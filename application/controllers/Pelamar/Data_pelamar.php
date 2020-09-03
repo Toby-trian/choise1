@@ -50,10 +50,10 @@ class Data_pelamar extends CI_Controller {
 		$this->load->view('pelamar/detail_keluarga',$paket);
 	}
 
-	public function detail_motlet($id_detail)
+	public function detail_pengalaman($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_motlet($id_detail);	
-		$this->load->view('pelamar/detail_motlet',$paket);
+		$paket['array']=$this->mdl_data_pelamar->ambildata_pengalaman($id_detail);	
+		$this->load->view('pelamar/detail_pengalaman',$paket);
 	}
 
 	

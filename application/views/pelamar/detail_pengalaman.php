@@ -8,7 +8,7 @@
         foreach ($pelamar->result() as $key_pelamar) {
           if ($key_pelamar->id_pelamar==$key['id_pelamar']) { 
             $pelamar = $key_pelamar->nama_pelamar;?>
-            <h1><i class="fa fa-th-list"></i> Detail data keluarga <b><?php echo $pelamar ?></b></h1>
+            <h1><i class="fa fa-th-list"></i> Detail data pengalaman <b><?php echo $pelamar ?></b></h1>
           <?php } ?> 
         <?php } ?>
       <?php } ?>  
@@ -16,7 +16,7 @@
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
       <li class="breadcrumb-item">User</li>
-      <li class="breadcrumb-item"><a href="#">Data Detail Data Keluarga</a></li>
+      <li class="breadcrumb-item"><a href="#">Data Detail Pengalaman</a></li>
     </ul>
   </div>
   <div class="row">
@@ -34,20 +34,28 @@
             <table class="table table-hover table-bordered" id="sampleTable">
               <tbody>
                 <tr>
-                  <th width="150">Nama Ayah</th>
-                  <td><?php echo $key['nama_ayah'] ?></td>
+                  <th width="150">Nama Perusahaan</th>
+                  <td><?php echo $key['nama_perusahaan'] ?></td>
                 </tr>
                 <tr>
-                  <th>Pekerjaan Ayah</th>
-                  <td><?php echo $key['pekerjaan_ayah'] ?></td>
+                  <th>Periode</th>
+                  <td><?php echo $key['periode'] ?></td>
                 </tr>                
                 <tr>
-                  <th>Nama Ibu</th>
-                  <td><?php echo $key['nama_ibu'] ?></td>
+                  <th>Jabatan Akhir</th>
+                  <td><?php echo $key['jabatan_akhir'] ?></td>
                 </tr>
                 <tr>
-                  <th>Pekerjaan Ibu</th>
-                  <td><?php echo $key['pekerjaan_ibu'] ?></td>
+                  <th>Alasan Keluar</th>
+                  <td><?php echo $key['alasan_keluar'] ?></td>
+                </tr>
+                <tr>
+                  <th>Referensi</th>
+                  <td><?php echo $key['nama_referensi'] ?></td>
+                </tr>
+                <tr>
+                  <th>No Hp Referensi</th>
+                  <td><?php echo $key['no_hp_referensi'] ?></td>
                 </tr>
 
               <?php } ?>
