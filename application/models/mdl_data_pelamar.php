@@ -30,6 +30,15 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_keluarga($id){
+		$query=$this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar=$id");
+		return $query->result_array();
+	}
+
+	public function ambildata_pengalaman($id){
+		$query=$this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar=$id");
+		return $query->result_array();
+	}
 
 	public function terima_pelamar($where,$table){
 		$this->db->where($where);
