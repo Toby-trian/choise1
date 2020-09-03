@@ -25,20 +25,60 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function ambildata_pendidikan($id){
-		$query=$this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar=$id");
+	public function ambildata_pendidikan($id=FALSE){
+		
+		if($id==TRUE){
+
+			$this->db->from('tb_data_pendidikan');  
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}else{
+
+			$this->db->from('tb_data_diri');
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}
+
 		return $query->result_array();
 	}
 
-	public function ambildata_keluarga($id){
-		$query=$this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar=$id");
-		return $query->result_array();
+	public function ambildata_keluarga($id=FALSE){
+
+		if($id==TRUE){
+
+			$this->db->from('tb_data_keluarga');  
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}else{
+
+			$this->db->from('tb_data_diri');
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}
 	}
 
 	public function ambildata_pengalaman($id){
 		$query=$this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar=$id");
 		return $query->result_array();
 	}
+
+	public function ambildata_motlet($id){
+		$query=$this->db->query("SELECT * FROM tb_motivation_letter WHERE id_pelamar=$id");
+		return $query->result_array();
+	}
+
 
 	public function terima_pelamar($where,$table){
 		$this->db->where($where);

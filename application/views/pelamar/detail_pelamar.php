@@ -29,7 +29,7 @@
            <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Pendidikan</a>
            <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Data Keluarga</a>
            <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pengalaman/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Pengalaman Kerja</a>
-           <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motivasi/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Motivation Letter</a>
+           <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Motivation Letter</a>
            <div class="table-responsive">
             <table class="table table-hover table-bordered" id="sampleTable">
               <tbody>
