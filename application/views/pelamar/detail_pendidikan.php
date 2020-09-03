@@ -25,11 +25,11 @@
         <div class="tile-body">
           <?php
           foreach ($array as $key_id) {
-            if (empty($key_id)) {
+            if (empty($key_id['id_pelamar'])) {
               echo "Data Kosong!";              
             } 
 
-            else if (isset($key_id)) {?>
+            else if (isset($key_id['id_pelamar'])) {?>
               <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key_id['id_pelamar']) ?>" class="btn btn-primary">Lihat Data Diri</a>
               <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key_id['id_pelamar']) ?>" class="btn btn-primary">Lihat Pendidikan</a>
               <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$key_id['id_pelamar']) ?>" class="btn btn-primary">Lihat Data Keluarga</a>
