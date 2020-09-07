@@ -13,7 +13,21 @@
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="../blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>Administrator Panel || Sistem E-recruitment</title>
+    <?php 
+    if ($this->session->userdata('ses_idLevel') == 'Administrator') {
+      $tittle = "Administrator Panel";
+    }
+    else if($this->session->userdata('ses_idLevel') == 'Admin Sdm'){
+      $tittle = "Admin SDM Panel";
+    }
+    else if($this->session->userdata('ses_idLevel') == 'Psikolog'){
+      $tittle = "Psikolog Panel";
+    }
+    else if($this->session->userdata('ses_idLevel') == 'Perusahaan'){
+      $tittle = "Perusahaan Panel";
+    }
+    ?>
+    <title><?php echo $tittle ?> || Sistem E-recruitment</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

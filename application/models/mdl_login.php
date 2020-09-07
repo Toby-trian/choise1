@@ -27,4 +27,10 @@ class Mdl_login extends CI_Model {
 		$query=$this->db->query("SELECT * FROM tb_psikolog where username='$username' AND password='$password' AND id_level=4");
 		return $query;
 	}
+
+	public function auth_perusahaan($username,$password)
+	{
+		$query=$this->db->query("SELECT * FROM tb_perusahaan where username='$username' AND password='$password' AND id_level=3");
+		return $query;
+	}
 }
