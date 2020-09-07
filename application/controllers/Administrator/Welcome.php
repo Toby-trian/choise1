@@ -38,7 +38,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('administrator/dashboard');
 	}
 
-	
+	// public function data_pelamar()
+	// {
+	// 	$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_detail);	
+	// 	$this->load->view('pelamar/detail_pelamar',$paket);
+	// }
 
 	// CRUD Level
 	public function data_level()

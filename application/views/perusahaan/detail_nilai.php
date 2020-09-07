@@ -63,33 +63,6 @@
                   }
                 }
                 ?>
-
-                <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title">Update Nilai</h4>
-                      </div>
-                      <div class="modal-body">
-                        <form action="<?php echo  base_url('Administrator/Data_nilai/update_nilai/'.$key['id_nilai']) ?>" method="post">
-                          <div class="form-group">
-                            <input type="hidden" name="id_nilai" value="<?php echo $key['id_nilai'] ?>">
-                            <label class="control-label">Nilai Wawancara</label>
-                            <input class="form-control" type="text" name="nilai_wawancara" value="<?php echo $key['nilai_wawancara'] ?>">
-                          </div>
-                          <div class="form-group">
-                            <label class="control-label">Nilai FGD</label>
-                            <input class="form-control" type="text" name="nilai_fgd" value="<?php echo $key['nilai_fgd'] ?>">
-                          </div>                          
-                        </div>
-                        <div class="modal-footer">
-                          <input type="submit" value="Update Nilai" class="btn btn-primary">
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div> 
-
                 <!-- Modal 2 -->
                 <div class="modal fade" id="myModal2" role="dialog">
                   <div class="modal-dialog modal-sm">
@@ -98,7 +71,7 @@
                         <h4 class="modal-title">Update Kepribadian</h4>
                       </div>
                       <div class="modal-body">
-                        <form action="<?php echo base_url('Administrator/Data_nilai/update_deskripsi/'.$key['id_nilai']) ?>" method="post">
+                        <form action="<?php echo base_url('Psikolog/Data_nilai/update_deskripsi/'.$key['id_nilai']) ?>" method="post">
                           <div class="form-group">
                             <input type="hidden" name="id_nilai" value="<?php echo $key['id_nilai'] ?>">
                             <label class="control-label">Gambaran Kepribadian</label>
@@ -128,28 +101,33 @@
 
                   $nilai_iq = $key['nilai_iq'];
 
-                  if ($nilai_iq <= 69 ){
-                    $hasil = "Inteletual Deficient";
+                  if ($nilai_iq >=80 || $nilai_iq <=119) {
+
+                    $hasil = "NORMAL";
                   }
-                  else if ($nilai_iq >=70 || $nilai_iq <=79){
-                    $hasil = "Borderline";
-                  }
-                  else if ($nilai_iq >=80 || $nilai_iq <=89){
-                    $hasil = "Dibawah rata-rata";
-                  }
-                  else if ($nilai_iq >=90 || $nilai_iq <=109){
-                    $hasil = "Rata-rata";
-                  }
-                  else if ($nilai_iq >=110 || $nilai_iq <=119){
-                    $hasil = "Diatas rata-rata";
-                  }
-                  else if ($nilai_iq >=120 || $nilai_iq <=129){
-                    $hasil = "Superior";
-                  }
-                  else if ($nilai_iq >=130){
-                    $hasil = "Sangat Superior";
+                  
+                  else if($nilai_iq >=120 || $nilai_iq <=129){
+
+                    $hasil = "SUPERIOR";
+
                   }
 
+                  else if($nilai_iq >=130 || $nilai_iq<=139){
+
+                    $hasil = "VERY SUPERIOR";
+
+                  }
+
+                  else if ($nilai_iq >=140){
+
+                    $hasil = "GENIUS";
+
+                  }
+
+                  else{
+
+                    $hasil = "Haha";
+                  }
                   ?>
 
                   <?php 

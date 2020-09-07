@@ -53,6 +53,7 @@ class Data_jadwal extends CI_Controller {
 		else{
 			$send['id_jadwal']='';
 			$send['id_lowongan']=$this->input->post('id_lowongan');
+			$send['id_perusahaan']=$this->input->post('idperusahaan');
 			$send['tes_tulis']=$this->input->post('tes_tulis');
 			$send['tes_wawancara']=$this->input->post('tes_wawancara');
 			$send['test_fgd']=$this->input->post('tes_fgd');

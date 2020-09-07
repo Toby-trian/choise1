@@ -39,7 +39,7 @@
       <li><a class="app-menu__item" href="<?php echo base_url('Administrator/Data_lowongan') ?>"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Lowongan Kerja</span></a></li>
       <li><a class="app-menu__item" href="<?php echo base_url('Administrator/Data_motlet') ?>"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Motivation Letter </span></a></li>
       <li><a class="app-menu__item" href="<?php echo base_url('Administrator/Data_jadwal') ?>"><i class="app-menu__icon fa fa-calendar-check-o"></i><span class="app-menu__label">Jadwal Seleksi </span></a></li>
-      <li><a class="app-menu__item" href="<?php echo base_url('Administrator/Welcome/data_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
+      <li><a class="app-menu__item" href="<?php echo base_url('Administrator/Data_nilai/data_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
 
 
     <?php } else if ($this->session->userdata('ses_idLevel') == 'Psikolog') { ?>
@@ -49,10 +49,17 @@
       <li><a class="app-menu__item" href="<?php echo base_url('Psikolog/Data_nilai/data_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
 
 
-    <?php } else if ($this->session->userdata('ses_idLevel') == 'Perusahaan') { ?>
+    <?php } else if ($this->session->userdata('ses_idLevel') == 'Perusahaan') { 
+      $ses_id = $this->session->userdata('ses_id');
+      $query = $this->db->query("SELECT * FROM tb_lowongan WHERE id_perusahaan = $ses_id");
+      foreach ($query->result() as $key ) {
+        $id = $key->id_perusahaan;
+      }
+      ?>
+      ?>
       <li><a class="app-menu__item active" href="<?php echo base_url('Administrator/Welcome') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_lowongan') ?>"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Lowongan Kerja</span></a></li>
-      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_jadwal') ?>"><i class="app-menu__icon fa fa-calendar-check-o"></i><span class="app-menu__label">Jadwal Seleksi </span></a></li>
+      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_lowongan/lowongan/'.$id) ?>"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Lowongan Kerja</span></a></li>
+      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_jadwal/jadwal/'.$id) ?>"><i class="app-menu__icon fa fa-calendar-check-o"></i><span class="app-menu__label">Jadwal Seleksi </span></a></li>
       <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_nilai/data_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
     <?php } ?>
   </ul>

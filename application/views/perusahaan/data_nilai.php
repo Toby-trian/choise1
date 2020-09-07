@@ -109,27 +109,33 @@
 
                   $nilai_iq = $key['nilai_iq'];
 
-                    if ($nilai_iq <= 69 ){
-                    $hasil = "Inteletual Deficient";
-                  }
-                  else if ($nilai_iq >=70 || $nilai_iq <=79){
-                    $hasil = "Borderline";
-                  }
-                  else if ($nilai_iq >=80 || $nilai_iq <=89){
-                    $hasil = "Dibawah rata-rata";
-                  }
-                  else if ($nilai_iq >=90 || $nilai_iq <=109){
-                    $hasil = "Rata-rata";
-                  }
-                  else if ($nilai_iq >=110 || $nilai_iq <=119){
-                    $hasil = "Diatas rata-rata";
-                  }
-                  else if ($nilai_iq >=120 || $nilai_iq <=129){
-                    $hasil = "Superior";
-                  }
-                  else if ($nilai_iq >=130){
-                    $hasil = "Sangat Superior";
-                  }
+                    if ($nilai_iq >=80 || $nilai_iq <=119) {
+                  
+                      $hasil = "NORMAL";
+                    }
+                  
+                    else if($nilai_iq >=120 || $nilai_iq <=129){
+
+                      $hasil = "SUPERIOR";
+
+                    }
+
+                    else if($nilai_iq >=130 || $nilai_iq<=139){
+
+                      $hasil = "VERY SUPERIOR";
+
+                    }
+
+                    else if ($nilai_iq >=140){
+
+                      $hasil = "GENIUS";
+
+                    }
+
+                    else{
+
+                      $hasil = "Haha";
+                    }
                   ?>
                   <td><?php echo $nama_pelamar ?></td>
                   <td><?php echo $namaJabatan ?></td>
@@ -138,7 +144,7 @@
                   <td><?php echo $hasil ?></td>
 
                   <td>
-                    <a href="<?php echo base_url('Administrator/Data_nilai/detail_nilai/'.$key['id_nilai']) ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Selengkapnya</a>
+                    <a href="<?php echo base_url('Psikolog/Data_nilai/detail_nilai/'.$key['id_nilai']) ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Selengkapnya</a>
                   </td>
                 </tr>
                 <?php $modal++; } ?>

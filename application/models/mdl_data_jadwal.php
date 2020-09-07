@@ -15,6 +15,11 @@ class Mdl_data_jadwal extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_jadwal_perusahaan($id){
+		$query=$this->db->query("SELECT * FROM tb_jadwal WHERE id_perusahaan = $id");
+		return $query->result_array();
+	}
+
 	public function ambildata2_jadwal($id){
 		$query=$this->db->query("SELECT * FROM tb_jadwal WHERE id_jadwal=$id");
 		return $query->result_array();

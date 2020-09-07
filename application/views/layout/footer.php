@@ -73,7 +73,17 @@ var pieChart = new Chart(ctxp).Pie(pdata);
 </script>
 <script type="text/javascript">
   $('#notifikasi').delay(5000).slideUp('slow');
+
 </script>
+
+<script>
+ $("#id_lowongan").change(function () {
+     //alert($(this).find(':selected').data('perusahaan'));
+     var perusahaan=$(this).find('option:selected').attr('data-idperusahaan');
+    $('#idperusahaan').val(perusahaan);
+});
+</script>
+
 </body>
 
 </html>

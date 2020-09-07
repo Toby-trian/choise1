@@ -19,7 +19,7 @@
           <form action="<?php echo base_url('Administrator/Data_jadwal/tambahdata') ?>" method="post">
             <div class="form-group">
               <label class="control-label">Lowongan / Jabatan</label>
-              <select class="form-control" name="id_lowongan">
+              <select class="form-control" name="id_lowongan" id="id_lowongan">
                 <option value="zero">--== Pilih Lowongan ==--</option>
                 <?php 
                 // $jadwal = $this->db->query("SELECT * FROM tb_jadwal");
@@ -36,13 +36,16 @@
                     if ($idPerus == $keyNama->id_perusahaan) {
                       # code...
                       $nmPerusahaan =  $keyNama->nama_perusahaan;?>
-                      <option value="<?php echo $idLowong?>"><?php echo $nama_lowongan; ?> (<?php echo $nmPerusahaan ?>)</option>
-
+                      <option value="<?php echo $idLowong?>" data-idperusahaan="<?php echo $idPerus?>"><?php echo $nama_lowongan; ?> (<?php echo $nmPerusahaan ?>)</option>
 
                     <?php } } }  ?>
 
                   </select>
+
+
                 </div>
+                <input class="form-control" type=text name=idperusahaan id=idperusahaan />
+
                 <div class="form-group">
                   <label class="control-label">Jadwal Tes Tulis</label>
                   <input class="form-control" name="tes_tulis" type="date">
@@ -56,7 +59,7 @@
                   <input class="form-control" name="tes_fgd" type="date">
                 </div>
 
-
+                
                 <input type="submit" value="Kirim" class="btn btn-primary">
                 <a href="<?php echo base_url('Administrator/Welcome/data_admin') ?>" class="btn btn-secondary"> Cancel</a>
               </form>
@@ -66,4 +69,6 @@
         </div>
       </div>
     </main>
+
+
     <?php $this->load->view('layout/footer') ?>

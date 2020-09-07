@@ -15,6 +15,11 @@ class Mdl_data_lowongan extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_lowongan_perusahaan($id){
+		$query=$this->db->query("SELECT * FROM tb_lowongan WHERE id_perusahaan=$id");
+		return $query->result_array();
+	}
+
 	public function ambildata_apply($id=FALSE){
 
 		if($id==TRUE){
