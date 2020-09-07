@@ -15,37 +15,49 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-3">
+          <div class="widget-small info coloured-icon"><i class="icon fa fa-building-o fa-3x"></i>
+            <div class="info">
+              <h4>Perusahaan</h4>
+              <?php 
+              $query_per = $this->db->query("SELECT count(id_perusahaan) AS jumlah FROM tb_perusahaan");
+              $result = $query_per->result_array();
+              ?>
+              <p><b><?php echo $result[0]['jumlah'] ?></b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-small warning coloured-icon"><i class="icon fa fa-file fa-3x"></i>
+            <div class="info">
+              <h4>Lowongan</h4>
+              <?php 
+              $query_low = $this->db->query("SELECT count(id_lowongan) AS jumlah FROM tb_lowongan");
+              $result = $query_low->result_array();
+              ?>
+              <p><b><?php echo $result[0]['jumlah'] ?></b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
           <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
             <div class="info">
-              <h4>Users</h4>
-              <p><b>5</b></p>
+              <h4>Pelamar</h4>
+              <?php 
+              $query_pel = $this->db->query("SELECT count(id_pelamar) AS jumlah FROM tb_pelamar");
+              $result = $query_pel->result_array();
+              ?>
+              <p><b><?php echo $result[0]['jumlah'] ?></b></p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small info coloured-icon"><i class="icon fa fa-thumbs-o-up fa-3x"></i>
-            <div class="info">
-              <h4>Likes</h4>
-              <p><b>25</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
-            <div class="info">
-              <h4>Uploades</h4>
-              <p><b>10</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
+        <!-- <div class="col-md-6 col-lg-3">
           <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
             <div class="info">
               <h4>Stars</h4>
               <p><b>500</b></p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="row">
         <div class="col-md-6">

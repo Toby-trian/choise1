@@ -15,9 +15,30 @@ class Mdl_data_lowongan extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function ambildata_apply($id){
-		$query=$this->db->query("SELECT * FROM tb_apply where id_lowongan=$id");
+	public function ambildata_apply($id=FALSE){
+
+		if($id==TRUE){
+
+			$this->db->from('tb_apply');  
+
+			$this->db->where('id_lowongan',$id);
+
+			$query = $this->db->get();
+
+		}else{
+
+			$this->db->from('tb_lowongan');
+
+			$this->db->where('id_lowongan',$id);
+
+			$query = $this->db->get();
+
+		}
+
 		return $query->result_array();
+
+		// $query=$this->db->query("SELECT * FROM tb_apply where id_lowongan=$id");
+		// return $query->result_array();
 	}
 
 	public function ambildata2_lowongan($id){

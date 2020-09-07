@@ -22,4 +22,9 @@ class Mdl_login extends CI_Model {
 		return $query;
 	}
 
+	public function auth_psikologi($username,$password)
+	{
+		$query=$this->db->query("SELECT * FROM tb_psikolog where username='$username' AND password='$password' AND id_level=4");
+		return $query;
+	}
 }

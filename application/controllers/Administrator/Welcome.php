@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url','form');
 		$this->load->model('mdl_data_level');
+		$this->load->model('mdl_data_nilai');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -36,6 +37,8 @@ class Welcome extends CI_Controller {
 		
 		$this->load->view('administrator/dashboard');
 	}
+
+	
 
 	// CRUD Level
 	public function data_level()

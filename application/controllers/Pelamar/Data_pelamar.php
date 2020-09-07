@@ -62,6 +62,7 @@ class Data_pelamar extends CI_Controller {
 		$this->load->view('pelamar/detail_motivasi',$paket);
 	}
 
+
 	
 	// public function tambahdata(){
 	// 	$this->form_validation->set_rules('id_perusahaan','Nama','trim|required');

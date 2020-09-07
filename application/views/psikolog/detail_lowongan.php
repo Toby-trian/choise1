@@ -94,9 +94,9 @@
                     <td><span class="<?php echo $badges ?>"><?php echo $key['status_lamaran'] ?></span></td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Data Pelamar" type="button" class="btn btn-primary"><a style="color: #fff" href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>"><i class="fa fa-eye"></i></a></button> 
+                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Data Pelamar" type="button" class="btn btn-primary"><a style="color: #fff" href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>"><i class="fa fa-eye"></i></a></button> <!-- 
                        <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Terima Lamaran" type="button" class="btn btn-success"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/terima_pelamar/'.$key['id_apply'])?>"><i class="fa fa-check"></i></a></button>
-                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tolak Lamaran" type="button" class="btn btn-danger"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/tolak_pelamar/'.$key['id_apply'])?>"><i class="fa fa-times"></i></a></button>
+                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tolak Lamaran" type="button" class="btn btn-danger"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/tolak_pelamar/'.$key['id_apply'])?>"><i class="fa fa-times"></i></a></button> -->
                     </td>
                   </tr>
                   <?php $modal++; } ?>
