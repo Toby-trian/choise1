@@ -109,22 +109,22 @@
 
                   $nilai_iq = $key['nilai_iq'];
 
-                    if ($nilai_iq <= 69 ){
+                  if ($nilai_iq <= 69 ){
                     $hasil = "Inteletual Deficient";
                   }
-                  else if ($nilai_iq >=70 || $nilai_iq <=79){
+                  else if ($nilai_iq >=70 && $nilai_iq <=79){
                     $hasil = "Borderline";
                   }
-                  else if ($nilai_iq >=80 || $nilai_iq <=89){
+                  else if ($nilai_iq >=80 && $nilai_iq <=89){
                     $hasil = "Dibawah rata-rata";
                   }
-                  else if ($nilai_iq >=90 || $nilai_iq <=109){
+                  else if ($nilai_iq >=90 && $nilai_iq <=109){
                     $hasil = "Rata-rata";
                   }
-                  else if ($nilai_iq >=110 || $nilai_iq <=119){
+                  else if ($nilai_iq >=110 && $nilai_iq <=119){
                     $hasil = "Diatas rata-rata";
                   }
-                  else if ($nilai_iq >=120 || $nilai_iq <=129){
+                  else if ($nilai_iq >=120 && $nilai_iq <=129){
                     $hasil = "Superior";
                   }
                   else if ($nilai_iq >=130){

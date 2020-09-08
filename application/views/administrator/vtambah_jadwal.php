@@ -44,7 +44,7 @@
 
 
                 </div>
-                <input class="form-control" type=text name=idperusahaan id=idperusahaan />
+                <input class="form-control" type=hidden name=idperusahaan id=idperusahaan />
 
                 <div class="form-group">
                   <label class="control-label">Jadwal Tes Tulis</label>
@@ -61,7 +61,7 @@
 
                 
                 <input type="submit" value="Kirim" class="btn btn-primary">
-                <a href="<?php echo base_url('Administrator/Welcome/data_admin') ?>" class="btn btn-secondary"> Cancel</a>
+                <a href="<?php echo base_url('Administrator/Data_jadwal') ?>" class="btn btn-secondary"> Cancel</a>
               </form>
             </div>
 

@@ -37,7 +37,7 @@
                     if ($idPerus == $keyNama->id_perusahaan) {
                       # code...
                       $nmPerusahaan =  $keyNama->nama_perusahaan;?>
-                      <option value="<?php echo $idLowong?>"<?php echo ($idLowong == $data[0]['id_lowongan'] ? 'selected="selected"' : ''); ?>><?php echo $nama_lowongan; ?> (<?php echo $nmPerusahaan ?>)</option>
+                      <option  value="<?php echo $idLowong?>"<?php echo ($idLowong == $data[0]['id_lowongan'] ? 'selected="selected"' : ''); ?>><?php echo $nama_lowongan; ?> (<?php echo $nmPerusahaan ?>)</option>
 
 
 
@@ -45,6 +45,7 @@
 
                   </select>
                 </div>
+                <input class="form-control" type=text name=idperusahaan id=idperusahaan />
                 <div class="form-group">
                   <label class="control-label">Jadwal Tes Tulis</label>
                   <input class="form-control" name="tes_tulis" type="date" value="<?php echo $data[0]['tes_tulis'] ?>">
@@ -60,7 +61,7 @@
 
 
                 <input type="submit" value="Kirim" class="btn btn-primary">
-                <a href="<?php echo base_url('Administrator/Welcome/data_admin') ?>" class="btn btn-secondary"> Cancel</a>
+                <a href="<?php echo base_url('Administrator/Data_jadwal') ?>" class="btn btn-secondary"> Cancel</a>
               </form>
             </div>
 

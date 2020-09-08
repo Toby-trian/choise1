@@ -60,7 +60,7 @@
       <li><a class="app-menu__item active" href="<?php echo base_url('Administrator/Welcome') ?>"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
       <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_lowongan/lowongan/'.$id) ?>"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Lowongan Kerja</span></a></li>
       <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_jadwal/jadwal/'.$id) ?>"><i class="app-menu__icon fa fa-calendar-check-o"></i><span class="app-menu__label">Jadwal Seleksi </span></a></li>
-      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_nilai/data_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
+      <li><a class="app-menu__item" href="<?php echo base_url('Perusahaan/Data_nilai/data_pelamar/'.$id) ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
     <?php } ?>
   </ul>
 </aside>
