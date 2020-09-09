@@ -3,18 +3,17 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Data Psikolog</h1>
+      <h1><i class="fa fa-th-list"></i> Data Pelamar Keseluruhan</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
       <li class="breadcrumb-item">User</li>
-      <li class="breadcrumb-item"><a href="#">Data Psikolog</a></li>
+      <li class="breadcrumb-item"><a href="#">Data Pelamar Keseluruhan</a></li>
     </ul>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <a href="<?php echo base_url('Administrator/Welcome/tambahdata_psikolog') ?>" class="btn btn-primary" style="margin-bottom: 2%;">Tambah Data</a>
         <div id="notifikasi">
           <?php if($this->session->flashdata('msg')):?>
             <div class="alert alert-primary">
@@ -38,12 +37,15 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Nama Admin</th>
+                  <th>Nama Pelamar</th>
+                  <th>Alamat</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Jenis Kelamin</th>
                   <th>No Hp</th>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Level</th>
-                  <th>Aksi</th>
+                  <th>Facebook</th>
+                  <th>Instagram</th>
+                  <th>Twitter</th>
                 </tr>
               </thead>
               <tbody>
@@ -69,20 +71,15 @@
                   </div> 
                   <tr>
                     <td><?php echo $no++ ?></td>
-                    <td><?php echo $key['nama_psikolog'] ?></td>
+                    <td><?php echo $key['nama_pelamar'] ?></td>
+                    <td><?php echo $key['alamat'] ?></td>
+                    <td><?php echo $key['tempat_lahir'] ?></td>
+                    <td><?php echo $key['tanggal_lahir'] ?></td>
+                    <td><?php echo $key['jenis_kelamin'] ?></td>
                     <td><?php echo $key['no_hp'] ?></td>
-                    <td><?php echo $key['username'] ?></td>
-                    <td><?php echo $key['password'] ?></td>
-                    <?php $level = $this->db->query("SELECT * FROM tb_level");
-                    foreach ($level->result() as $key_level) {
-                      if ($key_level->id_level==$key['id_level']) { ?>
-                        <td><?php echo $key_level->nama_level ?></td>
-                      <?php } ?>
-                    <?php } ?>
-                    <td>
-                      <a href="<?php echo base_url('Administrator/Welcome/edit_psikolog/'.$key['id_psikolog']) ?>" class="btn btn-warning"><i class="fa fa-pencil"></i> Edit</a>
-                      <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $modal ?>"><i class="fa fa-trash"></i> Hapus</a>
-                    </td>
+                    <td><?php echo $key['facebook'] ?></td>
+                    <td><?php echo $key['instagram'] ?></td>
+                    <td><?php echo $key['twitter'] ?></td>                  
                   </tr>
                   <?php $modal++; } ?>
                 </tbody>

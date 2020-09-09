@@ -25,6 +25,11 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_pelamar_(){
+		$query=$this->db->query("SELECT * FROM tb_data_diri");
+		return $query->result_array();
+	}
+
 	// public function ambildata_pendidikan($id){
 	// 	$query=$this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar=$id");
 

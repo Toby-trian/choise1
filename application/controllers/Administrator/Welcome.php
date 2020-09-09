@@ -9,6 +9,7 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->model('mdl_data_level');
 		$this->load->model('mdl_data_nilai');
+		$this->load->model('mdl_data_pelamar');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -38,11 +39,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('administrator/dashboard');
 	}
 
-	// public function data_pelamar()
-	// {
-	// 	$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_detail);	
-	// 	$this->load->view('pelamar/detail_pelamar',$paket);
-	// }
+	public function data_pelamar()
+	{
+		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar_();	
+		$this->load->view('administrator/data_pelamar',$paket);
+	}
 
 	// CRUD Level
 	public function data_level()
