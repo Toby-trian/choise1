@@ -32,18 +32,18 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150" action="<?php echo base_url('Login_pelamar/do_login') ?>" method="post">
 					<span class="login100-form-title">
 						Masuk
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" placeholder="Username" name="username">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
-						<input class="input100" type="password" name="pass" placeholder="Kata Sandi">
+						<input class="input100" type="password" placeholder="Kata Sandi" name="password">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Masuk
 						</button>
 					</div>

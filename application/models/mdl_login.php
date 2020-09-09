@@ -33,4 +33,10 @@ class Mdl_login extends CI_Model {
 		$query=$this->db->query("SELECT * FROM tb_perusahaan where username='$username' AND password='$password' AND id_level=3");
 		return $query;
 	}
+
+	public function auth_pelamar($username,$password)
+	{
+		$query=$this->db->query("SELECT * FROM tb_pelamar where username='$username' AND password='$password' AND id_level=5");
+		return $query;
+	}
 }

@@ -1,0 +1,25 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Mdl_home extends CI_Model {
+
+	public function __construct()
+		{
+			parent::__construct();
+			$this->load->database();
+		}
+
+	// DATA LEVEL
+	public function ambildata(){
+		$query=$this->db->query("SELECT * FROM tb_lowongan");
+		return $query->result_array();
+	}
+
+	public function ambildata_persyaratan($id){
+		$query=$this->db->query("SELECT * FROM tb_lowongan WHERE id_lowongan = $id");
+		return $query->result_array();
+	}
+
+
+
+}

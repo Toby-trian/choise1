@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		// $this->load->model('mdl_login');
+		$this->load->model('mdl_home');
 		$this->load->library('form_validation');
 		$this->load->database();
 		// if($this->session->userdata('masuk') == FALSE){
@@ -33,90 +33,17 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		$paket['array']=$this->mdl_home->ambildata();	
+		$this->load->view('home',$paket);
 	}
+
 	public function login2()
 	{
 		$this->load->view('login2');
 	}
+	
 	public function daftar()
 	{
 		$this->load->view('daftar');
-	}
-	public function dasbor()
-	{
-		$this->load->view('dasbor');
-	}
-	public function profilawal()
-	{
-		$this->load->view('profilawal');
-	}
-	public function profil()
-	{
-		$this->load->view('profil');
-	}
-	public function lowongantersedia()
-	{
-		$this->load->view('lowongantersedia');
-	}
-	public function lamaransaya()
-	{
-		$this->load->view('lamaransaya');
-	}
-	public function jadwalseleksi()
-	{
-		$this->load->view('jadwalseleksi');
-	}
-	public function ujian()
-	{
-		$this->load->view('ujian');
-	}
-	public function pengumuman()
-	{
-		$this->load->view('pengumuman');
-	}
-	public function lamarlowongan()
-	{
-		$this->load->view('lamarlowongan');
-	}
-	public function tambahdatadiri()
-	{
-		$this->load->view('tambahdatadiri');
-	}
-	public function tambahdatakeluarga()
-	{
-		$this->load->view('tambahdatakeluarga');
-	}
-	public function tambahpendidikan()
-	{
-		$this->load->view('tambahpendidikan');
-	}
-	public function tambahpendidikannonformal()
-	{
-		$this->load->view('tambahpendidikannonformal');
-	}
-	public function tambahdatapengalamankerja()
-	{
-		$this->load->view('tambahdatapengalamankerja');
-	}
-	public function ubahdatadiri()
-	{
-		$this->load->view('ubahdatadiri');
-	}
-	public function ubahdatakeluarga()
-	{
-		$this->load->view('ubahdatakeluarga');
-	}
-	public function ubahpendidikan()
-	{
-		$this->load->view('ubahpendidikan');
-	}
-	public function ubahpendidikannonformal()
-	{
-		$this->load->view('ubahpendidikannonformal');
-	}
-	public function ubahdatapengalamankerja()
-	{
-		$this->load->view('ubahdatapengalamankerja');
 	}
 }

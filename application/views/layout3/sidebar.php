@@ -13,7 +13,7 @@
 		<ul class="nav menu">
 			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dasbor</a></li>
 			<li><a href="<?php  echo base_url('Home/profilawal') ?>"><em class="fa fa-user">&nbsp;</em> Profil Saya</a></li>
-			<li><a href="<?php  echo base_url('Home/lowongantersedia') ?>"><em class="fa fa-suitcase">&nbsp;</em> Lowongan Tersedia</a></li>
+			<li><a href="<?php  echo base_url('Pelamar/Pelamar/lowongantersedia') ?>"><em class="fa fa-suitcase">&nbsp;</em> Lowongan Tersedia</a></li>
 			<li><a href="<?php  echo base_url('Home/lamaransaya') ?>"><em class="fa fa-envelope">&nbsp;</em> Lamaran Saya</a></li>
 		</ul>
 	</div><!--/.sidebar-->

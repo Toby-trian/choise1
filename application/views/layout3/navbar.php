@@ -26,7 +26,7 @@
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="" class="pull-left">
-									<a href="#" style="color: #283339;">Keluar</a>
+									<a href="<?php echo base_url('Login_pelamar/logout') ?>" style="color: #283339;">Keluar</a>
 								</div>
 							</li>
 						</ul>

@@ -46,6 +46,7 @@ class Login extends CI_Controller {
 		$cek_psikologi = $this->mdl_login->auth_psikologi($username,$password);
 		$cek_perusahaan = $this->mdl_login->auth_perusahaan($username,$password);
 
+
 		if ($cek_administrator->num_rows()>0) {
 			$data=$cek_administrator->row_array();
 			$level = $this->db->query("SELECT * FROM tb_level");
@@ -109,6 +110,7 @@ class Login extends CI_Controller {
 			// $this->session->set_userdata('ses_idLevel',$data['id_level']);
 			redirect(base_url('Administrator/Welcome'));
 		}
+		
 		else{
 			$this->session->set_flashdata('msg_gagal','Username dan Password Salah');
 			redirect(base_url('Login'));

@@ -1,6 +1,6 @@
 <?php   $this->load->view('layout2/header') ?>
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -18,13 +18,13 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-   
-   
+
+
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
       <div class="container">
         <div class="row align-items-center">
-          
+
           <div class="col-6 col-md-3 col-xl-4  d-block">
             <h1 class="mb-0 site-logo"><img src="<?php echo base_url('assets2/images/companylogo.png') ?>" alt=""></h1>
             <!-- <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">imagine<span class="text-primary">.</span> </a></h1> -->
@@ -42,226 +42,151 @@
                 <li><a href="<?php echo base_url('Home/login2') ?>" class="nav-link">MASUK</a></li>
                 <li><a href="<?php echo base_url('Home/daftar') ?>" class="nav-link">DAFTAR</a></li>
 <!--                 <li><a href="#testimonials-section" class="nav-link">FAQ</a></li>
-                <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->
+  <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->
 <!--                 <li><a class="nav-link">MASUK</a></li>
-                <li><a class="nav-link">REGISTRASI</a></li> -->
-              </ul>
-            </nav>
-          </div>
+  <li><a class="nav-link">REGISTRASI</a></li> -->
+</ul>
+</nav>
+</div>
 
 
-          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+<div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
 
-        </div>
-      </div>
-      
-    </header>
-    
+</div>
+</div>
 
-    <div class="site-blocks-cover" style="overflow: hidden;">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-            <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute" style="width:40%;">
-            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-6 mr-auto">
-                <h1>Ayo mulai karir Anda disini!</h1>
-                <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
-                <div>
-                  <a href="#" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+</header>
 
-    <div class="site-section" id="features-section">
-      <div class="container">
-        <div class="row justify-content-center text-center"  data-aos="fade-up">
-          <div class="col-7 text-center mb-3">
-            <h2 class="section-title">Lowongan Pekerjaan</h2>
-            <p class="lead">Mulailah menemukan tujuan Anda dengan Choise. Lihat lowongan terbaru kami di bawah ini.</p>
-          </div>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up"  data-aos-delay="200">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4 d-block">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/companylogohighrespng.png') ?>" alt="Card image cap">
-              </div><br>
-              <h3>Asisten Programmer</h3>
-              <p>Chaakra Consulting</p>
-              <div>
-                <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 justify-content-center text-center">
-            <div data-aos="fade-up" data-aos-delay="200">
-              <a href="#" class="btn btn-primary">Lowongan Lainnya</a>
+
+<div class="site-blocks-cover" style="overflow: hidden;">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
+        <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute" style="width:40%;">
+        <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 mr-auto">
+            <h1>Ayo mulai karir Anda disini!</h1>
+            <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
+            <div>
+              <a href="#" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="site-section" id="flow-section">
-      <div class="container">
-        <div class="row justify-content-center text-center"  data-aos="fade-up">
-          <div class="col-7 text-center mb-4">
-            <h2 class="section-title">Alur Pendaftaran</h2>
+
+<div class="site-section" id="features-section">
+  <div class="container">
+    <div class="row justify-content-center text-center"  data-aos="fade-up">
+      <div class="col-7 text-center mb-3">
+        <h2 class="section-title">Lowongan Pekerjaan</h2>
+        <p class="lead">Mulailah menemukan tujuan Anda dengan Choise. Lihat lowongan terbaru kami di bawah ini.</p>
+      </div>
+    </div>
+
+
+    <div class="row align-items-stretch">
+      <?php 
+      foreach ($array as $key) { ?>
+        <?php $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+        foreach ($perusahaan->result() as $key_perusahaan) {
+          if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) {
+            $nama_perusahaan = $key_perusahaan->nama_perusahaan;
+            $logo_perusahaan = $key_perusahaan->logo_perusahaan;
+          } 
+         } ?>
+        <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
+          <div class="unit-4 d-block">
+            <div class="card-img-block">
+              <img style="width: 130px" class="card-img-top" src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>">
+            </div><br>
+            <h3><?php echo $key['nama_jabatan'] ?></h3>
+            <p><?php echo $nama_perusahaan ?></p>
+            <div>
+              <a href="#" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+            </div>
           </div>
         </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/login.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>1.</h3>
-              <p>Pendaftaran baru, pilih menu registrasi di pojok kanan atas.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_3.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>2.</h3>
-              <p>Isi formulir data diri.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up"  data-aos-delay="200">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/email.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>3.</h3>
-              <p>Aktivasi akun melalui tautan yang dikirimkan ke email Anda.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/apply.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>4.</h3>
-              <p>Pilih perusahaan yang ingin dilamar pada menu lowongan pekerjaan.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_1.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>5.</h3>
-              <p>Pilih jabatan yang ingin dilamar dengan klik tombol "Lamar Posisi".</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_2.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>6.</h3>
-              <p>Isi formulir dan kirimkan lamaran Anda dengan klik tombol "Kirim".</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <div class="card-img-block">
-                <img class="card-img-top" src="<?php echo base_url('assets2/images/telephone.png') ?>" style="width:50%;" alt="Card image cap">
-              </div><br>
-              <h3>7.</h3>
-              <p>Anda telah berhasil mengirim lamaran. Silahkan cek email Anda!.</p>
-            </div>
-          </div>
+      <?php } ?>
+    </div>
+  </div>
+</div>
+
+
+<div class="site-section" id="flow-section">
+  <div class="container">
+    <div class="row justify-content-center text-center"  data-aos="fade-up">
+      <div class="col-7 text-center mb-4">
+        <h2 class="section-title">Alur Pendaftaran</h2>
+      </div>
+    </div>
+    <div class="row align-items-stretch">
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/login.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>1.</h3>
+          <p>Pendaftaran baru, pilih menu registrasi di pojok kanan atas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_3.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>2.</h3>
+          <p>Isi formulir data diri.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up"  data-aos-delay="200">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/email.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>3.</h3>
+          <p>Aktivasi akun melalui tautan yang dikirimkan ke email Anda.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/apply.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>4.</h3>
+          <p>Pilih perusahaan yang ingin dilamar pada menu lowongan pekerjaan.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_1.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>5.</h3>
+          <p>Pilih jabatan yang ingin dilamar dengan klik tombol "Lamar Posisi".</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_2.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>6.</h3>
+          <p>Isi formulir dan kirimkan lamaran Anda dengan klik tombol "Kirim".</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center">
+          <div class="card-img-block">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/telephone.png') ?>" style="width:50%;" alt="Card image cap">
+          </div><br>
+          <h3>7.</h3>
+          <p>Anda telah berhasil mengirim lamaran. Silahkan cek email Anda!.</p>
+        </div>
+      </div>
           <!-- <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <div class="card-img-block">
@@ -456,4 +381,4 @@
       </div>
     </div>
 
-<?php   $this->load->view('layout2/footer') ?>
+    <?php   $this->load->view('layout2/footer') ?>
