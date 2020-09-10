@@ -59,10 +59,6 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('tambahpendidikan');
 	}
-	public function tambahpendidikannonformal()
-	{
-		$this->load->view('tambahpendidikannonformal');
-	}
 	public function tambahdatapengalamankerja()
 	{
 		$this->load->view('tambahdatapengalamankerja');
@@ -110,10 +106,7 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('ubahpendidikan');
 	}
-	// public function ubahpendidikannonformal()
-	// {
-	// 	$this->load->view('ubahpendidikannonformal');
-	// }
+	
 	public function ubahdatapengalamankerja()
 	{
 		$this->load->view('ubahdatapengalamankerja');
