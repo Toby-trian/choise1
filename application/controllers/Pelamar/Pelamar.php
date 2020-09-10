@@ -117,4 +117,20 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('ubahdatapengalamankerja');
 	}
+	public function disc()
+	{
+		$this->load->view('disc');
+	}
+	public function discsoal1()
+	{
+		$this->load->view('discsoal1');
+	}
+	public function discsoal2()
+	{
+		$this->load->view('discsoal2');
+	}
+	public function discsoal24()
+	{
+		$this->load->view('discsoal24');
+	}
 }
