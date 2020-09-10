@@ -31,7 +31,7 @@ class Data_nilai extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function data_pelamar($id)
+	public function nilai_pelamar($id)
 	{
 		$paket['array']=$this->mdl_data_nilai->ambildata_nilai_perusahaan($id);	
 		$this->load->view('perusahaan/data_nilai',$paket);

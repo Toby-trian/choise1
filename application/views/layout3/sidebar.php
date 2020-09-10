@@ -19,9 +19,9 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dasbor</a></li>
-			<li><a href="<?php  echo base_url('Pelamar/Pelamar/profilawal') ?>"><em class="fa fa-user">&nbsp;</em> Profil Saya</a></li>
-			<li><a href="<?php  echo base_url('Pelamar/Pelamar/lowongantersedia') ?>"><em class="fa fa-suitcase">&nbsp;</em> Lowongan Tersedia</a></li>
-			<li><a href="<?php  echo base_url('Pelamar/Pelamar/lamaransaya') ?>"><em class="fa fa-envelope">&nbsp;</em> Lamaran Saya</a></li>
+			<li class="<?php if($this->uri->segment(3)=="Dashboard"){echo "active";}?>"><a href="<?php echo base_url('Pelamar/Pelamar/Dashboard') ?>"><em class="fa fa-dashboard">&nbsp;</em> Dasbor</a></li>
+			<li class="<?php if($this->uri->segment(3)=="profilawal"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Pelamar/profilawal') ?>"><em class="fa fa-user">&nbsp;</em> Profil Saya</a></li>
+			<li class="<?php if($this->uri->segment(3)=="lowongantersedia"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Lamaran/lowongantersedia') ?>"><em class="fa fa-suitcase">&nbsp;</em> Lowongan Tersedia</a></li>
+			<li class="<?php if($this->uri->segment(3)=="lamaransaya"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Lamaran/lamaransaya') ?>"><em class="fa fa-envelope">&nbsp;</em> Lamaran Saya</a></li>
 		</ul>
 	</div><!--/.sidebar-->

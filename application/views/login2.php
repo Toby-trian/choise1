@@ -38,7 +38,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" placeholder="Username" name="username">
+						<input class="input100" type="text" placeholder="Username" name="username" autocomplete="off">
 						<span class="focus-input100"></span>
 					</div>
 

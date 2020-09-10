@@ -26,6 +26,7 @@
 			$data_diri = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $id_pelamar");
 			foreach ($data_diri->result() as $key_diri) {
 				$nik =$key_diri->nik;
+				$id_pelamar = $key_diri->id_pelamar;
 				$nama_pelamar = $key_diri->nama_pelamar;
 				$alamat = $key_diri->alamat;
 				$tempat_lahir = $key_diri->tempat_lahir;
@@ -35,6 +36,7 @@
 				$facebook = $key_diri->facebook;
 				$instagram = $key_diri->instagram;
 				$twitter = $key_diri->twitter;
+				// $foto = $key_diri->foto == '' ? base_url('./upload/logo_perusahaan/user.png') : base_url('./upload/logo_perusahaan/' . $key_diri->foto);
 			}
 			?>
 			<div class="table-responsive">
@@ -75,13 +77,18 @@
 						<th>Twitter</th>
 						<td><?php echo $twitter ?></td>
 					</tr>
+					<!-- <tr>	
+						<th>Foto</th>
+						<td><img width="100" src="<?php echo $foto?>"></td>
+					</tr> -->
 				</table>
 			</div>
+
 			<?php 
 			if ($data_diri->num_rows()>0) {?>
-				<a href="<?php  echo base_url('Home/tambahdatadiri') ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+				<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$id_pelamar) ?>" type="button" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
 			<?php }else{?>
-				<a href="<?php  echo base_url('Home/tambahdatadiri') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
 			<?php }
 			?>
 

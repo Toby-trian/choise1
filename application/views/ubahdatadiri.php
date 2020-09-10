@@ -2,91 +2,90 @@
 <?php   $this->load->view('layout3/navbar') ?>
 <?php   $this->load->view('layout3/sidebar') ?>
 
+<?php $id_pelamar = $this->session->userdata('ses_id'); ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-user color-amber"></em>
-				</a></li>
-				<li class="active">Ubah Data Diri</li>
-			</ol>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Ubah Data Diri</h1>
-			</div>
-		</div><!--/.row-->
+	<div class="row">
+		<ol class="breadcrumb">
+			<li><a href="#">
+				<em class="fa fa-user color-amber"></em>
+			</a></li>
+			<li class="active">Profil Saya</li>
+		</ol>
+	</div><!--/.row-->
 
-		<div class="row">
-			<div class="col-sm-12">
-				<a href="#" class="btn btn-primary mr-2 mb-2"><em class="fa fa-chevron-left color-white"></em> Kembali</a>
-	    	</div>
-		</div><br>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Profil Saya</h1>
+		</div>
+	</div><!--/.row-->
 
-		<div class="row">
-			<form>
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+		<div class="col-sm-12">
+			<h4 style="margin-bottom: 2%;"><b>Update Data Diri</b></h4>
+			<form action="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$data[0]['id_pelamar']) ?>" method="post">
 			  <div class="form-row">
 			  	<div class="form-group col-sm-12">
 			      <label for="inputNama">Nama</label>
-			      <input type="text" class="form-control" id="inputNama" placeholder="Nama">
+			      <input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pelamar'] ?>">
+			      <input type="text" class="form-control" name="nama_pelamar" value="<?php echo $data[0]['nama_pelamar'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="inputNik">NIK</label>
-			      <input type="text" class="form-control" id="inputNik" placeholder="Nomor Induk Kependudukan">
+			      <input type="text" class="form-control" name="nik" value="<?php echo $data[0]['nik'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="inputTempatlahir">Tempat Lahir</label>
-			      <input type="text" class="form-control" id="inputTempatlahir" placeholder="Tempat Lahir">
+			      <input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data[0]['tempat_lahir'] ?>" >
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="calendar">Tanggal Lahir</label>
-			      <input type="text" class="form-control" id="calendar" placeholder="Tanggal Lahir">
+			      <input type="date" class="form-control" name="tgl_lahir" value="<?php echo $data[0]['tanggal_lahir'] ?>">
 			    </div>
 			    <div class="form-check form-check-inline col-sm-12 form-check">
 			      <div class="col-12">
 			      	<label for="jenisKelamin">Jenis Kelamin</label>
 			      </div>
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-				  <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
-				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-				  <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+				  <input class="form-check-input" type="radio" name="gender" value="L" <?php if ($data[0]['jenis_kelamin']=="L") { ?> checked="checked" <?php } ?>> Laki-Laki
+				  <input class="form-check-input" type="radio" name="gender" value="P" <?php if ($data[0]['jenis_kelamin']=="P") { ?> checked="checked" <?php } ?>> Perempuan
 				</div>
 				<div class="form-group col-sm-12">
 			      <label for="alamat">Alamat Domisili</label>
-			      <input type="text" class="form-control" id="alamat" placeholder="Alamat Domisili">
+			      <input type="text" class="form-control" name="alamat" value="<?php echo $data[0]['alamat'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="noHp">Nomor HP</label>
-			      <input type="text" class="form-control" id="noHp" placeholder="No HP">
+			      <input type="text" class="form-control" name="no_hp" value="<?php echo $data[0]['no_hp'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="akunFb">Akun Facebook</label>
-			      <input type="text" class="form-control" id="akunFb" placeholder="Akun Facebook">
+			      <input type="text" class="form-control" name="facebook" value="<?php echo $data[0]['facebook'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="akunIg">Akun Instagram</label>
-			      <input type="text" class="form-control" id="akunIg" placeholder="Akun Instagram">
+			      <input type="text" class="form-control" name="instagram" value="<?php echo $data[0]['instagram'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="akunTwtitter">Akun Twitter</label>
-			      <input type="text" class="form-control" id="akunTwtitter" placeholder="akun Twitter">
+			      <input type="text" class="form-control" name="twitter" value="<?php echo $data[0]['twitter'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 				  <label for="foto">Upload Pas Foto</label>
-				  <input type="file" class="form-control-file" id="foto">
+				  <input type="file" class="form-control-file" name="berkas" >
 				 </div>
 			  </div>
 			  <div class="col-sm-12">
-	            <a href="#" class="btn btn-primary mr-2 mb-2">Simpan</a>
+	            <input type="submit" value="Simpan" >
+	            <a href="#" class="btn btn-danger mr-2 mb-2">Batal</a>
 	          </div>
 			</form>
-		</div><br><!--/.row-->
 
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 		</div>
+	</div>
 
-	</div>	<!--/.main-->
+	<div class="col-sm-12">
+		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+	</div>
+
+</div>	<!--/.main-->
 
 <?php   $this->load->view('layout3/footer') ?>

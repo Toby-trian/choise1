@@ -39,7 +39,7 @@
                 <li><a href="#flow-section" class="nav-link">ALUR PENDAFTARAN</a></li>
                 <li><a href="#faq-section" class="nav-link">FAQ</a></li>
                 <li><a href="#contact-section" class="nav-link">HUBUNGI KAMI</a></li>
-                <li><a href="<?php echo base_url('Home/login2') ?>" class="nav-link">MASUK</a></li>
+                <li><a href="<?php echo base_url('Login_pelamar/') ?>" class="nav-link">MASUK</a></li>
                 <li><a href="<?php echo base_url('Home/daftar') ?>" class="nav-link">DAFTAR</a></li>
 <!--                 <li><a href="#testimonials-section" class="nav-link">FAQ</a></li>
   <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->

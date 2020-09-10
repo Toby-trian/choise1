@@ -31,7 +31,7 @@ class Data_nilai extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function data_pelamar()
+	public function nilai_pelamar()
 	{
 		$paket['array']=$this->mdl_data_nilai->ambildata_nilai();	
 		$this->load->view('administrator/data_nilai',$paket);

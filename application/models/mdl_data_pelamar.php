@@ -9,39 +9,20 @@ class Mdl_data_pelamar extends CI_Model {
 			$this->load->database();
 		}
 
-	// // DATA LEVEL
-	// public function ambildata_lowongan(){
-	// 	$query=$this->db->query("SELECT * FROM tb_lowongan");
-	// 	return $query->result_array();
-	// }
-
-	// public function ambildata_apply($id){
-	// 	$query=$this->db->query("SELECT * FROM tb_apply where id_lowongan=$id");
-	// 	return $query->result_array();
-	// }
-
 	public function ambildata_pelamar($id){
 		$query=$this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar=$id");
 		return $query->result_array();
+	}
+
+	public function modelupdate($send){
+		$sql="UPDATE tb_data_diri SET id_pelamar = ?, nik = ?, nama_pelamar = ?, tempat_lahir = ? , tanggal_lahir = ? , jenis_kelamin = ?, no_hp = ?, facebook = ?, instagram = ?, alamat = ?, twitter = ? WHERE id_pelamar = ?";
+		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nik'], $send['nama_pelamar'], $send['tempat_lahir'], $send['tanggal_lahir'], $send['jenis_kelamin'], $send['no_hp'], $send['facebook'], $send['instagram'], $send['alamat'], $send['twitter'], $send['id_pelamar']));
 	}
 
 	public function ambildata_pelamar_(){
 		$query=$this->db->query("SELECT * FROM tb_data_diri");
 		return $query->result_array();
 	}
-
-	// public function ambildata_pendidikan($id){
-	// 	$query=$this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar=$id");
-
-	// 	if($query->num_rows() > 0)
- //        {
- //           return $query->result_array();
- //        }
- //        return false;
-
-	// 	//return $query->result_array();
-	// }
-
 
 	public function ambildata_pendidikan($id=FALSE){
 		
@@ -135,17 +116,6 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
-
-	// public function ambildata_pengalaman($id){
-	// 	$query=$this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar=$id");
-	// 	return $query->result_array();
-	// }
-
-	// public function ambildata_motlet($id){
-	// 	$query=$this->db->query("SELECT * FROM tb_motivation_letter WHERE id_pelamar=$id");
-	// 	return $query->result_array();
-	// }
-
 	public function terima_pelamar($where,$table){
 		$this->db->where($where);
 		$this->db->SET('status_lamaran','Diterima');
@@ -158,9 +128,6 @@ class Mdl_data_pelamar extends CI_Model {
 		$this->db->update($table);
 	}
 
-	// public function terima_lamaran($id_pelamar,$id_lowongan){
-	// 	$sql="UPDATE tb_apply SET status_lamaran = 'Diterima', WHERE id_lowongan = ?";
-	// }	
 	// END DATA LEVEL
 
 // ============================================================================================

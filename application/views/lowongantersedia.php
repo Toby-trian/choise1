@@ -38,7 +38,7 @@
         <h3><?php echo $key['nama_jabatan'] ?></h3>
         <p><?php echo $nama_perusahaan ?></p>
         <div>
-          <a href="<?php echo base_url('Pelamar/Pelamar/lamarlowongan/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+          <a href="<?php echo base_url('Pelamar/Lamaran/lamarlowongan/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
         </div>
       </div>
     </div>
