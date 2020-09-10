@@ -29,7 +29,7 @@
                 <a href="<?php  echo base_url('Home/jadwalseleksi') ?>" class="btn btn-primary mr-2 mb-2">Lihat Jadwal</a>
               </div>
               <div class="button-lm-tittle">
-                <a href="<?php  echo base_url('Home/ujian') ?>" class="btn btn-primary mr-2 mb-2">Ujian Saya</a>
+                <a href="<?php  echo base_url('Pelamar/Pelamar/ujian') ?>" class="btn btn-primary mr-2 mb-2">Ujian Saya</a>
               </div>
               <div class="button-lm-tittle">
                 <a href="<?php  echo base_url('Home/pengumuman') ?>" class="btn btn-primary mr-2 mb-2">Pengumuman</a>
