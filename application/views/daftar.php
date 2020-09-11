@@ -48,12 +48,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
-						<input class="input100" type="password" name="pass" placeholder="Kata Sandi">
+						<input class="input100" type="password" name="pass" placeholder="Kata Sandi" id="txtPassword">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please re-enter password">
-						<input class="input100" type="password" name="repass" placeholder="Konfirmasi Kata Sandi">
+						<input class="input100" type="password" name="repass" placeholder="Konfirmasi Kata Sandi" id="txtComfirmPassword">
 						<span class="focus-input100"></span>
 					</div>
 

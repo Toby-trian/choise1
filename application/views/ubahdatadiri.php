@@ -74,8 +74,8 @@
 				 </div>
 			  </div>
 			  <div class="col-sm-12">
-	            <input type="submit" value="Simpan" >
-	            <a href="#" class="btn btn-danger mr-2 mb-2">Batal</a>
+	            <input type="submit" value="Simpan" class="btn btn-blue">
+	            <a href="<?php echo base_url('Pelamar/Pelamar/profilawal') ?>" class="btn btn-danger mr-2 mb-2">Batal</a>
 	          </div>
 			</form>
 

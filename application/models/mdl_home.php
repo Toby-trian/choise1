@@ -25,6 +25,11 @@ class Mdl_home extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+	public function isi_data_diri($paket){
+		$this->db->insert('tb_data_diri', $paket);
+		return $this->db->affected_rows();
+	}
+
 
 
 }

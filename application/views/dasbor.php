@@ -24,20 +24,20 @@
 			if ($data_diri->num_rows()>0) { ?>
 				<div id="notifikasi" class="alert bg-info" role="alert"><em class="fa fa-lg fa-check">&nbsp;</em> Selamat Datang di sistem choise chaakra <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
 			<?php } else{?>
-				<div class="alert bg-info" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data diri anda </b><a href="#" class="pull-right"></a></div>
+				<div class="alert bg-info" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="<?php echo base_url('Pelamar/Pelamar/tambahdatadiri') ?>">Segera lengkapi data diri anda </b></a></div>
 			<?php } ?>
 
 			<?php 
 				$data_pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar = $ses_id");
-				if ($data_diri->num_rows()>0) {
+				if ($data_pendidikan->num_rows()>0) {
 
 				} else{?>
-					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pendidikan anda </b> <a href="#" class="pull-right"></a></div>
+					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="">Segera lengkapi data pendidikan anda </b></a></div>
 				<?php } ?>
 
 			<?php 
 				$data_keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $ses_id");
-				if ($data_diri->num_rows()>0) {
+				if ($data_keluarga->num_rows()>0) {
 
 				} else{?>
 					<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data keluarga anda </b> <a href="#" class="pull-right"></a></div>
@@ -50,11 +50,6 @@
 				} else{?>
 					<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pengalaman anda </b> <a href="#" class="pull-right"></a></div>
 				<?php } ?>
-
-				<!-- 
-				<div class="alert bg-success" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div> -->
 			</div>
 		</div><!--/.row-->	
 		<!-- ENd Notif -->

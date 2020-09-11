@@ -49,7 +49,40 @@ class Pelamar extends CI_Controller {
 	
 	public function tambahdatadiri()
 	{
-		$this->load->view('tambahdatadiri');
+		$this->form_validation->set_rules('nik','Nama','trim|required');
+		$this->form_validation->set_rules('nama_pelamar','Nama','trim|required');
+		$this->form_validation->set_rules('alamat','Nama','trim|required');
+		$this->form_validation->set_rules('tempat_lahir','Nama','trim|required');
+		$this->form_validation->set_rules('tgl_lahir','Nama','trim|required');
+		// $this->form_validation->set_rules('gender','Nama','trim|required');
+		$this->form_validation->set_rules('no_hp','Nama','trim|required');
+		$this->form_validation->set_rules('facebook','Nama','trim|required');
+		$this->form_validation->set_rules('instagram','Nama','trim|required');
+		$this->form_validation->set_rules('twitter','Nama','trim|required');
+
+
+		if ($this->form_validation->run()==FALSE ) {
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('tambahdatadiri',$data);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nik']=$this->input->post('nik');
+			$send['nama_pelamar']=$this->input->post('nama_pelamar');
+			$send['alamat']=$this->input->post('alamat');
+			$send['tempat_lahir']=$this->input->post('tempat_lahir');
+			$send['tanggal_lahir']=$this->input->post('tgl_lahir');
+			$send['jenis_kelamin']=$this->input->post('gender');
+			$send['no_hp']=$this->input->post('no_hp');
+			$send['facebook']=$this->input->post('facebook');
+			$send['instagram']=$this->input->post('instagram');
+			$send['twitter']=$this->input->post('twitter');
+			$kembalian['jumlah']=$this->mdl_home->isi_data_diri($send);
+						
+			$this->load->view('profilawal',$kembalian);
+			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+			redirect('Pelamar/Pelamar/profilawal/');
+		}
 	}
 	public function tambahdatakeluarga()
 	{
