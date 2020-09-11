@@ -42,8 +42,4 @@ class Home extends CI_Controller {
 		$this->load->view('login2');
 	}
 	
-	public function daftar()
-	{
-		$this->load->view('daftar');
-	}
 }

@@ -6,10 +6,17 @@
 
 			<?php 
 				$ses_id = $this->session->userdata('ses_id');
+				$ses_user = $this->session->userdata('ses_user');
 				$pelamar = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $ses_id");
-				foreach ($pelamar->result() as $key) {
-					$nama_pelamar = $key->nama_pelamar;
+				if ($pelamar->num_rows()>0 ) {
+					foreach ($pelamar->result() as $key) {
+						$nama_pelamar = $key->nama_pelamar;
+					}
 				}
+				else{
+					$nama_pelamar = $ses_user;
+				}
+				
 			?>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name"><?php echo $nama_pelamar ?></div>

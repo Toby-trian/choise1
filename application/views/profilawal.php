@@ -39,6 +39,9 @@
 				// $foto = $key_diri->foto == '' ? base_url('./upload/logo_perusahaan/user.png') : base_url('./upload/logo_perusahaan/' . $key_diri->foto);
 			}
 			?>
+			<?php if ($data_diri->num_rows()>0): ?>
+				
+			
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<tr>
@@ -83,6 +86,7 @@
 					</tr> -->
 				</table>
 			</div>
+			<?php endif ?>
 
 			<?php 
 			if ($data_diri->num_rows()>0) {?>
@@ -107,6 +111,10 @@
 				$pekerjaan_ibu = $key_keluarga->pekerjaan_ibu; 
 			}
 			?>
+
+			<?php if ($keluarga->num_rows()>0): ?>
+				
+			
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<tr>
@@ -127,6 +135,7 @@
 					</tr>
 				</table>
 			</div>
+			<?php endif ?>
 			<?php 
 			if ($data_diri->num_rows()>0) {?>
 				<a href="<?php  echo base_url('Home/tambahdatakeluara') ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>

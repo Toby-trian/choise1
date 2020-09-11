@@ -68,7 +68,7 @@
 							Belum punya akun?
 						</span>
 
-						<a href="<?php echo base_url('Home/daftar') ?>" class="txt3">
+						<a href="<?php echo base_url('Daftar/') ?>" class="txt3">
 							Daftar sekarang
 						</a>
 					</div>

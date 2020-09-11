@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Choise-Masuk</title>
+	<title>Choise-Daftar</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,18 +32,18 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150" action="<?php echo base_url('Daftar/') ?>" method="post">
 					<span class="login100-form-title">
 						Daftar
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="username" placeholder="Nama Pengguna">
+						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -58,9 +58,8 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-26">
-						<button class="login100-form-btn">
-							Daftar
-						</button>
+						
+						<input type="submit" value="Daftar" class="login100-form-btn">
 					</div>
 
 					<div class="flex-col-c p-t-50 p-b-40">

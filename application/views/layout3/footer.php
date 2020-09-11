@@ -17,6 +17,11 @@
 	});
 };
 	</script>
+
+	<script type="text/javascript">
+  $('#notifikasi').delay(3000).slideUp('slow');
+
+</script>
 		
 </body>
 </html>

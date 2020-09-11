@@ -3,21 +3,68 @@
 <?php   $this->load->view('layout3/sidebar') ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home color-amber"></em>
-				</a></li>
-				<li class="active">Dashboard</li>
-			</ol>
-		</div><!--/.row-->
+	<div class="row">
+		<ol class="breadcrumb">
+			<li><a href="#">
+				<em class="fa fa-home color-amber"></em>
+			</a></li>
+			<li class="active">Dashboard</li>
+		</ol>
+	</div><!--/.row-->
+
+
+	<!-- Notif -->
+	<div class="row">
+		<div class="col-lg-12">
+			<br>
+			<!-- <div class="alert bg-primary" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div> -->
+			<?php 
+			$ses_id = $this->session->userdata('ses_id');
+			$data_diri = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $ses_id");
+			if ($data_diri->num_rows()>0) { ?>
+				<div id="notifikasi" class="alert bg-info" role="alert"><em class="fa fa-lg fa-check">&nbsp;</em> Selamat Datang di sistem choise chaakra <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+			<?php } else{?>
+				<div class="alert bg-info" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data diri anda </b><a href="#" class="pull-right"></a></div>
+			<?php } ?>
+
+			<?php 
+				$data_pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar = $ses_id");
+				if ($data_diri->num_rows()>0) {
+
+				} else{?>
+					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pendidikan anda </b> <a href="#" class="pull-right"></a></div>
+				<?php } ?>
+
+			<?php 
+				$data_keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $ses_id");
+				if ($data_diri->num_rows()>0) {
+
+				} else{?>
+					<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data keluarga anda </b> <a href="#" class="pull-right"></a></div>
+				<?php } ?>
+
+			<?php 
+				$data_pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $ses_id");
+				if ($data_pengalaman->num_rows()>0) {
+
+				} else{?>
+					<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pengalaman anda </b> <a href="#" class="pull-right"></a></div>
+				<?php } ?>
+
+				<!-- 
+				<div class="alert bg-success" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+				<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+				<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div> -->
+			</div>
+		</div><!--/.row-->	
+		<!-- ENd Notif -->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Dasbor</h1>	
 			</div>
 		</div><!--/.row-->
-		
+
 		<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
@@ -60,4 +107,4 @@
 		</div>
 	</div>	<!--/.main-->
 
-<?php   $this->load->view('layout3/footer') ?>
+	<?php   $this->load->view('layout3/footer') ?>

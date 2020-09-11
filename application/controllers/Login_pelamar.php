@@ -54,7 +54,7 @@ class Login_pelamar extends CI_Controller {
 					}
 
 			$this->session->set_userdata('masuk',TRUE);
-			$this->session->set_userdata('ses_nama',$data['nama_pelamar']);	
+			$this->session->set_userdata('ses_user',$data['username']);	
 			$this->session->set_userdata('ses_id',$data['id_pelamar']);	
 			// $this->session->set_userdata('ses_idLevel',$level);	
 			redirect(base_url('Pelamar/Pelamar/Dashboard'));
