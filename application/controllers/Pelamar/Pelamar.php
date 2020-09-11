@@ -86,7 +86,27 @@ class Pelamar extends CI_Controller {
 	}
 	public function tambahdatakeluarga()
 	{
-		$this->load->view('tambahdatakeluarga');
+		$this->form_validation->set_rules('nama_ayah','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
+		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
+
+		if ($this->form_validation->run()==FALSE ) {
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('tambahdatakeluarga',$data);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_ayah']=$this->input->post('nama_ayah');
+			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
+			$send['nama_ibu']=$this->input->post('nama_ibu');
+			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
+			$kembalian['jumlah']=$this->mdl_home->isi_data_keluarga($send);
+						
+			$this->load->view('profilawal',$kembalian);
+			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+			redirect('Pelamar/Pelamar/profilawal/');
+		}
 	}
 	public function tambahpendidikan()
 	{

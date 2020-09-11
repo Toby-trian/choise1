@@ -32,7 +32,7 @@
 				if ($data_pendidikan->num_rows()>0) {
 
 				} else{?>
-					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="">Segera lengkapi data pendidikan anda </b></a></div>
+					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="<?php echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>">Segera lengkapi data pendidikan anda </b></a></div>
 				<?php } ?>
 
 			<?php 
