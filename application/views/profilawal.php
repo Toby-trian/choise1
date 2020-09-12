@@ -90,9 +90,13 @@
 
 			<?php 
 			if ($data_diri->num_rows()>0) {?>
-				<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$id_pelamar) ?>" type="button" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+				<div style="text-align: right">
+					<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$id_pelamar) ?>" type="button" class="btn btn-primary mr-2 mb-2" style="text-align: right;"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+				</div>
 			<?php }else{?>
-				<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				<div style="text-align: right">
+					<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				</div>
 			<?php }
 			?>
 
@@ -138,9 +142,13 @@
 			<?php endif ?>
 			<?php 
 			if ($keluarga->num_rows()>0) {?>
-				<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatakeluara') ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+				<div style="text-align: right">
+					<a href="<?php  echo base_url('Pelamar/Pelamar/ubahdatakeluarga/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+				</div>
 			<?php }else{?>
-				<a href="<?php  echo base_url('Home/tambahdatakeluara') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				<div style="text-align: right">
+					<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				</div>
 			<?php }
 			?>
 		</div>
@@ -191,7 +199,9 @@
 					</thead>	
 				</table>	
 			</div>
-			<a href="<?php  echo base_url('Home/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			<div style="text-align: right">
+				<a href="<?php  echo base_url('Home/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			</div>
 		</div>
 	</div>
 
@@ -230,7 +240,9 @@
 					</tbody>
 				</table>
 			</div>
-			<a href="<?php  echo base_url('Home/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			<div style="text-align: right;">
+				<a href="<?php  echo base_url('Home/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			</div>
 		</div>
 	</div>
 

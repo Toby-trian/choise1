@@ -71,8 +71,11 @@
 				    </tr>
 				  </tbody>
 				</table>
-				<div style="text-align: left">
-					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; border-radius: 50%; color: #fff;">&#8249;</a>
+				<div class="col-sm-6" style="text-align: left">
+					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; color: #fff;">Sebelumnya</a>
+				</div>
+				<div class="col-sm-6" style="text-align: right">
+					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; color: #fff;">Selesai</a>
 				</div>
 				<!-- <div class="col-sm-6" style="text-align: right">
 					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; border-radius: 50%; color: #fff;">&#8250;</a>
@@ -151,9 +154,6 @@
 	            </div>
 	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>24</b></a>
-	            </div>
-	            <div class="button-lm-tittle col-sm-12" style="margin: 5px; padding: 10px;">
-	            	<a href="<?php  echo base_url('') ?>" class="btn btn-blue btn-block">Selesai</a>
 	            </div>
 			</div>
 		</div>

@@ -151,9 +151,28 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal');
 		}
 	}
-	public function ubahdatakeluarga()
+	public function ubahdatakeluarga($id_update)
 	{
-		$this->load->view('ubahdatakeluarga');
+		$this->form_validation->set_rules('nama_ayah','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
+		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
+
+		if($this->form_validation->run()==FALSE ){
+			$indexrow['data']=$this->mdl_home->ambil_data_keluarga($id_update);
+			$this->load->view('ubahdatakeluarga', $indexrow);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_ayah']=$this->input->post('nama_ayah');
+			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
+			$send['nama_ibu']=$this->input->post('nama_ibu');
+			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
+			// var_dump($send);
+			$kembalian['jumlah']=$this->mdl_home->modelupdate_keluarga($send);
+			$this->session->set_flashdata('msg_update', 'Data Diri Berhasil diupdate');
+			redirect('Pelamar/Pelamar/profilawal');
+		}
 	}
 	public function ubahpendidikan()
 	{
@@ -163,6 +182,10 @@ class Pelamar extends CI_Controller {
 	public function ubahdatapengalamankerja()
 	{
 		$this->load->view('ubahdatapengalamankerja');
+	}
+	public function ujian()
+	{
+		$this->load->view('ujian');
 	}
 	public function disc()
 	{

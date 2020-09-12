@@ -75,7 +75,7 @@
 					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; border-radius: 50%; color: #fff;">&#8249;</a>
 				</div> -->
 				<div style="text-align: right">
-					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; border-radius: 50%; color: #fff;">&#8250;</a>
+					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; color: #fff;">Selanjutnya</a>
 				</div>
 			</div>
 			<div class="col-md-5 col-sm-12">
@@ -151,9 +151,6 @@
 	            </div>
 	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>24</b></a>
-	            </div>
-	            <div class="button-lm-tittle col-sm-12" style="margin: 5px; padding: 10px;">
-	            	<a href="<?php  echo base_url('') ?>" class="btn btn-blue btn-block">Selesai</a>
 	            </div>
 			</div>
 		</div>

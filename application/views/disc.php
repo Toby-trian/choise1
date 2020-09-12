@@ -69,7 +69,7 @@
 					<li style="color: #fff;">Sehingga dalam 1 soal akan ada 1 pernyataan M dan pernyataan L</li>
 				</div>
 				<div class="button-lm-tittle">
-	                <a href="<?php  echo base_url('') ?>" class="btn btn-blue mr-2 mb-2 btn-block">Mulai Ujian</a>
+	                <a href="<?php  echo base_url('Pelamar/Pelamar/discsoal1') ?>" class="btn btn-blue mr-2 mb-2 btn-block">Mulai Ujian</a>
 	            </div>
 			</div>
 		</div>

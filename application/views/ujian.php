@@ -16,28 +16,28 @@
 				<h1 class="page-header">Ujian Saya</h1>
 			</div>
 		</div><!--/.row-->
-		<div class="card text-center" style="border: 1px solid #FBC02D; background-color: #fff;">
+		<div class="card text-center" style="background-color: #fff; padding: 20px;">
 		  <div class="card-body">
 		    <h4 class="card-title"><b>Tes Tulis</b></h4>
 		    <p class="card-text">1 Januari 2020 Pukul 09:00 WIB</p>
 		    <a href="#" class="btn btn-primary button-uj-tittle">Kerjakan Sekarang</a>
 		  </div>
 		</div><br>
-		<div class="card text-center" style="border: 1px solid #FBC02D; background-color: #fff;">
+		<div class="card text-center" style="background-color: #fff; padding: 20px;">
 		  <div class="card-body">
 		    <h4 class="card-title"><b>Tes Psikotes</b></h4>
 		    <p class="card-text">1 Januari 2020 Pukul 13:00 WIB</p>
 		    <a href="<?php  echo base_url('Pelamar/Pelamar/disc') ?>" class="btn btn-primary button-uj-tittle">Kerjakan Sekarang</a>
 		  </div>
 		</div><br>
-		<div class="card text-center" style="border: 1px solid #FBC02D; background-color: #fff;">
+		<div class="card text-center" style="background-color: #fff; padding: 20px;">
 		  <div class="card-body">
 		    <h4 class="card-title"><b>Tes Wawancara</b></h4>
 		    <p class="card-text">2 Januari 2020 Pukul 09:00 WIB</p>
 		    <a href="#" class="btn btn-primary button-uj-tittle">Kerjakan Sekarang</a>
 		  </div>
 		</div><br>
-		<div class="card text-center" style="border: 1px solid #FBC02D; background-color: #fff;">
+		<div class="card text-center" style="background-color: #fff; padding: 20px;">
 		  <div class="card-body">
 		    <h4 class="card-title"><b>Forum Group Discussion (FGD)</b></h4>
 		    <p class="card-text">3 Januari 2020 Pukul 09:00 WIB</p>
