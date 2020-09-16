@@ -5,6 +5,7 @@
 <script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/main.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery.chained.min.js') ?>"></script>
 <!-- Data table plugin-->
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/dataTables.bootstrap.min.js') ?>"></script>
@@ -80,10 +81,27 @@ var pieChart = new Chart(ctxp).Pie(pdata);
  $("#id_lowongan").change(function () {
      //alert($(this).find(':selected').data('perusahaan'));
      var perusahaan=$(this).find('option:selected').attr('data-idperusahaan');
-    $('#idperusahaan').val(perusahaan);
-});
-</script>
+     $('#idperusahaan').val(perusahaan);
+   });
+ </script>
 
-</body>
+ <script type="text/javascript">
+   var list = {
+    '2' : '#answer-2',
+   };
 
-</html>
+   $('select[name=subtes]').change(function(){
+
+    $('.hide').hide();
+
+    var value = $(this).val();
+
+    if(value in list){
+      $(list[value]).show();
+    }
+   });
+ </script>
+
+        </body>
+
+        </html>

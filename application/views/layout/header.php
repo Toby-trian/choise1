@@ -33,6 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bie.css') ?>">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/font-awesome/4.7.0/css/font-awesome.min.css') ?>">
   </head>

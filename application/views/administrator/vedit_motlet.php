@@ -32,9 +32,10 @@
             <div class="form-group">
               <label class="control-label">Jenis Motivation Letter</label>
               <select class="form-control" name="jenis_motlet">
+                <?php $jenis = $data[0]['jenis_motlet'] ?>
                 <option value="zero">--== Pilih Motivation Letter ==--</option>
-                <option value="Lowongan Kerja">Lowongan Kerja</option>
-                <option value="Promosi Jabatan">Promosi Jabatan</option>
+                <option value="Lowongan Kerja" <?php echo ($jenis == "Lowongan Kerja" ? "selected":"") ?>>Lowongan Kerja</option>
+                <option value="Promosi Jabatan" <?php echo ($jenis == "Promosi Jabatan" ? "selected":"") ?>>Promosi Jabatan</option>
 
               </select>
             </div>
