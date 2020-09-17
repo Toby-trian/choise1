@@ -62,14 +62,14 @@
 				</table>
 			</div>
 			<div class="col-md-5 col-sm-12">
-				<div style="background-color: #f9243f; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px;">
+				<div style="background-color: #f9243f; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
 					<h4 style="color: #fff;"><b>Peraturan Ujian!</b></h4>
 					<li style="color: #fff;">Pilihlah 1 pernyataan yang PALING sesuai dengan diri Anda SAAT INI (M)</li>
 					<li style="color: #fff;">Pilihlah 1 pernyataan yang PALING tidak sesuai dengan Anda SAAT INI (L)</li>
 					<li style="color: #fff;">Sehingga dalam 1 soal akan ada 1 pernyataan M dan pernyataan L</li>
 				</div>
 				<div class="button-lm-tittle">
-	                <a href="<?php  echo base_url('Pelamar/Pelamar/discsoal1') ?>" class="btn btn-blue mr-2 mb-2 btn-block">Mulai Ujian</a>
+	                <a href="<?php  echo base_url('Pelamar/Pelamar/discsoal1') ?>" class="btn btn-primary mr-2 mb-2 btn-block">Mulai Ujian</a>
 	            </div>
 			</div>
 		</div>

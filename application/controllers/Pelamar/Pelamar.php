@@ -203,4 +203,24 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('discsoal24');
 	}
+	public function testulispsikotes()
+	{
+		$this->load->view('testulispsikotes');
+	}
+	public function cfit()
+	{
+		$this->load->view('cfit');
+	}
+	public function latihancfit1()
+	{
+		$this->load->view('latihancfit1');
+	}
+	public function nilailatcfit1()
+	{
+		$this->load->view('nilailatcfit1');
+	}
+	public function cfitsoal113()
+	{
+		$this->load->view('cfitsoal113');
+	}
 }

@@ -19,7 +19,7 @@
 		</div>
 	</div><!--/.row-->
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 		<div class="col-sm-12">
 			<h3><b>Data Diri</b></h3>
 			<?php 
@@ -103,7 +103,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 		<div class="col-sm-12">
 			<h3><b>Data Keluarga</b></h3>
 			<?php 	
@@ -154,7 +154,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 		<div class="col-sm-12">
 			<h3><b>Data Pendidikan</b></h3>			
 		</div>
@@ -205,7 +205,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 		<div class="col-sm-12">
 			<h3><b>Data Pengalaman Kerja</b></h3>
 			<hr color="black">

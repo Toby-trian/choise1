@@ -24,6 +24,8 @@
 				<hr color="black">
 			</div>
 			<div class="col-md-7 col-sm-12" style="margin-bottom: 5px;">
+				<li><b>M</b> paling sesuai</li>
+				<li><b>L</b> paling tidak sesuai</li><br>
 				<table class="table table-bordered">
 				  <thead>
 				    <tr>
@@ -35,37 +37,37 @@
 				  <tbody>
 				    <tr>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="more" value="option1">
 				      </td>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="less" value="option2">
 				      </td>
 				      <td>Lembut, Ramah</td>
 				    </tr>
 				    <tr>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="more" value="option1">
 				      </td>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="less" value="option2">
 				      </td>
 				      <td>Membujuk, Meyakinkan</td>
 				    </tr>
 				    <tr>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="more" value="option1">
 				      </td>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="less" value="option2">
 				      </td>
 				      <td>Sedeharna, Mudah menerima, Rendah hati</td>
 				    </tr>
 				    <tr>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="more" value="option1">
 				      </td>
 				      <td>
-				      	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+				      	<input class="form-check-input" type="radio" name="less" value="option2">
 				      </td>
 				      <td>Asli/Original, berdayacipta, individualis</td>
 				    </tr>
@@ -75,81 +77,81 @@
 					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; border-radius: 50%; color: #fff;">&#8249;</a>
 				</div> -->
 				<div style="text-align: right">
-					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; color: #fff;">Selanjutnya</a>
+					<a href="#" style="text-decoration: none; display: inline-block; padding: 8px 16px; background-color: #FBC02D; color: black; color: #fff; border-radius: 5px;">Selanjutnya</a>
 				</div>
 			</div>
 			<div class="col-md-5 col-sm-12">
 				<h4><b>Daftar Soal</b></h4>
-				<div class="col-sm-2 justify-content-center text-center" style="background-color: #8ad919; margin: 5px; padding: 10px;">
+				<div class="col-sm-2 justify-content-center text-center" style="background-color: #8ad919; margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: #fff"><b>1</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #8ad919; margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #8ad919; margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: #fff"><b>2</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f9243f;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f9243f;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: #fff"><b>3</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>4</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>5</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>6</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>7</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>8</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>9</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>10</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>11</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>12</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>13</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>14</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>15</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>16</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>17</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>18</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>19</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>20</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>21</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>22</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>23</b></a>
 	            </div>
-	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px;">
+	            <div class="col-sm-2 justify-content-center text-center" style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px;">
 		            <a href="<?php  echo base_url('') ?>" style="color: black"><b>24</b></a>
 	            </div>
 			</div>
