@@ -27,15 +27,21 @@
 		<div class="alert bg-info" >
 			<h3><em class="fa fa-bullhorn" style="color: #fff"></em></h3>
 			<p class="card-text" style="color: #fff"><b>Selamat!</b> Anda dinyatakan lolos seleksi administrasi. Silahkan mempersiapkan diri untuk mengikuti rangkaian seleksi sesuai jadwal yang sudah ditentukan. Terima kasih.
-			</div><br>
+		</div><br>
 
-		<?php } else { ?>
+	<?php } else if($status == "Belum ada tindakan") { ?>
+		<div class="alert bg-warning">
+			<h3><em class="fa fa-bullhorn" style="color: #fff"></em></h3>
+			<p class="card-text" style="color: #fff">Lamaran anda sedang kami proses...
+		</div><br>
+
+	<?php } else { ?>
 		<div class="alert bg-danger">
 			<h3><em class="fa fa-bullhorn" style="color: #fff"></em></h3>
 			<p class="card-text" style="color: #fff"><b>Mohon maaf</b>, anda dinyatakan gugur dalam seleksi tes tulis. Tetap semangat ya! Terima kasih.
-			</div><br>
+		</div><br>
 
-		<?php } ?>
+	<?php } ?>
 			<div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 			</div>
