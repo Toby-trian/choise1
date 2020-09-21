@@ -9,6 +9,7 @@ class Lamaran extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->model('mdl_home');
 		$this->load->model('mdl_data_pelamar');
+		$this->load->model('mdl_data_jadwal');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -37,9 +38,11 @@ class Lamaran extends CI_Controller {
 		$this->load->view('lamaransaya');
 	}
 	
-	public function jadwalseleksi()
+	public function jadwalseleksi($id)
 	{
-		$this->load->view('jadwalseleksi');
+
+		$paket['array']=$this->mdl_data_jadwal->ambildata3_jadwal($id);
+		$this->load->view('jadwalseleksi',$paket);
 	}
 	
 	
