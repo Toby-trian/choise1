@@ -102,6 +102,23 @@
                   </tr>
                   <?php $modal++; } ?>
                 </tbody>
+                <tfoot>
+                <tr align="center">
+                  <th>No</th>
+                  <th>Soal</th>
+                  <th>Subtes Ke-</th>
+                  <th>Opsi A</th>
+                  <th>Opsi B</th>
+                  <th>Opsi C</th>
+                  <th>Opsi D</th>
+                  <th>Opsi E</th>
+                  <th>Opsi F</th>
+                  <th>Jawaban</th>
+                  <th>Jawaban Ke 2</th>
+                  <th>Type Soal</th>
+                  <th>Aksi</th>
+                </tr>
+              </tfoot>
               </table>
             </div>
           </div>
