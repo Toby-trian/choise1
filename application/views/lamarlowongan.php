@@ -52,7 +52,7 @@
 		</div><br>
 		<div class="card col-md-3 col-sm-12" style="background-color: #fff; padding: 10px;">
 			<h4 class="card-header"><em class="fa fa-building color-amber"></em><b> Profil Perusahaan</b></h4><hr><br>
-			<center><img class="card-img-top apply-tittle" style="width: 60%;" src="<?php  echo base_url('assets3/images/companylogohighrespng.png') ?>"></center>
+			<center><img class="card-img-top apply-tittle" style="width: 60%;"src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>"></center>
 			<div class="card-body" style="margin-top: 20px;">
 				<p><b><?php echo $nama_perusahaan ?></b></p>
 				<!-- <p class="card-text">Chaakra Consulting merupakan perusahaan konsultan bisnis dan manajemen.</p><hr> -->
