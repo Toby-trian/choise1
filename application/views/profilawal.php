@@ -19,6 +19,24 @@
 		</div>
 	</div><!--/.row-->
 
+	<div id="notifikasi">
+		<?php if($this->session->flashdata('msg')):?>
+			<div class="alert bg-info">
+				<?php  echo $this->session->flashdata('msg')?>
+			</div>
+		<?php endif ;?>
+		<?php if($this->session->flashdata('msg_update')):?>
+			<div class="alert bg-info">
+				<?php  echo $this->session->flashdata('msg_update')?>
+			</div>
+		<?php endif ;?>
+		<?php if($this->session->flashdata('msg_hapus')):?>
+			<div class="alert bg-danger">
+				<?php  echo $this->session->flashdata('msg_hapus')?>
+			</div>
+		<?php endif ;?>
+	</div> 
+
 	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 		<div class="col-sm-12">
 			<h3><b>Data Diri</b></h3>
@@ -41,83 +59,83 @@
 			?>
 			<?php if ($data_diri->num_rows()>0): ?>
 				
-			
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<tr>
-						<th width="300">NIK</th>
-						<td><?php echo $nik ?></td>
-					</tr>
-					<tr>	
-						<th>Nama Lengkap</th>
-						<td><?php echo $nama_pelamar ?></td>
-					</tr>
-					<tr>	
-						<th>Alamat</th>
-						<td><?php echo $alamat ?></td>
-					</tr>
-					<tr>	
-						<th>Tempat, Tanggal Lahir</th>
-						<td><?php echo $tempat_lahir ?> , <?php echo $tanggal_lahir ?></td>
-					</tr>
-					<tr>	
-						<th>Jenis Kelamin</th>
-						<td><?php echo $jk ?></td>
-					</tr>
-					<tr>	
-						<th>No Hp</th>
-						<td><?php echo $no_hp ?></td>
-					</tr>
-					<tr>	
-						<th>Facebook</th>
-						<td><?php echo $facebook ?></td>
-					</tr>
-					<tr>	
-						<th>Instagram</th>
-						<td><?php echo $instagram ?></td>
-					</tr>
-					<tr>	
-						<th>Twitter</th>
-						<td><?php echo $twitter ?></td>
-					</tr>
+
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<tr>
+							<th width="300">NIK</th>
+							<td><?php echo $nik ?></td>
+						</tr>
+						<tr>	
+							<th>Nama Lengkap</th>
+							<td><?php echo $nama_pelamar ?></td>
+						</tr>
+						<tr>	
+							<th>Alamat</th>
+							<td><?php echo $alamat ?></td>
+						</tr>
+						<tr>	
+							<th>Tempat, Tanggal Lahir</th>
+							<td><?php echo $tempat_lahir ?> , <?php echo $tanggal_lahir ?></td>
+						</tr>
+						<tr>	
+							<th>Jenis Kelamin</th>
+							<td><?php echo $jk ?></td>
+						</tr>
+						<tr>	
+							<th>No Hp</th>
+							<td><?php echo $no_hp ?></td>
+						</tr>
+						<tr>	
+							<th>Facebook</th>
+							<td><?php echo $facebook ?></td>
+						</tr>
+						<tr>	
+							<th>Instagram</th>
+							<td><?php echo $instagram ?></td>
+						</tr>
+						<tr>	
+							<th>Twitter</th>
+							<td><?php echo $twitter ?></td>
+						</tr>
 					<!-- <tr>	
 						<th>Foto</th>
 						<td><img width="100" src="<?php echo $foto?>"></td>
 					</tr> -->
 				</table>
 			</div>
-			<?php endif ?>
+		<?php endif ?>
 
-			<?php 
-			if ($data_diri->num_rows()>0) {?>
-				<div style="text-align: right">
-					<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$id_pelamar) ?>" type="button" class="btn btn-primary mr-2 mb-2" style="text-align: right;"><em class="fa fa-edit color-white"></em> Ubah Data</a>
-				</div>
-			<?php }else{?>
-				<div style="text-align: right">
-					<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-				</div>
-			<?php }
-			?>
+		<?php 
+		if ($data_diri->num_rows()>0) {?>
+			<div style="text-align: right">
+				<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatadiri/'.$id_pelamar) ?>" type="button" class="btn btn-primary mr-2 mb-2" style="text-align: right;"><em class="fa fa-edit color-white"></em> Ubah Data</a>
+			</div>
+		<?php }else{?>
+			<div style="text-align: right">
+				<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			</div>
+		<?php }
+		?>
 
-		</div>
 	</div>
+</div>
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
-		<div class="col-sm-12">
-			<h3><b>Data Keluarga</b></h3>
-			<?php 	
-			$keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $id_pelamar");
-			foreach ($keluarga->result() as $key_keluarga) {
-				$nama_ayah = $key_keluarga->nama_ayah;
-				$pekerjaan_ayah = $key_keluarga->pekerjaan_ayah;
-				$nama_ibu = $key_keluarga->nama_ibu;
-				$pekerjaan_ibu = $key_keluarga->pekerjaan_ibu; 
-			}
-			?>
+<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+	<div class="col-sm-12">
+		<h3><b>Data Keluarga</b></h3>
+		<?php 	
+		$keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $id_pelamar");
+		foreach ($keluarga->result() as $key_keluarga) {
+			$nama_ayah = $key_keluarga->nama_ayah;
+			$pekerjaan_ayah = $key_keluarga->pekerjaan_ayah;
+			$nama_ibu = $key_keluarga->nama_ibu;
+			$pekerjaan_ibu = $key_keluarga->pekerjaan_ibu; 
+		}
+		?>
 
-			<?php if ($keluarga->num_rows()>0): ?>
-				
+		<?php if ($keluarga->num_rows()>0): ?>
+
 			
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -139,116 +157,134 @@
 					</tr>
 				</table>
 			</div>
-			<?php endif ?>
-			<?php 
-			if ($keluarga->num_rows()>0) {?>
-				<div style="text-align: right">
-					<a href="<?php  echo base_url('Pelamar/Pelamar/ubahdatakeluarga/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
-				</div>
-			<?php }else{?>
-				<div style="text-align: right">
-					<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-				</div>
-			<?php }
-			?>
-		</div>
-	</div>
-
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
-		<div class="col-sm-12">
-			<h3><b>Data Pendidikan</b></h3>			
-		</div>
-		<div class="col-sm-12">
-			<h4><b>Pendidikan Formal</b></h4>
-			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>Jenjang Pendidikan</th>	
-							<th>Institusi</th>
-							<th>Jurusan</th>	
-							<th>Tahun Masuk</th>	
-							<th>Tahun Keluar</th>	
-							<th>Nilai AKhir</th>	
-							<th>Aksi</th>	
-						</tr>	
-						<?php 	
-						$pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar=$id_pelamar");
-						foreach ($pendidikan->result() as $key_pendidikan) {
-							$jenjang = $key_pendidikan->jenjang_pendidikan;
-							$institusi = $key_pendidikan->nama_institusi;
-							$jurusan = $key_pendidikan->jurusan;
-							$masuk = $key_pendidikan->tahun_masuk;
-							$keluar = $key_pendidikan->tahun_keluar;
-							$akhir = $key_pendidikan->nilai_akhir;
-							?>
-
-							<tr>	
-								<td><?php echo $jenjang?></td>
-								<td><?php echo $institusi?></td>
-								<td><?php echo $jurusan?></td>
-								<td><?php echo $masuk?></td>
-								<td><?php echo $keluar?></td>
-								<td><?php echo $akhir?></td>
-								<td>
-									<a href="" class="btn btn-primary">Edit</a>
-									<a href="" class="btn btn-danger">Hapus</a>
-								</td>
-							</tr>
-						<?php } ?>
-					</thead>	
-				</table>	
-			</div>
+		<?php endif ?>
+		<?php 
+		if ($keluarga->num_rows()>0) {?>
 			<div style="text-align: right">
-				<a href="<?php  echo base_url('Home/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				<a href="<?php  echo base_url('Pelamar/Pelamar/ubahdatakeluarga/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2"><em class="fa fa-edit color-white"></em> Ubah Data</a>
 			</div>
-		</div>
+		<?php }else{?>
+			<div style="text-align: right">
+				<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			</div>
+		<?php }
+		?>
 	</div>
+</div>
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
-		<div class="col-sm-12">
-			<h3><b>Data Pengalaman Kerja</b></h3>
-			<hr color="black">
-			<div class="table-responsive">	
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>Nama Perusahaan</th>	
-							<th>Periode</th>	
-							<th>Jabatan Akhir</th>	
-							<th>Alasan Keluar</th>	
-							<th>Nama Referensi</th>	
-							<th>NO Hp Referensi</th>	
-							<th>Aksi</th>
-						</tr>
-					</thead>
-					<tbody>	
-						<?php 	
-						$pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
-						foreach ($pengalaman->result() as $key_pengalaman) {?>
-							<td><?php echo $key_pengalaman->nama_perusahaan ?></td>		
-							<td><?php echo $key_pengalaman->periode ?></td>		
-							<td><?php echo $key_pengalaman->jabatan_akhir ?></td>		
-							<td><?php echo $key_pengalaman->alasan_keluar ?></td>		
-							<td><?php echo $key_pengalaman->nama_referensi ?></td>		
-							<td><?php echo $key_pengalaman->no_hp_referensi ?></td>	
-							<td>	
-								<a href="" class="btn btn-primary">Edit</a>
-								<a href="" class="btn btn-danger">Hapus</a>
-							</td>	
-						<?php } ?>
-					</tbody>
-				</table>
-			</div>
-			<div style="text-align: right;">
-				<a href="<?php  echo base_url('Home/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-			</div>
-		</div>
-	</div>
-
+<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 	<div class="col-sm-12">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+		<h3><b>Data Pendidikan</b></h3>			
 	</div>
+	<div class="col-sm-12">
+		<h4><b>Pendidikan Formal</b></h4>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Jenjang Pendidikan</th>	
+						<th>Institusi</th>
+						<th>Jurusan</th>	
+						<th>Tahun Masuk</th>	
+						<th>Tahun Keluar</th>	
+						<th>Nilai AKhir</th>	
+						<th>Aksi</th>	
+					</tr>	
+					<?php 	
+					$pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar=$id_pelamar");
+					$modal = 0;
+					foreach ($pendidikan->result() as $key_pendidikan) {
+						$id_pendidikan = $key_pendidikan->id_pendidikan;
+						$jenjang = $key_pendidikan->jenjang_pendidikan;
+						$institusi = $key_pendidikan->nama_institusi;
+						$jurusan = $key_pendidikan->jurusan;
+						$masuk = $key_pendidikan->tahun_masuk;
+						$keluar = $key_pendidikan->tahun_keluar;
+						$akhir = $key_pendidikan->nilai_akhir;
+						?>
+						<div class="modal fade" id="myModal<?php echo $modal ?>" role="dialog">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title">Hapus</h4>
+									</div>
+									<div class="modal-body">
+										<p>Ingin hapus pendidikan <b><?php echo $jenjang ?></b> </p>
+										<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pendidikan/'.$id_pendidikan) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+									</div>
+									<div class="modal-footer">
+
+									</div>
+								</div>
+							</div>
+						</div> 	
+
+						<tr>	
+							<td><?php echo $jenjang?></td>
+							<td><?php echo $institusi?></td>
+							<td><?php echo $jurusan?></td>
+							<td><?php echo $masuk?></td>
+							<td><?php echo $keluar?></td>
+							<td><?php echo $akhir?></td>
+							<td>
+								<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikan/'.$id_pelamar) ?>" class="btn btn-primary">Edit</a>
+								<button data-toggle="modal" data-target="#myModal<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
+							</td>
+						</tr>
+					<?php $modal ++ ;} ?>
+				</thead>	
+			</table>	
+		</div>
+		<div style="text-align: right">
+			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+	<div class="col-sm-12">
+		<h3><b>Data Pengalaman Kerja</b></h3>
+		<hr color="black">
+		<div class="table-responsive">	
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nama Perusahaan</th>	
+						<th>Periode</th>	
+						<th>Jabatan Akhir</th>	
+						<th>Alasan Keluar</th>	
+						<th>Nama Referensi</th>	
+						<th>NO Hp Referensi</th>	
+						<th>Aksi</th>
+					</tr>
+				</thead>
+				<tbody>	
+					<?php 	
+					$pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
+					foreach ($pengalaman->result() as $key_pengalaman) {?>
+						<td><?php echo $key_pengalaman->nama_perusahaan ?></td>		
+						<td><?php echo $key_pengalaman->periode ?></td>		
+						<td><?php echo $key_pengalaman->jabatan_akhir ?></td>		
+						<td><?php echo $key_pengalaman->alasan_keluar ?></td>		
+						<td><?php echo $key_pengalaman->nama_referensi ?></td>		
+						<td><?php echo $key_pengalaman->no_hp_referensi ?></td>	
+						<td>	
+							<a href="" class="btn btn-primary">Edit</a>
+							<a href="" class="btn btn-danger">Hapus</a>
+						</td>	
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		<div style="text-align: right;">
+			<a href="<?php  echo base_url('Home/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12">
+	<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+</div>
 
 </div>	<!--/.main-->
 

@@ -110,8 +110,72 @@ class Pelamar extends CI_Controller {
 	}
 	public function tambahpendidikan()
 	{
-		$this->load->view('tambahpendidikan');
+		$this->form_validation->set_rules('nama_institusi','Nama','trim|required');
+		$this->form_validation->set_rules('jurusan','Nama','trim|required');
+		$this->form_validation->set_rules('nilai_akhir','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_masuk','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_keluar','Nama','trim|required');
+		$jenjang = $this->input->post('jenjang_pendidikan');
+
+		if ($this->form_validation->run()==FALSE || $jenjang == "") {
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('tambahpendidikan',$data);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_institusi']=$this->input->post('nama_institusi');
+			$send['jenjang_pendidikan']=$this->input->post('jenjang_pendidikan');
+			$send['jurusan']=$this->input->post('jurusan');
+			$send['nilai_akhir']=$this->input->post('nilai_akhir');
+			$send['tahun_masuk']=$this->input->post('tahun_masuk');
+			$send['tahun_keluar']=$this->input->post('tahun_keluar');
+
+			$kembalian['jumlah']=$this->mdl_home->isi_data_pendidikan($send);
+						
+			$this->load->view('profilawal',$kembalian);
+			$this->session->set_flashdata('msg','Data Pendidikan Berhasil Ditambahkan!!!');
+			redirect('Pelamar/Pelamar/profilawal/');
+		}
 	}
+
+
+	public function hapus_pendidikan($id){
+		$where = array('id_pendidikan' => $id);
+		$this->mdl_home->do_delete($where,'tb_data_pendidikan');
+		$this->session->set_flashdata('msg_hapus','Data Pendidikan Berhasil dihapus');
+		redirect('Pelamar/Pelamar/profilawal');
+	}
+
+
+	public function ubahpendidikan($id_update)
+	{
+		$this->form_validation->set_rules('nama_institusi','Nama','trim|required');
+		$this->form_validation->set_rules('jurusan','Nama','trim|required');
+		$this->form_validation->set_rules('nilai_akhir','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_masuk','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_keluar','Nama','trim|required');
+		$jenjang = $this->input->post('jenjang_pendidikan');
+
+		if($this->form_validation->run()==FALSE || $jenjang = "" ){
+			$indexrow['data']=$this->mdl_home->ambildata_pendidikan($id_update);
+			$this->load->view('ubahpendidikan', $indexrow);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_institusi']=$this->input->post('nama_institusi');
+			$send['jenjang_pendidikan']=$this->input->post('jenjang_pendidikan');
+			$send['jurusan']=$this->input->post('jurusan');
+			$send['nilai_akhir']=$this->input->post('nilai_akhir');
+			$send['tahun_masuk']=$this->input->post('tahun_masuk');
+			$send['tahun_keluar']=$this->input->post('tahun_keluar');
+
+			// var_dump($send);
+			$kembalian['jumlah']=$this->mdl_home->modelupdate_pendidikan($send);
+			$this->session->set_flashdata('msg_update', 'Data Pendidikan Berhasil diupdate');
+			redirect('Pelamar/Pelamar/profilawal');
+		}
+	}
+
 	public function tambahdatapengalamankerja()
 	{
 		$this->load->view('tambahdatapengalamankerja');
@@ -174,10 +238,8 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal');
 		}
 	}
-	public function ubahpendidikan()
-	{
-		$this->load->view('ubahpendidikan');
-	}
+
+	
 	
 	public function ubahdatapengalamankerja()
 	{
