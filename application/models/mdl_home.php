@@ -64,4 +64,19 @@ class Mdl_home extends CI_Model {
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+	public function isi_data_pengalaman($paket){
+		$this->db->insert('tb_data_pengalaman_kerja', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function ambil_data_pengalaman($id){
+		$query=$this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pengalaman = $id");
+		return $query->result_array();
+	}
+
+	public function modelupdate_pengalaman($send){
+		$sql="UPDATE tb_data_pengalaman_kerja SET id_pengalaman = ?, id_pelamar = ?, nama_perusahaan = ?, periode = ?, jabatan_akhir = ? , alasan_keluar = ?, nama_referensi = ?, no_hp_referensi = ? WHERE id_pengalaman = ?";
+		$query=$this->db->query($sql, array( $send['id_pengalaman'], $send['id_pelamar'], $send['nama_perusahaan'], $send['periode'], $send['jabatan_akhir'], $send['alasan_keluar'], $send['nama_referensi'], $send['no_hp_referensi'], $send['id_pengalaman']));
+	}
 }

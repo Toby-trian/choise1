@@ -178,8 +178,32 @@ class Pelamar extends CI_Controller {
 
 	public function tambahdatapengalamankerja()
 	{
-		$this->load->view('tambahdatapengalamankerja');
+		$this->form_validation->set_rules('nama_perusahaan','Nama','trim|required');
+		$this->form_validation->set_rules('periode','Nama','trim|required');
+		$this->form_validation->set_rules('jabatan_akhir','Nama','trim|required');
+		$this->form_validation->set_rules('alasan_keluar','Nama','trim|required');
+		$this->form_validation->set_rules('nama_referensi','Nama','trim|required');
+		$this->form_validation->set_rules('no_hp_referensi','Nama','trim|required');
+
+		if ($this->form_validation->run()==FALSE){
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('tambahdatapengalamankerja',$data);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_perusahaan']=$this->input->post('nama_perusahaan');
+			$send['periode']=$this->input->post('periode');
+			$send['jabatan_akhir']=$this->input->post('jabatan_akhir');
+			$send['alasan_keluar']=$this->input->post('alasan_keluar');
+			$send['nama_referensi']=$this->input->post('nama_referensi');
+			$send['no_hp_referensi']=$this->input->post('no_hp_referensi');
+			$kembalian['jumlah']=$this->mdl_home->isi_data_pengalaman($send);
+			$this->load->view('profilawal',$kembalian);
+			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+			redirect('Pelamar/Pelamar/profilawal/');
+		}
 	}
+
 	public function ubahdatadiri($id_update)
 	{
 		$this->form_validation->set_rules('nik','Nama','trim|required');
@@ -215,6 +239,7 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal');
 		}
 	}
+
 	public function ubahdatakeluarga($id_update)
 	{
 		$this->form_validation->set_rules('nama_ayah','Nama','trim|required');
@@ -239,12 +264,43 @@ class Pelamar extends CI_Controller {
 		}
 	}
 
-	
-	
-	public function ubahdatapengalamankerja()
+	public function ubahdatapengalamankerja($id_update)
 	{
-		$this->load->view('ubahdatapengalamankerja');
+		$this->form_validation->set_rules('nama_perusahaan','Nama','trim|required');
+		$this->form_validation->set_rules('periode','Nama','trim|required');
+		$this->form_validation->set_rules('jabatan_akhir','Nama','trim|required');
+		$this->form_validation->set_rules('alasan_keluar','Nama','trim|required');
+		$this->form_validation->set_rules('nama_referensi','Nama','trim|required');
+		$this->form_validation->set_rules('no_hp_referensi','Nama','trim|required');
+
+		if($this->form_validation->run()==FALSE ){
+			$indexrow['data']=$this->mdl_home->ambil_data_pengalaman($id_update);
+			$this->load->view('ubahdatapengalamankerja', $indexrow);
+		}
+		else{
+			// var_dump($send);
+
+			$send['id_pengalaman']=$this->input->post('id_pengalaman');
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_perusahaan']=$this->input->post('nama_perusahaan');
+			$send['periode']=$this->input->post('periode');
+			$send['jabatan_akhir']=$this->input->post('jabatan_akhir');
+			$send['alasan_keluar']=$this->input->post('alasan_keluar');
+			$send['nama_referensi']=$this->input->post('nama_referensi');
+			$send['no_hp_referensi']=$this->input->post('no_hp_referensi');
+			$kembalian['jumlah']=$this->mdl_home->modelupdate_pengalaman($send);
+			$this->session->set_flashdata('msg_update', 'Data Pengalaman Berhasil diupdate');
+			redirect('Pelamar/Pelamar/profilawal');
+		}
 	}
+
+	public function hapus_pengalaman($id){
+		$where = array('id_pengalaman' => $id);
+		$this->mdl_home->do_delete($where,'tb_data_pengalaman_kerja');
+		$this->session->set_flashdata('msg_hapus','Data Pengalaman Berhasil dihapus');
+		redirect('Pelamar/Pelamar/profilawal');
+	}
+
 	public function ujian()
 	{
 		$this->load->view('ujian');

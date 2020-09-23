@@ -261,7 +261,26 @@
 				<tbody>	
 					<?php 	
 					$pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
+					$modal=0;
 					foreach ($pengalaman->result() as $key_pengalaman) {?>
+						<div class="modal fade" id="myModal2<?php echo $modal ?>" role="dialog">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title">Hapus</h4>
+									</div>
+									<div class="modal-body">
+										<p>Ingin hapus pengalaman di <b><?php echo $key_pengalaman->nama_perusahaan ?></b> </p>
+										<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pengalaman/'.$key_pengalaman->id_pengalaman) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+									</div>
+									<div class="modal-footer">
+
+									</div>
+								</div>
+							</div>
+						</div> 	
+
+						<tr>
 						<td><?php echo $key_pengalaman->nama_perusahaan ?></td>		
 						<td><?php echo $key_pengalaman->periode ?></td>		
 						<td><?php echo $key_pengalaman->jabatan_akhir ?></td>		
@@ -269,15 +288,16 @@
 						<td><?php echo $key_pengalaman->nama_referensi ?></td>		
 						<td><?php echo $key_pengalaman->no_hp_referensi ?></td>	
 						<td>	
-							<a href="" class="btn btn-primary">Edit</a>
-							<a href="" class="btn btn-danger">Hapus</a>
-						</td>	
-					<?php } ?>
+							<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatapengalamankerja/'.$key_pengalaman->id_pengalaman) ?>" class="btn btn-primary">Edit</a>
+							<a data-toggle="modal" data-target="#myModal2<?php echo $modal ?>" class="btn btn-danger">Hapus</a>
+						</td>
+						</tr>	
+					<?php $modal++;} ?>
 				</tbody>
 			</table>
 		</div>
 		<div style="text-align: right;">
-			<a href="<?php  echo base_url('Home/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
 		</div>
 	</div>
 </div>
