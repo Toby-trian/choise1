@@ -9,19 +9,19 @@
 			<li><a href="#">
 				<em class="fa fa-user color-amber"></em>
 			</a></li>
-			<li class="active">Ubah Data Pendidikan</li>
+			<li class="active">Profil Pendidikan</li>
 		</ol>
 	</div><!--/.row-->
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Ubah Data Pendidikan</h1>
+			<h1 class="page-header">Profil Pendidikan</h1>
 		</div>
 	</div><!--/.row-->
 
 	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
 		<div class="col-sm-12">
-			<h4 style="margin-bottom: 2%;"><b>Data Pendidikan</b></h4>
+			<h4 style="margin-bottom: 2%;"><b>Ubah Data Pendidikan</b></h4>
 			<form action="<?php echo base_url('Pelamar/Pelamar/ubahpendidikan/'.$data[0]['id_pendidikan']) ?>" method="post">
 			  <div class="form-row">
 			  	<input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pendidikan'] ?>">

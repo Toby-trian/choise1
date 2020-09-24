@@ -38,7 +38,7 @@
 	</div> 
 
 	<div class="col-sm-12" style="background-color: #fff; padding: 20px; border-radius: 5px;">
-		<div class="col-sm-4">
+		<div class="col-md-4">
 			<div class="col-sm-12">
 				<h4><b>Foto Profil</b></h4>
 				<img src="<?php  echo base_url('assets3/images/ava.jpg') ?>" alt="" style="width: 60%; border-radius: 5px;">
@@ -46,34 +46,36 @@
 			<div class="col-sm-12" style="margin-top: 5px;">
 				<a href="" class="btn btn-primary mr-2 mb-2"><em class="fa fa-pencil color-white"></em> Ubah</a>
 				<a href="" class="btn btn-blue mr-2 mb-2"><em class="fa fa-save color-white"></em> Simpan</a>
+			</div><hr>
+		</div>
+		<div class="col-md-8">
+			<div class="col-sm-12">
+				<h4><b>Nama Pengguna</b></h4>
+				<form action="">
+					<div class="form-row">
+						<div class="form-group">
+							<input type="text" class="form-control" name="nama_ayah" value="Nama pengguna baru">
+						</div>
+					</div>
+				</form><hr>
+				<h4><b>Kata Sandi</b></h4>
+				<form action="">
+					<div class="form-row">
+						<div class="form-group">
+							<input type="text" class="form-control" name="nama_ayah" value="Kata sandi lama">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="nama_ayah" value="Kata sandi baru">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="nama_ayah" value="Ulangi kata sandi baru">
+						</div>
+					</div>
+				</form>
 			</div>
-		</div>
-		<div class="col-sm-8">
-			<h4><b>Nama Pengguna</b></h4>
-			<form action="">
-				<div class="form-row">
-					<div class="form-group">
-						<input type="text" class="form-control" name="nama_ayah" value="Nama pengguna baru">
-					</div>
-				</div>
-			</form><hr>
-			<h4><b>Kata Sandi</b></h4>
-			<form action="">
-				<div class="form-row">
-					<div class="form-group">
-						<input type="text" class="form-control" name="nama_ayah" value="Kata sandi lama">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="nama_ayah" value="Kata sandi baru">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="nama_ayah" value="Ulangi kata sandi baru">
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="col-sm-12">
-			<a href="" class="btn btn-success btn-block mr-2 mb-2">Simpan</a>
+			<div class="col-sm-12">
+				<a href="" class="btn btn-success btn-block mr-2 mb-2">Simpan</a>
+			</div>
 		</div>
 	</div>
 

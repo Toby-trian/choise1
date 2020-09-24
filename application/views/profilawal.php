@@ -227,7 +227,7 @@
 							<td><?php echo $keluar?></td>
 							<td><?php echo $akhir?></td>
 							<td>
-								<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikan/'.$id_pelamar) ?>" class="btn btn-primary">Edit</a>
+								<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikan/'.$id_pendidikan) ?>" class="btn btn-primary">Edit</a>
 								<button data-toggle="modal" data-target="#myModal<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
 							</td>
 						</tr>
