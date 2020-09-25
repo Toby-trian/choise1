@@ -20,7 +20,7 @@
 							<li class="divider"></li>
 							<li>
 								<div class="dropdown-messages-box"><a href="" class="pull-left">
-									<a href="#" style="color: #283339;">Pengaturan</a>
+									<a href="<?php 	echo base_url('Pelamar/Pelamar/pengaturan') ?>" style="color: #283339;">Pengaturan</a>
 								</div>
 							</li>
 							<li class="divider"></li>

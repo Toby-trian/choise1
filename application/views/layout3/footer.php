@@ -23,46 +23,90 @@
 
 	</script>
 	
-<script type="text/javascript">
-$(document).ready(function(){
-   $('#save').click(function(){
+  <script type="text/javascript">
+    $(document).ready(function(){
+     $('#save').click(function(){
 
-    var id_pelamar = [];
-    var id_soal = [];
-    var jawaban_soal = [];
-    
-    $('#id_pelamar').each(function(){
-      id_pelamar.push($(this).text());
+      var id_pelamar = [];
+      var id_soal = [];
+      var jawaban_soal = [];
+
+      $('#id_pelamar').each(function(){
+        id_pelamar.push($(this).text());
+      });
+
+      $('#id_soal').each(function(){
+        id_soal.push($(this).text());
+      });
+
+      $('#jawaban_soal').each(function(){
+        jawaban_soal.push($(this).text());
+      });
+
+      $.ajax({
+        url : "localhost/choise/Pelamar/Lamaran/apply",
+        method : "POST",
+        data:{id_pelamar:id_pelamar, id_soal:id_soal, jawaban_soal:jawaban_soal},
+        success: function(data){
+          fetch_item_data();
+        }
+      });
+
     });
-
-    $('#id_soal').each(function(){
-      id_soal.push($(this).text());
-    });
-
-    $('#jawaban_soal').each(function(){
-      jawaban_soal.push($(this).text());
-    });
-
-    $.ajax({
-      url : "localhost/choise/Pelamar/Lamaran/apply",
-      method : "POST",
-      data:{id_pelamar:id_pelamar, id_soal:id_soal, jawaban_soal:jawaban_soal},
-      success: function(data){
-        fetch_item_data();
-      }
-    });
-
    });
-});
     
-   function fetch_item_data(){
-    $.ajax({
-      url : "<?php echo base_url("Pelamar/Lamaran/lowongantersedia") ?>",
-      method : "POST",
-    })
-   }
- </script>
+    function fetch_item_data(){
+      $.ajax({
+        url : "<?php echo base_url("Pelamar/Lamaran/lowongantersedia") ?>",
+        method : "POST",
+      })
+    }
+  </script>
 
+  <script type="text/javascript">
+
+   var btnUpload = $("#upload_file"),
+   btnOuter = $(".button_outer");
+   btnUpload.on("change", function(e){
+    var ext = btnUpload.val().split('.').pop().toLowerCase();
+    if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+      $(".error_msg").text("Format file bukan gambar ...");
+    } else {
+      $(".error_msg").text("");
+      btnOuter.addClass("file_uploading");
+      setTimeout(function(){
+        btnOuter.addClass("file_uploaded");
+      },3000);
+      var uploadedFile = URL.createObjectURL(e.target.files[0]);
+      setTimeout(function(){
+        $("#uploaded_view").append('<img src="'+uploadedFile+'" />').addClass("show");
+      },3500);
+    }
+  });
+   $(".file_remove").on("click", function(e){
+    $("#uploaded_view").removeClass("show");
+    $("#uploaded_view").find("img").remove();
+    btnOuter.removeClass("file_uploading");
+    btnOuter.removeClass("file_uploaded");
+  });
+</script>
+
+<script type="text/javascript">
+  
+   var password = document.getElementById("password")
+   , confirm_password = document.getElementById("confirm_password");
+
+   function validatePassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Tidak Sama");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+</script>
 
 </body>
 </html>

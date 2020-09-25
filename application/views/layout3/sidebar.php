@@ -1,7 +1,13 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="<?php  echo base_url('upload/foto_pelamar/kindpng_1300217.png') ?>" class="img-responsive" alt="">
+				<?php 
+				$id_pelamar = $this->session->userdata('ses_id');
+				$image = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $id_pelamar");
+				foreach ($image->result() as $key_user) {
+					$imageUser = $key_user->foto;
+				}?>
+				<img src="<?php echo ($imageUser != '' ? base_url('./upload/foto_pelamar/' . $imageUser) : base_url('./upload/foto_pelamar/default.png')); ?>" class="img-responsive" alt="">
 			</div>
 
 			<?php 

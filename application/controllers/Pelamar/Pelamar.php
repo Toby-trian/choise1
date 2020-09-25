@@ -36,6 +36,38 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('dasbor');
 	}
+
+	public function uploadImage($idUpload)
+	{
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		$send['id_pelamar'] = $this->input->post('id_pelamar');
+
+		$query_cekFoto=$this->db->query("SELECT * FROM tb_data_diri")->result_array();
+
+		if ($_FILES["foto"]["name"] != ""){
+			$config['upload_path']          = './upload/foto_pelamar/';
+			$config['allowed_types']        = 'jpg|JPG|jpeg|JPEG|png|PNG';
+			$config['max_size']             = 4000;
+			$config['file_name'] ="pelamar_".md5($id_pelamar);
+
+			$this->load->library('upload', $config);
+
+			//soal 
+			if ( ! $this->upload->do_upload('foto')){
+				$error =$this->upload->display_errors();
+				$this->session->set_flashdata('pesan_error',$error);
+				$this->load->view('pengumuman');
+			}else{
+				$data = $this->upload->data();
+				$send['foto']=$data['file_name'];					
+			}
+		}	
+		$kembalian['jumlah']=$this->mdl_data_pelamar->uploadImage($send);
+		$this->load->view('pengaturan',$kembalian);
+		$this->session->set_flashdata('msg','Foto Berhasil Diubah!!!');
+		redirect('Pelamar/Pelamar/pengaturan');
+	}
 	
 	public function profilawal()
 	{
@@ -46,6 +78,8 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('profil');
 	}
+
+
 	
 	public function tambahdatadiri()
 	{
@@ -78,7 +112,7 @@ class Pelamar extends CI_Controller {
 			$send['instagram']=$this->input->post('instagram');
 			$send['twitter']=$this->input->post('twitter');
 			$kembalian['jumlah']=$this->mdl_home->isi_data_diri($send);
-						
+
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Pelamar/Pelamar/profilawal/');
@@ -104,7 +138,7 @@ class Pelamar extends CI_Controller {
 			$send['nama_ibu']=$this->input->post('nama_ibu');
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
 			$kembalian['jumlah']=$this->mdl_home->isi_data_keluarga($send);
-						
+
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Pelamar/Pelamar/profilawal/');
@@ -133,7 +167,7 @@ class Pelamar extends CI_Controller {
 			$send['tahun_keluar']=$this->input->post('tahun_keluar');
 
 			$kembalian['jumlah']=$this->mdl_home->isi_data_pendidikan($send);
-						
+
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Pendidikan Berhasil Ditambahkan!!!');
 			redirect('Pelamar/Pelamar/profilawal/');
@@ -176,6 +210,35 @@ class Pelamar extends CI_Controller {
 			$this->session->set_flashdata('msg_update', 'Data Pendidikan Berhasil diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
+	}
+
+	public function editProfile($id_update)
+	{
+		$id_pelamar = $this->session->userdata('ses_id');
+		$cekPassword = $this->db->query("SELECT * FROM tb_pelamar where id_pelamar = $id_pelamar");
+		foreach ($cekPassword->result() as $keyPass) {
+			$passLama = $keyPass->password;
+		}
+
+		$passNow = md5($this->input->post('passOld'));
+
+		if ($passNow != $passLama) {
+			$message = "Password lama tidak sama";
+			echo "<script type='text/javascript'>alert('$message'); history.go(-1);</script>";
+			$this->load->view('pengaturan');
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['username']=$this->input->post('username');
+			$send['password']=md5($this->input->post('passNew'));
+			$send['confirm_password']=$this->input->post('confirmPass');
+
+			$kembalian['jumlah']=$this->mdl_data_pelamar->modelupdate_profile($send);
+			$this->session->set_flashdata('msg_update', 'Username dan password berhasil diupdate');
+			redirect('Pelamar/Pelamar/pengaturan');
+		}
+		
+		
 	}
 
 	public function tambahdatapengalamankerja()
