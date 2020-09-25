@@ -23,5 +23,46 @@
 
 	</script>
 	
+<script type="text/javascript">
+$(document).ready(function(){
+   $('#save').click(function(){
+
+    var id_pelamar = [];
+    var id_soal = [];
+    var jawaban_soal = [];
+    
+    $('#id_pelamar').each(function(){
+      id_pelamar.push($(this).text());
+    });
+
+    $('#id_soal').each(function(){
+      id_soal.push($(this).text());
+    });
+
+    $('#jawaban_soal').each(function(){
+      jawaban_soal.push($(this).text());
+    });
+
+    $.ajax({
+      url : "localhost/choise/Pelamar/Lamaran/apply",
+      method : "POST",
+      data:{id_pelamar:id_pelamar, id_soal:id_soal, jawaban_soal:jawaban_soal},
+      success: function(data){
+        fetch_item_data();
+      }
+    });
+
+   });
+});
+    
+   function fetch_item_data(){
+    $.ajax({
+      url : "<?php echo base_url("Pelamar/Lamaran/lowongantersedia") ?>",
+      method : "POST",
+    })
+   }
+ </script>
+
+
 </body>
 </html>

@@ -84,6 +84,8 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal/');
 		}
 	}
+
+	
 	public function tambahdatakeluarga()
 	{
 		$this->form_validation->set_rules('nama_ayah','Nama','trim|required');

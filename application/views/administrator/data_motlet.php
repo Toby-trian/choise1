@@ -73,7 +73,13 @@
                         <td><?php echo $key_perusahaan->nama_perusahaan ?></td>
                       <?php } ?>
                     <?php } ?>
-                    <td><?php echo $key['jenis_motlet'] ?></td>
+                    <!-- <td><?php echo $key['jenis_motlet'] ?></td> -->
+                    <?php $jenis = $this->db->query("SELECT * FROM tb_jenis_motlet");
+                    foreach ($jenis->result() as $key_jenis) {
+                      if ($key_jenis->id_jenis_motlet==$key['id_jenis_motlet']) { ?>
+                        <td><?php echo $key_jenis->jenis_motlet ?></td>
+                      <?php } ?>
+                    <?php } ?>
                     <td><?php echo $key['soal_motlet'] ?></td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example"> 

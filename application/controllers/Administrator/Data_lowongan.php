@@ -56,6 +56,7 @@ class Data_lowongan extends CI_Controller {
 			$send['id_lowongan']='';
 			$send['nama_jabatan']=$this->input->post('nama_lowongan');
 			$send['id_perusahaan']=$this->input->post('id_perusahaan');
+			$send['id_jenis_motlet']=$this->input->post('id_jenis_motlet');
 			$send['jadwal_seleksi']=$this->input->post('jadwal_seleksi');
 			$send['kota_penempatan']=$this->input->post('kota_penempatan');
 			$send['persyaratan']=$this->input->post('persyaratan');
@@ -91,6 +92,7 @@ class Data_lowongan extends CI_Controller {
 		else{
 			$send['id_lowongan']=$this->input->post('id_lowongan');
 			$send['id_perusahaan']=$this->input->post('id_perusahaan');
+			$send['id_jenis_motlet']=$this->input->post('id_jenis_motlet');
 			$send['nama_jabatan']=$this->input->post('nama_lowongan');
 			$send['jadwal_seleksi']=$this->input->post('jadwal_seleksi');
 			$send['kota_penempatan']=$this->input->post('kota_penempatan');

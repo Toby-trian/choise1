@@ -40,6 +40,7 @@
                   <th>No</th>
                   <th>Posisi Jabatan</th>
                   <th>Perusahaan</th>
+                  <th>Jenis Lowongan</th>
                   <th>Jadwal Seleksi</th>
                   <th>Kota Penempatan</th>
                   <th>Persyaratan</th>
@@ -77,6 +78,15 @@
                         <td><?php echo $key_perusahaan->nama_perusahaan ?></td>
                       <?php } ?>
                     <?php } ?>
+
+                    <?php $jenis = $this->db->query("SELECT * FROM tb_jenis_motlet");
+                    foreach ($jenis->result() as $key_jenis) {
+                      if ($key_jenis->id_jenis_motlet==$key['id_jenis_motlet']) { ?>
+                        <td><?php echo $key_jenis->jenis_motlet ?></td>
+                      <?php } ?>
+                    <?php } ?>
+
+
                     <td><?php echo $key['jadwal_seleksi'] ?></td>
                     <td><?php echo $key['kota_penempatan'] ?></td>
                     <td><?php echo $key['persyaratan'] ?></td>

@@ -10,6 +10,7 @@ class Lamaran extends CI_Controller {
 		$this->load->model('mdl_home');
 		$this->load->model('mdl_data_pelamar');
 		$this->load->model('mdl_data_jadwal');
+		$this->load->model('mdl_data_motlet');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -56,6 +57,31 @@ class Lamaran extends CI_Controller {
 	{
 		$paket['array']=$this->mdl_home->ambildata();	
 		$this->load->view('lowongantersedia',$paket);
+	}
+
+	public function apply()
+	{
+		
+		// $send['id_pelamar']=$this->input->post('id_pelamar');
+		// $send['id_soal']=$this->input->post('id_soal');
+		// $send['jawaban_soal']=$this->input->post('jawaban_soal');
+
+		$jawaban = $this->input->post('jawaban_soal');
+
+		for ($i=0; $i < $jawaban ; $i++) { 
+			$data = array(
+				'id_motivasi' => "",
+				'id_pelamar' => $this->input->post('id_pelamar[$i]'),
+				'id_soal' => $this->input->post('id_soal[$i]'),
+				'jawaban_soal' => $this->input->post('jawaban_soal[$i]')
+			);
+			$this->mdl_data_motlet->isi_soal_motlet($data);	
+		}
+
+		// $this->load->view('lowongantersedia',$kembalian);
+		$this->session->set_flashdata('msg','Lowongan Berhasil Diapply!!!');
+		redirect('Pelamar/Pelamar/profilawal/');
+		
 	}
 	
 }

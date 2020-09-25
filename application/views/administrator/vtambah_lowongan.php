@@ -33,6 +33,17 @@
               </select>
             </div>
             <div class="form-group">
+              <label class="control-label">Jenis Lowongan</label>
+              <select class="form-control" name="id_jenis_motlet">
+                <option value="zero">--== Pilih Jenis Lowongan ==--</option>
+                <?php 
+                $jenis = $this->db->query("SELECT * FROM tb_jenis_motlet");
+                foreach($jenis->result() as $row_jen)  { ?>
+                  <option value="<?php echo $row_jen->id_jenis_motlet?>"><?php echo $row_jen->jenis_motlet; ?></option>
+                <?php } ?>
+              </select>
+            </div>
+            <div class="form-group">
               <label class="control-label">Jadwal Seleksi</label>
               <input class="form-control" name="jadwal_seleksi" type="date">
             </div>

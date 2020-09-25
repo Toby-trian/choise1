@@ -1,7 +1,7 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="<?php  echo base_url('assets3/images/ava.jpg') ?>" class="img-responsive" alt="">
+				<img src="<?php  echo base_url('upload/foto_pelamar/kindpng_1300217.png') ?>" class="img-responsive" alt="">
 			</div>
 
 			<?php 

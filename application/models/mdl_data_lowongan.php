@@ -63,8 +63,8 @@ class Mdl_data_lowongan extends CI_Model {
 	}
 
 	public function modelupdate($send){
-		$sql="UPDATE tb_lowongan SET id_lowongan = ?, nama_jabatan = ?, id_perusahaan = ?, jadwal_seleksi = ?, kota_penempatan = ?, persyaratan = ?, gaji = ? WHERE id_lowongan = ?";
-		$query=$this->db->query($sql, array( $send['id_lowongan'], $send['nama_jabatan'], $send['id_perusahaan'], $send['jadwal_seleksi'], $send['kota_penempatan'], $send['persyaratan'], $send['gaji'], $send['id_lowongan']));
+		$sql="UPDATE tb_lowongan SET id_lowongan = ?, nama_jabatan = ?, id_perusahaan = ?, id_jenis_motlet = ?, jadwal_seleksi = ?, kota_penempatan = ?, persyaratan = ?, gaji = ? WHERE id_lowongan = ?";
+		$query=$this->db->query($sql, array( $send['id_lowongan'], $send['nama_jabatan'], $send['id_perusahaan'], $send['id_jenis_motlet'], $send['jadwal_seleksi'], $send['kota_penempatan'], $send['persyaratan'], $send['gaji'], $send['id_lowongan']));
 	}	
 	// END DATA LEVEL
 
