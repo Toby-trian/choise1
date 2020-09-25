@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Sep 2020 pada 05.31
+-- Waktu pembuatan: 25 Sep 2020 pada 09.38
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -92,10 +92,10 @@ CREATE TABLE `tb_data_diri` (
 --
 
 INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `facebook`, `instagram`, `twitter`, `foto`) VALUES
-('1212132442131', 3, 'Fulanah', 'Gempol', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-', '-'),
-('123456789101112', 1, 'Dhicky', 'hehe', 'test', '2020-07-07', 'L', '12345678', 'hahas', '-', '-', '-'),
+('1212132442131', 3, 'Fulanah', 'Gempol', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-', ''),
+('123456789101112', 1, 'Dhicky', 'hehe', 'test', '2020-07-07', 'L', '12345678', 'hahas', '-', '-', 'pelamar_c4ca4238a0b923820dcc509a6f75849b1.jpg'),
 ('1298192819', 4, 'Test 123', 'hahah', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj', ''),
-('78675654536879', 2, 'Fulan', 'Tak diketahui', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-', '-');
+('78675654536879', 2, 'Fulan', 'Tak diketahui', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-', '');
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE `tb_data_pendidikan` (
 --
 
 INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendidikan`, `nama_institusi`, `jurusan`, `tahun_masuk`, `tahun_keluar`, `nilai_akhir`) VALUES
-(1, 1, 'SMK', 'SMKN 10 Magelang', 'Akuntansi', '2015', '2018', '70'),
+(0, 1, 'SMA/SMK', 'SMKN 10 Magelang', 'Akuntansi', '2017', '2020', '70'),
 (2, 2, 'S1', 'Univ Sendiri', 'Hukum', '2014', '2018', '4'),
 (3, 3, 'SMP', 'SMP Maju Putra', '-', '2009', '2012', '90');
 
@@ -198,6 +198,25 @@ INSERT INTO `tb_jadwal` (`id_jadwal`, `id_lowongan`, `id_perusahaan`, `tes_tulis
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_jenis_motlet`
+--
+
+CREATE TABLE `tb_jenis_motlet` (
+  `id_jenis_motlet` int(5) NOT NULL,
+  `jenis_motlet` enum('Lowongan Kerja','Kenaikan Jabatan') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_jenis_motlet`
+--
+
+INSERT INTO `tb_jenis_motlet` (`id_jenis_motlet`, `jenis_motlet`) VALUES
+(1, 'Lowongan Kerja'),
+(2, 'Kenaikan Jabatan');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_level`
 --
 
@@ -226,6 +245,7 @@ INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
 CREATE TABLE `tb_lowongan` (
   `id_lowongan` int(5) NOT NULL,
   `id_perusahaan` int(5) NOT NULL,
+  `id_jenis_motlet` int(5) NOT NULL,
   `nama_jabatan` varchar(100) NOT NULL,
   `jadwal_seleksi` date NOT NULL,
   `kota_penempatan` varchar(100) NOT NULL,
@@ -237,10 +257,10 @@ CREATE TABLE `tb_lowongan` (
 -- Dumping data untuk tabel `tb_lowongan`
 --
 
-INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `nama_jabatan`, `jadwal_seleksi`, `kota_penempatan`, `persyaratan`, `gaji`) VALUES
-(1, 2, 'Full Stack Developer', '2020-09-13', 'Ponorogo', '1. salskal\r\n2. ajskaslak', '3500000'),
-(3, 1, 'Testing', '2020-09-06', 'Pasuruan', '<p><strong>Bersedia ditempatkan di Pasuruan</strong></p><ol><li>S1 Komputer</li><li>Domisili Pasuruan</li><li>Terbiasa dengan CodeIgniter</li><li>Paham Javascript</li></ol>', '3200000'),
-(4, 3, 'Android', '2020-10-06', 'Surabaya', '<p>ahahaha</p>', '800000');
+INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `id_jenis_motlet`, `nama_jabatan`, `jadwal_seleksi`, `kota_penempatan`, `persyaratan`, `gaji`) VALUES
+(1, 2, 1, 'Full Stack Developer', '2020-09-13', 'Ponorogo', '<p>1. salskal 2. ajskaslak</p>', '3500000'),
+(3, 1, 1, 'Testing', '2020-09-06', 'Pasuruan', '<p><strong>Bersedia ditempatkan di Pasuruan</strong></p><ol><li>S1 Komputer</li><li>Domisili Pasuruan</li><li>Terbiasa dengan CodeIgniter</li><li>Paham Javascript</li></ol>', '3200000'),
+(4, 3, 1, 'Android', '2020-10-06', 'Surabaya', '<p>ahahaha</p>', '800000');
 
 -- --------------------------------------------------------
 
@@ -306,6 +326,35 @@ INSERT INTO `tb_nilai` (`id_nilai`, `id_pelamar`, `id_lowongan`, `id_perusahaan`
 (2, 2, 3, 1, 130, 'Mantap dong Cuy!!', 120, 130, 124, 121, 100, 120, 140, 140, 150, 80, 90, 150, 200, 110, 90, 'LOLOSKAN'),
 (3, 1, 3, 1, 190, 'Joos Gandos kotos kotos', 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 120, 100, 100, 'Mantap'),
 (4, 3, 1, 2, 118, 'Hahaha', 29829, 9898, 9898, 9898, 898, 9, 17, 9, 787, 80, 8989, 12, 90, 120, 1230, 'Hihi');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_nilai_cfit`
+--
+
+CREATE TABLE `tb_nilai_cfit` (
+  `id_nilai_cfit` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_perusahaan` int(5) NOT NULL,
+  `nilai_cfit` int(15) NOT NULL,
+  `gambaran_kepribadian` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_nilai_pwb`
+--
+
+CREATE TABLE `tb_nilai_pwb` (
+  `id_nilai_pwb` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_perusahaan` int(5) NOT NULL,
+  `nilai_pwb` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -483,7 +532,7 @@ INSERT INTO `tb_soal_cfit` (`id_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `op
 CREATE TABLE `tb_soal_motlet` (
   `id_soal` int(5) NOT NULL,
   `id_perusahaan` int(5) NOT NULL,
-  `jenis_motlet` varchar(50) NOT NULL,
+  `id_jenis_motlet` int(5) NOT NULL,
   `soal_motlet` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -491,10 +540,10 @@ CREATE TABLE `tb_soal_motlet` (
 -- Dumping data untuk tabel `tb_soal_motlet`
 --
 
-INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `jenis_motlet`, `soal_motlet`) VALUES
-(1, 2, 'Lowongan Kerja', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
-(3, 1, 'Promosi Jabatan', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br />quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br />cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br />proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
-(5, 2, 'Lowongan Kerja', '<p>tes12324</p>');
+INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `soal_motlet`) VALUES
+(1, 2, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
+(3, 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br />quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br />cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br />proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
+(5, 2, 1, '<p>tes12324</p>');
 
 --
 -- Indexes for dumped tables
@@ -543,6 +592,12 @@ ALTER TABLE `tb_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
+-- Indeks untuk tabel `tb_jenis_motlet`
+--
+ALTER TABLE `tb_jenis_motlet`
+  ADD PRIMARY KEY (`id_jenis_motlet`);
+
+--
 -- Indeks untuk tabel `tb_level`
 --
 ALTER TABLE `tb_level`
@@ -565,6 +620,18 @@ ALTER TABLE `tb_motivation_letter`
 --
 ALTER TABLE `tb_nilai`
   ADD PRIMARY KEY (`id_nilai`);
+
+--
+-- Indeks untuk tabel `tb_nilai_cfit`
+--
+ALTER TABLE `tb_nilai_cfit`
+  ADD PRIMARY KEY (`id_nilai_cfit`);
+
+--
+-- Indeks untuk tabel `tb_nilai_pwb`
+--
+ALTER TABLE `tb_nilai_pwb`
+  ADD PRIMARY KEY (`id_nilai_pwb`);
 
 --
 -- Indeks untuk tabel `tb_pelamar`
@@ -622,7 +689,7 @@ ALTER TABLE `tb_data_keluarga`
 -- AUTO_INCREMENT untuk tabel `tb_data_pendidikan`
 --
 ALTER TABLE `tb_data_pendidikan`
-  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pengalaman_kerja`
@@ -635,6 +702,12 @@ ALTER TABLE `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_jadwal`
   MODIFY `id_jadwal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_jenis_motlet`
+--
+ALTER TABLE `tb_jenis_motlet`
+  MODIFY `id_jenis_motlet` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_level`
@@ -652,13 +725,25 @@ ALTER TABLE `tb_lowongan`
 -- AUTO_INCREMENT untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
   MODIFY `id_nilai` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_nilai_cfit`
+--
+ALTER TABLE `tb_nilai_cfit`
+  MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_nilai_pwb`
+--
+ALTER TABLE `tb_nilai_pwb`
+  MODIFY `id_nilai_pwb` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pelamar`
