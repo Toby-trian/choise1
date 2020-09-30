@@ -42,4 +42,8 @@ class Home extends CI_Controller {
 		$this->load->view('login2');
 	}
 	
+	public function lowonganlainnyahome()
+	{
+		$this->load->view('lowonganlainnyahome');
+	}
 }

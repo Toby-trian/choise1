@@ -2,6 +2,10 @@
 <?php   $this->load->view('layout3/navbar') ?>
 <?php   $this->load->view('layout3/sidebar') ?>
 
+<?php 
+$id_pelamar=$this->session->userdata('ses_id');
+ ?>
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -33,26 +37,16 @@
 				      <td><b>Aksi</b></td>
 				    </tr>
 				    <tr>
-				      <td>1</td>
-				      <td>Tes Tulis</td>
-				      <td>1 Januari 2020 Pukul 09:00 WIB</td>
-				      <td>1 Januari 2020 Pukul 23:59 WIB</td>
-				      <td><a href="" class="btn btn-primary">Kerjakan Sekarang</a></td>
+				    	<?php
+				    	$no = 1; 
+				    	foreach ($array as $key) { ?>
+				      <td><?php echo $no++; ?></td>
+				      <td><?php echo $key['nama_ujian']; ?></td>
+				      <td><?php echo date('d F Y H:i:s', strtotime($key['waktu_dimulai'])) ?> WIB</td>
+				      <td><?php echo date('d F Y H:i:s', strtotime($key['waktu_berakhir'])) ?> WIB</td>
+				      <td><a href="<?php  echo base_url('Pelamar/Pelamar/cfit/'.$id_pelamar) ?>" class="btn btn-primary">Kerjakan Sekarang</a></td>
 				    </tr>
-				    <tr>
-				      <td>2</td>
-				      <td>Tes CFIT</td>
-				      <td>1 Januari 2020 Pukul 09:00 WIB</td>
-				      <td>1 Januari 2020 Pukul 23:59 WIB</td>
-				      <td><a href="" class="btn btn-primary">Kerjakan Sekarang</a></td>
-				    </tr>
-				    <tr>
-				      <td>3</td>
-				      <td>Tes DISC</td>
-				      <td>1 Januari 2020 Pukul 09:00 WIB</td>
-				      <td>1 Januari 2020 Pukul 23:59 WIB</td>
-				      <td><a href="<?php  echo base_url('Pelamar/Pelamar/disc') ?>" class="btn btn-primary">Kerjakan Sekarang</a></td>
-				    </tr>
+				<?php } ?>
 				  </tbody>
 				</table>
 			</div>

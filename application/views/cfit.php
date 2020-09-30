@@ -23,6 +23,17 @@
 				<h3><b>Konfirmasi Data</b></h3>
 				<hr color="black">
 			</div>
+			<?php 
+			foreach ($array as $key) {
+				$nik=$key['nik'];
+				$nama=$key['nama_pelamar'];
+
+				$jabatan=$this->db->query("select * from tb_lowongan");
+				foreach ($query->result() as $key) {
+					$tanggal = $key->waktu_dimulai;
+				}
+			}
+			 ?>
 			<div class="col-sm-12" style="margin-bottom: 5px;">
 				<table class="table table-bordered">
 				  <tbody>

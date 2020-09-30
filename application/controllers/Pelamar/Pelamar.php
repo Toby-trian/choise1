@@ -9,6 +9,7 @@ class Pelamar extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->model('mdl_home');
 		$this->load->model('mdl_data_pelamar');
+		$this->load->model('mdl_data_ujian');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -79,8 +80,6 @@ class Pelamar extends CI_Controller {
 		$this->load->view('profil');
 	}
 
-
-	
 	public function tambahdatadiri()
 	{
 		$this->form_validation->set_rules('nik','Nama','trim|required');
@@ -388,11 +387,14 @@ class Pelamar extends CI_Controller {
 	}
 	public function testulispsikotes()
 	{
-		$this->load->view('testulispsikotes');
+		$paket['array']=$this->mdl_data_ujian->ambildata_ujian();	
+		$this->load->view('testulispsikotes',$paket);
+
 	}
-	public function cfit()
+	public function cfit($id_pelamar)
 	{
-		$this->load->view('cfit');
+		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$this->load->view('cfit',$paket);
 	}
 	public function latihancfit1()
 	{

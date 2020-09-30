@@ -2,6 +2,13 @@
 <?php   $this->load->view('layout3/navbar') ?>
 <?php   $this->load->view('layout3/sidebar') ?>
 
+<?php 
+$query=$this->db->query("select * from tb_ujian");
+foreach ($query->result() as $key) {
+	$tanggal = $key->waktu_dimulai;
+}
+ ?>
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -19,7 +26,7 @@
 		<div class="card text-center" style="background-color: #fff; padding: 20px; border-radius: 5px;">
 		  <div class="card-body">
 		    <h4 class="card-title"><b>Tes Tulis dan Psikotes</b></h4>
-		    <p class="card-text">1 Januari 2020 Pukul 13:00 WIB</p>
+		    <p class="card-text"><?php echo date('d F Y H:i:s', strtotime($tanggal)) ?> WIB</p>
 		    <a href="<?php  echo base_url('Pelamar/Pelamar/testulispsikotes') ?>" class="btn btn-primary button-uj-tittle">Kerjakan Sekarang</a>
 		    <!-- <a href="<?php  echo base_url('Pelamar/Pelamar/disc') ?>" class="btn btn-primary button-uj-tittle">Kerjakan Sekarang</a> -->
 		  </div>

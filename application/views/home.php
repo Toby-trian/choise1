@@ -380,5 +380,6 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <?php   $this->load->view('layout2/footer') ?>
+<?php   $this->load->view('layout2/footer') ?>
