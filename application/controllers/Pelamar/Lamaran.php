@@ -61,26 +61,22 @@ class Lamaran extends CI_Controller {
 
 	public function apply()
 	{
-		
-		// $send['id_pelamar']=$this->input->post('id_pelamar');
-		// $send['id_soal']=$this->input->post('id_soal');
-		// $send['jawaban_soal']=$this->input->post('jawaban_soal');
 
-		$jawaban = $this->input->post('jawaban_soal');
+		$dataMotelt = array('id_pelamar' => $this->input->post('id_pelamar'),
+							'jawaban_soal' => $this->input->post('jawaban1'),
+							'jawaban_soal2' => $this->input->post('jawaban2'));
 
-		for ($i=0; $i < $jawaban ; $i++) { 
-			$data = array(
-				'id_motivasi' => "",
-				'id_pelamar' => $this->input->post('id_pelamar[$i]'),
-				'id_soal' => $this->input->post('id_soal[$i]'),
-				'jawaban_soal' => $this->input->post('jawaban_soal[$i]')
-			);
-			$this->mdl_data_motlet->isi_soal_motlet($data);	
-		}
+		$this->db->insert('tb_motivation_letter',$dataMotelt);
+
+		$dataApply = array('id_pelamar' => $this->input->post('id_pelamar'),
+							'id_lowongan' => $this->input->post('id_lowongan'),
+							'status_lamaran' => 'Belum ada tindakan' );
+
+		$this->db->insert('tb_apply',$dataApply);
 
 		// $this->load->view('lowongantersedia',$kembalian);
 		$this->session->set_flashdata('msg','Lowongan Berhasil Diapply!!!');
-		redirect('Pelamar/Pelamar/profilawal/');
+		redirect('Pelamar/Lamaran/lowongantersedia/');
 		
 	}
 	

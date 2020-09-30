@@ -26,12 +26,6 @@ class Mdl_data_motlet extends CI_Model {
 			return $this->db->affected_rows();
 		}
 
-	public function isi_soal_motlet($paket)
-		{
-			$this->db->insert('tb_motivation_letter', $paket);
-			return $this->db->affected_rows();
-		}
-
 	public function do_delete($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);

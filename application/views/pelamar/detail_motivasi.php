@@ -57,32 +57,32 @@
                   <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                       <tr>
-                        <th>No</th>
+                        <!-- <th>No</th> -->
                         <th>Soal</th>
                         <th>Jawaban</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $no=1;
+                    <?php 
                       foreach ($array as $key)
                       {
-                        ?>
+                        $jawaban1 = $key['jawaban_soal'];
+                        $jawaban2 = $key['jawaban_soal2'];
+                      }
+                      ?>
                         <div class="table-responsive">
-                          <?php $soal = $this->db->query("SELECT * FROM tb_soal_motlet");
-                          foreach ($soal->result() as $key_soal) {
-                            if ($key_soal->id_soal==$key['id_soal']) {
-                              $soale = $key_soal->soal_motlet;
-                            } 
-                          } ?>
                         <tr>
-                          <td><?php echo $no++ ?></td>
-                          <td><?php echo $soale; ?></td>
-                          <td><?php echo $key['jawaban_soal'] ?></td>
+                          <td>1. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA PENDEK (1 tahun kedepan)</td>
+                          <td><?php echo $jawaban1 ?></td>
                         </tr>
-                      <?php }}?>
+
+                        <tr>
+                          <td>2. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA MENENGAH (3 tahun mendatang)</td>
+                          <td><?php echo $jawaban2 ?></td>
+                        </tr>
                     </tbody>
                   </table>
-
+<?php } ?>
                 </div>
               </div>
             </div>

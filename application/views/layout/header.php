@@ -34,6 +34,7 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bie.css') ?>">
+    <link href="<?php echo base_url('assets/datetimepicker/css/bootstrap-datetimepicker.css'); ?>" rel="stylesheet"> 
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/font-awesome/4.7.0/css/font-awesome.min.css') ?>">
   </head>

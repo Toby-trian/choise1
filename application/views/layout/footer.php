@@ -9,6 +9,7 @@
 <!-- Data table plugin-->
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/dataTables.bootstrap.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/datetimepicker/js/bootstrap-datetimepicker.js') ?>"></script>
 <script type="text/javascript">$('#sampleTable').DataTable();</script>
 <!-- The javascript plugin to display page loading on top-->
 <script src="<?php echo base_url('assets/js/plugins/pace.min.js') ?>"></script>
@@ -75,6 +76,14 @@ var pieChart = new Chart(ctxp).Pie(pdata);
 <script type="text/javascript">
   $('#notifikasi').delay(5000).slideUp('slow');
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.time').datetimepicker({format: 'yyyy-mm-dd hh:ii:ss', todayBtn: true,
+      autoclose: true,
+      pickerPosition: "top-left"});
+  });
 </script>
 
 <script>

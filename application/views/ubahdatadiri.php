@@ -68,10 +68,6 @@
 			      <label for="akunTwtitter">Akun Twitter</label>
 			      <input type="text" class="form-control" name="twitter" value="<?php echo $data[0]['twitter'] ?>">
 			    </div>
-			    <div class="form-group col-sm-12">
-				  <label for="foto">Upload Pas Foto</label>
-				  <input type="file" class="form-control-file" name="berkas" >
-				 </div>
 			  </div>
 			  <div class="col-sm-12">
 	            <input type="submit" value="Simpan" class="btn btn-blue">

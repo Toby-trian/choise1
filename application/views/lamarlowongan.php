@@ -14,6 +14,14 @@ foreach ($array as $key) {
 	$perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
 	$jenis = $this->db->query("SELECT * FROM tb_jenis_motlet");
 
+	if ($id_motlet == 1) {
+		$soal1 = "1. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA PENDEK (1 tahun kedepan) ";
+		$soal2 = "2. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA MENENGAH (3 tahun mendatang)";
+	}
+	else {
+		$soal1 = "1. mengapa kamu ingin naik jabatan?";
+		$soal2 = "2. test";
+	}
 
 	foreach ($jenis->result() as $key_jenis) {
 		if ($key_jenis->id_jenis_motlet==$key['id_jenis_motlet']) { 
@@ -57,23 +65,32 @@ foreach ($array as $key) {
 					<h4 class="modal-title">Motivation Letter</h4>
 				</div>
 				<div class="modal-body">
-					<form action="" method="post">
+					<form action="<?php echo base_url('Pelamar/Lamaran/apply') ?>" method="post">
 						<div class="form-group">
 							<?php 
-							$motlet = $this->db->query("SELECT * FROM tb_soal_motlet WHERE id_jenis_motlet = $id_motlet");
-							$no =1;
-							foreach ($motlet->result() as $key_mot) {
-								$soal = $key_mot->soal_motlet;?>
-								<label class="control-label"><?php echo $soal ?></label><br>
-								<label class="control-label">Jawaban</label>
-								<input type="hidden" id="id_pelamar" class="form-control" name="id_pelamar" value="<?php echo $id_pelamar ?>">
-								<input type="hidden" id="id_soal" class="form-control" name="id_soal" value="<?php echo $key_mot->id_soal ?>">
-								<input type="text" name="jawaban_soal" id="jawaban_soal" class="form-control"><br><br>
-						<?php $no++;} ?>
+							$mot = $this->db->query("SELECT * FROM tb_motivation_letter WHERE id_pelamar= $id_pelamar");
+							if ($mot->num_rows()>0) {
+								foreach ($mot->result() as $key_mot) {
+								$jawaban1 = $key_mot->jawaban_soal;
+								$jawaban2 = $key_mot->jawaban_soal2;
+								}
+							} else{
+								$jawaban1 = '';
+								$jawaban2 = '';
+							}
+							
+							 ?>
+							<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
+							<input type="hidden" name="id_lowongan" value="<?php echo $id_lowongan ?>">
+							<label class="control-label"><?php echo $soal1 ?></label>
+							<textarea class="form-control" name="jawaban1" rows="3"><?php echo $jawaban1?></textarea>
+
+							<label class="label-group" style="margin-top: 3%"><?php echo $soal2 ?></label>
+							<textarea class="form-control" name="jawaban2" rows="3"><?php echo $jawaban2 ?></textarea>
 						</div>                       
 					</div>
 					<div class="modal-footer">
-						<input type="submit" id="save" value="Update Nilai" class="btn btn-primary">
+						<input type="submit" value="Kirim" class="btn btn-blue">
 					</div>
 				</form>
 			</div>

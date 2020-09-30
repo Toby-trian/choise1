@@ -19,6 +19,8 @@
 
       <li><a class="app-menu__item  <?php if($this->uri->segment(3)=="nilai_pelamar"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_nilai/nilai_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
 
+      <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/') ?>"><i class="app-menu__icon fa fa-clipboard"></i><span class="app-menu__label">Ujian </span></a></li>
+
       <li class="treeview <?php if($this->uri->segment(2)=="Soal_cfit"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Bank Soal</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_cfit"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_cfit') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
