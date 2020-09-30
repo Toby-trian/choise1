@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Sep 2020 pada 09.38
+-- Waktu pembuatan: 30 Sep 2020 pada 09.54
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -64,7 +64,8 @@ CREATE TABLE `tb_apply` (
 INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `status_lamaran`) VALUES
 (1, 1, 3, 'Diterima'),
 (2, 2, 1, 'Tidak lolos'),
-(3, 3, 3, 'Belum ada tindakan');
+(3, 3, 3, 'Belum ada tindakan'),
+(4, 1, 1, 'Belum ada tindakan');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,7 @@ CREATE TABLE `tb_data_diri` (
 
 INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `facebook`, `instagram`, `twitter`, `foto`) VALUES
 ('1212132442131', 3, 'Fulanah', 'Gempol', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-', ''),
-('123456789101112', 1, 'Dhicky', 'hehe', 'test', '2020-07-07', 'L', '12345678', 'hahas', '-', '-', 'pelamar_c4ca4238a0b923820dcc509a6f75849b1.jpg'),
+('123456789101112', 1, 'Salmon', 'hehe', 'test', '2020-07-07', 'P', '12345678', 'hahas', '-', '-', 'pelamar_c4ca4238a0b923820dcc509a6f75849b1.jpg'),
 ('1298192819', 4, 'Test 123', 'hahah', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj', ''),
 ('78675654536879', 2, 'Fulan', 'Tak diketahui', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-', '');
 
@@ -272,20 +273,21 @@ CREATE TABLE `tb_motivation_letter` (
   `id_motivasi` int(5) NOT NULL,
   `id_pelamar` int(11) NOT NULL,
   `id_soal` int(5) NOT NULL,
-  `jawaban_soal` text NOT NULL
+  `jawaban_soal` text NOT NULL,
+  `jawaban_soal2` text NOT NULL,
+  `jawaban_soal3` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_motivation_letter`
 --
 
-INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jawaban_soal`) VALUES
-(1, 1, 1, 'ggvcvbghcghhgfhg'),
-(2, 1, 5, 'asdfghjklkjh'),
-(3, 2, 1, 'aqwertyujnfdsazxc'),
-(4, 2, 5, 'az nm,nhgfdxcg'),
-(5, 3, 1, 'zd vhijolkjfc'),
-(6, 3, 5, 'mnbvfyukmnhdgh');
+INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jawaban_soal`, `jawaban_soal2`, `jawaban_soal3`) VALUES
+(3, 2, 1, 'aqwertyujnfdsazxc', '', ''),
+(4, 2, 5, 'az nm,nhgfdxcg', '', ''),
+(5, 3, 1, 'zd vhijolkjfc', '', ''),
+(6, 3, 5, 'mnbvfyukmnhdgh', '', ''),
+(18, 1, 0, 'test124', '1223433q3', '');
 
 -- --------------------------------------------------------
 
@@ -545,6 +547,28 @@ INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `so
 (3, 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br />quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br />cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br />proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
 (5, 2, 1, '<p>tes12324</p>');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_ujian`
+--
+
+CREATE TABLE `tb_ujian` (
+  `id_ujian` int(11) NOT NULL,
+  `nama_ujian` varchar(100) NOT NULL,
+  `waktu_dimulai` datetime NOT NULL,
+  `waktu_berakhir` datetime NOT NULL,
+  `nama_pembuat` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_ujian`
+--
+
+INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `nama_pembuat`, `status`) VALUES
+(1, 'Psikotes Chaakra', '2020-09-30 14:50:22', '2020-09-30 17:45:23', 'Administrator', 'tersedia');
+
 --
 -- Indexes for dumped tables
 --
@@ -664,6 +688,12 @@ ALTER TABLE `tb_soal_motlet`
   ADD PRIMARY KEY (`id_soal`);
 
 --
+-- Indeks untuk tabel `tb_ujian`
+--
+ALTER TABLE `tb_ujian`
+  ADD PRIMARY KEY (`id_ujian`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -677,7 +707,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_apply`
 --
 ALTER TABLE `tb_apply`
-  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
@@ -725,7 +755,7 @@ ALTER TABLE `tb_lowongan`
 -- AUTO_INCREMENT untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_nilai`
@@ -774,6 +804,12 @@ ALTER TABLE `tb_soal_cfit`
 --
 ALTER TABLE `tb_soal_motlet`
   MODIFY `id_soal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_ujian`
+--
+ALTER TABLE `tb_ujian`
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
