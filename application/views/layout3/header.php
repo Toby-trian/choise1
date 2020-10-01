@@ -9,6 +9,8 @@
 	<link href="<?php  echo base_url('assets3/css/datepicker3.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/styles.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/custom.css') ?>" rel="stylesheet">
+	<link href="<?php  echo base_url('assets3/css/bie.css') ?>" rel="stylesheet">
+	
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">

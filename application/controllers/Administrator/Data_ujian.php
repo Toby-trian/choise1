@@ -55,6 +55,7 @@ class Data_ujian extends CI_Controller {
 			$send['waktu_berakhir']=$this->input->post('waktu_akhir');
 			$send['nama_pembuat']=$this->input->post('id_admin');
 			$send['status']='tersedia';
+			$send['durasi']='1950';
 
 			$kembalian['jumlah']=$this->mdl_data_ujian->tambahdata_ujian($send);
 

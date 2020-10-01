@@ -114,8 +114,9 @@
 					</div>
 				</div>
 			</div>
+			<?php $idUjian = $this->session->userdata('ses_ujian'); ?>
 			<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-		        <a href="<?php  echo base_url('Pelamar/Pelamar/nilailatcfit1') ?>" class="btn btn-primary mr-2 mb-2">Selanjutnya</a>
+		        <a href="<?php  echo base_url('Pelamar/Pelamar/jawabancontoh/'.$idUjian) ?>" class="btn btn-primary mr-2 mb-2">Selanjutnya</a>
 		    </div>
 		</div>
 

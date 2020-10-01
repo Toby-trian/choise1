@@ -365,8 +365,9 @@ class Pelamar extends CI_Controller {
 		redirect('Pelamar/Pelamar/profilawal');
 	}
 
-	public function ujian()
+	public function ujian($id_lowongan)
 	{
+		$this->session->set_userdata('sesIdLowongan', $id_lowongan);
 		$this->load->view('ujian');
 	}
 	public function disc()
@@ -391,23 +392,23 @@ class Pelamar extends CI_Controller {
 		$this->load->view('testulispsikotes',$paket);
 
 	}
-	public function cfit($id_pelamar)
+	public function cfit($id_pelamar, $id_ujian)
 	{
+		$idUjian = $this->session->set_userdata('ses_ujian', $id_ujian);
 		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$paket['arrayU']=$this->mdl_data_ujian->ambildata_ujian2($id_ujian);
 		$this->load->view('cfit',$paket);
 	}
 	public function latihancfit1()
 	{
 		$this->load->view('latihancfit1');
 	}
-	public function nilailatcfit1()
+
+	public function jawabancontoh()
 	{
-		$this->load->view('nilailatcfit1');
+		$this->load->view('jawabancontoh');
 	}
-	public function cfitsoal113()
-	{
-		$this->load->view('cfitsoal113');
-	}
+	
 	public function pengaturan()
 	{
 		$this->load->view('pengaturan');

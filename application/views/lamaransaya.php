@@ -57,7 +57,7 @@
 							<a href="<?php  echo base_url('Pelamar/Lamaran/jadwalseleksi/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Lihat Jadwal</a>
 						</div>
 						<div class="button-lm-tittle">
-							<a href="<?php  echo base_url('Pelamar/Pelamar/ujian') ?>" class="btn btn-primary mr-2 mb-2">Ujian Saya</a>
+							<a href="<?php  echo base_url('Pelamar/Pelamar/ujian/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Ujian Saya</a>
 						</div>
 					<?php } ?>
 					<div class="button-lm-tittle">
