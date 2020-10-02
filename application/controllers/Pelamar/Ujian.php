@@ -36,21 +36,76 @@ class Ujian extends CI_Controller {
 		$this->load->view('ujian');
 	}
 
-	public function frame_ujian(){
+	public function frame_ujian($id_ujian, $rdr){
 
 		$id_pelamar = $this->session->userdata('ses_id');
-
 		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1();
+
 
 		if (!empty($data['soal_subtes1'])) {
 			$id_soal = $data['soal_subtes1']->id_soal;
+			$nomor_soal = $data['soal_subtes1']->nomor_soal;
 		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
+
+		$data['jawaban'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian', $data);
 	}
 
 	public function start_ujian()
 	{
 		$this->load->view('pengerjaan');
+	}
+
+	public function masukkan_jawaban($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		// $id_soal = $this->input->post('id_soal');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_cfit'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban
+			);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
+	
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->mdl_ujian->insert_jawaban($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
+			}
+			redirect('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$rdr);
+		}
 	}
 	
 	

@@ -15,6 +15,24 @@ class Mdl_ujian extends CI_Model {
 		return $query->row();
 	}
 
+	public function insert_jawaban($paket)
+		{
+			$this->db->insert('tb_data_jawaban_cfit', $paket);
+			return $this->db->affected_rows();
+	}
+
+	public function get_answer($nomor_soal){
+		$query=$this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
+		return $query->row();
+	}
+
+	public function update($where,$data,$table){
+    if($this->db->update($table, $data, $where)){
+      return true;
+    }else{
+      return false;
+    }
+  } 
 	
 // ============================================================================================
 	
