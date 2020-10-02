@@ -39,7 +39,7 @@ class Ujian extends CI_Controller {
 	public function frame_ujian($id_ujian, $rdr){
 
 		$id_pelamar = $this->session->userdata('ses_id');
-		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1();
+		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1($rdr);
 
 
 		if (!empty($data['soal_subtes1'])) {
