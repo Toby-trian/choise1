@@ -10,8 +10,8 @@ class Mdl_ujian extends CI_Model {
 	}
 
 	// DATA LEVEL
-	public function get_questions_subtes_1(){
-		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 1 AND type_soal = 'Ujian' ");
+	public function get_questions_subtes_1($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 1 AND type_soal = 'Ujian' AND id_soal='$rdr' ");
 		return $query->row();
 	}
 
