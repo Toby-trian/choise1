@@ -44,8 +44,6 @@ class Pelamar extends CI_Controller {
 
 		$send['id_pelamar'] = $this->input->post('id_pelamar');
 
-		$query_cekFoto=$this->db->query("SELECT * FROM tb_data_diri")->result_array();
-
 		if ($_FILES["foto"]["name"] != ""){
 			$config['upload_path']          = './upload/foto_pelamar/';
 			$config['allowed_types']        = 'jpg|JPG|jpeg|JPEG|png|PNG';

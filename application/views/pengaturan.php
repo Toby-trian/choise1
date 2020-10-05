@@ -40,7 +40,7 @@
 		<div class="col-md-4">
 			<div class="col-sm-12">
 				<?php 
-				$image = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $id_pelamar");
+				$image = $this->db->query("SELECT * FROM tb_pelamar WHERE id_pelamar = $id_pelamar");
 				foreach ($image->result() as $key_user) {
 					$imageUser = $key_user->foto;
 				}

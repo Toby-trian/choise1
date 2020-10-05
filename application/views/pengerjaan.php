@@ -17,8 +17,11 @@
 				<h1 class="page-header">Tes CFIT</h1>
 			</div>
 		</div><!--/.row-->
-
-		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian/') ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
+		<?php  
+		$id_ujian=  $this->session->userdata('ses_ujian');
+		$nomor = $soal_subtes1->nomor_soal;
+		 ?>
+		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
         </div>
 			<div class="col-sm-12">

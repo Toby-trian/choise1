@@ -53,9 +53,10 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/frame_ujian', $data);
 	}
 
-	public function start_ujian()
+	public function start_ujian($rdr)
 	{
-		$this->load->view('pengerjaan');
+		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1($rdr);
+		$this->load->view('pengerjaan',$data);
 	}
 
 	public function masukkan_jawaban($redirect=null){

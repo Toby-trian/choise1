@@ -20,7 +20,7 @@ class Mdl_data_pelamar extends CI_Model {
 	}
 
 	public function uploadImage($send){
-		$sql="UPDATE tb_data_diri SET id_pelamar = ?,foto = ? WHERE id_pelamar = ?";
+		$sql="UPDATE tb_pelamar SET id_pelamar = ?,foto = ? WHERE id_pelamar = ?";
 		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['foto'], $send['id_pelamar']));
 	}
 
