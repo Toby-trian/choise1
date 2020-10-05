@@ -30,6 +30,7 @@ foreach ($array as $key) {
 	}
 
 	foreach ($perusahaan->result() as $key_perusahaan) {
+		$id_perusahaan = $key_perusahaan->id_perusahaan;
 		if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) {
 			$nama_perusahaan = $key_perusahaan->nama_perusahaan;
 			$logo_perusahaan = $key_perusahaan->logo_perusahaan;
@@ -42,6 +43,12 @@ foreach ($array as $key) {
 			$instagram = $key_perusahaan->instagram;
 			$twitter = $key_perusahaan->twitter;
 		} 
+
+		$apply = $this->db->query("SELECT * FROM tb_apply WHERE id_pelamar=$id_pelamar AND id_lowongan = $id_lowongan AND id_perusahaan = $id_perusahaan");
+		foreach ($apply->result() as $key_ap) {
+			$lowong = $key_ap->id_lowongan;
+			$perus = $key_ap->id_perusahaan;
+		}
 	} 
 } 
 
@@ -71,15 +78,15 @@ foreach ($array as $key) {
 							$mot = $this->db->query("SELECT * FROM tb_motivation_letter WHERE id_pelamar= $id_pelamar");
 							if ($mot->num_rows()>0) {
 								foreach ($mot->result() as $key_mot) {
-								$jawaban1 = $key_mot->jawaban_soal;
-								$jawaban2 = $key_mot->jawaban_soal2;
+									$jawaban1 = $key_mot->jawaban_soal;
+									$jawaban2 = $key_mot->jawaban_soal2;
 								}
 							} else{
 								$jawaban1 = '';
 								$jawaban2 = '';
 							}
 							
-							 ?>
+							?>
 							<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
 							<input type="hidden" name="id_lowongan" value="<?php echo $id_lowongan ?>">
 							<label class="control-label"><?php echo $soal1 ?></label>
@@ -111,7 +118,16 @@ foreach ($array as $key) {
 			<p><?php echo $persyaratan ?></p>
 			<p style="text-align: right;">Ditutup pada <?php echo date('d F Y' ,strtotime($tgl_tutup)) ?></p><br>
 			<div style="text-align: center;">
-				<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
+				<?php 
+				if ($apply->num_rows()>1) {
+					if ($lowong == $id_lowongan && $perusahaan == $id_perusahaan) {
+						echo "sudah dilamar";
+					} else{ 
+
+					}
+				}  else{ ?>
+					<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
+				<?php } ?>
 			</div>
 		</div><br>
 		<div class="card col-md-3 col-sm-12" style="background-color: #fff; padding: 10px;">

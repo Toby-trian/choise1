@@ -113,7 +113,7 @@
 			</div>
 		<?php }else{?>
 			<div style="text-align: right">
-				<a data-toggle="modal" data-target="#myModalDiri" type="button" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				<a href="<?php echo base_url('Pelamar/Pelamar/tambahdatadiri/') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
 			</div>
 		<?php }
 		?>

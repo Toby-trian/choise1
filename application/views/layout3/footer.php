@@ -148,31 +148,31 @@
       }
     }
   }
-  if(document.layers){
-    document.captureEvents(Event.MOUSEDOWN);
-    document.onmousedown=clickNS4;
-  }else if(document.all&&!document.getElementById){
-    document.onmousedown=clickIE4;
-  }
-  document.oncontextmenu=new Function("return false");
+//   if(document.layers){
+//     document.captureEvents(Event.MOUSEDOWN);
+//     document.onmousedown=clickNS4;
+//   }else if(document.all&&!document.getElementById){
+//     document.onmousedown=clickIE4;
+//   }
+//   document.oncontextmenu=new Function("return false");
 
-  function copyToClipboard() {
+//   function copyToClipboard() {
 
-  var aux = document.createElement("input");
-  aux.setAttribute("value", "print screen disabled!");      
-  document.body.appendChild(aux);
-  aux.select();
-  document.execCommand("copy");
-  // Remove it from the body
-  document.body.removeChild(aux);
-  alert("Print screen disabled!");
-}
+//   var aux = document.createElement("input");
+//   aux.setAttribute("value", "print screen disabled!");      
+//   document.body.appendChild(aux);
+//   aux.select();
+//   document.execCommand("copy");
+//   // Remove it from the body
+//   document.body.removeChild(aux);
+//   alert("Print screen disabled!");
+// }
 
-$(window).keyup(function(e){
-  if(e.keyCode == 44){
-    copyToClipboard();
-  }
-});
+// $(window).keyup(function(e){
+//   if(e.keyCode == 44){
+//     copyToClipboard();
+//   }
+// });
 
 
 </script><!--IE=internet explorer 4+ dan NS=netscape 4+0-->

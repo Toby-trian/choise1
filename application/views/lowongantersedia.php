@@ -19,17 +19,25 @@
 </div><!--/.row-->
 <div class="row align-items-stretch">
   <?php 
+  $id_pelamar = $this->session->userdata('ses_id');
+  $apply = $this->db->query("SELECT * FROM tb_apply WHERE id_pelamar = $id_pelamar");
+
+  
   foreach ($array as $key) { 
     $id_lowongan = $key['id_lowongan'];
-    $id_perusahaan = $key['id_perusahaan'];?>
+    $id_perusahaan = $key['id_perusahaan'];
 
-    <?php $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+    $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+
     foreach ($perusahaan->result() as $key_perusahaan) {
       if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) {
         $nama_perusahaan = $key_perusahaan->nama_perusahaan;
         $logo_perusahaan = $key_perusahaan->logo_perusahaan;
       } 
-    } ?>
+    }
+
+
+    ?>
     <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
       <div class="unit-4 d-block">
         <div class="card-img-block">
@@ -38,13 +46,13 @@
         <h3><?php echo $key['nama_jabatan'] ?></h3>
         <p><?php echo $nama_perusahaan ?></p>
         <div>
-          <a href="<?php echo base_url('Pelamar/Lamaran/lamarlowongan/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+          <a href="<?php echo base_url('Pelamar/Lamaran/lamarlowongan/'.$id_lowongan) ?>" class="btn btn-primary mr-2 mb-2">Lihat Lowongan</a>
         </div>
       </div>
     </div>
   <?php } ?>
-<!-- </div> -->
-<nav class="justify-content-center text-center col-sm-12" aria-label="Page navigation example">
+  <!-- </div> -->
+<!-- <nav class="justify-content-center text-center col-sm-12" aria-label="Page navigation example">
  <ul class="pagination">
    <li class="page-item">
      <a class="page-link" href="#" aria-label="Previous">
@@ -62,7 +70,7 @@
      </a>
    </li>
  </ul>
-</nav>
+</nav> -->
 </div>
 <div class="col-sm-12">
   <p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
