@@ -70,6 +70,7 @@ class Lamaran extends CI_Controller {
 
 		$dataApply = array('id_pelamar' => $this->input->post('id_pelamar'),
 							'id_lowongan' => $this->input->post('id_lowongan'),
+							'id_perusahaan' => $this->input->post('id_perusahaan'),
 							'status_lamaran' => 'Belum ada tindakan' );
 
 		$this->db->insert('tb_apply',$dataApply);
