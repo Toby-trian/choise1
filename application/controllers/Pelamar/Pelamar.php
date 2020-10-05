@@ -85,12 +85,16 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('alamat','Nama','trim|required');
 		$this->form_validation->set_rules('tempat_lahir','Nama','trim|required');
 		$this->form_validation->set_rules('tgl_lahir','Nama','trim|required');
+		$this->form_validation->set_rules('alamat_ktp','Nama','trim|required');
+		$this->form_validation->set_rules('status_perkawinan','Nama','trim|required');
+		$this->form_validation->set_rules('agama','Nama','trim|required');
+		$this->form_validation->set_rules('anak_ke','Nama','trim|required');
+		$this->form_validation->set_rules('dari_x_sdr','Nama','trim|required');
 		// $this->form_validation->set_rules('gender','Nama','trim|required');
 		$this->form_validation->set_rules('no_hp','Nama','trim|required');
 		$this->form_validation->set_rules('facebook','Nama','trim|required');
 		$this->form_validation->set_rules('instagram','Nama','trim|required');
 		$this->form_validation->set_rules('twitter','Nama','trim|required');
-
 
 		if ($this->form_validation->run()==FALSE ) {
 			$data['msg_error']="Silahkan isi semua kolom";
@@ -103,6 +107,11 @@ class Pelamar extends CI_Controller {
 			$send['alamat']=$this->input->post('alamat');
 			$send['tempat_lahir']=$this->input->post('tempat_lahir');
 			$send['tanggal_lahir']=$this->input->post('tgl_lahir');
+			$send['alamat_ktp']=$this->input->post('alamat_ktp');
+			$send['status_perkawinan']=$this->input->post('status_perkawinan');
+			$send['agama']=$this->input->post('agama');
+			$send['anak_ke']=$this->input->post('anak_ke');
+			$send['dari_x_sdr']=$this->input->post('dari_x_sdr');
 			$send['jenis_kelamin']=$this->input->post('gender');
 			$send['no_hp']=$this->input->post('no_hp');
 			$send['facebook']=$this->input->post('facebook');
@@ -115,7 +124,6 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal/');
 		}
 	}
-
 	
 	public function tambahdatakeluarga()
 	{
@@ -123,6 +131,10 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
 		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
 		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
+		$this->form_validation->set_rules('nama_suami','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_suami','Nama','trim|required');
+		$this->form_validation->set_rules('nama_istri','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_istri','Nama','trim|required');
 
 		if ($this->form_validation->run()==FALSE ) {
 			$data['msg_error']="Silahkan isi semua kolom";
@@ -134,6 +146,10 @@ class Pelamar extends CI_Controller {
 			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
 			$send['nama_ibu']=$this->input->post('nama_ibu');
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
+			$send['nama_suami']=$this->input->post('nama_suami');
+			$send['pekerjaan_suami']=$this->input->post('pekerjaan_suami');
+			$send['nama_istri']=$this->input->post('nama_istri');
+			$send['pekerjaan_istri']=$this->input->post('pekerjaan_istri');
 			$kembalian['jumlah']=$this->mdl_home->isi_data_keluarga($send);
 
 			$this->load->view('profilawal',$kembalian);
@@ -141,6 +157,7 @@ class Pelamar extends CI_Controller {
 			redirect('Pelamar/Pelamar/profilawal/');
 		}
 	}
+
 	public function tambahpendidikan()
 	{
 		$this->form_validation->set_rules('nama_institusi','Nama','trim|required');
@@ -171,11 +188,43 @@ class Pelamar extends CI_Controller {
 		}
 	}
 
+	public function tambahpendidikannonformal()
+	{
+		$this->form_validation->set_rules('nama_pendidikan_nonformal','Nama','trim|required');
+		$this->form_validation->set_rules('tujuan_pendidikan_nonformal','Nama','trim|required');
+		$this->form_validation->set_rules('nomor_sertifikat','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_pendidikan_nonformal','Nama','trim|required');
+
+		if ($this->form_validation->run()==FALSE) {
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('tambahpendidikannonformal',$data);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_pendidikan_nonformal']=$this->input->post('nama_pendidikan_nonformal');
+			$send['tujuan_pendidikan_nonformal']=$this->input->post('tujuan_pendidikan_nonformal');
+			$send['nomor_sertifikat']=$this->input->post('nomor_sertifikat');
+			$send['tahun_pendidikan_nonformal']=$this->input->post('tahun_pendidikan_nonformal');
+
+			$kembalian['jumlah']=$this->mdl_home->isi_data_pendidikan_nonformal($send);
+
+			$this->load->view('profilawal',$kembalian);
+			$this->session->set_flashdata('msg','Data Pendidikan Non Formal Berhasil Ditambahkan!!!');
+			redirect('Pelamar/Pelamar/profilawal/');
+		}
+	}
 
 	public function hapus_pendidikan($id){
 		$where = array('id_pendidikan' => $id);
 		$this->mdl_home->do_delete($where,'tb_data_pendidikan');
 		$this->session->set_flashdata('msg_hapus','Data Pendidikan Berhasil dihapus');
+		redirect('Pelamar/Pelamar/profilawal');
+	}
+
+	public function hapus_pendidikan_nonformal($id){
+		$where = array('id_pendidikan_nonformal' => $id);
+		$this->mdl_home->do_delete($where,'tb_data_pendidikan_nonformal');
+		$this->session->set_flashdata('msg_hapus','Data Pendidikan Non Formal Berhasil dihapus');
 		redirect('Pelamar/Pelamar/profilawal');
 	}
 
@@ -209,6 +258,32 @@ class Pelamar extends CI_Controller {
 		}
 	}
 
+	public function ubahpendidikannonformal($id_update)
+	{
+		$this->form_validation->set_rules('nama_pendidikan_nonformal','Nama','trim|required');
+		$this->form_validation->set_rules('tujuan_pendidikan_nonformal','Nama','trim|required');
+		$this->form_validation->set_rules('nomor_sertifikat','Nama','trim|required');
+		$this->form_validation->set_rules('tahun_pendidikan_nonformal','Nama','trim|required');
+		$nama_pendidikan_nonformal = $this->input->post('nama_pendidikan_nonformal');
+
+		if($this->form_validation->run()==FALSE || $nama_pendidikan_nonformal = "" ){
+			$indexrow['data']=$this->mdl_home->ambildata_pendidikan_nonformal($id_update);
+			$this->load->view('ubahpendidikannonformal', $indexrow);
+		}
+		else{
+			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['nama_pendidikan_nonformal']=$this->input->post('nama_pendidikan_nonformal');
+			$send['tujuan_pendidikan_nonformal']=$this->input->post('tujuan_pendidikan_nonformal');
+			$send['nomor_sertifikat']=$this->input->post('nomor_sertifikat');
+			$send['tahun_pendidikan_nonformal']=$this->input->post('tahun_pendidikan_nonformal');
+
+			// var_dump($send);
+			$kembalian['jumlah']=$this->mdl_home->modelupdate_pendidikan_nonformal($send);
+			$this->session->set_flashdata('msg_update', 'Data Pendidikan Non Formal Berhasil Diupdate');
+			redirect('Pelamar/Pelamar/profilawal');
+		}
+	}
+
 	public function editProfile($id_update)
 	{
 		$id_pelamar = $this->session->userdata('ses_id');
@@ -233,9 +308,7 @@ class Pelamar extends CI_Controller {
 			$kembalian['jumlah']=$this->mdl_data_pelamar->modelupdate_profile($send);
 			$this->session->set_flashdata('msg_update', 'Username dan password berhasil diupdate');
 			redirect('Pelamar/Pelamar/pengaturan');
-		}
-		
-		
+		}	
 	}
 
 	public function tambahdatapengalamankerja()
@@ -273,6 +346,11 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('alamat','Nama','trim|required');
 		$this->form_validation->set_rules('tempat_lahir','Nama','trim|required');
 		$this->form_validation->set_rules('tgl_lahir','Nama','trim|required');
+		$this->form_validation->set_rules('alamat_ktp','Nama','trim|required');
+		$this->form_validation->set_rules('status_perkawinan','Nama','trim|required');
+		$this->form_validation->set_rules('agama','Nama','trim|required');
+		$this->form_validation->set_rules('anak_ke','Nama','trim|required');
+		$this->form_validation->set_rules('dari_x_sdr','Nama','trim|required');
 		// $this->form_validation->set_rules('gender','Nama','trim|required');
 		$this->form_validation->set_rules('no_hp','Nama','trim|required');
 		$this->form_validation->set_rules('facebook','Nama','trim|required');
@@ -291,6 +369,11 @@ class Pelamar extends CI_Controller {
 			$send['tempat_lahir']=$this->input->post('tempat_lahir');
 			$send['tanggal_lahir']=$this->input->post('tgl_lahir');
 			$send['jenis_kelamin']=$this->input->post('gender');
+			$send['alamat_ktp']=$this->input->post('alamat_ktp');
+			$send['status_perkawinan']=$this->input->post('status_perkawinan');
+			$send['agama']=$this->input->post('agama');
+			$send['anak_ke']=$this->input->post('anak_ke');
+			$send['dari_x_sdr']=$this->input->post('dari_x_sdr');
 			$send['no_hp']=$this->input->post('no_hp');
 			$send['facebook']=$this->input->post('facebook');
 			$send['instagram']=$this->input->post('instagram');
@@ -308,6 +391,10 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
 		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
 		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
+		$this->form_validation->set_rules('nama_suami','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_suami','Nama','trim|required');
+		$this->form_validation->set_rules('nama_istri','Nama','trim|required');
+		$this->form_validation->set_rules('pekerjaan_istri','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
 			$indexrow['data']=$this->mdl_home->ambil_data_keluarga($id_update);
@@ -319,6 +406,10 @@ class Pelamar extends CI_Controller {
 			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
 			$send['nama_ibu']=$this->input->post('nama_ibu');
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
+			$send['nama_suami']=$this->input->post('nama_suami');
+			$send['pekerjaan_suami']=$this->input->post('pekerjaan_suami');
+			$send['nama_istri']=$this->input->post('nama_istri');
+			$send['pekerjaan_istri']=$this->input->post('pekerjaan_istri');
 			// var_dump($send);
 			$kembalian['jumlah']=$this->mdl_home->modelupdate_keluarga($send);
 			$this->session->set_flashdata('msg_update', 'Data Diri Berhasil diupdate');

@@ -18,7 +18,7 @@
 			</div>
 		</div><!--/.row-->
 
-		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 			<div class="col-sm-12">
 				<h4 style="margin-bottom: 2%;"><b>Ubah Data Keluarga</b></h4>
 				<form action="<?php echo base_url('Pelamar/Pelamar/ubahdatakeluarga/'.$data[0]['id_pelamar']) ?>"method="post">
@@ -39,6 +39,23 @@
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="inputPekerjaanIbu">Pekerjaan Ibu</label>
 				      <input type="text" class="form-control" name="pekerjaan_ibu" value="<?php echo $data[0]['pekerjaan_ibu'] ?>" placeholder="Pekerjaan Ibu">
+				    </div>
+				    <div class="form-group col-md-6 col-sm-12">
+				      <label for="inputNamaSuami">Nama Suami</label>
+				      <input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pelamar'] ?>">
+				      <input type="text" class="form-control" name="nama_suami" value="<?php echo $data[0]['nama_suami'] ?>" placeholder="Nama Suami">
+				    </div>
+				    <div class="form-group col-md-6 col-sm-12">
+				      <label for="inputPekerjaanSuami">Pekerjaan Suami</label>
+				      <input type="text" class="form-control" name="pekerjaan_suami" value="<?php echo $data[0]['pekerjaan_suami'] ?>" placeholder="Pekerjaan Suami">
+				    </div>
+				    <div class="form-group col-md-6 col-sm-12">
+				      <label for="inputNamaIstri">Nama Istri</label>
+				      <input type="text" class="form-control" name="nama_istri" value="<?php echo $data[0]['nama_istri'] ?>" placeholder="Nama Istri">
+				    </div>
+				    <div class="form-group col-md-6 col-sm-12">
+				      <label for="inputPekerjaanIstri">Pekerjaan Istri</label>
+				      <input type="text" class="form-control" name="pekerjaan_istri" value="<?php echo $data[0]['pekerjaan_istri'] ?>" placeholder="Pekerjaan Istri">
 				    </div>
 				  </div>
 				  <div class="col-sm-12">
