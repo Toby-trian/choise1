@@ -19,7 +19,7 @@
 		</div>
 	</div><!--/.row-->
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px">
 		<div class="col-sm-12">
 			<h4 style="margin-bottom: 2%;"><b>Tambah Data Pendidikan</b></h4>
 			<form action="<?php echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" method="post">

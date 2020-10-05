@@ -19,7 +19,7 @@
 		</div>
 	</div><!--/.row-->
 
-	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px">
 		<div class="col-sm-12">
 			<h4 style="margin-bottom: 2%;"><b>Isi Data Diri</b></h4>
 			<form action="<?php echo base_url('Pelamar/Pelamar/tambahdatadiri/') ?>" method="post">
@@ -49,11 +49,31 @@
 				  <input class="form-check-input" type="radio" name="gender" value="P"> Perempuan
 				</div>
 				<div class="form-group col-sm-12">
+			      <label for="alamat_ktp">Alamat Sesuai KTP</label>
+			      <input type="text" class="form-control" name="alamat_ktp" >
+			    </div>
+			    <div class="form-group col-sm-12">
 			      <label for="alamat">Alamat Domisili</label>
 			      <input type="text" class="form-control" name="alamat" >
 			    </div>
 			    <div class="form-group col-sm-12">
-			      <label for="noHp">Nomor HP</label>
+			      <label for="status_perkawinan">Status Perkawinan</label>
+			      <input type="text" class="form-control" name="status_perkawinan" >
+			    </div>
+			    <div class="form-group col-sm-12">
+			      <label for="agama">Agama</label>
+			      <input type="text" class="form-control" name="agama" >
+			    </div>
+			    <div class="form-group col-sm-12">
+			      <label for="anak_ke">Anak ke</label>
+			      <input type="text" class="form-control" name="anak_ke" >
+			    </div>
+			    <div class="form-group col-sm-12">
+			      <label for="dari_x_sdr">Dari berapa bersaudara</label>
+			      <input type="text" class="form-control" name="dari_x_sdr" >
+			    </div>
+			    <div class="form-group col-sm-12">
+			      <label for="noHp">Nomor WA Aktif</label>
 			      <input type="text" class="form-control" name="no_hp">
 			    </div>
 			    <div class="form-group col-sm-12">

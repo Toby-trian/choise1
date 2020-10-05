@@ -46,7 +46,12 @@
 				$nik =$key_diri->nik;
 				$id_pelamar = $key_diri->id_pelamar;
 				$nama_pelamar = $key_diri->nama_pelamar;
+				$alamat_ktp = $key_diri->alamat_ktp;
 				$alamat = $key_diri->alamat;
+				$status_perkawinan = $key_diri->status_perkawinan;
+				$agama = $key_diri->agama;
+				$anak_ke = $key_diri->anak_ke;
+				$dari_x_sdr = $key_diri->dari_x_sdr;
 				$tempat_lahir = $key_diri->tempat_lahir;
 				$tanggal_lahir = $key_diri->tanggal_lahir;
 				$jk = $key_diri->jenis_kelamin;
@@ -71,8 +76,28 @@
 							<td><?php echo $nama_pelamar ?></td>
 						</tr>
 						<tr>	
-							<th>Alamat</th>
+							<th>Alamat Sesuai KTP</th>
+							<td><?php echo $alamat_ktp ?></td>
+						</tr>
+						<tr>	
+							<th>Alamat Domisili</th>
 							<td><?php echo $alamat ?></td>
+						</tr>
+						<tr>	
+							<th>Status Perkawinan</th>
+							<td><?php echo $status_perkawinan ?></td>
+						</tr>
+						<tr>	
+							<th>Agama</th>
+							<td><?php echo $agama ?></td>
+						</tr>
+						<tr>	
+							<th>Anak ke</th>
+							<td><?php echo $anak_ke ?></td>
+						</tr>
+						<tr>	
+							<th>Dari berapa bersaudara</th>
+							<td><?php echo $dari_x_sdr ?></td>
 						</tr>
 						<tr>	
 							<th>Tempat, Tanggal Lahir</th>
@@ -131,6 +156,10 @@
 			$pekerjaan_ayah = $key_keluarga->pekerjaan_ayah;
 			$nama_ibu = $key_keluarga->nama_ibu;
 			$pekerjaan_ibu = $key_keluarga->pekerjaan_ibu; 
+			$nama_suami = $key_keluarga->nama_suami;
+			$pekerjaan_suami = $key_keluarga->pekerjaan_suami;
+			$nama_istri = $key_keluarga->nama_istri;
+			$pekerjaan_istri = $key_keluarga->pekerjaan_istri; 
 		}
 		?>
 
@@ -154,6 +183,22 @@
 					<tr>	
 						<th>Pekerjaan Ibu</th>
 						<td><?php echo $pekerjaan_ibu ?></td>
+					</tr>
+					<tr>
+						<th width="300">Nama Suami</th>
+						<td><?php echo $nama_suami ?></td>
+					</tr>
+					<tr>	
+						<th>Pekerjaan Suami</th>
+						<td><?php echo $pekerjaan_suami ?></td>
+					</tr>
+					<tr>	
+						<th>Nama Istri</th>
+						<td><?php echo $nama_istri ?></td>
+					</tr>
+					<tr>	
+						<th>Pekerjaan Istri</th>
+						<td><?php echo $pekerjaan_istri ?></td>
 					</tr>
 				</table>
 			</div>
@@ -239,6 +284,61 @@
 			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
 		</div>
 	</div>
+	<div class="col-sm-12">
+		<h4><b>Pendidikan Non Formal</b></h4>
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Nama Kursus/Pelatihan</th>	
+						<th>Tujuan Kursus/Pelatihan</th>						
+						<th>Nomor Sertifikat</th>	
+						<th>Tahun</th>
+					</tr>	
+					<?php 	
+					$pendidikannonformal = $this->db->query("SELECT * FROM tb_data_pendidikan_nonformal WHERE id_pelamar=$id_pelamar");
+					$modal = 0;
+					foreach ($pendidikannonformal->result() as $key_pendidikan_nonformal) {
+						$id_pendidikan_nonformal = $key_pendidikan_nonformal->id_pendidikan_nonformal;
+						$nama_pendidikan_nonformal = $key_pendidikan_nonformal->nama_pendidikan_nonformal;
+						$tujuan_pendidikan_nonformal = $key_pendidikan_nonformal->tujuan_pendidikan_nonformal;
+						$tahun_pendidikan_nonformal = $key_pendidikan_nonformal->tahun_pendidikan_nonformal;
+						$nomor_sertifikat = $key_pendidikan_nonformal->nomor_sertifikat;
+						?>
+						<div class="modal fade" id="myModal3<?php echo $modal ?>" role="dialog">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title">Hapus</h4>
+									</div>
+									<div class="modal-body">
+										<p>Ingin hapus pendidikan non formal <b><?php echo $nama_pendidikan_nonformal ?></b></p>
+										<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pendidikan_nonformal/'.$id_pendidikan_nonformal) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+									</div>
+									<div class="modal-footer">
+									</div>
+								</div>
+							</div>
+						</div> 	
+
+						<tr>	
+							<td><?php echo $nama_pendidikan_nonformal?></td>
+							<td><?php echo $tujuan_pendidikan_nonformal?></td>
+							<td><?php echo $nomor_sertifikat?></td>
+							<td><?php echo $tahun_pendidikan_nonformal?></td>
+							<td>
+								<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikannonformal/'.$id_pendidikan_nonformal) ?>" class="btn btn-primary">Edit</a>
+								<button data-toggle="modal" data-target="#myModal3<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
+							</td>
+						</tr>
+					<?php $modal ++ ;} ?>
+				</thead>	
+			</table>	
+		</div>
+		<div style="text-align: right">
+			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikannonformal') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+		</div>
+	</div>
 </div>
 
 <div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
@@ -299,6 +399,14 @@
 		<div style="text-align: right;">
 			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
 		</div>
+	</div>
+</div>
+
+<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+	<div class="col-sm-12">
+		<h3><b>Upload Kelengkapan Berkas</b></h3>
+		<hr color="black">
+
 	</div>
 </div>
 

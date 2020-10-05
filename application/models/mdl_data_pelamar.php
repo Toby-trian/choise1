@@ -15,8 +15,8 @@ class Mdl_data_pelamar extends CI_Model {
 	}
 
 	public function modelupdate($send){
-		$sql="UPDATE tb_data_diri SET id_pelamar = ?, nik = ?, nama_pelamar = ?, tempat_lahir = ? , tanggal_lahir = ? , jenis_kelamin = ?, no_hp = ?, facebook = ?, instagram = ?, alamat = ?, twitter = ? WHERE id_pelamar = ?";
-		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nik'], $send['nama_pelamar'], $send['tempat_lahir'], $send['tanggal_lahir'], $send['jenis_kelamin'], $send['no_hp'], $send['facebook'], $send['instagram'], $send['alamat'], $send['twitter'], $send['id_pelamar']));
+		$sql="UPDATE tb_data_diri SET id_pelamar = ?, nik = ?, nama_pelamar = ?, tempat_lahir = ? , tanggal_lahir = ? , jenis_kelamin = ?, alamat_ktp = ?, status_perkawinan = ?, agama = ?, anak_ke = ?, dari_x_sdr = ?, no_hp = ?, facebook = ?, instagram = ?, alamat = ?, twitter = ? WHERE id_pelamar = ?";
+		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nik'], $send['nama_pelamar'], $send['tempat_lahir'], $send['tanggal_lahir'], $send['jenis_kelamin'], $send['alamat_ktp'], $send['status_perkawinan'], $send['agama'], $send['anak_ke'], $send['dari_x_sdr'], $send['no_hp'], $send['facebook'], $send['instagram'], $send['alamat'], $send['twitter'], $send['id_pelamar']));
 	}
 
 	public function uploadImage($send){
