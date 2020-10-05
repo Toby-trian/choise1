@@ -7,6 +7,7 @@ $id_pelamar = $this->session->userdata('ses_id');
 foreach ($array as $key) {
 	$id_lowongan = $key['id_lowongan'];
 	$persyaratan = $key['persyaratan'];
+	$perusahaan_id = $key['id_perusahaan'];
 	$jabatan = $key['nama_jabatan'];
 	$gaji = $key['gaji'];
 	$tgl_tutup = $key['jadwal_seleksi'];
@@ -44,7 +45,7 @@ foreach ($array as $key) {
 			$twitter = $key_perusahaan->twitter;
 		} 
 
-		$apply = $this->db->query("SELECT * FROM tb_apply WHERE id_pelamar=$id_pelamar AND id_lowongan = $id_lowongan AND id_perusahaan = $id_perusahaan");
+		$apply = $this->db->query("SELECT * FROM tb_apply WHERE id_pelamar=$id_pelamar AND id_lowongan = $id_lowongan AND id_perusahaan = $perusahaan_id");
 		foreach ($apply->result() as $key_ap) {
 			$lowong = $key_ap->id_lowongan;
 			$perus = $key_ap->id_perusahaan;
@@ -89,6 +90,7 @@ foreach ($array as $key) {
 							?>
 							<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
 							<input type="hidden" name="id_lowongan" value="<?php echo $id_lowongan ?>">
+							<input type="hidden" name="id_perusahaan" value="<?php echo $perusahaan_id ?>">
 							<label class="control-label"><?php echo $soal1 ?></label>
 							<textarea class="form-control" name="jawaban1" rows="3"><?php echo $jawaban1?></textarea>
 
@@ -119,13 +121,11 @@ foreach ($array as $key) {
 			<p style="text-align: right;">Ditutup pada <?php echo date('d F Y' ,strtotime($tgl_tutup)) ?></p><br>
 			<div style="text-align: center;">
 				<?php 
-				if ($apply->num_rows()>1) {
-					if ($lowong == $id_lowongan && $perusahaan == $id_perusahaan) {
+				if ($apply->num_rows()>=1) {
+					
 						echo "sudah dilamar";
-					} else{ 
-
-					}
-				}  else{ ?>
+					
+					}  else{ ?>
 					<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
 				<?php } ?>
 			</div>
