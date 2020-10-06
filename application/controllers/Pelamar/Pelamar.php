@@ -67,6 +67,57 @@ class Pelamar extends CI_Controller {
 		$this->session->set_flashdata('msg','Foto Berhasil Diubah!!!');
 		redirect('Pelamar/Pelamar/pengaturan');
 	}
+
+
+	public function uploadDoc()
+	{
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		$send['id_pelamar'] = $this->input->post('id_pelamar');
+
+		$query = $this->db->query("SELECT * FROM tb_berkas WHERE id_pelamar = $id_pelamar");
+		$query2 = $this->db->query("SELECT * FROM tb_berkas WHERE id_pelamar = $id_pelamar")->result_array();
+		$query3 = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $id_pelamar");
+		foreach ($query3->result() as $key_name) {
+			if ($key_name->id_pelamar == $id_pelamar) {
+				$nama = $key_name->nama_pelamar;
+			}
+		}
+
+		if ($_FILES["berkas"]["name"] != ""){
+			$config['upload_path']          = './upload/berkas_pelamar/';
+			$config['allowed_types']        = 'pdf';
+			$config['max_size']             = 4000;
+			$config['file_name'] ="berkas_".$nama;
+
+			$this->load->library('upload', $config);
+
+			//soal 
+			if ( ! $this->upload->do_upload('berkas')){
+				$error =$this->upload->display_errors();
+				$this->session->set_flashdata('pesan_error',$error);
+				$this->load->view('uploadberkas');
+			}elseif ($query->num_rows()>0) {
+				$target= "upload/berkas_pelamar/".$query2[0]['berkas'];
+				unlink($target);
+				$data = $this->upload->data();
+				$send['berkas']=$data['file_name'];	
+			}
+			else{
+				$data = $this->upload->data();
+				$send['berkas']=$data['file_name'];					
+			}
+		}
+
+		if ($query->num_rows()>0) {
+			$kembalian['jumlah']=$this->mdl_data_pelamar->updateBerkas($send);
+		}else{
+			$kembalian['jumlah']=$this->mdl_data_pelamar->inputBerkas($send);
+		}	
+		$this->load->view('uploadberkas',$kembalian);
+		$this->session->set_flashdata('msg','Berkas berhasil diunggah!!!');
+		redirect('Pelamar/Pelamar/uploadberkas');
+	}
 	
 	public function profilawal()
 	{
@@ -507,4 +558,6 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('uploadberkas');
 	}	
+
+	
 }

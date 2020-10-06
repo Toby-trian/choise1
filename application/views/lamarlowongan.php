@@ -99,7 +99,50 @@ foreach ($array as $key) {
 						</div>                       
 					</div>
 					<div class="modal-footer">
+						<input type="submit" value="Kirim" class="btn btn-blue" onclick = "return confirm('Yakin melamar lowongan ini?');">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div> 
+
+
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Motivation Letter</h4>
+				</div>
+				<div class="modal-body">
+					<form action="<?php echo base_url('Pelamar/Lamaran/apply') ?>" method="post">
+						<div class="form-group">
+							<?php 
+							$mot = $this->db->query("SELECT * FROM tb_motivation_letter WHERE id_pelamar= $id_pelamar");
+							if ($mot->num_rows()>0) {
+								foreach ($mot->result() as $key_mot) {
+									$jawaban1 = $key_mot->jawaban_soal;
+									$jawaban2 = $key_mot->jawaban_soal2;
+								}
+							} else{
+								$jawaban1 = '';
+								$jawaban2 = '';
+							}
+							
+							?>
+							<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
+							<input type="hidden" name="id_lowongan" value="<?php echo $id_lowongan ?>">
+							<input type="hidden" name="id_perusahaan" value="<?php echo $perusahaan_id ?>">
+							<label class="control-label"><?php echo $soal1 ?></label>
+							<textarea class="form-control" name="jawaban1" rows="3"><?php echo $jawaban1?></textarea>
+
+							<label class="label-group" style="margin-top: 3%"><?php echo $soal2 ?></label>
+							<textarea class="form-control" name="jawaban2" rows="3"><?php echo $jawaban2 ?></textarea>
+						</div>                       
+					</div>
+					<div class="modal-footer">
 						<input type="submit" value="Kirim" class="btn btn-blue">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</form>
 			</div>
@@ -125,7 +168,9 @@ foreach ($array as $key) {
 					
 						echo "sudah dilamar";
 					
-					}  else{ ?>
+					}  else if($apply->num_rows()>=1 && $perusahaan_id == $id_perusahaan){
+						echo "hanya bisa melamar 1 lowongan dalam 1 perusahaan"; 
+					} else{?>
 					<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
 				<?php } ?>
 			</div>

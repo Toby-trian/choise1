@@ -24,6 +24,17 @@ class Mdl_data_pelamar extends CI_Model {
 		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['foto'], $send['id_pelamar']));
 	}
 
+	public function updateBerkas($send){
+		$sql="UPDATE tb_berkas SET id_pelamar = ?,berkas = ? WHERE id_pelamar = ?";
+		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['berkas'], $send['id_pelamar']));
+	}
+
+	public function inputBerkas($paket)
+	{
+		$this->db->insert('tb_berkas', $paket);
+		return $this->db->affected_rows();
+	}
+
 	public function modelupdate_profile($send){
 		$sql="UPDATE tb_pelamar SET id_pelamar = ?, username = ?, password = ?, confirm_password = ? WHERE id_pelamar = ?";
 		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['username'], $send['password'],  $send['confirm_password'], $send['id_pelamar']));

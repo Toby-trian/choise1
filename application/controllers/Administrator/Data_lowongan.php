@@ -73,6 +73,7 @@ class Data_lowongan extends CI_Controller {
 	public function hapus_lowongan($id){
 		$where = array('id_lowongan' => $id);
 		$this->mdl_data_lowongan->do_delete($where,'tb_lowongan');
+		$this->mdl_data_lowongan->do_delete($where, 'tb_apply');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Data_lowongan/');
 	}
@@ -117,9 +118,10 @@ class Data_lowongan extends CI_Controller {
 	//detail pelamar
 	
 
-	public function terima_pelamar($id){
+	public function terima_pelamar($id,$pelamar){
 		$where = array('id_apply' => $id);
 		$this->mdl_data_pelamar->terima_pelamar($where,'tb_apply');
+
 		$this->session->set_flashdata('msg_success','Pelamar diterima');
 		redirect('Administrator/Data_lowongan/');
 	}

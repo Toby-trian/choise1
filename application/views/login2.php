@@ -4,28 +4,28 @@
 	<title>Choise-Masuk</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets2/login/images/icons/favicon.ico') ?>"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/bootstrap/css/bootstrap.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/animate/animate.css') ?>">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/css-hamburgers/hamburgers.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/animsition/css/animsition.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/select2/select2.min.css') ?>">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/vendor/daterangepicker/daterangepicker.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/css/util.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/login/css/main.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 </head>
 <body>
 	
@@ -36,6 +36,24 @@
 					<span class="login100-form-title">
 						Masuk
 					</span>
+
+					<div id="notifikasi">
+						<?php if($this->session->flashdata('msg')):?>
+							<div class="alert alert-primary">
+								<?php  echo $this->session->flashdata('msg')?>
+							</div>
+						<?php endif ;?>
+						<?php if($this->session->flashdata('msg_update')):?>
+							<div class="alert alert-primary">
+								<?php  echo $this->session->flashdata('msg_update')?>
+							</div>
+						<?php endif ;?>
+						<?php if($this->session->flashdata('msg_gagal')):?>
+							<div class="alert alert-danger">
+								<?php  echo $this->session->flashdata('msg_gagal')?>
+							</div>
+						<?php endif ;?>
+					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
 						<input class="input100" type="text" placeholder="Username" name="username" autocomplete="off">
@@ -78,22 +96,26 @@
 	</div>
 	
 	
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/jquery/jquery-3.2.1.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/animsition/js/animsition.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/bootstrap/js/popper.js') ?>"></script>
 	<script src="<?php echo base_url('assets2/login/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/select2/select2.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/daterangepicker/moment.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets2/login/vendor/daterangepicker/daterangepicker.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/vendor/countdowntime/countdowntime.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/login/js/main.js') ?>"></script>
+
+	<script type="text/javascript">
+      $('#notifikasi').delay(4000).slideUp('slow');
+    </script>
 
 </body>
 </html>

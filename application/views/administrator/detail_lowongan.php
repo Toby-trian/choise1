@@ -4,6 +4,7 @@
   <div class="app-title">
     <div>
       <?php foreach ($array as $key ) {
+        $id_pelamar = $this->session->userdata('ses_id');
         $lowongan = $this->db->query("SELECT * FROM tb_lowongan");
         foreach ($lowongan->result() as $key_lowongan) {
           if ($key_lowongan->id_lowongan==$key['id_lowongan']) { 
@@ -63,9 +64,9 @@
                         </div>
                         <div class="modal-body">
                           <p>Ingin hapus <?php echo $key['nama_jabatan'] ?>?</p>
-                          <a href="<?php echo base_url('Administrator/Data_lowongan/hapus_lowongan/'.$key['id_lowongan']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
                         </div>
                         <div class="modal-footer">
+                          <a href="<?php echo base_url('Administrator/Data_lowongan/hapus_lowongan/'.$key['id_lowongan']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
 
                         </div>
                       </div>

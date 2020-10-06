@@ -54,16 +54,18 @@
                 foreach ($array as $key) { ?>
 
                   <div class="modal fade" id="myModal<?php echo $modal ?>" role="dialog">
-                    <div class="modal-dialog modal-sm">
+                    <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h4 class="modal-title">Hapus</h4>
                         </div>
                         <div class="modal-body">
-                          <p>Ingin hapus <?php echo $key['nama_jabatan'] ?>?</p>
-                          <a href="<?php echo base_url('Administrator/Data_lowongan/hapus_lowongan/'.$key['id_lowongan']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+                          <p>Apakah anda yakin akan menghapus lowongan <b><?php echo $key['nama_jabatan'] ?></b> dari perusahaan <b><?php echo $name_company ?></b>?</p>
+                          <p>Menghapus lowongan ini akan menghapus semua data yang berkaitan dengan lowongan</p>
                         </div>
                         <div class="modal-footer">
+                          <a href="<?php echo base_url('Administrator/Data_lowongan/hapus_lowongan/'.$key['id_lowongan']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger">Hapus <i class="fa fa-trash"></i></button></a>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 
                         </div>
                       </div>
@@ -75,7 +77,7 @@
                     <?php $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
                     foreach ($perusahaan->result() as $key_perusahaan) {
                       if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) { ?>
-                        <td><?php echo $key_perusahaan->nama_perusahaan ?></td>
+                        <td><?php echo $name_company = $key_perusahaan->nama_perusahaan ?></td>
                       <?php } ?>
                     <?php } ?>
 
@@ -94,7 +96,9 @@
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
                        <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Pelamar" type="button" class="btn btn-primary"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/detail_lowongan/'.$key['id_lowongan']) ?>"><i class="fa fa-eye"></i></a></button> 
+
                        <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit" type="button" class="btn btn-warning"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/edit_lowongan/'.$key['id_lowongan']) ?>"><i class="fa fa-edit"></i></a></button>
+
                        <button data-placement="bottom" data-original-title="Hapus" data-toggle="modal" data-target="#myModal<?php echo $modal ?>" type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                      </div>
                    </td>
