@@ -56,9 +56,18 @@
 			      <label for="alamat">Alamat Domisili</label>
 			      <input type="text" class="form-control" name="alamat" value="<?php echo $data[0]['alamat'] ?>">
 			    </div>
-			    <div class="form-group col-sm-12">
+<!-- 			    <div class="form-group col-sm-12">
 			      <label for="status_perkawinan">Status Perkawinan</label>
 			      <input type="text" class="form-control" name="status_perkawinan" value="<?php echo $data[0]['status_perkawinan'] ?>">
+			    </div> -->
+			    <div class="form-group col-sm-12">
+			      <label for="status_perkawinan">Status Perkawinan</label>
+			      <select name="status_perkawinan" class="form-control form-control-lg">
+			      	<?php $status_perkawinan = $data[0]['status_perkawinan'] ?>
+					<option value="">--== Pilih Status Perkawinan ==--</option>
+					<option value="Belum Menikah" <?php echo ($status_perkawinan == "belum_menikah" ? "selected":"") ?>>Belum Menikah</option>
+			        <option value="Sudah Menikah" <?php echo ($status_perkawinan == "sudah_menikah" ? "selected":"") ?>>Sudah Menikah</option>
+			      </select>
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="agama">Agama</label>

@@ -56,9 +56,17 @@
 			      <label for="alamat">Alamat Domisili</label>
 			      <input type="text" class="form-control" name="alamat" >
 			    </div>
-			    <div class="form-group col-sm-12">
+<!-- 			    <div class="form-group col-sm-12">
 			      <label for="status_perkawinan">Status Perkawinan</label>
 			      <input type="text" class="form-control" name="status_perkawinan" >
+			    </div> -->
+			    <div class="form-group col-sm-12">
+			      <label for="status_perkawinan">Status Perkawinan</label>
+			      <select name="status_perkawinan" class="form-control form-control-lg">
+					<option value="">--== Pilih Status Perkawinan ==--</option>
+					<option value="Belum Menikah">Belum Menikah</option>
+			        <option value="Sudah Menikah">Sudah Menikah</option>
+			      </select>
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="agama">Agama</label>

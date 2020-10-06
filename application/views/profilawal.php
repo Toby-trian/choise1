@@ -406,7 +406,16 @@
 	<div class="col-sm-12">
 		<h3><b>Upload Kelengkapan Berkas</b></h3>
 		<hr color="black">
-
+		<div class="form-group">
+			<p>Kelengkapan berkas yang wajib diunggah:</p>
+			<li>Scan Kartu Tanda Penduduk</li>
+			<li>Pas foto berwarna terbaru</li>
+			<li>Scan ijazah terakhir</li>
+			<li>Scan transkrip nilai</li>
+			<li>Scan sertifikat pendukung</li>
+			<p>Semua berkas file dijadikan dalam satu file pdf</p>
+			<input type="file">
+		</div>
 	</div>
 </div>
 
