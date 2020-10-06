@@ -131,10 +131,6 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
 		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
 		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
-		$this->form_validation->set_rules('nama_suami','Nama','trim|required');
-		$this->form_validation->set_rules('pekerjaan_suami','Nama','trim|required');
-		$this->form_validation->set_rules('nama_istri','Nama','trim|required');
-		$this->form_validation->set_rules('pekerjaan_istri','Nama','trim|required');
 
 		if ($this->form_validation->run()==FALSE ) {
 			$data['msg_error']="Silahkan isi semua kolom";
@@ -146,10 +142,8 @@ class Pelamar extends CI_Controller {
 			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
 			$send['nama_ibu']=$this->input->post('nama_ibu');
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
-			$send['nama_suami']=$this->input->post('nama_suami');
-			$send['pekerjaan_suami']=$this->input->post('pekerjaan_suami');
-			$send['nama_istri']=$this->input->post('nama_istri');
-			$send['pekerjaan_istri']=$this->input->post('pekerjaan_istri');
+			$send['nama_pasangan']=$this->input->post('nama_pasangan');
+			$send['pekerjaan_pasangan']=$this->input->post('pekerjaan_pasangan');
 			$kembalian['jumlah']=$this->mdl_home->isi_data_keluarga($send);
 
 			$this->load->view('profilawal',$kembalian);
@@ -192,7 +186,6 @@ class Pelamar extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nama_pendidikan_nonformal','Nama','trim|required');
 		$this->form_validation->set_rules('tujuan_pendidikan_nonformal','Nama','trim|required');
-		$this->form_validation->set_rules('nomor_sertifikat','Nama','trim|required');
 		$this->form_validation->set_rules('tahun_pendidikan_nonformal','Nama','trim|required');
 
 		if ($this->form_validation->run()==FALSE) {
@@ -262,7 +255,6 @@ class Pelamar extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nama_pendidikan_nonformal','Nama','trim|required');
 		$this->form_validation->set_rules('tujuan_pendidikan_nonformal','Nama','trim|required');
-		$this->form_validation->set_rules('nomor_sertifikat','Nama','trim|required');
 		$this->form_validation->set_rules('tahun_pendidikan_nonformal','Nama','trim|required');
 		$nama_pendidikan_nonformal = $this->input->post('nama_pendidikan_nonformal');
 
@@ -391,10 +383,6 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('pekerjaan_ayah','Nama','trim|required');
 		$this->form_validation->set_rules('nama_ibu','Nama','trim|required');
 		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
-		$this->form_validation->set_rules('nama_suami','Nama','trim|required');
-		$this->form_validation->set_rules('pekerjaan_suami','Nama','trim|required');
-		$this->form_validation->set_rules('nama_istri','Nama','trim|required');
-		$this->form_validation->set_rules('pekerjaan_istri','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
 			$indexrow['data']=$this->mdl_home->ambil_data_keluarga($id_update);
@@ -406,10 +394,8 @@ class Pelamar extends CI_Controller {
 			$send['pekerjaan_ayah']=$this->input->post('pekerjaan_ayah');
 			$send['nama_ibu']=$this->input->post('nama_ibu');
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
-			$send['nama_suami']=$this->input->post('nama_suami');
-			$send['pekerjaan_suami']=$this->input->post('pekerjaan_suami');
-			$send['nama_istri']=$this->input->post('nama_istri');
-			$send['pekerjaan_istri']=$this->input->post('pekerjaan_istri');
+			$send['nama_pasangan']=$this->input->post('nama_pasangan');
+			$send['pekerjaan_pasangan']=$this->input->post('pekerjaan_pasangan');
 			// var_dump($send);
 			$kembalian['jumlah']=$this->mdl_home->modelupdate_keluarga($send);
 			$this->session->set_flashdata('msg_update', 'Data Diri Berhasil diupdate');

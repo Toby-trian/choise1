@@ -71,8 +71,8 @@ class Mdl_home extends CI_Model {
 	}
 
 	public function modelupdate_keluarga($send){
-		$sql="UPDATE tb_data_keluarga SET id_pelamar = ?, nama_ayah = ?, pekerjaan_ayah = ?, nama_ibu = ? , pekerjaan_ibu = ?, nama_suami = ?, pekerjaan_suami = ?, nama_istri = ? , pekerjaan_istri = ? WHERE id_pelamar = ?";
-		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nama_ayah'], $send['pekerjaan_ayah'], $send['nama_ibu'], $send['pekerjaan_ibu'], $send['nama_suami'], $send['pekerjaan_suami'], $send['nama_istri'], $send['pekerjaan_istri'], $send['id_pelamar']));
+		$sql="UPDATE tb_data_keluarga SET id_pelamar = ?, nama_ayah = ?, pekerjaan_ayah = ?, nama_ibu = ? , pekerjaan_ibu = ?, nama_pasangan = ?, pekerjaan_pasangan = ? WHERE id_pelamar = ?";
+		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nama_ayah'], $send['pekerjaan_ayah'], $send['nama_ibu'], $send['pekerjaan_ibu'], $send['nama_pasangan'], $send['pekerjaan_pasangan'], $send['id_pelamar']));
 	}
 
 	public function do_delete($where,$table){

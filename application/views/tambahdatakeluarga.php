@@ -42,21 +42,12 @@
 			      <input type="text" class="form-control" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="inputNamaSuami">Nama Suami</label>
-			      <input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
-			      <input type="text" class="form-control" name="nama_suami" placeholder="Nama Suami">
+			      <label for="inputNamaPasangan">Nama Suami/Istri</label>
+			      <input type="text" class="form-control" name="nama_pasangan" placeholder="Nama Suami/Istri">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="inputPekerjaanSuami">Pekerjaan Suami</label>
-			      <input type="text" class="form-control" name="pekerjaan_suami" placeholder="Pekerjaan Suami">
-			    </div>
-			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="inputNamaIstri">Nama Istri</label>
-			      <input type="text" class="form-control" name="nama_istri" placeholder="Nama Istri">
-			    </div>
-			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="inputPekerjaanIstri">Pekerjaan Istri</label>
-			      <input type="text" class="form-control" name="pekerjaan_istri" placeholder="Pekerjaan Istri">
+			      <label for="inputPekerjaanPasangan">Pekerjaan Suami/Istri</label>
+			      <input type="text" class="form-control" name="pekerjaan_pasangan" placeholder="Pekerjaan Suami/Istri">
 			    </div>
 			  </div>
 			  <div class="col-sm-12">

@@ -76,6 +76,18 @@
 							<td><?php echo $nama_pelamar ?></td>
 						</tr>
 						<tr>	
+							<th>Tempat, Tanggal Lahir</th>
+							<td><?php echo $tempat_lahir ?> , <?php echo $tanggal_lahir ?></td>
+						</tr>
+						<tr>	
+							<th>Jenis Kelamin</th>
+							<td><?php echo $jk ?></td>
+						</tr>
+						<tr>	
+							<th>Agama</th>
+							<td><?php echo $agama ?></td>
+						</tr>
+						<tr>	
 							<th>Alamat Sesuai KTP</th>
 							<td><?php echo $alamat_ktp ?></td>
 						</tr>
@@ -88,10 +100,6 @@
 							<td><?php echo $status_perkawinan ?></td>
 						</tr>
 						<tr>	
-							<th>Agama</th>
-							<td><?php echo $agama ?></td>
-						</tr>
-						<tr>	
 							<th>Anak ke</th>
 							<td><?php echo $anak_ke ?></td>
 						</tr>
@@ -100,27 +108,19 @@
 							<td><?php echo $dari_x_sdr ?></td>
 						</tr>
 						<tr>	
-							<th>Tempat, Tanggal Lahir</th>
-							<td><?php echo $tempat_lahir ?> , <?php echo $tanggal_lahir ?></td>
-						</tr>
-						<tr>	
-							<th>Jenis Kelamin</th>
-							<td><?php echo $jk ?></td>
-						</tr>
-						<tr>	
-							<th>No Hp</th>
+							<th>Nomor WA Aktif</th>
 							<td><?php echo $no_hp ?></td>
 						</tr>
 						<tr>	
-							<th>Facebook</th>
+							<th>Nama Pengguna Facebook</th>
 							<td><?php echo $facebook ?></td>
 						</tr>
 						<tr>	
-							<th>Instagram</th>
+							<th>Nama Pengguna Instagram</th>
 							<td><?php echo $instagram ?></td>
 						</tr>
 						<tr>	
-							<th>Twitter</th>
+							<th>Nama Pengguna Twitter</th>
 							<td><?php echo $twitter ?></td>
 						</tr>
 					<!-- <tr>	
@@ -156,10 +156,8 @@
 			$pekerjaan_ayah = $key_keluarga->pekerjaan_ayah;
 			$nama_ibu = $key_keluarga->nama_ibu;
 			$pekerjaan_ibu = $key_keluarga->pekerjaan_ibu; 
-			$nama_suami = $key_keluarga->nama_suami;
-			$pekerjaan_suami = $key_keluarga->pekerjaan_suami;
-			$nama_istri = $key_keluarga->nama_istri;
-			$pekerjaan_istri = $key_keluarga->pekerjaan_istri; 
+			$nama_pasangan = $key_keluarga->nama_pasangan;
+			$pekerjaan_pasangan = $key_keluarga->pekerjaan_pasangan;
 		}
 		?>
 
@@ -185,20 +183,12 @@
 						<td><?php echo $pekerjaan_ibu ?></td>
 					</tr>
 					<tr>
-						<th width="300">Nama Suami</th>
-						<td><?php echo $nama_suami ?></td>
+						<th>Nama Suami/Istri</th>
+						<td><?php echo $nama_pasangan ?></td>
 					</tr>
 					<tr>	
-						<th>Pekerjaan Suami</th>
-						<td><?php echo $pekerjaan_suami ?></td>
-					</tr>
-					<tr>	
-						<th>Nama Istri</th>
-						<td><?php echo $nama_istri ?></td>
-					</tr>
-					<tr>	
-						<th>Pekerjaan Istri</th>
-						<td><?php echo $pekerjaan_istri ?></td>
+						<th>Pekerjaan Suami/Istri</th>
+						<td><?php echo $pekerjaan_pasangan ?></td>
 					</tr>
 				</table>
 			</div>
@@ -219,10 +209,10 @@
 
 <div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 	<div class="col-sm-12">
-		<h3><b>Data Pendidikan</b></h3>			
+		<h3><b>Data Riwayat Pendidikan</b></h3>			
 	</div>
 	<div class="col-sm-12">
-		<h4><b>Pendidikan Formal</b></h4>
+		<h4><b>Riwayat Pendidikan Formal</b></h4>
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
@@ -285,7 +275,7 @@
 		</div>
 	</div>
 	<div class="col-sm-12">
-		<h4><b>Pendidikan Non Formal</b></h4>
+		<h4><b>Riwayat Pendidikan Non Formal</b></h4>
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
