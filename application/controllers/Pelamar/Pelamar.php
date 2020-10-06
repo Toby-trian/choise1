@@ -502,4 +502,9 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('pengaturan');
 	}
+
+	public function uploadberkas()
+	{
+		$this->load->view('uploadberkas');
+	}	
 }

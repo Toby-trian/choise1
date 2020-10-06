@@ -402,7 +402,7 @@
 	</div>
 </div>
 
-<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+<!-- <div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 	<div class="col-sm-12">
 		<h3><b>Upload Kelengkapan Berkas</b></h3>
 		<hr color="black">
@@ -417,7 +417,7 @@
 			<input type="file">
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="col-sm-12">
 	<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
