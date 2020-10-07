@@ -94,6 +94,15 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-xs-12 col-md-12 col-lg-12">
+					<div class="panel panel-red panel-widget">
+						<div class="row no-padding">
+							<h4>Jika ada pertanyaan bisa hubungi kontak dibawah:</h4>
+							<div class="medium"><em class="fa fa-md fa-phone color-black"></em> WhatsApp: +6285732273347</div>
+							<div class="medium"><em class="fa fa-md fa-at color-black"></em> Email: chaakraconsulting@gmail.com</div>
+						</div>
+					</div>
+				</div>
 			</div><!--/.row-->
 		</div>
 
