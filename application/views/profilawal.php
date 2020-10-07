@@ -80,6 +80,29 @@
 							<td><?php echo $tempat_lahir ?> , <?php echo $tanggal_lahir ?></td>
 						</tr>
 						<tr>	
+							<th>Usia</th>
+							<?php 
+							$tgl = strtotime($tanggal_lahir);
+							$current_time = time();
+
+							$age_years = date('Y', $current_time) - date('Y',$tgl);
+							$age_months = date('m', $current_time) - date('m',$tgl);
+							$age_days = date('d', $current_time) - date('d',$tgl);
+							if ($age_days<0) {
+								$days_in_month = date('t',$current_time);
+								$age_months--;
+								$age_days= $days_in_month+$age_days;
+							}
+
+							if ($age_months<0) {
+								$age_years--;
+								$age_months = 12+$age_months;
+							}
+
+							?>
+							<td><?php echo $age_years ?> tahun, <?php echo $age_months ?> bulan, <?php echo $age_days ?> hari</td>
+						</tr>
+						<tr>	
 							<th>Jenis Kelamin</th>
 							<td><?php echo $jk ?></td>
 						</tr>
@@ -101,11 +124,7 @@
 						</tr>
 						<tr>	
 							<th>Anak ke</th>
-							<td><?php echo $anak_ke ?></td>
-						</tr>
-						<tr>	
-							<th>Dari berapa bersaudara</th>
-							<td><?php echo $dari_x_sdr ?></td>
+							<td><?php echo $anak_ke ?> dari <?php echo $dari_x_sdr ?> bersaudara</td>
 						</tr>
 						<tr>	
 							<th>Nomor WA Aktif</th>
@@ -266,131 +285,131 @@
 								<button data-toggle="modal" data-target="#myModal<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
 							</td>
 						</tr>
-					<?php $modal ++ ;} ?>
-				</thead>	
-			</table>	
+						<?php $modal ++ ;} ?>
+					</thead>	
+				</table>	
+			</div>
+			<div style="text-align: right">
+				<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+			</div>
 		</div>
-		<div style="text-align: right">
-			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-		</div>
-	</div>
-	<div class="col-sm-12">
-		<h4><b>Riwayat Pendidikan Non Formal</b></h4>
-		<div class="table-responsive">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Nama Kursus/Pelatihan</th>	
-						<th>Tujuan Kursus/Pelatihan</th>						
-						<th>Nomor Sertifikat</th>	
-						<th>Tahun</th>
-					</tr>	
-					<?php 	
-					$pendidikannonformal = $this->db->query("SELECT * FROM tb_data_pendidikan_nonformal WHERE id_pelamar=$id_pelamar");
-					$modal = 0;
-					foreach ($pendidikannonformal->result() as $key_pendidikan_nonformal) {
-						$id_pendidikan_nonformal = $key_pendidikan_nonformal->id_pendidikan_nonformal;
-						$nama_pendidikan_nonformal = $key_pendidikan_nonformal->nama_pendidikan_nonformal;
-						$tujuan_pendidikan_nonformal = $key_pendidikan_nonformal->tujuan_pendidikan_nonformal;
-						$tahun_pendidikan_nonformal = $key_pendidikan_nonformal->tahun_pendidikan_nonformal;
-						$nomor_sertifikat = $key_pendidikan_nonformal->nomor_sertifikat;
-						?>
-						<div class="modal fade" id="myModal3<?php echo $modal ?>" role="dialog">
-							<div class="modal-dialog modal-sm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title">Hapus</h4>
-									</div>
-									<div class="modal-body">
-										<p>Ingin hapus pendidikan non formal <b><?php echo $nama_pendidikan_nonformal ?></b></p>
-										<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pendidikan_nonformal/'.$id_pendidikan_nonformal) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
-									</div>
-									<div class="modal-footer">
-									</div>
-								</div>
-							</div>
-						</div> 	
-
-						<tr>	
-							<td><?php echo $nama_pendidikan_nonformal?></td>
-							<td><?php echo $tujuan_pendidikan_nonformal?></td>
-							<td><?php echo $nomor_sertifikat?></td>
-							<td><?php echo $tahun_pendidikan_nonformal?></td>
-							<td>
-								<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikannonformal/'.$id_pendidikan_nonformal) ?>" class="btn btn-primary">Edit</a>
-								<button data-toggle="modal" data-target="#myModal3<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
-							</td>
-						</tr>
-					<?php $modal ++ ;} ?>
-				</thead>	
-			</table>	
-		</div>
-		<div style="text-align: right">
-			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikannonformal') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-		</div>
-	</div>
-</div>
-
-<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
-	<div class="col-sm-12">
-		<h3><b>Data Pengalaman Kerja</b></h3>
-		<hr color="black">
-		<div class="table-responsive">	
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Nama Perusahaan</th>	
-						<th>Periode</th>	
-						<th>Jabatan Akhir</th>	
-						<th>Alasan Keluar</th>	
-						<th>Nama Referensi</th>	
-						<th>NO Hp Referensi</th>	
-						<th>Aksi</th>
-					</tr>
-				</thead>
-				<tbody>	
-					<?php 	
-					$pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
-					$modal=0;
-					foreach ($pengalaman->result() as $key_pengalaman) {?>
-						<div class="modal fade" id="myModal2<?php echo $modal ?>" role="dialog">
-							<div class="modal-dialog modal-sm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title">Hapus</h4>
-									</div>
-									<div class="modal-body">
-										<p>Ingin hapus pengalaman di <b><?php echo $key_pengalaman->nama_perusahaan ?></b> </p>
-										<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pengalaman/'.$key_pengalaman->id_pengalaman) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
-									</div>
-									<div class="modal-footer">
-
-									</div>
-								</div>
-							</div>
-						</div> 	
-
+		<div class="col-sm-12">
+			<h4><b>Riwayat Pendidikan Non Formal</b></h4>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
 						<tr>
-						<td><?php echo $key_pengalaman->nama_perusahaan ?></td>		
-						<td><?php echo $key_pengalaman->periode ?></td>		
-						<td><?php echo $key_pengalaman->jabatan_akhir ?></td>		
-						<td><?php echo $key_pengalaman->alasan_keluar ?></td>		
-						<td><?php echo $key_pengalaman->nama_referensi ?></td>		
-						<td><?php echo $key_pengalaman->no_hp_referensi ?></td>	
-						<td>	
-							<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatapengalamankerja/'.$key_pengalaman->id_pengalaman) ?>" class="btn btn-primary">Edit</a>
-							<a data-toggle="modal" data-target="#myModal2<?php echo $modal ?>" class="btn btn-danger">Hapus</a>
-						</td>
+							<th>Nama Kursus/Pelatihan</th>	
+							<th>Tujuan Kursus/Pelatihan</th>						
+							<th>Nomor Sertifikat</th>	
+							<th>Tahun</th>
 						</tr>	
-					<?php $modal++;} ?>
-				</tbody>
-			</table>
+						<?php 	
+						$pendidikannonformal = $this->db->query("SELECT * FROM tb_data_pendidikan_nonformal WHERE id_pelamar=$id_pelamar");
+						$modal = 0;
+						foreach ($pendidikannonformal->result() as $key_pendidikan_nonformal) {
+							$id_pendidikan_nonformal = $key_pendidikan_nonformal->id_pendidikan_nonformal;
+							$nama_pendidikan_nonformal = $key_pendidikan_nonformal->nama_pendidikan_nonformal;
+							$tujuan_pendidikan_nonformal = $key_pendidikan_nonformal->tujuan_pendidikan_nonformal;
+							$tahun_pendidikan_nonformal = $key_pendidikan_nonformal->tahun_pendidikan_nonformal;
+							$nomor_sertifikat = $key_pendidikan_nonformal->nomor_sertifikat;
+							?>
+							<div class="modal fade" id="myModal3<?php echo $modal ?>" role="dialog">
+								<div class="modal-dialog modal-sm">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title">Hapus</h4>
+										</div>
+										<div class="modal-body">
+											<p>Ingin hapus pendidikan non formal <b><?php echo $nama_pendidikan_nonformal ?></b></p>
+											<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pendidikan_nonformal/'.$id_pendidikan_nonformal) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+										</div>
+										<div class="modal-footer">
+										</div>
+									</div>
+								</div>
+							</div> 	
+
+							<tr>	
+								<td><?php echo $nama_pendidikan_nonformal?></td>
+								<td><?php echo $tujuan_pendidikan_nonformal?></td>
+								<td><?php echo $nomor_sertifikat?></td>
+								<td><?php echo $tahun_pendidikan_nonformal?></td>
+								<td>
+									<a href="<?php echo base_url('Pelamar/Pelamar/ubahpendidikannonformal/'.$id_pendidikan_nonformal) ?>" class="btn btn-primary">Edit</a>
+									<button data-toggle="modal" data-target="#myModal3<?php echo $modal ?>" type="button" class="btn btn-danger">Hapus</button>
+								</td>
+							</tr>
+							<?php $modal ++ ;} ?>
+						</thead>	
+					</table>	
+				</div>
+				<div style="text-align: right">
+					<a href="<?php  echo base_url('Pelamar/Pelamar/tambahpendidikannonformal') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+				</div>
+			</div>
 		</div>
-		<div style="text-align: right;">
-			<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
-		</div>
-	</div>
-</div>
+
+		<div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+			<div class="col-sm-12">
+				<h3><b>Data Pengalaman Kerja</b></h3>
+				<hr color="black">
+				<div class="table-responsive">	
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Nama Perusahaan</th>	
+								<th>Periode</th>	
+								<th>Jabatan Akhir</th>	
+								<th>Alasan Keluar</th>	
+								<th>Nama Referensi</th>	
+								<th>NO Hp Referensi</th>	
+								<th>Aksi</th>
+							</tr>
+						</thead>
+						<tbody>	
+							<?php 	
+							$pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
+							$modal=0;
+							foreach ($pengalaman->result() as $key_pengalaman) {?>
+								<div class="modal fade" id="myModal2<?php echo $modal ?>" role="dialog">
+									<div class="modal-dialog modal-sm">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">Hapus</h4>
+											</div>
+											<div class="modal-body">
+												<p>Ingin hapus pengalaman di <b><?php echo $key_pengalaman->nama_perusahaan ?></b> </p>
+												<a href="<?php echo base_url('Pelamar/Pelamar/hapus_pengalaman/'.$key_pengalaman->id_pengalaman) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+											</div>
+											<div class="modal-footer">
+
+											</div>
+										</div>
+									</div>
+								</div> 	
+
+								<tr>
+									<td><?php echo $key_pengalaman->nama_perusahaan ?></td>		
+									<td><?php echo $key_pengalaman->periode ?></td>		
+									<td><?php echo $key_pengalaman->jabatan_akhir ?></td>		
+									<td><?php echo $key_pengalaman->alasan_keluar ?></td>		
+									<td><?php echo $key_pengalaman->nama_referensi ?></td>		
+									<td><?php echo $key_pengalaman->no_hp_referensi ?></td>	
+									<td>	
+										<a href="<?php echo base_url('Pelamar/Pelamar/ubahdatapengalamankerja/'.$key_pengalaman->id_pengalaman) ?>" class="btn btn-primary">Edit</a>
+										<a data-toggle="modal" data-target="#myModal2<?php echo $modal ?>" class="btn btn-danger">Hapus</a>
+									</td>
+								</tr>	
+								<?php $modal++;} ?>
+							</tbody>
+						</table>
+					</div>
+					<div style="text-align: right;">
+						<a href="<?php  echo base_url('Pelamar/Pelamar/tambahdatapengalamankerja') ?>" class="btn btn-blue mr-2 mb-2"><em class="fa fa-plus color-white"></em> Tambah Data</a>
+					</div>
+				</div>
+			</div>
 
 <!-- <div class="col-sm-12" style="background-color: #fff; padding-top: 20px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 	<div class="col-sm-12">

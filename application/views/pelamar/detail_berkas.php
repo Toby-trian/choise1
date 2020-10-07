@@ -9,7 +9,7 @@
       {
 
         ?>
-        <h1><i class="fa fa-th-list"></i> Data Keluarga </h1>
+        <h1><i class="fa fa-th-list"></i> Data Berkas Pelamar </h1>
 
       <?php } 
       else
@@ -21,14 +21,14 @@
           if ($key_pelamar->id_pelamar==$key['id_pelamar']) { 
             $pelamar = $key_pelamar->nama_pelamar;
             ?>
-            <h1><i class="fa fa-th-list"></i> Detail Keluarga <b><?php echo $pelamar ?></b></h1>
+            <h1><i class="fa fa-th-list"></i> Detail Berkas Pelamar <b><?php echo $pelamar ?></b></h1>
           <?php } } } } ?> 
 
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
           <li class="breadcrumb-item">User</li>
-          <li class="breadcrumb-item"><a href="#">Data Detail Keluarga</a></li>
+          <li class="breadcrumb-item"><a href="#">Data Detail Berkas Pelamar</a></li>
         </ul>
       </div>
       <div class="row">
@@ -47,7 +47,10 @@
              {
               foreach ($array as $key)
               {
+                $berkas = $key['berkas'];
+              
                 ?>
+
                 <div style="margin-bottom: 3%;">
 
                   <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>" class="btn btn-primary">Data Diri</a>
@@ -58,40 +61,10 @@
                   <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$key['id_pelamar']) ?>" class="btn btn-primary">Motivation Letter</a>
                   <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_berkas/'.$key['id_pelamar']) ?>" class="btn btn-primary">Berkas</a>
                 </div>
-                <div class="table-responsive">
-                  <table class="table table-hover table-bordered" id="sampleTable">
-                    <tbody>
-                      <tr>
-                        <th width="150">Nama Ayah</th>
-                        <td><?php echo $key['nama_ayah'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Pekerjaan Ayah</th>
-                        <td><?php echo $key['pekerjaan_ayah'] ?></td>
-                      </tr>                
-                      <tr>
-                        <th>Nama Ibu</th>
-                        <td><?php echo $key['nama_ibu'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Pekerjaan Ibu</th>
-                        <td><?php echo $key['pekerjaan_ibu'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Nama Suami/Istri</th>
-                        <td><?php echo $key['nama_pasangan'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Pekerjaan Suami/Istri</th>
-                        <td><?php echo $key['pekerjaan_pasangan'] ?></td>
-                      </tr>
-
-                    <?php } } ?>
-
-                  </tbody>
-                </table>
-
+              <div align="center">
+                <embed type="application/pdf" width="90%" height="600" src="<?php echo base_url('./upload/berkas_pelamar/'.$berkas) ?>"></embed>
               </div>
+            <?php }} ?>
             </div>
           </div>
         </div>

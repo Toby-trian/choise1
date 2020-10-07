@@ -44,6 +44,18 @@ class Data_pelamar extends CI_Controller {
 		$this->load->view('pelamar/detail_pendidikan',$paket);
 	}
 
+	public function detail_pendidikan_non($id_detail)
+	{
+		$paket['array']=$this->mdl_data_pelamar->ambildata_pendidikan_non($id_detail);	
+		$this->load->view('pelamar/detail_pendidikan_non_formal',$paket);
+	}
+
+	public function detail_berkas($id_detail)
+	{
+		$paket['array']=$this->mdl_data_pelamar->ambildata_berkas($id_detail);	
+		$this->load->view('pelamar/detail_berkas',$paket);
+	}
+
 	public function detail_keluarga($id_detail)
 	{
 		$paket['array']=$this->mdl_data_pelamar->ambildata_keluarga($id_detail);	

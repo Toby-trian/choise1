@@ -23,7 +23,7 @@
             $pelamar = $key_pelamar->nama_pelamar;
             ?>
           <?php } } } } ?> 
-            <h1><i class="fa fa-th-list"></i> Detail Pengalaman <b><?php echo $pelamar ?></b></h1>
+          <h1><i class="fa fa-th-list"></i> Detail Pengalaman <b><?php echo $pelamar ?></b></h1>
 
         </div>
         <ul class="app-breadcrumb breadcrumb">
@@ -45,48 +45,50 @@
                echo "Data belum diisi oleh pelamar";
              }
              else
-             { ?>
-              <div style="margin-bottom: 3%;">
+               { ?>
+                <div style="margin-bottom: 3%;">
 
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$id) ?>" class="btn btn-primary">Lihat Data Diri</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$id) ?>" class="btn btn-primary">Lihat Pendidikan</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$id) ?>" class="btn btn-primary">Lihat Data Keluarga</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pengalaman/'.$id) ?>" class="btn btn-primary">Lihat Pengalaman Kerja</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$id) ?>" class="btn btn-primary">Lihat Motivation Letter</a>
-                </div>
-                  <table class="table table-hover table-bordered" id="sampleTable">
-                    <thead>
-                      <tr>
-                        <!-- <th>No</th> -->
-                        <th>Soal</th>
-                        <th>Jawaban</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <?php 
-                      foreach ($array as $key)
-                      {
-                        $jawaban1 = $key['jawaban_soal'];
-                        $jawaban2 = $key['jawaban_soal2'];
-                      }
-                      ?>
-                        <div class="table-responsive">
-                        <tr>
-                          <td>1. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA PENDEK (1 tahun kedepan)</td>
-                          <td><?php echo $jawaban1 ?></td>
-                        </tr>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>" class="btn btn-primary">Data Diri</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pendidikan</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pendidikan Non Formal</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$key['id_pelamar']) ?>" class="btn btn-primary">Data Keluarga</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pengalaman/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pengalaman Kerja</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$key['id_pelamar']) ?>" class="btn btn-primary">Motivation Letter</a>
+                 <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_berkas/'.$key['id_pelamar']) ?>" class="btn btn-primary">Berkas</a>
+               </div>
+               <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <!-- <th>No</th> -->
+                    <th>Soal</th>
+                    <th>Jawaban</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                  foreach ($array as $key)
+                  {
+                    $jawaban1 = $key['jawaban_soal'];
+                    $jawaban2 = $key['jawaban_soal2'];
+                  }
+                  ?>
+                  <div class="table-responsive">
+                    <tr>
+                      <td>1. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA PENDEK (1 tahun kedepan)</td>
+                      <td><?php echo $jawaban1 ?></td>
+                    </tr>
 
-                        <tr>
-                          <td>2. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA MENENGAH (3 tahun mendatang)</td>
-                          <td><?php echo $jawaban2 ?></td>
-                        </tr>
-                    </tbody>
-                  </table>
-<?php } ?>
-                </div>
-              </div>
+                    <tr>
+                      <td>2. Jelaskan secara rinci mengenai impian dan target yang Anda miliki khususnya terkait dengan pencapaian karir dan kehidupan pribadi Anda pada JANGKA MENENGAH (3 tahun mendatang)</td>
+                      <td><?php echo $jawaban2 ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              <?php } ?>
             </div>
           </div>
         </div>
-      </main>
-      <?php $this->load->view('layout/footer'); ?>
+      </div>
+    </div>
+  </main>
+  <?php $this->load->view('layout/footer'); ?>

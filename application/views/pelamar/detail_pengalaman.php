@@ -50,37 +50,31 @@
                 ?>
                 <div style="margin-bottom: 3%;">
 
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Data Diri</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Pendidikan</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Data Keluarga</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pengalaman/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Pengalaman Kerja</a>
-                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$key['id_pelamar']) ?>" class="btn btn-primary">Lihat Motivation Letter</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pelamar/'.$key['id_pelamar']) ?>" class="btn btn-primary">Data Diri</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pendidikan</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pendidikan_non/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pendidikan Non Formal</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_keluarga/'.$key['id_pelamar']) ?>" class="btn btn-primary">Data Keluarga</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_pengalaman/'.$key['id_pelamar']) ?>" class="btn btn-primary">Pengalaman Kerja</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_motlet/'.$key['id_pelamar']) ?>" class="btn btn-primary">Motivation Letter</a>
+                  <a href="<?php echo base_url('Pelamar/Data_pelamar/detail_berkas/'.$key['id_pelamar']) ?>" class="btn btn-primary">Berkas</a>
                 </div>
                 <div class="table-responsive">
                   <table class="table table-hover table-bordered" id="sampleTable">
                     <tbody>
                       <tr>
-                        <th width="150">Nama Perusahaan</th>
-                        <td><?php echo $key['nama_perusahaan'] ?></td>
-                      </tr>
-                      <tr>
+                        <th>Nama Perusahaan</th>
                         <th>Periode</th>
-                        <td><?php echo $key['periode'] ?></td>
-                      </tr>                
-                      <tr>
                         <th>Jabatan Akhir</th>
-                        <td><?php echo $key['jabatan_akhir'] ?></td>
-                      </tr>
-                      <tr>
                         <th>Alasan Keluar</th>
-                        <td><?php echo $key['alasan_keluar'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Referensi</th>
-                        <td><?php echo $key['nama_referensi'] ?></td>
-                      </tr>
-                      <tr>
+                        <th>Nama Referensi</th>
                         <th>No Hp Referensi</th>
+                      </tr>
+                      <tr>
+                        <td><?php echo $key['nama_perusahaan'] ?></td>
+                        <td><?php echo $key['periode'] ?></td>
+                        <td><?php echo $key['jabatan_akhir'] ?></td>
+                        <td><?php echo $key['alasan_keluar'] ?></td>
+                        <td><?php echo $key['nama_referensi'] ?></td>
                         <td><?php echo $key['no_hp_referensi'] ?></td>
                       </tr>
 

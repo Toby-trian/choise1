@@ -68,6 +68,52 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_pendidikan_non($id=FALSE){
+		
+		if($id==TRUE){
+
+			$this->db->from('tb_data_pendidikan_nonformal');  
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}else{
+
+			$this->db->from('tb_data_diri');
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}
+
+		return $query->result_array();
+	}
+
+	public function ambildata_berkas($id=FALSE){
+		
+		if($id==TRUE){
+
+			$this->db->from('tb_berkas');  
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}else{
+
+			$this->db->from('tb_data_diri');
+
+			$this->db->where('id_pelamar',$id);
+
+			$query = $this->db->get();
+
+		}
+
+		return $query->result_array();
+	}
+
 	public function ambildata_keluarga($id=FALSE){
 		
 		if($id==TRUE){

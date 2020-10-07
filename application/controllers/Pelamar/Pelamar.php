@@ -132,20 +132,23 @@ class Pelamar extends CI_Controller {
 	public function tambahdatadiri()
 	{
 		$this->form_validation->set_rules('nik','Nama','trim|required');
-		$this->form_validation->set_rules('nama_pelamar','Nama','trim|required');
-		$this->form_validation->set_rules('alamat','Nama','trim|required');
-		$this->form_validation->set_rules('tempat_lahir','Nama','trim|required');
-		$this->form_validation->set_rules('tgl_lahir','Nama','trim|required');
-		$this->form_validation->set_rules('alamat_ktp','Nama','trim|required');
-		$this->form_validation->set_rules('status_perkawinan','Nama','trim|required');
-		$this->form_validation->set_rules('agama','Nama','trim|required');
-		$this->form_validation->set_rules('anak_ke','Nama','trim|required');
-		$this->form_validation->set_rules('dari_x_sdr','Nama','trim|required');
+		// $this->form_validation->set_rules('nama_pelamar','Nama','trim|required');
+		// $this->form_validation->set_rules('alamat','Nama','trim|required');
+		// $this->form_validation->set_rules('tempat_lahir','Nama','trim|required');
+		// $this->form_validation->set_rules('tgl_lahir','Nama','trim|required');
+		// $this->form_validation->set_rules('alamat_ktp','Nama','trim|required');
+		// $this->form_validation->set_rules('status_perkawinan','Nama','trim|required');
+		// $this->form_validation->set_rules('agama','Nama','trim|required');
+		// $this->form_validation->set_rules('anak_ke','Nama','trim|required');
+		// $this->form_validation->set_rules('dari_x_sdr','Nama','trim|required');
 		// $this->form_validation->set_rules('gender','Nama','trim|required');
-		$this->form_validation->set_rules('no_hp','Nama','trim|required');
-		$this->form_validation->set_rules('facebook','Nama','trim|required');
-		$this->form_validation->set_rules('instagram','Nama','trim|required');
-		$this->form_validation->set_rules('twitter','Nama','trim|required');
+		// $this->form_validation->set_rules('no_hp','Nama','trim|required');
+		// $this->form_validation->set_rules('facebook','Nama','trim|required');
+		// $this->form_validation->set_rules('instagram','Nama','trim|required');
+		// $this->form_validation->set_rules('twitter','Nama','trim|required');
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$nikPel = $this->input->post('nik');
 
 		if ($this->form_validation->run()==FALSE ) {
 			$data['msg_error']="Silahkan isi semua kolom";
@@ -168,6 +171,11 @@ class Pelamar extends CI_Controller {
 			$send['facebook']=$this->input->post('facebook');
 			$send['instagram']=$this->input->post('instagram');
 			$send['twitter']=$this->input->post('twitter');
+
+			$query_data_diri = $this->db->query("SELECT * FROM tb_data_diri WHERE nik = $nikPel");
+			if ($query_data_diri->num_rows()>0) {
+				echo '<script language="javascript"> alert("NIK sudah ada")</script>';
+			}
 			$kembalian['jumlah']=$this->mdl_home->isi_data_diri($send);
 
 			$this->load->view('profilawal',$kembalian);

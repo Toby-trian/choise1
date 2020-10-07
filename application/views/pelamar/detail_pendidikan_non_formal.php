@@ -9,7 +9,7 @@
       {
 
         ?>
-        <h1><i class="fa fa-th-list"></i> Data Keluarga </h1>
+        <h1><i class="fa fa-th-list"></i> Data Pendidikan Non Formal </h1>
 
       <?php } 
       else
@@ -21,14 +21,14 @@
           if ($key_pelamar->id_pelamar==$key['id_pelamar']) { 
             $pelamar = $key_pelamar->nama_pelamar;
             ?>
-            <h1><i class="fa fa-th-list"></i> Detail Keluarga <b><?php echo $pelamar ?></b></h1>
+            <h1><i class="fa fa-th-list"></i> Detail Pendidikan Non Formal <b><?php echo $pelamar ?></b></h1>
           <?php } } } } ?> 
 
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
           <li class="breadcrumb-item">User</li>
-          <li class="breadcrumb-item"><a href="#">Data Detail Keluarga</a></li>
+          <li class="breadcrumb-item"><a href="#">Data Detail Pendidikan Non Formal</a></li>
         </ul>
       </div>
       <div class="row">
@@ -62,31 +62,19 @@
                   <table class="table table-hover table-bordered" id="sampleTable">
                     <tbody>
                       <tr>
-                        <th width="150">Nama Ayah</th>
-                        <td><?php echo $key['nama_ayah'] ?></td>
+                        <th>Nama Kursus/Pelatihan</th>
+                        <th>Tujuan Kursus</th>
+                        <th>Tahun</th>
+                        <th>Nomor Sertifikat</th>
                       </tr>
                       <tr>
-                        <th>Pekerjaan Ayah</th>
-                        <td><?php echo $key['pekerjaan_ayah'] ?></td>
-                      </tr>                
-                      <tr>
-                        <th>Nama Ibu</th>
-                        <td><?php echo $key['nama_ibu'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Pekerjaan Ibu</th>
-                        <td><?php echo $key['pekerjaan_ibu'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Nama Suami/Istri</th>
-                        <td><?php echo $key['nama_pasangan'] ?></td>
-                      </tr>
-                      <tr>
-                        <th>Pekerjaan Suami/Istri</th>
-                        <td><?php echo $key['pekerjaan_pasangan'] ?></td>
+                        <td><?php echo $key['nama_pendidikan_nonformal'] ?></td>
+                        <td><?php echo $key['tujuan_pendidikan_nonformal'] ?></td>
+                        <td><?php echo $key['tahun_pendidikan_nonformal'] ?></td>
+                        <td><?php echo $key['nomor_sertifikat'] ?></td>
                       </tr>
 
-                    <?php } } ?>
+                    <?php }} ?>
 
                   </tbody>
                 </table>

@@ -4,28 +4,28 @@
 	<title>Choise-Daftar</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets2/daftar/images/icons/favicon.ico') ?>"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/bootstrap/css/bootstrap.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/animate/animate.css') ?>">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/css-hamburgers/hamburgers.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/animsition/css/animsition.min.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/select2/select2.min.css') ?>">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/vendor/daterangepicker/daterangepicker.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/css/util.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets2/daftar/css/main.css') ?>">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 </head>
 <body>
 	
@@ -48,12 +48,12 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
-						<input class="input100" type="password" name="pass" placeholder="Kata Sandi" id="txtPassword">
+						<input class="input100" type="password" id="password" name="pass" placeholder="Kata Sandi" id="txtPassword">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please re-enter password">
-						<input class="input100" type="password" name="repass" placeholder="Konfirmasi Kata Sandi" id="txtComfirmPassword">
+						<input class="input100" type="password" name="repass" id="confirm_password" placeholder="Konfirmasi Kata Sandi" id="txtComfirmPassword">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -75,22 +75,39 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		
+		var password = document.getElementById("password")
+		, confirm_password = document.getElementById("confirm_password");
+
+		function validatePassword(){
+			if(password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords Tidak Sama");
+			} else {
+				confirm_password.setCustomValidity('');
+			}
+		}
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+	</script>
 	
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/jquery/jquery-3.2.1.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/animsition/js/animsition.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/bootstrap/js/popper.js') ?>"></script>
 	<script src="<?php echo base_url('assets2/daftar/vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/select2/select2.min.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/daterangepicker/moment.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets2/daftar/vendor/daterangepicker/daterangepicker.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/vendor/countdowntime/countdowntime.js') ?>"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="<?php echo base_url('assets2/daftar/js/main.js') ?>"></script>
 
 </body>
