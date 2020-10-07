@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2020 at 10:28 AM
+-- Generation Time: Oct 06, 2020 at 11:38 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -71,6 +71,18 @@ INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `id_perusahaan`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_berkas`
+--
+
+CREATE TABLE `tb_berkas` (
+  `id_berkas` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `berkas` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_data_diri`
 --
 
@@ -99,7 +111,7 @@ CREATE TABLE `tb_data_diri` (
 
 INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `alamat_ktp`, `status_perkawinan`, `agama`, `anak_ke`, `dari_x_sdr`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `facebook`, `instagram`, `twitter`) VALUES
 ('1212132442131', 3, 'Fulanah', 'Gempol', '', '', '', '', '', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-'),
-('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Belum Menikah', 'Hindu', '2', '4', 'test', '2020-07-07', 'P', '12345678', 'hahas', '-', '-'),
+('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '2020-07-07', 'P', '12345678', 'hahas', '-', '-'),
 ('1298192819', 4, 'Test 123', 'hahah', '', '', '', '', '', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj'),
 ('78675654536879', 2, 'Fulan', 'Tak diketahui', '', '', '', '', '', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-');
 
@@ -138,20 +150,18 @@ CREATE TABLE `tb_data_keluarga` (
   `pekerjaan_ayah` varchar(50) NOT NULL,
   `nama_ibu` varchar(50) NOT NULL,
   `pekerjaan_ibu` varchar(50) NOT NULL,
-  `nama_suami` varchar(50) NOT NULL,
-  `pekerjaan_suami` varchar(50) NOT NULL,
-  `nama_istri` varchar(50) NOT NULL,
-  `pekerjaan_istri` varchar(50) NOT NULL
+  `nama_pasangan` varchar(50) NOT NULL,
+  `pekerjaan_pasangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_data_keluarga`
 --
 
-INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `nama_suami`, `pekerjaan_suami`, `nama_istri`, `pekerjaan_istri`) VALUES
-(1, 1, 'Joko', 'Swasta', 'Siadah', 'Ibu rumah tangga', 'mang oleh', 'penjual odading', 'ny oleh', 'promotor odading'),
-(2, 2, 'Daniel', 'PNS', 'Nur', 'Guru', '', '', '', ''),
-(3, 4, 'hehe', 'swasta', 'huhu', 'dagang', '', '', '', '');
+INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
+(1, 1, 'Joko', 'Swasta', 'Siadah', 'Ibu rumah tangga', 'kang oleh', 'penjual odading'),
+(2, 2, 'Daniel', 'PNS', 'Nur', 'Guru', '', ''),
+(3, 4, 'hehe', 'swasta', 'huhu', 'dagang', '', '');
 
 -- --------------------------------------------------------
 
@@ -175,7 +185,7 @@ CREATE TABLE `tb_data_pendidikan` (
 --
 
 INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendidikan`, `nama_institusi`, `jurusan`, `tahun_masuk`, `tahun_keluar`, `nilai_akhir`) VALUES
-(0, 1, 'SMA/SMK', 'SMKN 10 Magelang', 'Akuntansi', '2017', '2020', '70'),
+(1, 1, 'SMA/SMK', 'SMKN 10 Magelang', 'Akuntansi', '2017', '2020', '70'),
 (2, 2, 'S1', 'Univ Sendiri', 'Hukum', '2014', '2018', '4'),
 (3, 3, 'SMP', 'SMP Maju Putra', '-', '2009', '2012', '90');
 
@@ -636,6 +646,12 @@ ALTER TABLE `tb_apply`
   ADD PRIMARY KEY (`id_apply`);
 
 --
+-- Indexes for table `tb_berkas`
+--
+ALTER TABLE `tb_berkas`
+  ADD PRIMARY KEY (`id_berkas`);
+
+--
 -- Indexes for table `tb_data_diri`
 --
 ALTER TABLE `tb_data_diri`
@@ -772,6 +788,12 @@ ALTER TABLE `tb_apply`
   MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tb_berkas`
+--
+ALTER TABLE `tb_berkas`
+  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
@@ -793,7 +815,7 @@ ALTER TABLE `tb_data_pendidikan`
 -- AUTO_INCREMENT for table `tb_data_pendidikan_nonformal`
 --
 ALTER TABLE `tb_data_pendidikan_nonformal`
-  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_data_pengalaman_kerja`

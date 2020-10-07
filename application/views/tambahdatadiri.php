@@ -49,6 +49,19 @@
 				  <input class="form-check-input" type="radio" name="gender" value="P"> Perempuan
 				</div>
 				<div class="form-group col-sm-12">
+			      <label for="agama">Agama</label>
+			      <select name="agama" class="form-control form-control-lg">
+					<option value="">--== Pilih Agama ==--</option>
+					<option value="Islam">Islam</option>
+			        <option value="Hindu">Hindu</option>
+			        <option value="Budha">Budha</option>
+			        <option value="Kristen Protestan">Kristen Protestan</option>
+			        <option value="Katolik">Katolik</option>
+			        <option value="Kong Hu Cu">Kong Hu Cu</option>
+			        <option value="Lainnya">Lainnya</option>
+			      </select>
+			    </div>
+				<div class="form-group col-sm-12">
 			      <label for="alamat_ktp">Alamat Sesuai KTP</label>
 			      <input type="text" class="form-control" name="alamat_ktp" >
 			    </div>
@@ -69,10 +82,6 @@
 			      </select>
 			    </div>
 			    <div class="form-group col-sm-12">
-			      <label for="agama">Agama</label>
-			      <input type="text" class="form-control" name="agama" >
-			    </div>
-			    <div class="form-group col-sm-12">
 			      <label for="anak_ke">Anak ke</label>
 			      <input type="text" class="form-control" name="anak_ke" >
 			    </div>
@@ -85,15 +94,15 @@
 			      <input type="text" class="form-control" name="no_hp">
 			    </div>
 			    <div class="form-group col-sm-12">
-			      <label for="akunFb">Akun Facebook</label>
+			      <label for="akunFb">Nama Pengguna Facebook</label>
 			      <input type="text" class="form-control" name="facebook">
 			    </div>
 			    <div class="form-group col-sm-12">
-			      <label for="akunIg">Akun Instagram</label>
+			      <label for="akunIg">Nama Pengguna Instagram</label>
 			      <input type="text" class="form-control" name="instagram">
 			    </div>
 			    <div class="form-group col-sm-12">
-			      <label for="akunTwtitter">Akun Twitter</label>
+			      <label for="akunTwtitter">Nama Pengguna Twitter</label>
 			      <input type="text" class="form-control" name="twitter">
 			    </div>
 			    <!-- <div class="form-group col-sm-12">

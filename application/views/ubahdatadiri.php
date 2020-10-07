@@ -49,6 +49,20 @@
 				  <input class="form-check-input" type="radio" name="gender" value="P" <?php if ($data[0]['jenis_kelamin']=="P") { ?> checked="checked" <?php } ?>> Perempuan
 				</div>
 				<div class="form-group col-sm-12">
+			      <label for="agama">Agama</label>
+			      <select name="agama" class="form-control form-control-lg">
+			      	<?php $agama = $data[0]['agama'] ?>
+					<option value="">--== Pilih Agama ==--</option>
+					<option value="Islam" <?php echo ($agama == "Islam" ? "selected":"") ?>>Islam</option>
+			        <option value="Hindu" <?php echo ($agama == "Hindu" ? "selected":"") ?>>Hindu</option>
+			        <option value="Budha" <?php echo ($agama == "Budha" ? "selected":"") ?>>Budha</option>
+			        <option value="Kristen Protestan" <?php echo ($agama == "Kristen Protestan" ? "selected":"") ?>>Kristen Protestan</option>
+			        <option value="Katolik" <?php echo ($agama == "Katolik" ? "selected":"") ?>>Katolik</option>
+			        <option value="Kong Hu Cu" <?php echo ($agama == "Kong Hu Cu" ? "selected":"") ?>>Kong Hu Cu</option>
+			        <option value="Lainnya" <?php echo ($agama == "Lainnya" ? "selected":"") ?>>Lainnya</option>
+			      </select>
+			    </div>
+				<div class="form-group col-sm-12">
 			      <label for="alamat_ktp">Alamat Sesuai KTP</label>
 			      <input type="text" class="form-control" name="alamat_ktp" value="<?php echo $data[0]['alamat_ktp'] ?>">
 			    </div>
@@ -65,13 +79,9 @@
 			      <select name="status_perkawinan" class="form-control form-control-lg">
 			      	<?php $status_perkawinan = $data[0]['status_perkawinan'] ?>
 					<option value="">--== Pilih Status Perkawinan ==--</option>
-					<option value="Belum Menikah" <?php echo ($status_perkawinan == "belum_menikah" ? "selected":"") ?>>Belum Menikah</option>
-			        <option value="Sudah Menikah" <?php echo ($status_perkawinan == "sudah_menikah" ? "selected":"") ?>>Sudah Menikah</option>
+					<option value="Belum Menikah" <?php echo ($status_perkawinan == "Belum Menikah" ? "selected":"") ?>>Belum Menikah</option>
+			        <option value="Sudah Menikah" <?php echo ($status_perkawinan == "Sudah Menikah" ? "selected":"") ?>>Sudah Menikah</option>
 			      </select>
-			    </div>
-			    <div class="form-group col-sm-12">
-			      <label for="agama">Agama</label>
-			      <input type="text" class="form-control" name="agama" value="<?php echo $data[0]['agama'] ?>">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="anak_ke">Anak ke</label>
