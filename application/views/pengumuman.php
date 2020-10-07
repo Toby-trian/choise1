@@ -17,16 +17,17 @@
 		</div>
 	</div><!--/.row-->
 	<?php 
-	$id_pelamar = $this->session->userdata('ses_id');
-	$apply = $this->db->query("SELECT * FROM tb_apply WHERE id_pelamar = $id_pelamar");
-	foreach ($apply->result() as $key) {
-		$status = $key->status_lamaran;
-	}
+	foreach ($array as $key) {
+		$status = $key['status_lamaran'];
+		$idPel = $key['id_pelamar'];
+		$idLow = $key['id_lowongan'];
+
 
 	if ($status == "Diterima") { ?>
 		<div class="alert bg-info" >
 			<h3><em class="fa fa-bullhorn" style="color: #fff"></em></h3>
-			<p class="card-text" style="color: #fff"><b>Selamat!</b> Anda dinyatakan lolos seleksi administrasi. Silahkan mempersiapkan diri untuk mengikuti rangkaian seleksi sesuai jadwal yang sudah ditentukan. Terima kasih.
+			<!-- <p class="card-text" style="color: #fff"><b>Selamat!</b> Anda dinyatakan lolos seleksi administrasi. Silahkan mempersiapkan diri untuk mengikuti rangkaian seleksi sesuai jadwal yang sudah ditentukan. Terima kasih.</p> -->
+			<p class="card-text" style="color: #fff"><b>Selamat!</b> Anda dinyatakan lolos seleksi administrasi. Silahkan mempersiapkan diri untuk mengikuti tahap selanjutnya.</p>
 		</div><br>
 
 	<?php } else if($status == "Belum ada tindakan") { ?>
@@ -41,7 +42,7 @@
 			<p class="card-text" style="color: #fff"><b>Mohon maaf</b>, anda dinyatakan gugur dalam seleksi tes tulis. Tetap semangat ya! Terima kasih.
 		</div><br>
 
-	<?php } ?>
+	<?php }} ?>
 			<div class="col-sm-12">
 				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 			</div>

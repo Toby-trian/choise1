@@ -55,12 +55,33 @@ class Lamaran extends CI_Controller {
 	
 	public function lowongantersedia()
 	{
+
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		$queryDiri = $this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar = $id_pelamar");
+		$queryKeluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $id_pelamar");
+		$queryPendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar = $id_pelamar");
+		$queryPendidikanNon = $this->db->query("SELECT * FROM tb_data_pendidikan_nonformal WHERE id_pelamar = $id_pelamar");
+		$queryPengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $id_pelamar");
+
+		if ($queryDiri->num_rows()<1 && $queryKeluarga->num_rows()<1 && $queryPendidikan->num_rows()<1) {
+		 	echo '<script language="javascript"> alert("Silahkan isi semua data yang ada di menu Profil Saya");document.location.href = "../../Pelamar/Pelamar/profilawal";</script>';
+		}elseif ($queryDiri->num_rows()<1) {
+			echo '<script language="javascript"> alert("Silahkan isi data diri anda terlebih dahulu");document.location.href = "../../Pelamar/Pelamar/profilawal";</script>';
+		} 
+		elseif ($queryKeluarga->num_rows()<1) {
+			echo '<script language="javascript"> alert("Silahkan isi data keluarga anda terlebih dahulu");document.location.href = "../../Pelamar/Pelamar/profilawal";</script>';
+		} 
+		elseif ($queryPendidikan->num_rows()<1) {
+			echo '<script language="javascript"> alert("Silahkan isi data pendidikan anda terlebih dahulu");document.location.href = "../../Pelamar/Pelamar/profilawal";</script>';
+		} 
 		$paket['array']=$this->mdl_home->ambildata();	
 		$this->load->view('lowongantersedia',$paket);
 	}
 
 	public function apply()
 	{
+
 
 		$dataMotelt = array('id_pelamar' => $this->input->post('id_pelamar'),
 							'jawaban_soal' => $this->input->post('jawaban1'),

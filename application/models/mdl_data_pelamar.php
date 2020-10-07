@@ -14,6 +14,16 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_pengumuman($id){
+		$query=$this->db->query("SELECT * FROM tb_apply WHERE id_apply=$id");
+		return $query->result_array();
+	}
+
+	// public function ambildata_pengumuman2($id){
+	// 	$query=$this->db->query("SELECT * FROM tb_apply WHERE id_pelamar=$id");
+	// 	return $query->result_array();
+	// }
+
 	public function modelupdate($send){
 		$sql="UPDATE tb_data_diri SET id_pelamar = ?, nik = ?, nama_pelamar = ?, tempat_lahir = ? , tanggal_lahir = ? , jenis_kelamin = ?, alamat_ktp = ?, status_perkawinan = ?, agama = ?, anak_ke = ?, dari_x_sdr = ?, no_hp = ?, facebook = ?, instagram = ?, alamat = ?, twitter = ? WHERE id_pelamar = ?";
 		$query=$this->db->query($sql, array( $send['id_pelamar'], $send['nik'], $send['nama_pelamar'], $send['tempat_lahir'], $send['tanggal_lahir'], $send['jenis_kelamin'], $send['alamat_ktp'], $send['status_perkawinan'], $send['agama'], $send['anak_ke'], $send['dari_x_sdr'], $send['no_hp'], $send['facebook'], $send['instagram'], $send['alamat'], $send['twitter'], $send['id_pelamar']));

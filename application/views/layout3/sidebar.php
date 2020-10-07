@@ -36,6 +36,6 @@
 			<li class="<?php if($this->uri->segment(3)=="profilawal" || $this->uri->segment(3) =="tambahdatadiri" || $this->uri->segment(3)=="tambahdatakeluarga"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Pelamar/profilawal') ?>"><em class="fa fa-user">&nbsp;</em> Profil Saya</a></li>
 			<li class="<?php if($this->uri->segment(3)=="uploadberkas"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Pelamar/uploadberkas') ?>"><em class="fa fa-paperclip">&nbsp;</em> Upload Berkas</a></li>
 			<li class="<?php if($this->uri->segment(3)=="lowongantersedia"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Lamaran/lowongantersedia') ?>"><em class="fa fa-suitcase">&nbsp;</em> Lowongan Tersedia</a></li>
-			<li class="<?php if($this->uri->segment(3)=="lamaransaya"){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Lamaran/lamaransaya') ?>"><em class="fa fa-envelope">&nbsp;</em> Lamaran Saya</a></li>
+			<li class="<?php if($this->uri->segment(3)=="lamaransaya" || $this->uri->segment(2)=="Pengumuman" ){echo "active";}?>"><a href="<?php  echo base_url('Pelamar/Lamaran/lamaransaya') ?>"><em class="fa fa-envelope">&nbsp;</em> Lamaran Saya</a></li>
 		</ul>
 	</div><!--/.sidebar-->

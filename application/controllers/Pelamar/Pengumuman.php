@@ -32,9 +32,16 @@ class Pengumuman extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function index()
+	public function pengumuman($id)
 	{
-		$this->load->view('pengumuman');
+		$paket['array']=$this->mdl_data_pelamar->ambildata_pengumuman($id);	
+		$this->load->view('pengumuman',$paket);
+	}
+
+	public function pengumuman2()
+	{
+		// $paket['array']=$this->mdl_data_pelamar->ambildata_pengumuman2($id);	
+		$this->load->view('pengumuman2');
 	}
 	
 	

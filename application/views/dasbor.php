@@ -2,7 +2,7 @@
 <?php   $this->load->view('layout3/navbar') ?>
 <?php   $this->load->view('layout3/sidebar') ?>
 
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<div class="col-sm-9 col-sm-offset-4 col-lg-10 col-lg-offset-2 main">
 	<div class="row">
 		<ol class="breadcrumb">
 			<li><a href="#">
@@ -28,87 +28,98 @@
 			<?php } ?>
 
 			<?php 
-				$data_pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar = $ses_id");
-				if ($data_pendidikan->num_rows()>0) {
+			$data_pendidikan = $this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pelamar = $ses_id");
+			if ($data_pendidikan->num_rows()>0) {
 
-				} else{?>
-					<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="<?php echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>">Segera lengkapi data pendidikan anda </b></a></div>
-				<?php } ?>
-
-			<?php 
-				$data_keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $ses_id");
-				if ($data_keluarga->num_rows()>0) {
-
-				} else{?>
-					<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data keluarga anda </b> <a href="#" class="pull-right"></a></div>
-				<?php } ?>
+			} else{?>
+				<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b><a href="<?php echo base_url('Pelamar/Pelamar/tambahdatakeluarga') ?>">Segera lengkapi data pendidikan anda </b></a></div>
+			<?php } ?>
 
 			<?php 
-				$data_pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $ses_id");
-				if ($data_pengalaman->num_rows()>0) {
+			$data_keluarga = $this->db->query("SELECT * FROM tb_data_keluarga WHERE id_pelamar = $ses_id");
+			if ($data_keluarga->num_rows()>0) {
 
-				} else{?>
-					<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pengalaman anda </b> <a href="#" class="pull-right"></a></div>
-				<?php } ?>
-			</div>
-		</div><!--/.row-->	
-		<!-- ENd Notif -->
+			} else{?>
+				<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data keluarga anda </b> <a href="#" class="pull-right"></a></div>
+			<?php } ?>
 
+			<?php 
+			$data_pengalaman = $this->db->query("SELECT * FROM tb_data_pengalaman_kerja WHERE id_pelamar = $ses_id");
+			if ($data_pengalaman->num_rows()>0) {
+
+			} else{?>
+				<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Selamat Datang di sistem choise chaakra, <b>Segera lengkapi data pengalaman anda </b> <a href="#" class="pull-right"></a></div>
+			<?php } ?>
+		</div>
+	</div><!--/.row-->	
+	<!-- ENd Notif -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Dasbor</h1>	
+		</div>
+	</div><!--/.row-->
+
+	<div class="panel panel-container">
 		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Dasbor</h1>	
-			</div>
-		</div><!--/.row-->
-
-		<div class="panel panel-container">
-			<div class="row">
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+				<!-- <div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-file color-blue"></em>
 							<div class="large">1</div>
 							<div class="text-muted"><a href="<?php  echo base_url('Home/ujian') ?>">Ujian Terjadwal</a></div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-blue panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-suitcase color-orange"></em>
-							<div class="large">20</div>
-							<div class="text-muted"><a href="<?php  echo base_url('Home/lowongantersedia') ?>">Lowongan Tersedia</a></div>
+				</div> -->
+				<center>
+					<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
+						<div class="panel panel-blue panel-widget border-right">
+							<div class="row no-padding"><em class="fa fa-xl fa-suitcase color-orange"></em>
+								<?php 
+								$query_low = $this->db->query("SELECT count(id_lowongan) AS jumlah FROM tb_lowongan");
+								$result = $query_low->result_array();
+								?>
+								<div class="large"><?php echo $result[0]['jumlah'] ?></div>
+								<div class="text-muted"><a href="<?php  echo base_url('Pelamar/Lamaran/lowongantersedia') ?>">Lowongan Tersedia</a></div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-orange panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-envelope color-teal"></em>
-							<div class="large">1</div>
-							<div class="text-muted"><a href="<?php  echo base_url('Home/lamaransaya') ?>">Lamaran Saya</a></div>
+					<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
+						<div class="panel panel-orange panel-widget border-right">
+							<div class="row no-padding"><em class="fa fa-xl fa-envelope color-teal"></em>
+								<?php 
+								$query_low = $this->db->query("SELECT count(id_apply) AS jumlah FROM tb_apply WHERE id_pelamar = $ses_id");
+								$result = $query_low->result_array();
+								?>
+								<div class="large"><?php echo $result[0]['jumlah'] ?></div>
+								<div class="text-muted"><a href="<?php  echo base_url('Pelamar/Lamaran/lamaransaya') ?>">Lamaran Saya</a></div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-					<div class="panel panel-red panel-widget ">
-						<div class="row no-padding"><em class="fa fa-xl fa-bullhorn color-red"></em>
-							<div class="large">2</div>
-							<div class="text-muted"><a href="<?php  echo base_url('Home/pengumuman') ?>">Pengumuman</a></div>
+					<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
+						<div class="panel panel-red panel-widget ">
+							<div class="row no-padding"><em class="fa fa-xl fa-bullhorn color-red"></em>
+								<?php 
+								$query_low = $this->db->query("SELECT count(id_apply) AS jumlah FROM tb_apply WHERE id_pelamar = $ses_id AND status_lamaran = 'Diterima'|| status_lamaran = 'Tidak lolos'");
+								$result = $query_low->result_array();
+								?>
+								<div class="large"><?php echo $result[0]['jumlah'] ?></div>
+								<div class="text-muted"><a href="<?php  echo base_url('Pelamar/Pengumuman/pengumuman2/') ?>">Hasil Akhir</a></div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-md-12 col-lg-12">
-					<div class="panel panel-red panel-widget">
-						<div class="row no-padding">
-							<h4>Jika ada pertanyaan bisa hubungi kontak dibawah:</h4>
-							<div class="medium"><em class="fa fa-md fa-phone color-black"></em> WhatsApp: +6285732273347</div>
-							<div class="medium"><em class="fa fa-md fa-at color-black"></em> Email: chaakraconsulting@gmail.com</div>
+					<div class="col-xs-12 col-md-12 col-lg-12">
+						<div class="panel panel-red panel-widget">
+							<div class="row no-padding">
+								<h4>Jika ada pertanyaan bisa hubungi kontak dibawah:</h4>
+								<div class="medium"><em class="fa fa-md fa-phone color-black"></em> WhatsApp: +6285732273347</div>
+								<div class="medium"><em class="fa fa-md fa-at color-black"></em> Email: chaakraconsulting@gmail.com</div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</center>
 			</div><!--/.row-->
 		</div>
 
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-		</div>
 	</div>	<!--/.main-->
 
 	<?php   $this->load->view('layout3/footer') ?>
