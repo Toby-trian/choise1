@@ -52,8 +52,6 @@ foreach ($array as $key) {
 		}
 	} 
 } 
-
-
 ?>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -99,14 +97,13 @@ foreach ($array as $key) {
 						</div>                       
 					</div>
 					<div class="modal-footer">
-						<input type="submit" value="Kirim" class="btn btn-blue" onclick = "return confirm('Yakin melamar lowongan ini?');">
+						<input type="submit" value="Kirim" class="btn btn-blue" onclick = "return confirm('Apakah anda yakin ingin melamar lowongan ini?');">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div> 
-
 
 	<div class="modal fade" id="myModal2" role="dialog">
 		<div class="modal-dialog modal-lg">
@@ -150,49 +147,51 @@ foreach ($array as $key) {
 	</div> 
 
 	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header"><b><?php echo $jabatan ?></b></h1>
-			<h6 class="apply-tittle"><em class="fa fa-building color-amber"></em> <?php echo $nama_perusahaan ?> &nbsp;<em class="fa fa-map-marker color-amber"></em> <?php echo $alamat_perusahaan ?></h6>
-			<h6>Gaji: <?php echo $gaji ?></h6>
-			<!-- <h6>Jenis Lowongan: <?php echo $jenis_mot ?></h6> -->
-			<hr color="black">
-		</div>
-		<hr>
-		<div class="col-md-8 col-sm-12">
-			<h4 class="persyaratan-tittle">Persyaratan:</h4>
-			<p><?php echo $persyaratan ?></p>
-			<p style="text-align: right;">Ditutup pada <?php echo date('d F Y' ,strtotime($tgl_tutup)) ?></p><br>
-			<div style="text-align: center;">
-				<?php 
-				if ($apply->num_rows()>=1) {
-					
-						echo "sudah dilamar";
-					
-					}  else if($apply->num_rows()>=1 && $perusahaan_id == $id_perusahaan){
-						echo "hanya bisa melamar 1 lowongan dalam 1 perusahaan"; 
-					} else{?>
-					<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
-				<?php } ?>
-			</div>
-		</div><br>
-		<div class="card col-md-3 col-sm-12" style="background-color: #fff; padding: 10px;">
-			<h4 class="card-header"><em class="fa fa-building color-amber"></em><b> Profil Perusahaan</b></h4><hr><br>
-			<center><img class="card-img-top apply-tittle" style="width: 60%;"src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>"></center>
-			<div class="card-body" style="margin-top: 20px;">
-				<p><b><?php echo $nama_perusahaan ?></b></p>
-				<!-- <p class="card-text">Chaakra Consulting merupakan perusahaan konsultan bisnis dan manajemen.</p><hr> -->
-				<p><b>Jenis Usaha</b></p>
-				<p class="card-text"><?php echo $jenis_usaha ?>.</p><hr color="black">
-				<p><b>Lokasi Perusahaan</b></p>
-				<p class="card-text"><em class="fa fa-map-marker color-amber"></em> <?php echo $alamat_perusahaan ?></p><hr>
-				<p><b>Kontak</b></p>
-				<p class="card-text">Situs web: <?php echo $website ?></p>
-				<p class="card-text">Email: <?php echo $email ?></p>
-				<p class="card-text">WhatsApp: <?php echo $no_hp ?></p>
-				<p class="card-text">Facebook : <?php echo $facebook ?></p>
-				<p class="card-text">Instagram: <?php echo $instagram ?></p><hr>
+		<div class="col-md-8 col-sm-12" style="margin-top: 15px;">
+			<div class="col-sm-12" style="background-color: #fff; padding: 20px; border-radius: 5px;">
+				<h2 class="page-header" style="margin-top: 0%"><b><?php echo $jabatan ?></b></h2><br>
+				<h6 class="apply-tittle"><em class="fa fa-building color-amber"></em> <?php echo $nama_perusahaan ?> &nbsp;<em class="fa fa-map-marker color-amber"></em> <?php echo $alamat_perusahaan ?></h6>
+				<h6>Gaji: <?php echo $gaji ?></h6><br>
+				<!-- <h6>Jenis Lowongan: <?php echo $jenis_mot ?></h6> -->
+				<h4 class="persyaratan-tittle">Persyaratan:</h4>
+				<p><?php echo $persyaratan ?></p>
+				<p style="text-align: right;">Ditutup pada <?php echo date('d F Y' ,strtotime($tgl_tutup)) ?></p><br>
+				<div style="text-align: center;">
+					<?php 
+					if ($apply->num_rows()>=1) {
+						
+							echo "<b>SUDAH DILAMAR</b>";
+						
+						}  else if($apply->num_rows()>=1 && $perusahaan_id == $id_perusahaan){
+							echo "<b>HANYA BISA MELAMAR 1 LOWONGAN PADA 1 PERUSAHAAN.</b>"; 
+						} else{?>
+						<a  data-toggle="modal" data-target="#myModal" class="btn btn-primary mr-2 mb-2">Lamar Sekarang</a>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
+
+		<div class="card col-md-4 col-sm-12" style="margin-top: 15px;">
+			<div class="col-sm-12" style="background-color: #fff; padding: 20px; border-radius: 5px;">
+				<h4 class="card-header"><em class="fa fa-building color-amber"></em><b> Profil Perusahaan</b></h4><hr><br>
+				<center><img class="card-img-top apply-tittle" style="width: 60%;"src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>"></center>
+				<div class="card-body" style="margin-top: 20px;">
+					<p><b><?php echo $nama_perusahaan ?></b></p>
+					<!-- <p class="card-text">Chaakra Consulting merupakan perusahaan konsultan bisnis dan manajemen.</p><hr> -->
+					<p><b>Jenis Usaha</b></p>
+					<p class="card-text"><?php echo $jenis_usaha ?>.</p><hr color="black">
+					<p><b>Lokasi Perusahaan</b></p>
+					<p class="card-text"><em class="fa fa-map-marker color-amber"></em> <?php echo $alamat_perusahaan ?></p><hr>
+					<p><b>Kontak</b></p>
+					<p class="card-text">Situs web: <?php echo $website ?></p>
+					<p class="card-text">Email: <?php echo $email ?></p>
+					<p class="card-text">WhatsApp: <?php echo $no_hp ?></p>
+					<p class="card-text">Facebook : <?php echo $facebook ?></p>
+					<p class="card-text">Instagram: <?php echo $instagram ?></p><hr>
+				</div>
+			</div>
+		</div>
+
 	</div><br><!--/.row-->
 
 	<div class="col-sm-12">
