@@ -25,6 +25,7 @@
 		foreach ($apply->result() as $key) {
 			$id_lowongan = $key->id_lowongan;
 			$status_lamaran = $key->status_lamaran;
+			$id_apply = $key->id_apply;
 
 			foreach ($lowongan->result() as $key_lowongan) {
 
@@ -51,14 +52,15 @@
 					</div><br>
 					<h3><?php echo $nama_lowongan ?></h3>
 					<p><?php echo $nama_perusahaan ?></p><br>
-					<?php if ($status_lamaran == "Diterima") { ?>
+					<!-- <?php if ($status_lamaran == "Diterima") { ?>
 						<div>
 							<a href="<?php  echo base_url('Pelamar/Lamaran/jadwalseleksi/'.$id_lowongan) ?>" class="btn btn-primary btn-block mr-2 mb-2">Lihat Jadwal</a>
 						</div>
 						<div class="button-lm-tittle">
 							<a href="<?php  echo base_url('Pelamar/Pelamar/ujian/'.$id_lowongan) ?>" class="btn btn-primary btn-block mr-2 mb-2">Ujian Saya</a>
 						</div>
-					<?php } ?>
+					<?php } ?> -->
+					<?php $id_pelamar = $this->session->userdata('ses_id') ?>
 					<div class="button-lm-tittle">
 						<a href="<?php  echo base_url('Pelamar/Pengumuman') ?>" class="btn btn-primary btn-block mr-2 mb-2">Pengumuman</a>
 					</div>
