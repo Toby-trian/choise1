@@ -119,6 +119,6 @@ class Mdl_data_level extends CI_Model {
 
 	public function modelupdate_psikolog($send){
 		$sql="UPDATE tb_psikolog SET id_psikolog = ?, no_hp = ?, nama_psikolog = ?, username = ?, password = ?, id_level = ? WHERE id_psikolog = ?";
-		$query=$this->db->query($sql, array( $send['id_psikolog'], $send['nama_psikolog'], $send['no_hp'], $send['username'], $send['password'], $send['id_level'], $send['id_psikolog']));
+		$query=$this->db->query($sql, array( $send['id_psikolog'], $send['no_hp'], $send['nama_psikolog'], $send['username'], $send['password'], $send['id_level'], $send['id_psikolog']));
 	}	
 }
