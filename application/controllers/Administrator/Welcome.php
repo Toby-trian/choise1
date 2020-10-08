@@ -368,7 +368,7 @@ class Welcome extends CI_Controller {
 			$send['nama_psikolog']=$this->input->post('nama_psikolog');
 			$send['no_hp']=$this->input->post('no_hp');
 			$send['username']=$this->input->post('username');
-			$send['password']=$this->input->post('password');
+			$send['password']=md5($this->input->post('password'));
 			$send['id_level']=$this->input->post('id_level');
 			// var_dump($send);
 			$kembalian['jumlah']=$this->mdl_data_level->modelupdate_psikolog($send);

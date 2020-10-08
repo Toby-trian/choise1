@@ -39,7 +39,7 @@
                   <th>No</th>
                   <th>Posisi Jabatan</th>
                   <th>Perusahaan</th>
-                  <th>Jadwal Seleksi</th>
+                  <th>Jadwal Penutupan</th>
                   <th>Kota Penempatan</th>
                   <th>Persyaratan</th>
                   <th>Gaji</th>

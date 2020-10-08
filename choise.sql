@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2020 at 11:38 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Waktu pembuatan: 08 Okt 2020 pada 04.56
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_admin`
+-- Struktur dari tabel `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_admin`
+-- Dumping data untuk tabel `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`id_admin`, `id_level`, `nama_admin`, `username`, `password`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `tb_admin` (`id_admin`, `id_level`, `nama_admin`, `username`, `passw
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_apply`
+-- Struktur dari tabel `tb_apply`
 --
 
 CREATE TABLE `tb_apply` (
@@ -58,20 +58,10 @@ CREATE TABLE `tb_apply` (
   `status_lamaran` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_apply`
---
-
-INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `id_perusahaan`, `status_lamaran`) VALUES
-(1, 1, 3, 1, 'Diterima'),
-(2, 2, 1, 2, 'Tidak lolos'),
-(3, 3, 3, 1, 'Belum ada tindakan'),
-(4, 1, 1, 2, 'Belum ada tindakan');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_berkas`
+-- Struktur dari tabel `tb_berkas`
 --
 
 CREATE TABLE `tb_berkas` (
@@ -80,10 +70,17 @@ CREATE TABLE `tb_berkas` (
   `berkas` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_berkas`
+--
+
+INSERT INTO `tb_berkas` (`id_berkas`, `id_pelamar`, `berkas`) VALUES
+(1, 1, 'berkas_Salmon1.pdf');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_diri`
+-- Struktur dari tabel `tb_data_diri`
 --
 
 CREATE TABLE `tb_data_diri` (
@@ -106,19 +103,19 @@ CREATE TABLE `tb_data_diri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_data_diri`
+-- Dumping data untuk tabel `tb_data_diri`
 --
 
 INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `alamat_ktp`, `status_perkawinan`, `agama`, `anak_ke`, `dari_x_sdr`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `facebook`, `instagram`, `twitter`) VALUES
 ('1212132442131', 3, 'Fulanah', 'Gempol', '', '', '', '', '', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-'),
-('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '2020-07-07', 'P', '12345678', 'hahas', '-', '-'),
+('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '1998-05-11', 'P', '12345678', 'hahas', '-', '-'),
 ('1298192819', 4, 'Test 123', 'hahah', '', '', '', '', '', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj'),
 ('78675654536879', 2, 'Fulan', 'Tak diketahui', '', '', '', '', '', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_jawaban_cfit`
+-- Struktur dari tabel `tb_data_jawaban_cfit`
 --
 
 CREATE TABLE `tb_data_jawaban_cfit` (
@@ -131,7 +128,7 @@ CREATE TABLE `tb_data_jawaban_cfit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_data_jawaban_cfit`
+-- Dumping data untuk tabel `tb_data_jawaban_cfit`
 --
 
 INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `jawaban`) VALUES
@@ -140,7 +137,7 @@ INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowonga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_keluarga`
+-- Struktur dari tabel `tb_data_keluarga`
 --
 
 CREATE TABLE `tb_data_keluarga` (
@@ -155,7 +152,7 @@ CREATE TABLE `tb_data_keluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_data_keluarga`
+-- Dumping data untuk tabel `tb_data_keluarga`
 --
 
 INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
@@ -166,7 +163,7 @@ INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `peker
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_pendidikan`
+-- Struktur dari tabel `tb_data_pendidikan`
 --
 
 CREATE TABLE `tb_data_pendidikan` (
@@ -181,7 +178,7 @@ CREATE TABLE `tb_data_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_data_pendidikan`
+-- Dumping data untuk tabel `tb_data_pendidikan`
 --
 
 INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendidikan`, `nama_institusi`, `jurusan`, `tahun_masuk`, `tahun_keluar`, `nilai_akhir`) VALUES
@@ -192,7 +189,7 @@ INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendid
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_pendidikan_nonformal`
+-- Struktur dari tabel `tb_data_pendidikan_nonformal`
 --
 
 CREATE TABLE `tb_data_pendidikan_nonformal` (
@@ -207,7 +204,7 @@ CREATE TABLE `tb_data_pendidikan_nonformal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data_pengalaman_kerja`
+-- Struktur dari tabel `tb_data_pengalaman_kerja`
 --
 
 CREATE TABLE `tb_data_pengalaman_kerja` (
@@ -222,7 +219,7 @@ CREATE TABLE `tb_data_pengalaman_kerja` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_data_pengalaman_kerja`
+-- Dumping data untuk tabel `tb_data_pengalaman_kerja`
 --
 
 INSERT INTO `tb_data_pengalaman_kerja` (`id_pengalaman`, `id_pelamar`, `nama_perusahaan`, `periode`, `jabatan_akhir`, `alasan_keluar`, `nama_referensi`, `no_hp_referensi`) VALUES
@@ -232,7 +229,7 @@ INSERT INTO `tb_data_pengalaman_kerja` (`id_pengalaman`, `id_pelamar`, `nama_per
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jadwal`
+-- Struktur dari tabel `tb_jadwal`
 --
 
 CREATE TABLE `tb_jadwal` (
@@ -244,18 +241,10 @@ CREATE TABLE `tb_jadwal` (
   `test_fgd` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_jadwal`
---
-
-INSERT INTO `tb_jadwal` (`id_jadwal`, `id_lowongan`, `id_perusahaan`, `tes_tulis`, `tes_wawancara`, `test_fgd`) VALUES
-(1, 1, 2, '2020-09-16', '2020-09-23', '2020-09-30'),
-(2, 3, 1, '2020-09-13', '2020-09-15', '2020-09-20');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jenis_motlet`
+-- Struktur dari tabel `tb_jenis_motlet`
 --
 
 CREATE TABLE `tb_jenis_motlet` (
@@ -264,7 +253,7 @@ CREATE TABLE `tb_jenis_motlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_jenis_motlet`
+-- Dumping data untuk tabel `tb_jenis_motlet`
 --
 
 INSERT INTO `tb_jenis_motlet` (`id_jenis_motlet`, `jenis_motlet`) VALUES
@@ -274,7 +263,7 @@ INSERT INTO `tb_jenis_motlet` (`id_jenis_motlet`, `jenis_motlet`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_level`
+-- Struktur dari tabel `tb_level`
 --
 
 CREATE TABLE `tb_level` (
@@ -283,7 +272,7 @@ CREATE TABLE `tb_level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_level`
+-- Dumping data untuk tabel `tb_level`
 --
 
 INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
@@ -296,7 +285,7 @@ INSERT INTO `tb_level` (`id_level`, `nama_level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_lowongan`
+-- Struktur dari tabel `tb_lowongan`
 --
 
 CREATE TABLE `tb_lowongan` (
@@ -310,19 +299,10 @@ CREATE TABLE `tb_lowongan` (
   `gaji` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tb_lowongan`
---
-
-INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `id_jenis_motlet`, `nama_jabatan`, `jadwal_seleksi`, `kota_penempatan`, `persyaratan`, `gaji`) VALUES
-(1, 2, 1, 'Full Stack Developer', '2020-09-13', 'Ponorogo', '<p>1. salskal 2. ajskaslak</p>', '3500000'),
-(3, 1, 1, 'Testing', '2020-09-06', 'Pasuruan', '<p><strong>Bersedia ditempatkan di Pasuruan</strong></p><ol><li>S1 Komputer</li><li>Domisili Pasuruan</li><li>Terbiasa dengan CodeIgniter</li><li>Paham Javascript</li></ol>', '3200000'),
-(4, 3, 1, 'Android', '2020-10-06', 'Surabaya', '<p>ahahaha</p>', '800000');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_motivation_letter`
+-- Struktur dari tabel `tb_motivation_letter`
 --
 
 CREATE TABLE `tb_motivation_letter` (
@@ -335,7 +315,7 @@ CREATE TABLE `tb_motivation_letter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_motivation_letter`
+-- Dumping data untuk tabel `tb_motivation_letter`
 --
 
 INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jawaban_soal`, `jawaban_soal2`, `jawaban_soal3`) VALUES
@@ -348,7 +328,7 @@ INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jaw
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nilai`
+-- Struktur dari tabel `tb_nilai`
 --
 
 CREATE TABLE `tb_nilai` (
@@ -377,7 +357,7 @@ CREATE TABLE `tb_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_nilai`
+-- Dumping data untuk tabel `tb_nilai`
 --
 
 INSERT INTO `tb_nilai` (`id_nilai`, `id_pelamar`, `id_lowongan`, `id_perusahaan`, `nilai_iq`, `gambaran_kepribadian`, `nilai_pwb`, `nilai_holand_r`, `nilai_holand_i`, `nilai_holand_a`, `nilai_holand_s`, `nilai_holand_e`, `nilai_holand_c`, `nilai_papiskotik`, `nilai_msdt`, `nilai_cfit`, `nilai_kemampuan_bidang`, `nilai_studi_kasus`, `nilai_perhitungan`, `nilai_wawancara`, `nilai_fgd`, `kesimpulan`) VALUES
@@ -388,7 +368,7 @@ INSERT INTO `tb_nilai` (`id_nilai`, `id_pelamar`, `id_lowongan`, `id_perusahaan`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nilai_cfit`
+-- Struktur dari tabel `tb_nilai_cfit`
 --
 
 CREATE TABLE `tb_nilai_cfit` (
@@ -403,7 +383,7 @@ CREATE TABLE `tb_nilai_cfit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_nilai_pwb`
+-- Struktur dari tabel `tb_nilai_pwb`
 --
 
 CREATE TABLE `tb_nilai_pwb` (
@@ -417,7 +397,7 @@ CREATE TABLE `tb_nilai_pwb` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pelamar`
+-- Struktur dari tabel `tb_pelamar`
 --
 
 CREATE TABLE `tb_pelamar` (
@@ -431,7 +411,7 @@ CREATE TABLE `tb_pelamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_pelamar`
+-- Dumping data untuk tabel `tb_pelamar`
 --
 
 INSERT INTO `tb_pelamar` (`id_pelamar`, `id_level`, `username`, `email`, `password`, `confirm_password`, `foto`) VALUES
@@ -439,12 +419,12 @@ INSERT INTO `tb_pelamar` (`id_pelamar`, `id_level`, `username`, `email`, `passwo
 (2, 5, 'hahaha', 'candaanaja@gmail.com', '064d8682f9420f2286f2fe5d3889ffb2', 'pelamar2', ''),
 (3, 5, 'guyonbae', 'guyonbae@gmail.com', 'f33fe70bcf7f48e8f107c5d18cdef5e4', 'pelamar3', ''),
 (4, 5, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'test', ''),
-(5, 5, 'hahah', 'asasas@gmail.com', '202cb962ac59075b964b07152d234b70', '321', '');
+(7, 5, 'testing123', 'testing123@gmail.com', '7f2ababa423061c509f4923dd04b6cf1', 'testing123', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_perusahaan`
+-- Struktur dari tabel `tb_perusahaan`
 --
 
 CREATE TABLE `tb_perusahaan` (
@@ -465,18 +445,16 @@ CREATE TABLE `tb_perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_perusahaan`
+-- Dumping data untuk tabel `tb_perusahaan`
 --
 
 INSERT INTO `tb_perusahaan` (`id_perusahaan`, `id_level`, `nama_perusahaan`, `jenis_usaha`, `alamat`, `email`, `logo_perusahaan`, `username`, `password`, `website`, `facebook`, `instagram`, `twitter`, `no_hp`) VALUES
-(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002'),
-(2, 3, 'Artareja', 'Website Development', 'Ponorogo', 'artareja@artareja.com', 'Logo200902_2.png', 'arta123', '823f48b9c9a452a92596f89fa0687663', 'artarejamedia.com', '-', '-', '-', '08217179'),
-(3, 3, 'Uji Coba', 'Tidak diketahui', 'not found', 'testing@gmail.com', 'Logo200904_.png', '123', '81dc9bdb52d04dc20036dbd8313ed055', '-', '-', '-', '-', '-');
+(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_psikolog`
+-- Struktur dari tabel `tb_psikolog`
 --
 
 CREATE TABLE `tb_psikolog` (
@@ -489,16 +467,16 @@ CREATE TABLE `tb_psikolog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_psikolog`
+-- Dumping data untuk tabel `tb_psikolog`
 --
 
 INSERT INTO `tb_psikolog` (`id_psikolog`, `id_level`, `nama_psikolog`, `no_hp`, `username`, `password`) VALUES
-(1, '4', 'Anggi', '0190191121', 'test', 'e0bf5f93b93a528bd5cdb05f621d7202');
+(1, '4', 'Psikolog Chaakra', '08291213223', 'psikolog', 'c015e9ad489a46fc9f16d449682eb454');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_soal_cfit`
+-- Struktur dari tabel `tb_soal_cfit`
 --
 
 CREATE TABLE `tb_soal_cfit` (
@@ -518,7 +496,7 @@ CREATE TABLE `tb_soal_cfit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_soal_cfit`
+-- Dumping data untuk tabel `tb_soal_cfit`
 --
 
 INSERT INTO `tb_soal_cfit` (`id_soal`, `nomor_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `opsi_e`, `opsi_f`, `jawaban`, `jawaban2`, `type_soal`, `subtes`) VALUES
@@ -587,7 +565,7 @@ INSERT INTO `tb_soal_cfit` (`id_soal`, `nomor_soal`, `soal`, `opsi_a`, `opsi_b`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_soal_motlet`
+-- Struktur dari tabel `tb_soal_motlet`
 --
 
 CREATE TABLE `tb_soal_motlet` (
@@ -598,7 +576,7 @@ CREATE TABLE `tb_soal_motlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_soal_motlet`
+-- Dumping data untuk tabel `tb_soal_motlet`
 --
 
 INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `soal_motlet`) VALUES
@@ -609,7 +587,7 @@ INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `so
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_ujian`
+-- Struktur dari tabel `tb_ujian`
 --
 
 CREATE TABLE `tb_ujian` (
@@ -623,7 +601,7 @@ CREATE TABLE `tb_ujian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_ujian`
+-- Dumping data untuk tabel `tb_ujian`
 --
 
 INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `durasi`, `nama_pembuat`, `status`) VALUES
@@ -634,275 +612,275 @@ INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakh
 --
 
 --
--- Indexes for table `tb_admin`
+-- Indeks untuk tabel `tb_admin`
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `tb_apply`
+-- Indeks untuk tabel `tb_apply`
 --
 ALTER TABLE `tb_apply`
   ADD PRIMARY KEY (`id_apply`);
 
 --
--- Indexes for table `tb_berkas`
+-- Indeks untuk tabel `tb_berkas`
 --
 ALTER TABLE `tb_berkas`
   ADD PRIMARY KEY (`id_berkas`);
 
 --
--- Indexes for table `tb_data_diri`
+-- Indeks untuk tabel `tb_data_diri`
 --
 ALTER TABLE `tb_data_diri`
   ADD PRIMARY KEY (`nik`);
 
 --
--- Indexes for table `tb_data_jawaban_cfit`
+-- Indeks untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
   ADD PRIMARY KEY (`id_jawaban_cfit`);
 
 --
--- Indexes for table `tb_data_keluarga`
+-- Indeks untuk tabel `tb_data_keluarga`
 --
 ALTER TABLE `tb_data_keluarga`
   ADD PRIMARY KEY (`id_keluarga`);
 
 --
--- Indexes for table `tb_data_pendidikan`
+-- Indeks untuk tabel `tb_data_pendidikan`
 --
 ALTER TABLE `tb_data_pendidikan`
   ADD PRIMARY KEY (`id_pendidikan`);
 
 --
--- Indexes for table `tb_data_pendidikan_nonformal`
+-- Indeks untuk tabel `tb_data_pendidikan_nonformal`
 --
 ALTER TABLE `tb_data_pendidikan_nonformal`
   ADD PRIMARY KEY (`id_pendidikan_nonformal`);
 
 --
--- Indexes for table `tb_data_pengalaman_kerja`
+-- Indeks untuk tabel `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_data_pengalaman_kerja`
   ADD PRIMARY KEY (`id_pengalaman`);
 
 --
--- Indexes for table `tb_jadwal`
+-- Indeks untuk tabel `tb_jadwal`
 --
 ALTER TABLE `tb_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
--- Indexes for table `tb_jenis_motlet`
+-- Indeks untuk tabel `tb_jenis_motlet`
 --
 ALTER TABLE `tb_jenis_motlet`
   ADD PRIMARY KEY (`id_jenis_motlet`);
 
 --
--- Indexes for table `tb_level`
+-- Indeks untuk tabel `tb_level`
 --
 ALTER TABLE `tb_level`
   ADD PRIMARY KEY (`id_level`);
 
 --
--- Indexes for table `tb_lowongan`
+-- Indeks untuk tabel `tb_lowongan`
 --
 ALTER TABLE `tb_lowongan`
   ADD PRIMARY KEY (`id_lowongan`);
 
 --
--- Indexes for table `tb_motivation_letter`
+-- Indeks untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
   ADD PRIMARY KEY (`id_motivasi`);
 
 --
--- Indexes for table `tb_nilai`
+-- Indeks untuk tabel `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
   ADD PRIMARY KEY (`id_nilai`);
 
 --
--- Indexes for table `tb_nilai_cfit`
+-- Indeks untuk tabel `tb_nilai_cfit`
 --
 ALTER TABLE `tb_nilai_cfit`
   ADD PRIMARY KEY (`id_nilai_cfit`);
 
 --
--- Indexes for table `tb_nilai_pwb`
+-- Indeks untuk tabel `tb_nilai_pwb`
 --
 ALTER TABLE `tb_nilai_pwb`
   ADD PRIMARY KEY (`id_nilai_pwb`);
 
 --
--- Indexes for table `tb_pelamar`
+-- Indeks untuk tabel `tb_pelamar`
 --
 ALTER TABLE `tb_pelamar`
   ADD PRIMARY KEY (`id_pelamar`);
 
 --
--- Indexes for table `tb_perusahaan`
+-- Indeks untuk tabel `tb_perusahaan`
 --
 ALTER TABLE `tb_perusahaan`
   ADD PRIMARY KEY (`id_perusahaan`);
 
 --
--- Indexes for table `tb_psikolog`
+-- Indeks untuk tabel `tb_psikolog`
 --
 ALTER TABLE `tb_psikolog`
   ADD PRIMARY KEY (`id_psikolog`);
 
 --
--- Indexes for table `tb_soal_cfit`
+-- Indeks untuk tabel `tb_soal_cfit`
 --
 ALTER TABLE `tb_soal_cfit`
   ADD PRIMARY KEY (`id_soal`);
 
 --
--- Indexes for table `tb_soal_motlet`
+-- Indeks untuk tabel `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
   ADD PRIMARY KEY (`id_soal`);
 
 --
--- Indexes for table `tb_ujian`
+-- Indeks untuk tabel `tb_ujian`
 --
 ALTER TABLE `tb_ujian`
   ADD PRIMARY KEY (`id_ujian`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_admin`
+-- AUTO_INCREMENT untuk tabel `tb_admin`
 --
 ALTER TABLE `tb_admin`
   MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tb_apply`
+-- AUTO_INCREMENT untuk tabel `tb_apply`
 --
 ALTER TABLE `tb_apply`
-  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_berkas`
+-- AUTO_INCREMENT untuk tabel `tb_berkas`
 --
 ALTER TABLE `tb_berkas`
-  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_data_jawaban_cfit`
+-- AUTO_INCREMENT untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
   MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_data_keluarga`
+-- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
 --
 ALTER TABLE `tb_data_keluarga`
   MODIFY `id_keluarga` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_data_pendidikan`
+-- AUTO_INCREMENT untuk tabel `tb_data_pendidikan`
 --
 ALTER TABLE `tb_data_pendidikan`
   MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_data_pendidikan_nonformal`
+-- AUTO_INCREMENT untuk tabel `tb_data_pendidikan_nonformal`
 --
 ALTER TABLE `tb_data_pendidikan_nonformal`
   MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_data_pengalaman_kerja`
+-- AUTO_INCREMENT untuk tabel `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_data_pengalaman_kerja`
   MODIFY `id_pengalaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tb_jadwal`
+-- AUTO_INCREMENT untuk tabel `tb_jadwal`
 --
 ALTER TABLE `tb_jadwal`
-  MODIFY `id_jadwal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jadwal` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_jenis_motlet`
+-- AUTO_INCREMENT untuk tabel `tb_jenis_motlet`
 --
 ALTER TABLE `tb_jenis_motlet`
   MODIFY `id_jenis_motlet` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tb_level`
+-- AUTO_INCREMENT untuk tabel `tb_level`
 --
 ALTER TABLE `tb_level`
   MODIFY `id_level` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tb_lowongan`
+-- AUTO_INCREMENT untuk tabel `tb_lowongan`
 --
 ALTER TABLE `tb_lowongan`
-  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_motivation_letter`
+-- AUTO_INCREMENT untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `tb_nilai`
+-- AUTO_INCREMENT untuk tabel `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
   MODIFY `id_nilai` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tb_nilai_cfit`
+-- AUTO_INCREMENT untuk tabel `tb_nilai_cfit`
 --
 ALTER TABLE `tb_nilai_cfit`
   MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_nilai_pwb`
+-- AUTO_INCREMENT untuk tabel `tb_nilai_pwb`
 --
 ALTER TABLE `tb_nilai_pwb`
   MODIFY `id_nilai_pwb` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_pelamar`
+-- AUTO_INCREMENT untuk tabel `tb_pelamar`
 --
 ALTER TABLE `tb_pelamar`
-  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tb_perusahaan`
+-- AUTO_INCREMENT untuk tabel `tb_perusahaan`
 --
 ALTER TABLE `tb_perusahaan`
-  MODIFY `id_perusahaan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_perusahaan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_psikolog`
+-- AUTO_INCREMENT untuk tabel `tb_psikolog`
 --
 ALTER TABLE `tb_psikolog`
   MODIFY `id_psikolog` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_soal_cfit`
+-- AUTO_INCREMENT untuk tabel `tb_soal_cfit`
 --
 ALTER TABLE `tb_soal_cfit`
   MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
--- AUTO_INCREMENT for table `tb_soal_motlet`
+-- AUTO_INCREMENT untuk tabel `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
   MODIFY `id_soal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tb_ujian`
+-- AUTO_INCREMENT untuk tabel `tb_ujian`
 --
 ALTER TABLE `tb_ujian`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
