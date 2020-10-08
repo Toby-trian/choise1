@@ -62,7 +62,7 @@
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-        <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute" style="width:40%;">
+        <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute">
         <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 mr-auto">
             <h1>Ayo mulai karir Anda disini!</h1>
