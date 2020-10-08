@@ -40,7 +40,7 @@
                 <li><a href="#faq-section" class="nav-link">FAQ</a></li>
                 <li><a href="#contact-section" class="nav-link">HUBUNGI KAMI</a></li>
                 <li><a href="<?php echo base_url('Login_pelamar/') ?>" class="nav-link">MASUK</a></li>
-                <li><a href="<?php echo base_url('Home/daftar') ?>" class="nav-link">DAFTAR</a></li>
+                <li><a href="<?php echo base_url('Daftar') ?>" class="nav-link">DAFTAR</a></li>
 <!--                 <li><a href="#testimonials-section" class="nav-link">FAQ</a></li>
   <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->
 <!--                 <li><a class="nav-link">MASUK</a></li>
@@ -68,7 +68,7 @@
             <h1>Ayo mulai karir Anda disini!</h1>
             <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
             <div>
-              <a href="#" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
+              <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
             </div>
           </div>
         </div>
