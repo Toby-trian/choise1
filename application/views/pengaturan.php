@@ -115,10 +115,6 @@
 		</div>
 	</div>
 
-	<div class="col-sm-12" style="margin-top: 20px;">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-	</div>
-
 </div>
 
 </div>	<!--/.main-->

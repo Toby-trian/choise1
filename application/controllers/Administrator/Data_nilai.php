@@ -7,7 +7,7 @@ class Data_nilai extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_nilai');
+		$this->load->model('Mdl_data_nilai');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -33,20 +33,20 @@ class Data_nilai extends CI_Controller {
 
 	public function nilai_pelamar()
 	{
-		$paket['array']=$this->mdl_data_nilai->ambildata_nilai();	
+		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai();	
 		$this->load->view('administrator/data_nilai',$paket);
 	}
 
 	// CRUD Motlet
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_nilai->ambildata_nilai();	
+		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai();	
 		$this->load->view('administrator/data_nilai',$paket);
 	}
 
 	public function detail_nilai($id_detail)
 	{
-		$paket['array']=$this->mdl_data_nilai->ambildata_nilai2($id_detail);	
+		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai2($id_detail);	
 		$this->load->view('administrator/detail_nilai',$paket);
 	}
 
@@ -56,7 +56,7 @@ class Data_nilai extends CI_Controller {
 		$this->form_validation->set_rules('nilai_fgd','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE){
-			$indexrow['data']=$this->mdl_data_nilai->ambildata2_nilai($id_update);
+			$indexrow['data']=$this->Mdl_data_nilai->ambildata2_nilai($id_update);
 			$this->load->view('administrator/detail_nilai', $indexrow);
 		}
 		else{
@@ -64,7 +64,7 @@ class Data_nilai extends CI_Controller {
 			$send['nilai_wawancara']=$this->input->post('nilai_wawancara');
 			$send['nilai_fgd']=$this->input->post('nilai_fgd');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_nilai->modelupdate_nilai($send);
+			$kembalian['jumlah']=$this->Mdl_data_nilai->modelupdate_nilai($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Data_nilai/detail_nilai/'.$id_update);
 		}
@@ -75,7 +75,7 @@ class Data_nilai extends CI_Controller {
 		$this->form_validation->set_rules('kesimpulan','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE){
-			$indexrow['data']=$this->mdl_data_nilai->ambildata2_nilai($id_update);
+			$indexrow['data']=$this->Mdl_data_nilai->ambildata2_nilai($id_update);
 			$this->load->view('administrator/detail_nilai', $indexrow);
 		}
 		else{
@@ -83,7 +83,7 @@ class Data_nilai extends CI_Controller {
 			$send['gambaran_kepribadian']=$this->input->post('gambaran_kepribadian');
 			$send['kesimpulan']=$this->input->post('kesimpulan');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_nilai->modelupdate_deskripsi($send);
+			$kembalian['jumlah']=$this->Mdl_data_nilai->modelupdate_deskripsi($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Data_nilai/detail_nilai/'.$id_update);
 		}

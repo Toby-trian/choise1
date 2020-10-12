@@ -7,7 +7,7 @@ class Data_pelamar extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_pelamar');
+		$this->load->model('Mdl_data_pelamar');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,43 +34,43 @@ class Data_pelamar extends CI_Controller {
 	// CRUD Motlet
 	public function detail_pelamar($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pelamar($id_detail);	
 		$this->load->view('pelamar/detail_pelamar',$paket);
 	}
 
 	public function detail_pendidikan($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pendidikan($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pendidikan($id_detail);	
 		$this->load->view('pelamar/detail_pendidikan',$paket);
 	}
 
 	public function detail_pendidikan_non($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pendidikan_non($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pendidikan_non($id_detail);	
 		$this->load->view('pelamar/detail_pendidikan_non_formal',$paket);
 	}
 
 	public function detail_berkas($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_berkas($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_berkas($id_detail);	
 		$this->load->view('pelamar/detail_berkas',$paket);
 	}
 
 	public function detail_keluarga($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_keluarga($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_keluarga($id_detail);	
 		$this->load->view('pelamar/detail_keluarga',$paket);
 	}
 
 	public function detail_pengalaman($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pengalaman($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pengalaman($id_detail);	
 		$this->load->view('pelamar/detail_pengalaman',$paket);
 	}
 
 	public function detail_motlet($id_detail)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_motlet($id_detail);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_motlet($id_detail);	
 		$this->load->view('pelamar/detail_motivasi',$paket);
 	}
 

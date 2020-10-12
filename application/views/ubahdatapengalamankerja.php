@@ -30,7 +30,7 @@
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="periode">Lama Bekerja (Dalam Tahun)</label>
-				      <input type="text" class="form-control" name="periode" placeholder="Lama Bekerja (Dalam Tahun)" value="<?php echo $data[0]['periode'] ?>">
+				      <input type="number" class="form-control" name="periode" placeholder="Lama Bekerja (Dalam Tahun)" value="<?php echo $data[0]['periode'] ?>">
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="jabatan_akhir">Jabatan Terakhir</label>
@@ -46,7 +46,7 @@
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="no_hp_referensi">Nomor HP Referensi</label>
-				      <input type="text" class="form-control" name="no_hp_referensi" placeholder="Alasan Keluar" value="<?php echo $data[0]['no_hp_referensi'] ?>">
+				      <input type="number" class="form-control" name="no_hp_referensi" placeholder="Alasan Keluar" value="<?php echo $data[0]['no_hp_referensi'] ?>">
 				    </div>
 				  </div>
 				  <div class="col-sm-12">
@@ -55,10 +55,6 @@
 		          </div>
 				</form>
 			</div>
-		</div><br>
-
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 		</div>
 
 	</div>	<!--/.main-->

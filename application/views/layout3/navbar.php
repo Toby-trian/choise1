@@ -14,7 +14,7 @@
 						<ul class="dropdown-menu dropdown-messages">
 							<li>
 								<div class="dropdown-messages-box"><a href="" class="pull-left">
-									<a href="#" style="color: #283339;">Data Diri</a>
+									<a href="<?php  echo base_url('Pelamar/Pelamar/profilawal') ?>" style="color: #283339;">Profil Saya</a>
 								</div>
 							</li>
 							<li class="divider"></li>

@@ -7,7 +7,7 @@ class Data_jadwal extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_jadwal');
+		$this->load->model('Mdl_data_jadwal');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,13 +34,13 @@ class Data_jadwal extends CI_Controller {
 	// CRUD Motlet
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_jadwal->ambildata_jadwal();	
+		$paket['array']=$this->Mdl_data_jadwal->ambildata_jadwal();	
 		$this->load->view('perusahaan/data_jadwal',$paket);
 	}
 
 	public function jadwal($id)
 	{
-		$paket['array']=$this->mdl_data_jadwal->ambildata_jadwal_perusahaan($id);	
+		$paket['array']=$this->Mdl_data_jadwal->ambildata_jadwal_perusahaan($id);	
 		$this->load->view('perusahaan/data_jadwal',$paket);
 	}
 

@@ -7,8 +7,8 @@ class Data_lowongan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_lowongan');
-		$this->load->model('mdl_data_pelamar');
+		$this->load->model('Mdl_data_lowongan');
+		$this->load->model('Mdl_data_pelamar');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -35,13 +35,13 @@ class Data_lowongan extends CI_Controller {
 	// CRUD Lowongan
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_lowongan->ambildata_lowongan();	
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_lowongan();	
 		$this->load->view('perusahaan/data_lowongan',$paket);
 	}
 
 	public function lowongan($id)
 	{
-		$paket['array']=$this->mdl_data_lowongan->ambildata_lowongan_perusahaan($id);	
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_lowongan_perusahaan($id);	
 		$this->load->view('perusahaan/data_lowongan',$paket);
 	}
 
@@ -50,7 +50,7 @@ class Data_lowongan extends CI_Controller {
 	// detail lowongan
 	public function detail_lowongan($id_detail)
 	{
-		$paket['array']=$this->mdl_data_lowongan->ambildata_apply($id_detail);	
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_apply($id_detail);	
 		$this->load->view('perusahaan/detail_lowongan',$paket);
 	}
 
@@ -59,14 +59,14 @@ class Data_lowongan extends CI_Controller {
 
 	public function terima_pelamar($id){
 		$where = array('id_apply' => $id);
-		$this->mdl_data_pelamar->terima_pelamar($where,'tb_apply');
+		$this->Mdl_data_pelamar->terima_pelamar($where,'tb_apply');
 		$this->session->set_flashdata('msg_success','Pelamar diterima');
 		redirect('Administrator/Data_lowongan/');
 	}
 
 	public function tolak_pelamar($id){
 		$where = array('id_apply' => $id);
-		$this->mdl_data_pelamar->tolak_pelamar($where,'tb_apply');
+		$this->Mdl_data_pelamar->tolak_pelamar($where,'tb_apply');
 		$this->session->set_flashdata('msg_success','Pelamar ditolak');
 		redirect('Administrator/Data_lowongan/');
 	}

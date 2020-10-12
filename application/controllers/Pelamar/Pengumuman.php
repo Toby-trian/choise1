@@ -7,8 +7,8 @@ class Pengumuman extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_home');
-		$this->load->model('mdl_data_pelamar');
+		$this->load->model('Mdl_home');
+		$this->load->model('Mdl_data_pelamar');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,13 +34,13 @@ class Pengumuman extends CI_Controller {
 
 	public function pengumuman($id)
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pengumuman($id);	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pengumuman($id);	
 		$this->load->view('pengumuman',$paket);
 	}
 
 	public function pengumuman2()
 	{
-		// $paket['array']=$this->mdl_data_pelamar->ambildata_pengumuman2($id);	
+		// $paket['array']=$this->Mdl_data_pelamar->ambildata_pengumuman2($id);	
 		$this->load->view('pengumuman2');
 	}
 	

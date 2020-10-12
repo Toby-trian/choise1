@@ -103,7 +103,7 @@
 								$result = $query_low->result_array();
 								?>
 								<div class="large"><?php echo $result[0]['jumlah'] ?></div>
-								<div class="text-muted"><a href="<?php  echo base_url('Pelamar/Pengumuman/pengumuman2/') ?>">Hasil Akhir</a></div>
+								<div class="text-muted"><a href="<?php  echo base_url('Pelamar/Pengumuman/pengumuman2/') ?>">Hasil Seleksi</a></div>
 							</div>
 						</div>
 					</div>

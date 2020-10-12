@@ -38,9 +38,9 @@
                 <li><a href="#features-section" class="nav-link">LOWONGAN</a></li>
                 <li><a href="#flow-section" class="nav-link">ALUR PENDAFTARAN</a></li>
                 <li><a href="#faq-section" class="nav-link">FAQ</a></li>
-                <li><a href="#contact-section" class="nav-link">HUBUNGI KAMI</a></li>
+                <!-- <li><a href="#contact-section" class="nav-link">HUBUNGI KAMI</a></li> -->
                 <li><a href="<?php echo base_url('Login_pelamar/') ?>" class="nav-link">MASUK</a></li>
-                <li><a href="<?php echo base_url('Home/daftar') ?>" class="nav-link">DAFTAR</a></li>
+                <li><a href="<?php echo base_url('Daftar') ?>" class="nav-link">DAFTAR</a></li>
 <!--                 <li><a href="#testimonials-section" class="nav-link">FAQ</a></li>
   <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->
 <!--                 <li><a class="nav-link">MASUK</a></li>
@@ -62,13 +62,13 @@
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-        <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute" style="width:40%;">
+        <img src="<?php echo base_url('assets2/images/headerimage.jpg') ?>" alt="Image" class="img-fluid img-absolute">
         <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 mr-auto">
             <h1>Ayo mulai karir Anda disini!</h1>
             <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
             <div>
-              <a href="#" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
+              <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Daftar Sekarang</a>
             </div>
           </div>
         </div>
@@ -76,7 +76,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="site-section" id="features-section">
   <div class="container">
@@ -86,7 +85,6 @@
         <p class="lead">Mulailah menemukan tujuan Anda dengan Choise. Lihat lowongan terbaru kami di bawah ini.</p>
       </div>
     </div>
-
 
     <div class="row align-items-stretch">
       <?php 
@@ -106,7 +104,7 @@
             <h3><?php echo $key['nama_jabatan'] ?></h3>
             <p><?php echo $nama_perusahaan ?></p>
             <div>
-              <a href="<?php  echo base_url('Pelamar/Pelamar/lowongantersedia') ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+              <a href="<?php echo base_url('Login_pelamar/') ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
             </div>
           </div>
         </div>
@@ -114,7 +112,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="site-section" id="flow-section">
   <div class="container">
@@ -130,7 +127,7 @@
             <img class="card-img-top" src="<?php echo base_url('assets2/images/login.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>1.</h3>
-          <p>Pendaftaran baru, pilih menu registrasi di pojok kanan atas.</p>
+          <p>Pendaftaran baru, pilih menu Daftar di pojok kanan atas.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
@@ -139,7 +136,7 @@
             <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_3.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>2.</h3>
-          <p>Isi formulir data diri.</p>
+          <p>Isi nama pengguna, email aktif, kata sandi, dan konfirmasi kata sandi untuk keperluan Daftar ke akun choise.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up"  data-aos-delay="200">
@@ -148,37 +145,37 @@
             <img class="card-img-top" src="<?php echo base_url('assets2/images/email.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>3.</h3>
-          <p>Aktivasi akun melalui tautan yang dikirimkan ke email Anda.</p>
+          <p>Aktivasi akun melalui tautan yang dikirimkan ke email Anda. Kemudian masuk ke akun choise Anda.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
         <div class="text-center">
           <div class="card-img-block">
-            <img class="card-img-top" src="<?php echo base_url('assets2/images/apply.png') ?>" style="width:50%;" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_2.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>4.</h3>
-          <p>Pilih perusahaan yang ingin dilamar pada menu lowongan pekerjaan.</p>
+          <p>Lengkapi data diri, data keluarga, data riwayat pendidikan formal, data riwayat pendidikan non formal, data riwayat pendidikan, dan upload kelengkapan berkas yang diminta.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
         <div class="text-center">
           <div class="card-img-block">
-            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_1.png') ?>" style="width:50%;" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/apply.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>5.</h3>
-          <p>Pilih jabatan yang ingin dilamar dengan klik tombol "Lamar Posisi".</p>
+          <p>Pilih lowongan pekerjaan yang sesuai dengan minat Anda.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="100">
         <div class="text-center">
           <div class="card-img-block">
-            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_2.png') ?>" style="width:50%;" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo base_url('assets2/images/submit_1.png') ?>" style="width:50%;" alt="Card image cap">
           </div><br>
           <h3>6.</h3>
-          <p>Isi formulir dan kirimkan lamaran Anda dengan klik tombol "Kirim".</p>
+          <p>Klik "Lamar Lowongan" dan isi formulir motivation letter. Kemudian klik tombol "Kirim".</p>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
+<!--       <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
         <div class="text-center">
           <div class="card-img-block">
             <img class="card-img-top" src="<?php echo base_url('assets2/images/telephone.png') ?>" style="width:50%;" alt="Card image cap">
@@ -186,7 +183,7 @@
           <h3>7.</h3>
           <p>Anda telah berhasil mengirim lamaran. Silahkan cek email Anda!.</p>
         </div>
-      </div>
+      </div> -->
           <!-- <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <div class="card-img-block">
@@ -214,7 +211,7 @@
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Apakah proses rekrutmen dan seleksi yang dijalani oleh pelamar akan dipungut biaya? 
+                      Apakah proses rekrutmen dan seleksi akan dipungut biaya?
                     </a>
                   </h4>
                 </div>
@@ -228,13 +225,13 @@
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Bagaimana cara verfikasi email yang menggunakan yahoo mail dan gmail? 
+                      Apakah pelamar bisa melamar lebih dari 1 jabatan?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
-                    <p>Bagi pelamar yang menggunakan gmail saat pendaftaran akun choise maka link verifikasi yang masuk pada inbox email bisa secara langsung klik link tersebut untuk mengaktifkan akun. Sedangkan bagi pendaftar yang melakukan registrasi dengan menggunakan yahoo mail, maka link yang masuk pada kotak masuk/inbox bisa di copy paste ke tab baru/new tab. Jika kode verifikasi tidak terdapat pada kotak masuk/inbox maka bisa di cek di spam akun email anda.</p>
+                    <p>TIDAK BISA. Setiap pelamar hanya diperbolehkan untuk memilih 1 posisi jabatan saja. oleh karena itu pertimbangkan terlebih dahulu sebelum melakukan submit pada posisi yang anda pilih. KECUALI bila Anda berniat untuk melamar di lebih dari satu perusahaan yang berbeda.</p>
                   </div>
                 </div>
               </div>
@@ -242,13 +239,13 @@
                 <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Apakah pelamar boleh melamar lebih dari 1 posisi jabatan?
+                      Bagaimana pelamar bisa mengetahui apakah lowongan kerjanya sudah diterima oleh Tim Seleksi Chaakra Consulting dengan baik?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
-                    <p>TIDAK BISA. Setiap pelamar hanya diperbolehkan untuk memilih 1 posisi jabatan saja. Oleh karena itu pertimbangkan terlebih dahulu sebelum melakukan submit pada posisi yang anda pilih.</p>
+                    <p>Setiap data yang sudah lengkap dan sesuai dengan persyaratan yang diajukan akan diproses dengan baik sebagaimana mestinya. Adapun pelamar yang datanya sudah diterima dengan baik akan menerima notifikasi dari panitia. Oleh karena itu setiap pelamar diharapkan untuk mengisi kontak email aktif dan nomor handpone aktif yang digunakan untuk proses penginformasian tahapan pada kegiatan ini.</p>
                   </div>
                 </div>
               </div>
@@ -256,13 +253,13 @@
                 <div class="panel-heading" role="tab" id="headingFour">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Bagaimana pelamar bisa tahu data yang diberikan sudah diterima dengan baik? 
+                      Apakah kerahasiaan data yang diberikan oleh pelamar bisa dijamin kerahasiaannya?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                   <div class="panel-body">
-                    <p>Setiap data yang sudah lengkap dan sesuai dengan persyaratan yang diajukan akan diproses dengan baik sebagaimana mestinya. Adapun pelamar yang datanya sudah diterima dengan baik akan menerima notifikasi dari panitia. Oleh karena itu setiap pelamar diharapkan untuk mengisi kontak email aktif dan nomor handpone aktif yang digunakan untuk proses penginformasian tahapan pada kegiatan ini.</p>
+                    <p>Panitia menjamin penuh kerahasiaan data yang sudah diberikan oleh pelamar untuk semua rangkaian kegiatan rekrutmen dan seleksi. Adapun setiap data yang diberikan hanya digunakan untuk kepentingan rekrutmen dan seleksi sebagaimana yang menjadi tujuan kegiatan ini.</p>
                   </div>
                 </div>
               </div>
@@ -270,13 +267,13 @@
                 <div class="panel-heading" role="tab" id="headingFive">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      Apakah kerahasiaan data yang diberikan oleh pelamar bisa dijamin kerahasiaannya? 
+                      Kapan pengumuman kelolosan untuk kegiatan rekrutmen dan seleksi yang dijalani oleh pelamar?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">
-                    <p>Panitia menjamin penuh kerahasiaan data yang sudah diberikan oleh pelamar untuk semua rangkaian kegiatan rekrutmen dan seleksi. Adapun setiap data yang diberikan hanya digunakan untuk kepentingan rekrutmen dan seleksi sebagaimana yang menjadi tujuan kegiatan ini.</p>
+                    <p>Untuk jadwal pengumuman tahapan kelolosan seleksi sudah ditampilkan di web yang sudah ditetapkan choise.chaakraconsulting.com. Silahkan dicermati untuk setiap detil tanggal pelaksanaannya. Setiap proses seleksi akan dilakukan sesuai dengan jadwal yang sudah ditetapkan oleh panitia. Adapun perubahan tanggal dan waktu akan tetap diinformasikan via web secara tepat waktu.</p>
                   </div>
                 </div>
               </div>
@@ -284,25 +281,11 @@
                 <div class="panel-heading" role="tab" id="headingSix">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                      Kapankah pengumuman kelolosan untuk kegiatan rekrutmen dan seleksi yang dijalani oleh pelamar? 
+                      Apa saja tahapan seleksi yang harus dilalui oleh pelamar? 
                     </a>
                   </h4>
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                  <div class="panel-body">
-                    <p>Untuk jadwal pengumuman tahapan kelolosan seleksi sudah ditampilkan di web yang sudah ditetapkan choise.chaakraconsulting.com. Silahkan dicermati untuk setiap detil tanggal pelaksanaannya. Setiap proses seleksi akan dilakukan sesuai dengan jadwal yang sudah ditetapkan oleh panitia. Adapun perubahan tanggal dan waktu akan tetap diinformasikan via web secara tepat waktu.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingSeven">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                      Apa saja tahapan seleksi yang harus dilalui oleh pelamar untuk bisa diterima sesuai dengan posisi jabatan perusahaan yang dilamar? 
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                   <div class="panel-body">
                     <p>Untuk tahapan seleksi yang akan dijalankan oleh pelamar sudah ada di jadwal kegiatan seleksi di web choise.chaakraconsulting.com. Silahkan untuk dicermati tahapan dan waktu pelaksanaannya. Adapun tahapan seleksi yang diterapkan adalah melalui SISTEM GUGUR. Sehingga untuk nama-nama yang tidak ada dalam konfirmasi panitia berarti dinyatakan TIDAK LOLOS.</p>
                   </div>
@@ -332,7 +315,7 @@
       </div>
     </div>
 
-    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('assets2/images/hero_1.jpg');">
+   <!--  <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('assets2/images/hero_1.jpg');">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -379,7 +362,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
 <?php   $this->load->view('layout2/footer') ?>

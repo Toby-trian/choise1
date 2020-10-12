@@ -7,9 +7,9 @@ class Pelamar extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_home');
-		$this->load->model('mdl_data_pelamar');
-		$this->load->model('mdl_data_ujian');
+		$this->load->model('Mdl_home');
+		$this->load->model('Mdl_data_pelamar');
+		$this->load->model('Mdl_data_ujian');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -62,7 +62,7 @@ class Pelamar extends CI_Controller {
 				$send['foto']=$data['file_name'];					
 			}
 		}	
-		$kembalian['jumlah']=$this->mdl_data_pelamar->uploadImage($send);
+		$kembalian['jumlah']=$this->Mdl_data_pelamar->uploadImage($send);
 		$this->load->view('pengaturan',$kembalian);
 		$this->session->set_flashdata('msg','Foto Berhasil Diubah!!!');
 		redirect('Pelamar/Pelamar/pengaturan');
@@ -98,7 +98,7 @@ class Pelamar extends CI_Controller {
 				$this->session->set_flashdata('pesan_error',$error);
 				$this->load->view('uploadberkas');
 			}elseif ($query->num_rows()>0) {
-				$target= "upload/berkas_pelamar/".$query2[0]['berkas'];
+				$target= "./upload/berkas_pelamar/".$query2[0]['berkas'];
 				unlink($target);
 				$data = $this->upload->data();
 				$send['berkas']=$data['file_name'];	
@@ -110,9 +110,9 @@ class Pelamar extends CI_Controller {
 		}
 
 		if ($query->num_rows()>0) {
-			$kembalian['jumlah']=$this->mdl_data_pelamar->updateBerkas($send);
+			$kembalian['jumlah']=$this->Mdl_data_pelamar->updateBerkas($send);
 		}else{
-			$kembalian['jumlah']=$this->mdl_data_pelamar->inputBerkas($send);
+			$kembalian['jumlah']=$this->Mdl_data_pelamar->inputBerkas($send);
 		}	
 		$this->load->view('uploadberkas',$kembalian);
 		$this->session->set_flashdata('msg','Berkas berhasil diunggah!!!');
@@ -148,7 +148,7 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('twitter','Nama','trim|required');
 
 		$id_pelamar = $this->input->post('id_pelamar');
-		$nikPel = $this->input->post('nik');
+		
 
 		if ($this->form_validation->run()==FALSE ) {
 			$data['msg_error']="Silahkan isi semua kolom";
@@ -172,11 +172,13 @@ class Pelamar extends CI_Controller {
 			$send['instagram']=$this->input->post('instagram');
 			$send['twitter']=$this->input->post('twitter');
 
+			$nikPel = $this->input->post('nik');
+
 			$query_data_diri = $this->db->query("SELECT * FROM tb_data_diri WHERE nik = $nikPel");
 			if ($query_data_diri->num_rows()>0) {
 				echo '<script language="javascript"> alert("NIK sudah terdaftar");document.location.href = "./Pelamar/Pelamar/tambahdatadiri";</script>';
 			}
-			$kembalian['jumlah']=$this->mdl_home->isi_data_diri($send);
+			$kembalian['jumlah']=$this->Mdl_home->isi_data_diri($send);
 
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -203,7 +205,7 @@ class Pelamar extends CI_Controller {
 			$send['pekerjaan_ibu']=$this->input->post('pekerjaan_ibu');
 			$send['nama_pasangan']=$this->input->post('nama_pasangan');
 			$send['pekerjaan_pasangan']=$this->input->post('pekerjaan_pasangan');
-			$kembalian['jumlah']=$this->mdl_home->isi_data_keluarga($send);
+			$kembalian['jumlah']=$this->Mdl_home->isi_data_keluarga($send);
 
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -233,7 +235,7 @@ class Pelamar extends CI_Controller {
 			$send['tahun_masuk']=$this->input->post('tahun_masuk');
 			$send['tahun_keluar']=$this->input->post('tahun_keluar');
 
-			$kembalian['jumlah']=$this->mdl_home->isi_data_pendidikan($send);
+			$kembalian['jumlah']=$this->Mdl_home->isi_data_pendidikan($send);
 
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Pendidikan Berhasil Ditambahkan!!!');
@@ -258,7 +260,7 @@ class Pelamar extends CI_Controller {
 			$send['nomor_sertifikat']=$this->input->post('nomor_sertifikat');
 			$send['tahun_pendidikan_nonformal']=$this->input->post('tahun_pendidikan_nonformal');
 
-			$kembalian['jumlah']=$this->mdl_home->isi_data_pendidikan_nonformal($send);
+			$kembalian['jumlah']=$this->Mdl_home->isi_data_pendidikan_nonformal($send);
 
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Pendidikan Non Formal Berhasil Ditambahkan!!!');
@@ -268,18 +270,17 @@ class Pelamar extends CI_Controller {
 
 	public function hapus_pendidikan($id){
 		$where = array('id_pendidikan' => $id);
-		$this->mdl_home->do_delete($where,'tb_data_pendidikan');
+		$this->Mdl_home->do_delete($where,'tb_data_pendidikan');
 		$this->session->set_flashdata('msg_hapus','Data Pendidikan Berhasil dihapus');
 		redirect('Pelamar/Pelamar/profilawal');
 	}
 
 	public function hapus_pendidikan_nonformal($id){
 		$where = array('id_pendidikan_nonformal' => $id);
-		$this->mdl_home->do_delete($where,'tb_data_pendidikan_nonformal');
+		$this->Mdl_home->do_delete($where,'tb_data_pendidikan_nonformal');
 		$this->session->set_flashdata('msg_hapus','Data Pendidikan Non Formal Berhasil dihapus');
 		redirect('Pelamar/Pelamar/profilawal');
 	}
-
 
 	public function ubahpendidikan($id_update)
 	{
@@ -291,11 +292,12 @@ class Pelamar extends CI_Controller {
 		$jenjang = $this->input->post('jenjang_pendidikan');
 
 		if($this->form_validation->run()==FALSE || $jenjang = "" ){
-			$indexrow['data']=$this->mdl_home->ambildata_pendidikan($id_update);
+			$indexrow['data']=$this->Mdl_home->ambildata_pendidikan2($id_update);
 			$this->load->view('ubahpendidikan', $indexrow);
 		}
 		else{
 			$send['id_pelamar']=$this->input->post('id_pelamar');
+			$send['id_pendidikan']=$this->input->post('id_pendidikan');
 			$send['nama_institusi']=$this->input->post('nama_institusi');
 			$send['jenjang_pendidikan']=$this->input->post('jenjang_pendidikan');
 			$send['jurusan']=$this->input->post('jurusan');
@@ -304,7 +306,7 @@ class Pelamar extends CI_Controller {
 			$send['tahun_keluar']=$this->input->post('tahun_keluar');
 
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_home->modelupdate_pendidikan($send);
+			$kembalian['jumlah']=$this->Mdl_home->modelupdate_pendidikan($send);
 			$this->session->set_flashdata('msg_update', 'Data Pendidikan Berhasil diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
@@ -318,10 +320,11 @@ class Pelamar extends CI_Controller {
 		$nama_pendidikan_nonformal = $this->input->post('nama_pendidikan_nonformal');
 
 		if($this->form_validation->run()==FALSE || $nama_pendidikan_nonformal = "" ){
-			$indexrow['data']=$this->mdl_home->ambildata_pendidikan_nonformal($id_update);
+			$indexrow['data']=$this->Mdl_home->ambildata_pendidikan_nonformal2($id_update);
 			$this->load->view('ubahpendidikannonformal', $indexrow);
 		}
 		else{
+			$send['id_pendidikan_nonformal']=$this->input->post('id_pendidikan_non');
 			$send['id_pelamar']=$this->input->post('id_pelamar');
 			$send['nama_pendidikan_nonformal']=$this->input->post('nama_pendidikan_nonformal');
 			$send['tujuan_pendidikan_nonformal']=$this->input->post('tujuan_pendidikan_nonformal');
@@ -329,7 +332,7 @@ class Pelamar extends CI_Controller {
 			$send['tahun_pendidikan_nonformal']=$this->input->post('tahun_pendidikan_nonformal');
 
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_home->modelupdate_pendidikan_nonformal($send);
+			$kembalian['jumlah']=$this->Mdl_home->modelupdate_pendidikan_nonformal($send);
 			$this->session->set_flashdata('msg_update', 'Data Pendidikan Non Formal Berhasil Diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
@@ -356,7 +359,7 @@ class Pelamar extends CI_Controller {
 			$send['password']=md5($this->input->post('passNew'));
 			$send['confirm_password']=$this->input->post('confirmPass');
 
-			$kembalian['jumlah']=$this->mdl_data_pelamar->modelupdate_profile($send);
+			$kembalian['jumlah']=$this->Mdl_data_pelamar->modelupdate_profile($send);
 			$this->session->set_flashdata('msg_update', 'Username dan password berhasil diupdate');
 			redirect('Pelamar/Pelamar/pengaturan');
 		}	
@@ -383,7 +386,7 @@ class Pelamar extends CI_Controller {
 			$send['alasan_keluar']=$this->input->post('alasan_keluar');
 			$send['nama_referensi']=$this->input->post('nama_referensi');
 			$send['no_hp_referensi']=$this->input->post('no_hp_referensi');
-			$kembalian['jumlah']=$this->mdl_home->isi_data_pengalaman($send);
+			$kembalian['jumlah']=$this->Mdl_home->isi_data_pengalaman($send);
 			$this->load->view('profilawal',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Pelamar/Pelamar/profilawal/');
@@ -409,7 +412,7 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('twitter','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_pelamar->ambildata_pelamar($id_update);
+			$indexrow['data']=$this->Mdl_data_pelamar->ambildata_pelamar($id_update);
 			$this->load->view('ubahdatadiri', $indexrow);
 		}
 		else{
@@ -430,7 +433,7 @@ class Pelamar extends CI_Controller {
 			$send['instagram']=$this->input->post('instagram');
 			$send['twitter']=$this->input->post('twitter');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_pelamar->modelupdate($send);
+			$kembalian['jumlah']=$this->Mdl_data_pelamar->modelupdate($send);
 			$this->session->set_flashdata('msg_update', 'Data Diri Berhasil diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
@@ -444,7 +447,7 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('pekerjaan_ibu','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_home->ambil_data_keluarga($id_update);
+			$indexrow['data']=$this->Mdl_home->ambil_data_keluarga($id_update);
 			$this->load->view('ubahdatakeluarga', $indexrow);
 		}
 		else{
@@ -456,7 +459,7 @@ class Pelamar extends CI_Controller {
 			$send['nama_pasangan']=$this->input->post('nama_pasangan');
 			$send['pekerjaan_pasangan']=$this->input->post('pekerjaan_pasangan');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_home->modelupdate_keluarga($send);
+			$kembalian['jumlah']=$this->Mdl_home->modelupdate_keluarga($send);
 			$this->session->set_flashdata('msg_update', 'Data Diri Berhasil diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
@@ -472,7 +475,7 @@ class Pelamar extends CI_Controller {
 		$this->form_validation->set_rules('no_hp_referensi','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_home->ambil_data_pengalaman($id_update);
+			$indexrow['data']=$this->Mdl_home->ambil_data_pengalaman($id_update);
 			$this->load->view('ubahdatapengalamankerja', $indexrow);
 		}
 		else{
@@ -486,7 +489,7 @@ class Pelamar extends CI_Controller {
 			$send['alasan_keluar']=$this->input->post('alasan_keluar');
 			$send['nama_referensi']=$this->input->post('nama_referensi');
 			$send['no_hp_referensi']=$this->input->post('no_hp_referensi');
-			$kembalian['jumlah']=$this->mdl_home->modelupdate_pengalaman($send);
+			$kembalian['jumlah']=$this->Mdl_home->modelupdate_pengalaman($send);
 			$this->session->set_flashdata('msg_update', 'Data Pengalaman Berhasil diupdate');
 			redirect('Pelamar/Pelamar/profilawal');
 		}
@@ -494,7 +497,7 @@ class Pelamar extends CI_Controller {
 
 	public function hapus_pengalaman($id){
 		$where = array('id_pengalaman' => $id);
-		$this->mdl_home->do_delete($where,'tb_data_pengalaman_kerja');
+		$this->Mdl_home->do_delete($where,'tb_data_pengalaman_kerja');
 		$this->session->set_flashdata('msg_hapus','Data Pengalaman Berhasil dihapus');
 		redirect('Pelamar/Pelamar/profilawal');
 	}
@@ -522,15 +525,15 @@ class Pelamar extends CI_Controller {
 	}
 	public function testulispsikotes()
 	{
-		$paket['array']=$this->mdl_data_ujian->ambildata_ujian();	
+		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();	
 		$this->load->view('testulispsikotes',$paket);
 
 	}
 	public function cfit($id_pelamar, $id_ujian)
 	{
 		$idUjian = $this->session->set_userdata('ses_ujian', $id_ujian);
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
-		$paket['arrayU']=$this->mdl_data_ujian->ambildata_ujian2($id_ujian);
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$paket['arrayU']=$this->Mdl_data_ujian->ambildata_ujian2($id_ujian);
 		$this->load->view('cfit',$paket);
 	}
 	public function latihancfit1()

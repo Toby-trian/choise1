@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Choise-Daftar</title>
+	<title>Choise-Verifikasi</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->	
@@ -32,48 +32,20 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150" action="<?php echo base_url('Daftar/') ?>" method="post">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-150">
 					<span class="login100-form-title">
-						Daftar
+						Verifikasi Berhasil
 					</span>
 
-					<?php if($this->session->flashdata('msg_gagal')):?>
-						<div class="alert alert-danger">
-							<?php  echo $this->session->flashdata('msg_gagal')?>
-						</div>
-					<?php endif ;?>
-
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
-						<input class="input100" type="email" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
-						<input class="input100" type="password" id="password" name="pass" placeholder="Kata Sandi" id="txtPassword">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Please re-enter password">
-						<input class="input100" type="password" name="repass" id="confirm_password" placeholder="Konfirmasi Kata Sandi" id="txtComfirmPassword">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="container-login100-form-btn p-t-26">
-						
-						<input type="submit" value="Daftar" class="login100-form-btn">
-					</div>
-
+					
 					<div class="flex-col-c p-t-50 p-b-40">
-						<span class="txt1 p-b-9">
-							Sudah punya akun?
+						<span class="txt4 p-b-9">
+						
+                        Selamat akun kamu berhasil terverifikasi.
+                       
 						</span>
 
-						<a href="<?php echo base_url('Home/login2') ?>" class="txt3">
+						<a href="<?php echo base_url('Home/login2') ?>" class="txt4 btn btn btn-warning mr-2 mb-2">
 							Masuk Sekarang
 						</a>
 					</div>
@@ -97,25 +69,6 @@
 
 		password.onchange = validatePassword;
 		confirm_password.onkeyup = validatePassword;
-	</script>
-
-	<script type="text/javascript">        
-		$(document).ready(function(){
-			$('#email').change(function(){
-				var email = $('#email').val();
-				if(email != ''){
-					$.ajax({
-						url: "<?php echo base_url(); ?>Daftar/checkUsername",
-						method: "POST",
-						data: {email:email},
-						success: function(data){
-							$('#username_result').html(data);
-							processData: false
-						}
-					});
-				}
-			});
-		});
 	</script>
 	
 	<!--===============================================================================================-->

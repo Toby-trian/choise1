@@ -25,9 +25,14 @@ class Mdl_home extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_pendidikan2($id){
+		$query=$this->db->query("SELECT * FROM tb_data_pendidikan WHERE id_pendidikan = $id");
+		return $query->result_array();
+	}
+
 	public function modelupdate_pendidikan($send){
-		$sql="UPDATE tb_data_pendidikan SET id_pendidikan = ?, id_pelamar = ?, jenjang_pendidikan = ?, nama_institusi = ?, jurusan = ? , tahun_masuk = ?, tahun_keluar = ?, nilai_akhir = ? WHERE id_pelamar = ?";
-		$query=$this->db->query($sql, array($send['id_pendidikan'], $send['id_pelamar'], $send['jenjang_pendidikan'], $send['nama_institusi'], $send['jurusan'], $send['tahun_masuk'], $send['tahun_keluar'], $send['nilai_akhir'], $send['id_pelamar']));
+		$sql="UPDATE tb_data_pendidikan SET id_pendidikan = ?, id_pelamar = ?, jenjang_pendidikan = ?, nama_institusi = ?, jurusan = ? , tahun_masuk = ?, tahun_keluar = ?, nilai_akhir = ? WHERE id_pendidikan = ?";
+		$query=$this->db->query($sql, array($send['id_pendidikan'], $send['id_pelamar'], $send['jenjang_pendidikan'], $send['nama_institusi'], $send['jurusan'], $send['tahun_masuk'], $send['tahun_keluar'], $send['nilai_akhir'], $send['id_pendidikan']));
 	}
 
 	public function ambildata_pendidikan_nonformal($id){
@@ -35,9 +40,15 @@ class Mdl_home extends CI_Model {
 		return $query->result_array();
 	}
 
+
+	public function ambildata_pendidikan_nonformal2($id){
+		$query=$this->db->query("SELECT * FROM tb_data_pendidikan_nonformal WHERE id_pendidikan_nonformal = $id");
+		return $query->result_array();
+	}
+
 	public function modelupdate_pendidikan_nonformal($send){
-		$sql="UPDATE tb_data_pendidikan_nonformal SET id_pendidikan_nonformal = ?, id_pelamar = ?, nama_pendidikan_nonformal = ?, tujuan_pendidikan_nonformal = ?, nomor_sertifikat = ? , tahun_pendidikan_nonformal = ? WHERE id_pelamar = ?";
-		$query=$this->db->query($sql, array($send['id_pendidikan_nonformal'], $send['id_pelamar'], $send['nama_pendidikan_nonformal'], $send['tujuan_pendidikan_nonformal'], $send['nomor_sertifikat'], $send['tahun_pendidikan_nonformal'], $send['id_pelamar']));
+		$sql="UPDATE tb_data_pendidikan_nonformal SET id_pendidikan_nonformal = ?, id_pelamar = ?, nama_pendidikan_nonformal = ?, tujuan_pendidikan_nonformal = ?, nomor_sertifikat = ? , tahun_pendidikan_nonformal = ? WHERE id_pendidikan_nonformal = ?";
+		$query=$this->db->query($sql, array($send['id_pendidikan_nonformal'], $send['id_pelamar'], $send['nama_pendidikan_nonformal'], $send['tujuan_pendidikan_nonformal'], $send['nomor_sertifikat'], $send['tahun_pendidikan_nonformal'], $send['id_pendidikan_nonformal']));
 	}
 
 	public function register($paket){
@@ -94,4 +105,53 @@ class Mdl_home extends CI_Model {
 		$sql="UPDATE tb_data_pengalaman_kerja SET id_pengalaman = ?, id_pelamar = ?, nama_perusahaan = ?, periode = ?, jabatan_akhir = ? , alasan_keluar = ?, nama_referensi = ?, no_hp_referensi = ? WHERE id_pengalaman = ?";
 		$query=$this->db->query($sql, array( $send['id_pengalaman'], $send['id_pelamar'], $send['nama_perusahaan'], $send['periode'], $send['jabatan_akhir'], $send['alasan_keluar'], $send['nama_referensi'], $send['no_hp_referensi'], $send['id_pengalaman']));
 	}
+
+	function changeActiveState($key)
+	{
+
+	 $data = array(
+	 'status' => 1
+	 );
+
+	 $this->db->where('encrypt_email', $key);
+	 $this->db->update('tb_pelamar', $data);
+
+	 return true;
+	}
+
+	public function send_mail($subject_,$pesan_,$to_)
+
+	{ 
+		$this->load->library('email');
+
+		$result = $this->email
+
+					->from('adm@chaakraconsulting.com','Admin Choise') 
+
+					->to($to_)
+
+					->subject($subject_)
+
+					->set_mailtype("html")
+
+					->message($pesan_)
+
+					->send();
+    
+		return TRUE;	 
+
+	}
+
+	public function getUsername($email)
+	 {
+	  $this->db->where('email' , $email);
+	  $query = $this->db->get('tb_pelamar');
+
+	  if($query->num_rows()>0){
+	   return true;
+	  }
+	  else {
+	   return false;
+	  }
+	 }
 }

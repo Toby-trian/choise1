@@ -7,8 +7,9 @@ class Data_lowongan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_lowongan');
-		$this->load->model('mdl_data_pelamar');
+		$this->load->model('Mdl_data_lowongan');
+		$this->load->model('Mdl_data_pelamar');
+		$this->load->model('Mdl_home');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -35,7 +36,7 @@ class Data_lowongan extends CI_Controller {
 	// CRUD Lowongan
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_lowongan->ambildata_lowongan();	
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_lowongan();	
 		$this->load->view('administrator/data_lowongan',$paket);
 	}
 
@@ -62,7 +63,7 @@ class Data_lowongan extends CI_Controller {
 			$send['persyaratan']=$this->input->post('persyaratan');
 			$send['gaji']=$this->input->post('gaji');
 
-			$kembalian['jumlah']=$this->mdl_data_lowongan->tambahdata_lowongan($send);
+			$kembalian['jumlah']=$this->Mdl_data_lowongan->tambahdata_lowongan($send);
 						
 			$this->load->view('administrator/data_lowongan',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -72,8 +73,8 @@ class Data_lowongan extends CI_Controller {
 
 	public function hapus_lowongan($id){
 		$where = array('id_lowongan' => $id);
-		$this->mdl_data_lowongan->do_delete($where,'tb_lowongan');
-		$this->mdl_data_lowongan->do_delete($where, 'tb_apply');
+		$this->Mdl_data_lowongan->do_delete($where,'tb_lowongan');
+		$this->Mdl_data_lowongan->do_delete($where, 'tb_apply');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Data_lowongan/');
 	}
@@ -87,7 +88,7 @@ class Data_lowongan extends CI_Controller {
 		$this->form_validation->set_rules('gaji','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_lowongan->ambildata2_lowongan($id_update);
+			$indexrow['data']=$this->Mdl_data_lowongan->ambildata2_lowongan($id_update);
 			$this->load->view('administrator/vedit_lowongan', $indexrow);
 		}
 		else{
@@ -100,7 +101,7 @@ class Data_lowongan extends CI_Controller {
 			$send['persyaratan']=$this->input->post('persyaratan');
 			$send['gaji']=$this->input->post('gaji');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_lowongan->modelupdate($send);
+			$kembalian['jumlah']=$this->Mdl_data_lowongan->modelupdate($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Data_lowongan');
 		}
@@ -111,7 +112,7 @@ class Data_lowongan extends CI_Controller {
 	// detail lowongan
 	public function detail_lowongan($id_detail)
 	{
-		$paket['array']=$this->mdl_data_lowongan->ambildata_apply($id_detail);	
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_apply($id_detail);	
 		$this->load->view('administrator/detail_lowongan',$paket);
 	}
 
@@ -120,7 +121,25 @@ class Data_lowongan extends CI_Controller {
 
 	public function terima_pelamar($id,$pelamar){
 		$where = array('id_apply' => $id);
-		$this->mdl_data_pelamar->terima_pelamar($where,'tb_apply');
+		$this->Mdl_data_pelamar->terima_pelamar($where,'tb_apply');
+
+		/*Kirim email*/
+		$id_pelamar = $this->session->userdata('ses_id');
+		$queryMail = $this->db->query("SELECT * FROM tb_pelamar WHERE id_pelamar = $id_pelamar");
+		foreach ($queryMail->result() as $key) {
+			$penerima = $key->email;
+		}
+
+				$subject_="ADM CHOISE - Pengumuman (No Reply)";
+				
+				$pesan_='
+				<b>SELAMAT,</b> <br><br>
+				Anda dinyatakan lolos seleksi administrasi, untuk info selanjutnya bisa akses akun choise anda<br> <br> <br><br>
+				Terimakasih.<br><br> Tim Rekrutmen dan Assessment Chaakraconsulting
+				';
+				$to_=$penerima;
+				
+				$this->Mdl_home->send_mail($subject_,$pesan_,$to_);	
 
 		$this->session->set_flashdata('msg_success','Pelamar diterima');
 		redirect('Administrator/Data_lowongan/');
@@ -128,7 +147,7 @@ class Data_lowongan extends CI_Controller {
 
 	public function tolak_pelamar($id){
 		$where = array('id_apply' => $id);
-		$this->mdl_data_pelamar->tolak_pelamar($where,'tb_apply');
+		$this->Mdl_data_pelamar->tolak_pelamar($where,'tb_apply');
 		$this->session->set_flashdata('msg_success','Pelamar ditolak');
 		redirect('Administrator/Data_lowongan/');
 	}

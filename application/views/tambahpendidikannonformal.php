@@ -21,7 +21,7 @@
 
 		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px">
 			<div class="col-sm-12">
-				<h4 style="margin-bottom: 2%;"><b>Tambah Data Pendidikan Nonformal</b></h4>
+				<h4 style="margin-bottom: 2%;"><b>Tambah Riwayat Pendidikan Nonformal</b></h4>
 				<form action="<?php echo base_url('Pelamar/Pelamar/tambahpendidikannonformal') ?>" method="post">
 				  <div class="form-row">
 				  	<div class="form-group col-sm-12">
@@ -34,12 +34,12 @@
 				      <input type="text" class="form-control" name="tujuan_pendidikan_nonformal" placeholder="Tujuan Kursus/Pelatihan">
 				    </div>
 				    <div class="form-group col-sm-12">
-				      <label for="inputnomorsertifikat">Nomor Sertifikat</label>
+				      <label for="inputnomorsertifikat">Nomor Sertifikat <label style="color:red">*Isi dengan "-" (tanpa petik) Jika tidak ada</label></label>
 				      <input type="text" class="form-control" name="nomor_sertifikat" placeholder="Nomor Sertifikat">
 				    </div>
 				    <div class="form-group col-sm-12">
 				      <label for="inputtahunpendidikannonformal">Tahun</label>
-				      <input type="text" class="form-control" name="tahun_pendidikan_nonformal" placeholder="Tahun">
+				      <input type="number" class="form-control" name="tahun_pendidikan_nonformal" placeholder="Tahun">
 				    </div>
 				  </div>
 				  <div class="col-sm-12">
@@ -48,9 +48,6 @@
 		          </div>
 				</form>
 			</div>
-		</div><br>
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 		</div>
 
 	</div>	<!--/.main-->

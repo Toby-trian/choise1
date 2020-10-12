@@ -47,9 +47,11 @@ $id_pelamar=$this->session->userdata('ses_id');
 				      <td>
 				      	<?php if(date('Y-m-d H:i:s') < date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){
 
-				      	} else{ ?>
-				      	<a href="<?php  echo base_url('Pelamar/Pelamar/cfit/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a></td>
+				      	} elseif(date('Y-m-d H:i:s') == date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){ ?>
 
+				      	<a href="<?php  echo base_url('Pelamar/Pelamar/cfit/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a></td>
+				      	<?php } elseif (date('Y-m-d H:i:s') > date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){ ?>
+				      		Ujian sudah selesai
 				      	<?php } ?>
 				    </tr>
 				<?php } ?>

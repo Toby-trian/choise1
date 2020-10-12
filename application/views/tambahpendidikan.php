@@ -21,7 +21,7 @@
 
 	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px">
 		<div class="col-sm-12">
-			<h4 style="margin-bottom: 2%;"><b>Tambah Data Pendidikan</b></h4>
+			<h4 style="margin-bottom: 2%;"><b>Tambah Riwayat Pendidikan</b></h4>
 			<form action="<?php echo base_url('Pelamar/Pelamar/tambahpendidikan') ?>" method="post">
 			  <div class="form-row">
 			  	<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
@@ -48,16 +48,16 @@
 			    </div>
 
 			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="nilaiAkhir">Nilai Akhir</label>
-			      <input type="text" class="form-control" name="nilai_akhir" placeholder="NEM/IPK">
+			      <label for="nilaiAkhir">Nilai Akhir/IPK</label>
+			      <input pattern="^\d*(\.\d{0,2})?$" class="form-control" name="nilai_akhir" placeholder="NEM/IPK">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
 			      <label for="tanggal">Tahun Masuk</label>
-			      <input type="text" class="form-control" name="tahun_masuk" placeholder="Tahun Masuk">
+			      <input type="number" class="form-control" name="tahun_masuk" placeholder="Tahun Masuk">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
 			      <label for="tanggal">Tahun Lulus</label>
-			      <input type="text" class="form-control" name="tahun_keluar" placeholder="Tahun Lulus">
+			      <input type="number" class="form-control" name="tahun_keluar" placeholder="Tahun Lulus">
 			    </div>
 			  </div>
 			  <div class="col-sm-12">
@@ -67,10 +67,6 @@
 			</form>
 
 		</div>
-	</div>
-
-	<div class="col-sm-12">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 	</div>
 
 </div>	<!--/.main-->

@@ -25,13 +25,13 @@
 			<form action="<?php echo base_url('Pelamar/Pelamar/tambahdatadiri/') ?>" method="post">
 			  <div class="form-row">
 			  	<div class="form-group col-sm-12">
-			      <label for="inputNama">Nama</label>
+			      <label for="inputNama">Nama Lengkap</label>
 			      <input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
 			      <input type="text" class="form-control" name="nama_pelamar">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="inputNik">NIK</label>
-			      <input type="text" class="form-control" name="nik">
+			      <input type="number" class="form-control" name="nik">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="inputTempatlahir">Tempat Lahir</label>
@@ -83,15 +83,15 @@
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="anak_ke">Anak ke</label>
-			      <input type="text" class="form-control" name="anak_ke" >
+			      <input type="number" class="form-control" name="anak_ke" >
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="dari_x_sdr">Dari berapa bersaudara</label>
-			      <input type="text" class="form-control" name="dari_x_sdr" >
+			      <input type="number" class="form-control" name="dari_x_sdr" >
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="noHp">Nomor WA Aktif</label>
-			      <input type="text" class="form-control" name="no_hp">
+			      <input type="number" class="form-control" name="no_hp">
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="akunFb">Nama Pengguna Facebook</label>
@@ -117,10 +117,6 @@
 			</form>
 
 		</div>
-	</div>
-
-	<div class="col-sm-12">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 	</div>
 
 </div>	<!--/.main-->

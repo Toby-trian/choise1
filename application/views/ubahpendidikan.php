@@ -9,22 +9,22 @@
 			<li><a href="#">
 				<em class="fa fa-user color-amber"></em>
 			</a></li>
-			<li class="active">Profil Pendidikan</li>
+			<li class="active">Profil Saya</li>
 		</ol>
 	</div><!--/.row-->
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Profil Pendidikan</h1>
+			<h1 class="page-header">Profil Saya</h1>
 		</div>
 	</div><!--/.row-->
 
 	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
 		<div class="col-sm-12">
-			<h4 style="margin-bottom: 2%;"><b>Ubah Data Pendidikan</b></h4>
+			<h4 style="margin-bottom: 2%;"><b>Ubah Riwayat Pendidikan</b></h4>
 			<form action="<?php echo base_url('Pelamar/Pelamar/ubahpendidikan/'.$data[0]['id_pendidikan']) ?>" method="post">
 			  <div class="form-row">
-			  	<input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pendidikan'] ?>">
+			  	<input type="hidden" name="id_pendidikan" value="<?php echo $data[0]['id_pendidikan'] ?>">
 			  	<input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pelamar'] ?>">
 			  	<div class="form-group col-md-6 col-sm-12">
 			      <label for="inputJenjang">Jenjang Pendidikan</label>
@@ -50,16 +50,16 @@
 			    </div>
 
 			    <div class="form-group col-md-6 col-sm-12">
-			      <label for="nilaiAkhir">Nilai Akhir / IPK</label>
-			      <input type="text" class="form-control" name="nilai_akhir" value="<?php echo $data[0]['nilai_akhir'] ?>">
+			      <label for="nilaiAkhir">Nilai Akhir/IPK</label>
+			      <input pattern="^\d*(\.\d{0,2})?$" class="form-control" name="nilai_akhir" value="<?php echo $data[0]['nilai_akhir'] ?>">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
 			      <label for="tanggal">Tahun Masuk</label>
-			      <input type="text" class="form-control" name="tahun_masuk" value="<?php echo $data[0]['tahun_masuk'] ?>">
+			      <input type="number" class="form-control" name="tahun_masuk" value="<?php echo $data[0]['tahun_masuk'] ?>">
 			    </div>
 			    <div class="form-group col-md-6 col-sm-12">
 			      <label for="tanggal">Tahun Lulus</label>
-			      <input type="text" class="form-control" name="tahun_keluar" value="<?php echo $data[0]['tahun_keluar'] ?>">
+			      <input type="number" class="form-control" name="tahun_keluar" value="<?php echo $data[0]['tahun_keluar'] ?>">
 			    </div>
 			  </div>
 			  <div class="col-sm-12">
@@ -69,10 +69,6 @@
 			</form>
 
 		</div>
-	</div>
-
-	<div class="col-sm-12">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 	</div>
 
 </div>	<!--/.main-->

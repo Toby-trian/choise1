@@ -7,10 +7,10 @@ class Lamaran extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_home');
-		$this->load->model('mdl_data_pelamar');
-		$this->load->model('mdl_data_jadwal');
-		$this->load->model('mdl_data_motlet');
+		$this->load->model('Mdl_home');
+		$this->load->model('Mdl_data_pelamar');
+		$this->load->model('Mdl_data_jadwal');
+		$this->load->model('Mdl_data_motlet');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -42,14 +42,14 @@ class Lamaran extends CI_Controller {
 	public function jadwalseleksi($id)
 	{
 
-		$paket['array']=$this->mdl_data_jadwal->ambildata3_jadwal($id);
+		$paket['array']=$this->Mdl_data_jadwal->ambildata3_jadwal($id);
 		$this->load->view('jadwalseleksi',$paket);
 	}
 	
 	
 	public function lamarlowongan($id)
 	{
-		$paket['array']=$this->mdl_home->ambildata_persyaratan($id);	
+		$paket['array']=$this->Mdl_home->ambildata_persyaratan($id);	
 		$this->load->view('lamarlowongan',$paket);
 	}
 	
@@ -75,7 +75,7 @@ class Lamaran extends CI_Controller {
 		elseif ($queryPendidikan->num_rows()<1) {
 			echo '<script language="javascript"> alert("Silahkan isi data pendidikan anda terlebih dahulu");document.location.href = "../../Pelamar/Pelamar/profilawal";</script>';
 		} 
-		$paket['array']=$this->mdl_home->ambildata();	
+		$paket['array']=$this->Mdl_home->ambildata();	
 		$this->load->view('lowongantersedia',$paket);
 	}
 

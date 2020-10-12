@@ -7,7 +7,7 @@ class Data_motlet extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_motlet');
+		$this->load->model('Mdl_data_motlet');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,7 +34,7 @@ class Data_motlet extends CI_Controller {
 	// CRUD Motlet
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_motlet->ambildata_motlet();	
+		$paket['array']=$this->Mdl_data_motlet->ambildata_motlet();	
 		$this->load->view('administrator/data_motlet',$paket);
 	}
 
@@ -54,7 +54,7 @@ class Data_motlet extends CI_Controller {
 			$send['jenis_motlet']=$this->input->post('jenis_motlet');
 			$send['soal_motlet']=$this->input->post('soal_motlet');
 
-			$kembalian['jumlah']=$this->mdl_data_motlet->tambahdata_motlet($send);
+			$kembalian['jumlah']=$this->Mdl_data_motlet->tambahdata_motlet($send);
 						
 			$this->load->view('administrator/data_motlet',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -64,7 +64,7 @@ class Data_motlet extends CI_Controller {
 
 	public function hapus_motlet($id){
 		$where = array('id_soal' => $id);
-		$this->mdl_data_motlet->do_delete($where,'tb_soal_motlet');
+		$this->Mdl_data_motlet->do_delete($where,'tb_soal_motlet');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Data_motlet/');
 	}
@@ -75,7 +75,7 @@ class Data_motlet extends CI_Controller {
 		$value['jenis_motlet']=$this->input->post('jenis_motlet');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_motlet->ambildata2_motlet($id_update);
+			$indexrow['data']=$this->Mdl_data_motlet->ambildata2_motlet($id_update);
 			$this->load->view('administrator/vedit_motlet', $indexrow);
 		}
 		else{
@@ -84,7 +84,7 @@ class Data_motlet extends CI_Controller {
 			$send['jenis_motlet']=$this->input->post('jenis_motlet');
 			$send['soal_motlet']=$this->input->post('soal_motlet');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_motlet->modelupdate($send);
+			$kembalian['jumlah']=$this->Mdl_data_motlet->modelupdate($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Data_motlet');
 		}

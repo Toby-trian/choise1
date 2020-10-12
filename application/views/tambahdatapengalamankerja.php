@@ -21,7 +21,7 @@
 		<?php $id_pelamar=$this->session->userdata('ses_id') ?>
 		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px;">
 			<div class="col-sm-12">
-				<h4 style="margin-bottom: 2%;"><b>Isi Data Pengalaman Kerja</b></h4>
+				<h4 style="margin-bottom: 2%;"><b>Tambah Data Pengalaman Kerja</b></h4>
 				<form action="<?php echo base_url('Pelamar/Pelamar/tambahdatapengalamankerja/') ?>" method="post">
 				  <div class="form-row">
 				  	<div class="form-group col-md-6 col-sm-12">
@@ -31,7 +31,7 @@
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="periode">Lama Bekerja (Dalam Tahun)</label>
-				      <input type="text" class="form-control" name="periode" placeholder="Lama Bekerja (Dalam Tahun)">
+				      <input type="number" class="form-control" name="periode" placeholder="Lama Bekerja (Dalam Tahun)">
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="jabatan_akhir">Jabatan Terakhir</label>
@@ -47,7 +47,7 @@
 				    </div>
 				    <div class="form-group col-md-6 col-sm-12">
 				      <label for="no_hp_referensi">Nomor HP Referensi</label>
-				      <input type="text" class="form-control" name="no_hp_referensi" placeholder="Alasan Keluar">
+				      <input type="number" class="form-control" name="no_hp_referensi" placeholder="Alasan Keluar">
 				    </div>
 				  </div>
 				  <div class="col-sm-12">
@@ -57,10 +57,6 @@
 				</form>
 			</div>
 		</div><br>
-
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-		</div>
 
 	</div>	<!--/.main-->
 

@@ -7,9 +7,9 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_level');
-		$this->load->model('mdl_data_nilai');
-		$this->load->model('mdl_data_pelamar');
+		$this->load->model('Mdl_data_level');
+		$this->load->model('Mdl_data_nilai');
+		$this->load->model('Mdl_data_pelamar');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -41,14 +41,14 @@ class Welcome extends CI_Controller {
 
 	public function data_pelamar()
 	{
-		$paket['array']=$this->mdl_data_pelamar->ambildata_pelamar_();	
+		$paket['array']=$this->Mdl_data_pelamar->ambildata_pelamar_();	
 		$this->load->view('administrator/data_pelamar',$paket);
 	}
 
 	// CRUD Level
 	public function data_level()
 	{
-		$paket['array']=$this->mdl_data_level->ambildata();	
+		$paket['array']=$this->Mdl_data_level->ambildata();	
 		$this->load->view('administrator/data_level',$paket);
 	}
 
@@ -63,7 +63,7 @@ class Welcome extends CI_Controller {
 			$send['id_level']='';
 			$send['nama_level']=$this->input->post('nama_level');
 
-			$kembalian['jumlah']=$this->mdl_data_level->tambahdata_level($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_level($send);
 						
 			$this->load->view('administrator/data_level',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -73,7 +73,7 @@ class Welcome extends CI_Controller {
 
 	public function do_delete($id){
 		$where = array('id_level' => $id);
-		$this->mdl_data_level->do_delete($where,'tb_level');
+		$this->Mdl_data_level->do_delete($where,'tb_level');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Welcome/data_level');
 	}
@@ -82,14 +82,14 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('nama_level','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_level->ambildata2_level($id_update);
+			$indexrow['data']=$this->Mdl_data_level->ambildata2_level($id_update);
 			$this->load->view('administrator/vedit_level', $indexrow);
 		}
 		else{
 			$send['id_level']=$this->input->post('id_level');
 			$send['nama_level']=$this->input->post('nama_level');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_level->modelupdate($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->modelupdate($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Welcome/data_level');
 		}
@@ -100,7 +100,7 @@ class Welcome extends CI_Controller {
 	// CRUD DATA Admin
 	public function data_admin()
 	{
-		$paket['array']=$this->mdl_data_level->ambildata_admin();	
+		$paket['array']=$this->Mdl_data_level->ambildata_admin();	
 		$this->load->view('administrator/data_admin',$paket);
 	}
 
@@ -123,7 +123,7 @@ class Welcome extends CI_Controller {
 
 			var_dump($send);
 
-			$kembalian['jumlah']=$this->mdl_data_level->tambahdata_admin($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_admin($send);
 						
 			$this->load->view('administrator/data_admin',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -138,7 +138,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('id_level','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_level->ambildata2_admin($id_update);
+			$indexrow['data']=$this->Mdl_data_level->ambildata2_admin($id_update);
 			$this->load->view('administrator/vedit_admin', $indexrow);
 		}
 		else{
@@ -148,7 +148,7 @@ class Welcome extends CI_Controller {
 			$send['password']=$this->input->post('password');
 			$send['id_level']=$this->input->post('id_level');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_level->modelupdate_admin($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->modelupdate_admin($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Welcome/data_admin');
 		}
@@ -156,7 +156,7 @@ class Welcome extends CI_Controller {
 
 	public function hapus_admin($id){
 		$where = array('id_admin' => $id);
-		$this->mdl_data_level->do_delete_admin($where,'tb_admin');
+		$this->Mdl_data_level->do_delete_admin($where,'tb_admin');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Welcome/data_admin');
 	}
@@ -165,7 +165,7 @@ class Welcome extends CI_Controller {
 	// CRUD DATA PERUSAHAAN
 	public function data_perusahaan()
 	{
-		$paket['array']=$this->mdl_data_level->ambildata_perusahaan();	
+		$paket['array']=$this->Mdl_data_level->ambildata_perusahaan();	
 		$this->load->view('administrator/data_perusahaan',$paket);
 	}
 
@@ -216,7 +216,7 @@ class Welcome extends CI_Controller {
 			}
 			// var_dump($send);
 
-			$kembalian['jumlah']=$this->mdl_data_level->tambahdata_perusahaan($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_perusahaan($send);
 						
 			$this->load->view('administrator/data_perusahaan',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -239,7 +239,7 @@ class Welcome extends CI_Controller {
 			unlink($target);
 		}
 
-		$this->mdl_data_level->do_delete_perusahaan($where,'tb_perusahaan');
+		$this->Mdl_data_level->do_delete_perusahaan($where,'tb_perusahaan');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Welcome/data_perusahaan');
 	}
@@ -254,7 +254,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('no_hp','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_level->ambildata2_perusahaan($id_update);
+			$indexrow['data']=$this->Mdl_data_level->ambildata2_perusahaan($id_update);
 			$this->load->view('administrator/vedit_perusahaan', $indexrow);
 		}
 		else{
@@ -288,7 +288,7 @@ class Welcome extends CI_Controller {
 					$error =$this->upload->display_errors();
 					// // var_dump($error);
 					$this->session->set_flashdata('msg_error',$error);
-					$indexrow['data']=$this->mdl_data_level->ambildata2_perusahaan($id_update);
+					$indexrow['data']=$this->Mdl_data_level->ambildata2_perusahaan($id_update);
 					$this->load->view('administrator/vedit_perusahaan', $indexrow);
 				}else{
 					$target= "./upload/logo_perusahaan/".$query[0]['logo_perusahaan'];
@@ -301,7 +301,7 @@ class Welcome extends CI_Controller {
 				$send['logo_perusahaan']=$query[0]['logo_perusahaan'];
 			}			
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_level->modelupdate_perusahaan($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->modelupdate_perusahaan($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Welcome/data_perusahaan');
 		}
@@ -312,7 +312,7 @@ class Welcome extends CI_Controller {
 
 	public function data_psikolog()
 	{
-		$paket['array']=$this->mdl_data_level->ambildata_psikolog();	
+		$paket['array']=$this->Mdl_data_level->ambildata_psikolog();	
 		$this->load->view('administrator/data_psikolog',$paket);
 	}
 
@@ -337,7 +337,7 @@ class Welcome extends CI_Controller {
 
 			var_dump($send);
 
-			$kembalian['jumlah']=$this->mdl_data_level->tambahdata_psikolog($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_psikolog($send);
 						
 			$this->load->view('administrator/data_psikolog',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -347,7 +347,7 @@ class Welcome extends CI_Controller {
 
 	public function hapus_psikolog($id){
 		$where = array('id_psikolog' => $id);
-		$this->mdl_data_level->do_delete_psikolog($where,'tb_psikolog');
+		$this->Mdl_data_level->do_delete_psikolog($where,'tb_psikolog');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Administrator/Welcome/data_psikolog');
 	}
@@ -360,7 +360,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('id_level','Nama','trim|required');
 
 		if($this->form_validation->run()==FALSE ){
-			$indexrow['data']=$this->mdl_data_level->ambildata2_psikolog($id_update);
+			$indexrow['data']=$this->Mdl_data_level->ambildata2_psikolog($id_update);
 			$this->load->view('administrator/vedit_psikolog', $indexrow);
 		}
 		else{
@@ -371,7 +371,7 @@ class Welcome extends CI_Controller {
 			$send['password']=md5($this->input->post('password'));
 			$send['id_level']=$this->input->post('id_level');
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_data_level->modelupdate_psikolog($send);
+			$kembalian['jumlah']=$this->Mdl_data_level->modelupdate_psikolog($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Welcome/data_psikolog');
 		}

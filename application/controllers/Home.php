@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_home');
+		$this->load->model('Mdl_home');
 		$this->load->library('form_validation');
 		$this->load->database();
 		// if($this->session->userdata('masuk') == FALSE){
@@ -33,7 +33,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$paket['array']=$this->mdl_home->ambildata();	
+		$paket['array']=$this->Mdl_home->ambildata();	
 		$this->load->view('home',$paket);
 	}
 

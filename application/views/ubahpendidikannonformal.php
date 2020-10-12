@@ -21,12 +21,13 @@
 
 		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 			<div class="col-sm-12">
-				<h4 style="margin-bottom: 2%;"><b>Ubah Data Pendidikan Non Formal</b></h4>
-				<form action="<?php echo base_url('Pelamar/Pelamar/ubahpendidikannonformal/'.$data[0]['id_pelamar']) ?>" method="post">
+				<h4 style="margin-bottom: 2%;"><b>Ubah Riwayat Pendidikan Nonformal</b></h4>
+				<form action="<?php echo base_url('Pelamar/Pelamar/ubahpendidikannonformal/'.$data[0]['id_pendidikan_nonformal']) ?>" method="post">
 				  <div class="form-row">
 				  	<div class="form-group col-sm-12">
 				      <label for="inputnamapendidikannonformal">Nama Kursus/Pelatihan</label>
 				      <input type="hidden" name="id_pelamar" value="<?php echo $data[0]['id_pelamar'] ?>">
+				      <input type="hidden" name="id_pendidikan_non" value="<?php echo $data[0]['id_pendidikan_nonformal'] ?>">
 				      <input type="text" class="form-control" name="nama_pendidikan_nonformal" value="<?php echo $data[0]['nama_pendidikan_nonformal'] ?>">
 				    </div>
 				    <div class="form-group col-sm-12">
@@ -34,12 +35,12 @@
 				      <input type="text" class="form-control" name="tujuan_pendidikan_nonformal" value="<?php echo $data[0]['tujuan_pendidikan_nonformal'] ?>">
 				    </div>
 				    <div class="form-group col-sm-12">
-				      <label for="inputnomorsertifikat">Nomor Sertifikat</label>
+				      <label for="inputnomorsertifikat">Nomor Sertifikat<label style="color:red">*Isi dengan "-" (tanpa petik) Jika tidak ada</label></label>
 				      <input type="text" class="form-control" name="nomor_sertifikat" value="<?php echo $data[0]['nomor_sertifikat'] ?>">
 				    </div>
 				    <div class="form-group col-sm-12">
 				      <label for="inputtahunpendidikannonformal">Tahun</label>
-				      <input type="text" class="form-control" name="tahun_pendidikan_nonformal" value="<?php echo $data[0]['tahun_pendidikan_nonformal'] ?>">
+				      <input type="number" class="form-control" name="tahun_pendidikan_nonformal" value="<?php echo $data[0]['tahun_pendidikan_nonformal'] ?>">
 				    </div>
 				  </div>
 				  <div class="col-sm-12">
@@ -48,9 +49,6 @@
 		          </div>
 				</form>
 			</div>
-		</div><br>
-		<div class="col-sm-12">
-			<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 		</div>
 
 	</div>	<!--/.main-->

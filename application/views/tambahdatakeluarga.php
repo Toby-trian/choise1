@@ -9,13 +9,13 @@
 			<li><a href="#">
 				<em class="fa fa-user color-amber"></em>
 			</a></li>
-			<li class="active">Tambah Data Keluarga</li>
+			<li class="active">Profil Saya</li>
 		</ol>
 	</div><!--/.row-->
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Tambah Data Keluarga</h1>
+			<h1 class="page-header">Profil Saya</h1>
 		</div>
 	</div><!--/.row-->
 
@@ -57,10 +57,6 @@
 			</form>
 
 		</div>
-	</div>
-
-	<div class="col-sm-12">
-		<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 	</div>
 
 </div>	<!--/.main-->

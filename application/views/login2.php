@@ -53,6 +53,11 @@
 								<?php  echo $this->session->flashdata('msg_gagal')?>
 							</div>
 						<?php endif ;?>
+						<?php if($this->session->flashdata('msg_email')):?>
+							<div class="alert alert-danger">
+								<?php  echo $this->session->flashdata('msg_email')?>
+							</div>
+						<?php endif ;?>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
@@ -114,7 +119,7 @@
 	<script src="<?php echo base_url('assets2/login/js/main.js') ?>"></script>
 
 	<script type="text/javascript">
-      $('#notifikasi').delay(4000).slideUp('slow');
+      $('#notifikasi').delay(8000).slideUp('slow');
     </script>
 
 </body>

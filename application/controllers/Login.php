@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_login');
+		$this->load->model('Mdl_login');
 		$this->load->library('form_validation');
 		$this->load->database();
 		// if($this->session->userdata('masuk') == FALSE){
@@ -41,10 +41,10 @@ class Login extends CI_Controller {
 		$password = md5($this->input->post('password'));
 
 
-		$cek_administrator = $this->mdl_login->auth_administrator($username,$password);
-		$cek_admin_sdm = $this->mdl_login->auth_admin_sdm($username,$password);
-		$cek_psikologi = $this->mdl_login->auth_psikologi($username,$password);
-		$cek_perusahaan = $this->mdl_login->auth_perusahaan($username,$password);
+		$cek_administrator = $this->Mdl_login->auth_administrator($username,$password);
+		$cek_admin_sdm = $this->Mdl_login->auth_admin_sdm($username,$password);
+		$cek_psikologi = $this->Mdl_login->auth_psikologi($username,$password);
+		$cek_perusahaan = $this->Mdl_login->auth_perusahaan($username,$password);
 
 
 		if ($cek_administrator->num_rows()>0) {

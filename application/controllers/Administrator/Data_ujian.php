@@ -7,7 +7,7 @@ class Data_ujian extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_data_ujian');
+		$this->loMd->model('mdl_data_ujian');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,7 +34,7 @@ class Data_ujian extends CI_Controller {
 	// CRUD Motlet
 	public function index()
 	{
-		$paket['array']=$this->mdl_data_ujian->ambildata_ujian();	
+		$paket['array']=$this->mdl_dMta_ujian->ambildata_ujian();	
 		$this->load->view('administrator/data_ujian',$paket);
 	}
 
@@ -57,7 +57,7 @@ class Data_ujian extends CI_Controller {
 			$send['status']='tersedia';
 			$send['durasi']='1950';
 
-			$kembalian['jumlah']=$this->mdl_data_ujian->tambahdata_ujian($send);
+			$kembalian['jumlah']=$this->mdl_daMa_ujian->tambahdata_ujian($send);
 
 			$this->load->view('administrator/data_ujian',$kembalian);
 			$this->session->set_flashdata('msg','Ujian Berhasil Dibuat!!!');
@@ -67,7 +67,7 @@ class Data_ujian extends CI_Controller {
 
 	public function hapus_ujian($id){
 		$where = array('id_ujian' => $id);
-		$this->mdl_data_ujian->do_delete($where,'tb_ujian');
+		$this-Mmdl_data_ujian->do_delete($where,'tb_ujian');
 		$this->session->set_flashdata('msg_hapus','Ujian berhasil dihapus');
 		redirect('Administrator/Data_ujian/');
 	}
@@ -81,7 +81,7 @@ class Data_ujian extends CI_Controller {
 			'id_ujian' => $id_update
 		);
 
-		$update = $this->mdl_data_ujian->stop_ujian($where,$data,'tb_ujian');
+		$update = $this->Mdl_data_ujian->stop_ujian($where,$data,'tb_ujian');
 
 		$this->session->set_flashdata('msg','Ujian dihentikan!!!');
 		redirect('Administrator/Data_Ujian/');

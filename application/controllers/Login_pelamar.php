@@ -7,7 +7,7 @@ class Login_pelamar extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_login');
+		$this->load->model('Mdl_login');
 		$this->load->library('form_validation');
 		$this->load->database();
 		// if($this->session->userdata('masuk') == FALSE){
@@ -41,7 +41,7 @@ class Login_pelamar extends CI_Controller {
 		$password = md5($this->input->post('password'));
 
 
-		$cek_pelamar = $this->mdl_login->auth_pelamar($username,$password);
+		$cek_pelamar = $this->Mdl_login->auth_pelamar($username,$password);
 
 
 		if ($cek_pelamar->num_rows()>0) {
@@ -52,6 +52,11 @@ class Login_pelamar extends CI_Controller {
 							$this->session->set_userdata('ses_idLevel', $key_level->nama_level);
 						}
 					}
+
+			if ($data['status']==0) {
+				$this->session->set_flashdata('msg_email','Email belum diaktivasi, jika belum menerima email silahkan cek spam email anda');
+				redirect('Login_pelamar');
+			}
 
 			$this->session->set_userdata('masuk',TRUE);
 			$this->session->set_userdata('ses_user',$data['username']);	

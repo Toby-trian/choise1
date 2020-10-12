@@ -7,7 +7,7 @@ class Ujian extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_ujian');
+		$this->load->model('Mdl_ujian');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -39,7 +39,7 @@ class Ujian extends CI_Controller {
 	public function frame_ujian($id_ujian, $rdr){
 
 		$id_pelamar = $this->session->userdata('ses_id');
-		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1($rdr);
+		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_subtes_1($rdr);
 
 
 		if (!empty($data['soal_subtes1'])) {
@@ -55,7 +55,7 @@ class Ujian extends CI_Controller {
 
 	public function start_ujian($rdr)
 	{
-		$data['soal_subtes1'] = $this->mdl_ujian->get_questions_subtes_1($rdr);
+		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_subtes_1($rdr);
 		$this->load->view('pengerjaan',$data);
 	}
 
@@ -91,7 +91,7 @@ class Ujian extends CI_Controller {
 	
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
-				$insert = $this->mdl_ujian->insert_jawaban($data);
+				$insert = $this->Mdl_ujian->insert_jawaban($data);
 			}
 			redirect('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$rdr);
 		}else{
@@ -103,7 +103,7 @@ class Ujian extends CI_Controller {
 				'jawaban'=>$jawaban
 			);
 			if (!empty($jawaban)) {
-				$update = $this->mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
 			}
 			redirect('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$rdr);
 		}

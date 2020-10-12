@@ -7,7 +7,7 @@ class Soal_cfit extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url','form');
-		$this->load->model('mdl_soal');
+		$this->load->model('Mdl_soal');
 		// $this->load->model('mdl_data_nilai');
 		// $this->load->model('mdl_data_pelamar');
 		$this->load->library('form_validation');
@@ -35,7 +35,7 @@ class Soal_cfit extends CI_Controller {
 
 	public function index()
 	{
-		$paket['array']=$this->mdl_soal->ambildata();	
+		$paket['array']=$this->Mdl_soal->ambildata();	
 		$this->load->view('soal/soal_cfit',$paket);
 	}
 
@@ -192,7 +192,7 @@ class Soal_cfit extends CI_Controller {
 
 			// var_dump($send);
 
-			$kembalian['jumlah']=$this->mdl_soal->tambahdata($send);
+			$kembalian['jumlah']=$this->Mdl_soal->tambahdata($send);
 
 			$this->load->view('soal/soal_cfit',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
@@ -251,7 +251,7 @@ class Soal_cfit extends CI_Controller {
 			unlink($target);
 		}
 
-		$this->mdl_soal->do_delete($where,'tb_soal_cfit');
+		$this->Mdl_soal->do_delete($where,'tb_soal_cfit');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Soal/Soal_cfit/');
 	}
@@ -264,7 +264,7 @@ class Soal_cfit extends CI_Controller {
 		$value_subtes = $this->input->post('subtes');
 
 		if($this->form_validation->run()==FALSE || $value_jawab == "zero" || $value_type == "zero" || $value_subtes == "zero"){
-			$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+			$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 			$this->load->view('soal/vedit_cfit', $indexrow);
 		}
 		else{
@@ -291,7 +291,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('soal')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['soal'];
@@ -318,7 +318,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_a')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_a'];
@@ -345,7 +345,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_b')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_b'];
@@ -371,7 +371,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_c')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_c'];
@@ -397,7 +397,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_d')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_d'];
@@ -423,7 +423,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_e')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_e'];
@@ -449,7 +449,7 @@ class Soal_cfit extends CI_Controller {
 				if ( ! $this->upload->do_upload('opsi_f')){
 					$error =$this->upload->display_errors();
 					$this->session->set_flashdata('pesan_error',$error);
-					$indexrow['data']=$this->mdl_soal->ambildata2($id_update);
+					$indexrow['data']=$this->Mdl_soal->ambildata2($id_update);
 					$this->load->view('soal/vedit_cfit', $indexrow);
 				}else{
 					$target= "./upload/bank_soal/cfit/".$query[0]['opsi_f'];
@@ -462,7 +462,7 @@ class Soal_cfit extends CI_Controller {
 				$send['opsi_f']=$query[0]['opsi_f'];
 			}		
 			// var_dump($send);
-			$kembalian['jumlah']=$this->mdl_soal->modelupdate($send);
+			$kembalian['jumlah']=$this->Mdl_soal->modelupdate($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Soal/Soal_cfit/');
 		}

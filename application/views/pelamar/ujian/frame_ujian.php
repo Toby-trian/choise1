@@ -67,8 +67,12 @@
 					<?php } ?>
 					<!-- <button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/0') ?>"> Konfirmasi -->
 					</button>
-					<?php if($soal_subtes1->nomor_soal !=100 && $soal_subtes1->subtes == 1){ ?>
+					<?php if($soal_subtes1->nomor_soal !=13 && $soal_subtes1->subtes == 1){ ?>
 						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
+						</button>
+					<?php } ?>
+					<?php if($soal_subtes1->nomor_soal >= 13 && $soal_subtes1->subtes == 1){ ?>
+						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/3') ?>"> Subtes 2 <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
 				</div>
@@ -77,7 +81,7 @@
 		</form>
 	</div>
 	<?php 
-	$this->load->view('pelamar/ujian/panel_ujian');
+	$this->load->view('pelamar/ujian/panel_ujian_1');
 	?>
 
 </div>
