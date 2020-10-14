@@ -541,6 +541,11 @@ class Pelamar extends CI_Controller {
 		$this->load->view('latihancfit1');
 	}
 
+	public function latihancfit2()
+	{
+		$this->load->view('latihancfit2');
+	}
+
 	public function jawabancontoh()
 	{
 		$this->load->view('jawabancontoh');

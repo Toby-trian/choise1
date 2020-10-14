@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Okt 2020 pada 04.56
+-- Waktu pembuatan: 14 Okt 2020 pada 03.36
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -58,6 +58,14 @@ CREATE TABLE `tb_apply` (
   `status_lamaran` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_apply`
+--
+
+INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `id_perusahaan`, `status_lamaran`) VALUES
+(7, 1, 1, 2, 'Diterima'),
+(8, 16, 1, 2, 'Tidak lolos');
+
 -- --------------------------------------------------------
 
 --
@@ -75,7 +83,8 @@ CREATE TABLE `tb_berkas` (
 --
 
 INSERT INTO `tb_berkas` (`id_berkas`, `id_pelamar`, `berkas`) VALUES
-(1, 1, 'berkas_Salmon1.pdf');
+(1, 1, 'berkas_Salmon.pdf'),
+(2, 16, 'berkas_Dhiki_Sekti_Wibawa1.pdf');
 
 -- --------------------------------------------------------
 
@@ -110,6 +119,7 @@ INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `alam
 ('1212132442131', 3, 'Fulanah', 'Gempol', '', '', '', '', '', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-'),
 ('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '1998-05-11', 'P', '12345678', 'hahas', '-', '-'),
 ('1298192819', 4, 'Test 123', 'hahah', '', '', '', '', '', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj'),
+('351', 16, 'Dhiki Sekti Wibawa', 'Sidoarjo', 'Sidoarjo', 'Belum Menikah', 'Islam', '1', '3', 'Sidoarjo', '1998-02-18', 'L', '089', '-', 'dhikiwibawa', '-'),
 ('78675654536879', 2, 'Fulan', 'Tak diketahui', '', '', '', '', '', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-');
 
 -- --------------------------------------------------------
@@ -124,6 +134,7 @@ CREATE TABLE `tb_data_jawaban_cfit` (
   `id_lowongan` int(5) NOT NULL,
   `nomor_soal` int(5) NOT NULL,
   `id_ujian` int(5) NOT NULL,
+  `subtes` varchar(5) NOT NULL,
   `jawaban` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -131,8 +142,12 @@ CREATE TABLE `tb_data_jawaban_cfit` (
 -- Dumping data untuk tabel `tb_data_jawaban_cfit`
 --
 
-INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `jawaban`) VALUES
-(1, 1, 3, 1, 1, 'a');
+INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`) VALUES
+(1, 1, 3, 1, 1, '1', 'd'),
+(2, 1, 1, 3, 1, '1', 'b'),
+(3, 1, 1, 2, 1, '1', 'd'),
+(4, 1, 1, 4, 1, '1', 'c'),
+(5, 1, 1, 13, 1, '1', 'e');
 
 -- --------------------------------------------------------
 
@@ -158,7 +173,8 @@ CREATE TABLE `tb_data_keluarga` (
 INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
 (1, 1, 'Joko', 'Swasta', 'Siadah', 'Ibu rumah tangga', 'kang oleh', 'penjual odading'),
 (2, 2, 'Daniel', 'PNS', 'Nur', 'Guru', '', ''),
-(3, 4, 'hehe', 'swasta', 'huhu', 'dagang', '', '');
+(3, 4, 'hehe', 'swasta', 'huhu', 'dagang', '', ''),
+(4, 16, 'LP', 'W', 'DNW', 'B', '', '');
 
 -- --------------------------------------------------------
 
@@ -184,7 +200,8 @@ CREATE TABLE `tb_data_pendidikan` (
 INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendidikan`, `nama_institusi`, `jurusan`, `tahun_masuk`, `tahun_keluar`, `nilai_akhir`) VALUES
 (1, 1, 'SMA/SMK', 'SMKN 10 Magelang', 'Akuntansi', '2017', '2020', '70'),
 (2, 2, 'S1', 'Univ Sendiri', 'Hukum', '2014', '2018', '4'),
-(3, 3, 'SMP', 'SMP Maju Putra', '-', '2009', '2012', '90');
+(3, 3, 'SMP', 'SMP Maju Putra', '-', '2009', '2012', '90'),
+(4, 16, 'D4/S1', 'UB', 'SI', '2016', '2020', '3.64');
 
 -- --------------------------------------------------------
 
@@ -196,7 +213,7 @@ CREATE TABLE `tb_data_pendidikan_nonformal` (
   `id_pendidikan_nonformal` int(5) NOT NULL,
   `id_pelamar` int(11) NOT NULL,
   `nama_pendidikan_nonformal` varchar(100) NOT NULL,
-  `tujuan_pendidikan_nonformal` varchar(4) NOT NULL,
+  `tujuan_pendidikan_nonformal` varchar(300) NOT NULL,
   `tahun_pendidikan_nonformal` varchar(4) NOT NULL,
   `nomor_sertifikat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -299,6 +316,13 @@ CREATE TABLE `tb_lowongan` (
   `gaji` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `tb_lowongan`
+--
+
+INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `id_jenis_motlet`, `nama_jabatan`, `jadwal_seleksi`, `kota_penempatan`, `persyaratan`, `gaji`) VALUES
+(1, 2, 1, 'Kepala Bagian (Kabag) HRD & GA', '2020-10-23', 'Sidoarjo - Jawa Timur', '<p>&nbsp;</p><ul><li>Berusia&nbsp; 27-35 tahun</li><li>Pendidikan Min. S1 Manajemen SDM / Psikologi Industri &amp; Organisasi / Teknik Industri / Ilmu Hukum</li><li>Menguasai UU Ketenagakerjaan dan Hubungan Internasional</li><li>Memiliki Jiwa Kepemimpinan</li><li>Mampu Berkomunikasi Secara Efektif</li></ul>', '-');
+
 -- --------------------------------------------------------
 
 --
@@ -323,7 +347,9 @@ INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jaw
 (4, 2, 5, 'az nm,nhgfdxcg', '', ''),
 (5, 3, 1, 'zd vhijolkjfc', '', ''),
 (6, 3, 5, 'mnbvfyukmnhdgh', '', ''),
-(18, 1, 0, 'test124', '1223433q3', '');
+(18, 1, 0, 'test124', '1223433q3', ''),
+(21, 1, 0, 'test124', '1223433q3', ''),
+(22, 16, 0, 'Mencoba', 'Mencoba', '');
 
 -- --------------------------------------------------------
 
@@ -407,19 +433,25 @@ CREATE TABLE `tb_pelamar` (
   `email` varchar(130) NOT NULL,
   `password` varchar(500) NOT NULL,
   `confirm_password` varchar(500) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `foto` varchar(100) NOT NULL,
+  `encrypt_email` varchar(50) NOT NULL,
+  `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_pelamar`
 --
 
-INSERT INTO `tb_pelamar` (`id_pelamar`, `id_level`, `username`, `email`, `password`, `confirm_password`, `foto`) VALUES
-(1, 5, 'pelamar1', 'pelamar1@test.com', '86117feed185c63bed6d19f272e34e12', 'pelamar1', ''),
-(2, 5, 'hahaha', 'candaanaja@gmail.com', '064d8682f9420f2286f2fe5d3889ffb2', 'pelamar2', ''),
-(3, 5, 'guyonbae', 'guyonbae@gmail.com', 'f33fe70bcf7f48e8f107c5d18cdef5e4', 'pelamar3', ''),
-(4, 5, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'test', ''),
-(7, 5, 'testing123', 'testing123@gmail.com', '7f2ababa423061c509f4923dd04b6cf1', 'testing123', '');
+INSERT INTO `tb_pelamar` (`id_pelamar`, `id_level`, `username`, `email`, `password`, `confirm_password`, `foto`, `encrypt_email`, `status`) VALUES
+(1, 5, 'pelamar1', 'abdulhhabibie44@gmail.com', '86117feed185c63bed6d19f272e34e12', 'pelamar1', 'pelamar_c4ca4238a0b923820dcc509a6f75849b4.jpg', '', 1),
+(2, 5, 'hahaha', 'candaanaja@gmail.com', '064d8682f9420f2286f2fe5d3889ffb2', 'pelamar2', '', '', 1),
+(3, 5, 'guyonbae', 'guyonbae@gmail.com', 'f33fe70bcf7f48e8f107c5d18cdef5e4', 'pelamar3', '', '', 1),
+(4, 5, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'test', '', '', 1),
+(7, 5, 'testing123', 'testing123@gmail.com', '7f2ababa423061c509f4923dd04b6cf1', 'testing123', '', '', 1),
+(13, 5, 'edwin', 'hunter_freaks@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '123456', '', '1987817f7b8bd5208dac87465928a751', 1),
+(15, 5, 'Dik-Dik', 'Arkep0701@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '1234567', '', 'a3d6f6523e4f912dc18f5477e6f5b7e2', 1),
+(16, 5, 'dhiki', 'dhikiwibawa@gmail.com', '47e9d84838ef62310de676ab919c59b1', 'dhiki', 'pelamar_c74d97b01eae257e44aa9d5bade97baf.jpg', 'a1cf9ad536d537788810069896268ff8', 1),
+(18, 5, 'Dik-Dik', 'Arkep0701@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '1234567', '', 'a3d6f6523e4f912dc18f5477e6f5b7e2', 1);
 
 -- --------------------------------------------------------
 
@@ -449,7 +481,8 @@ CREATE TABLE `tb_perusahaan` (
 --
 
 INSERT INTO `tb_perusahaan` (`id_perusahaan`, `id_level`, `nama_perusahaan`, `jenis_usaha`, `alamat`, `email`, `logo_perusahaan`, `username`, `password`, `website`, `facebook`, `instagram`, `twitter`, `no_hp`) VALUES
-(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002');
+(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002'),
+(2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', '16bb5a6238d9b0bc4d12c6f6d8c8eec8', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -763,43 +796,43 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_apply`
 --
 ALTER TABLE `tb_apply`
-  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_berkas`
 --
 ALTER TABLE `tb_berkas`
-  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
-  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
 --
 ALTER TABLE `tb_data_keluarga`
-  MODIFY `id_keluarga` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_keluarga` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pendidikan`
 --
 ALTER TABLE `tb_data_pendidikan`
-  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pendidikan_nonformal`
 --
 ALTER TABLE `tb_data_pendidikan_nonformal`
-  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_data_pengalaman_kerja`
-  MODIFY `id_pengalaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pengalaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_jadwal`
@@ -823,13 +856,13 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT untuk tabel `tb_lowongan`
 --
 ALTER TABLE `tb_lowongan`
-  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_nilai`
@@ -853,13 +886,13 @@ ALTER TABLE `tb_nilai_pwb`
 -- AUTO_INCREMENT untuk tabel `tb_pelamar`
 --
 ALTER TABLE `tb_pelamar`
-  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_perusahaan`
 --
 ALTER TABLE `tb_perusahaan`
-  MODIFY `id_perusahaan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_perusahaan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_psikolog`
