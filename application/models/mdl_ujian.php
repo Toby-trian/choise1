@@ -16,7 +16,7 @@ class Mdl_ujian extends CI_Model {
 	}
 
 	public function get_questions_subtes_2($rdr){
-		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 1 AND type_soal = 'Ujian' AND id_soal='$rdr' ");
+		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 2 AND type_soal = 'Ujian' AND id_soal='$rdr' ");
 		return $query->row();
 	}
 
@@ -24,11 +24,6 @@ class Mdl_ujian extends CI_Model {
 		{
 			$this->db->insert('tb_data_jawaban_cfit', $paket);
 			return $this->db->affected_rows();
-	}
-
-	public function get_answer($nomor_soal){
-		$query=$this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
-		return $query->row();
 	}
 
 	public function update($where,$data,$table){

@@ -47,7 +47,7 @@ class Ujian extends CI_Controller {
 			$nomor_soal = $data['soal_subtes1']->nomor_soal;
 		}
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = 1");
 
 		$data['jawaban'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian', $data);
@@ -56,18 +56,18 @@ class Ujian extends CI_Controller {
 	public function frame_ujian_sub2($id_ujian, $rdr){
 
 		$id_pelamar = $this->session->userdata('ses_id');
-		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_subtes_2($rdr);
+		$data['soal_subtes2'] = $this->Mdl_ujian->get_questions_subtes_2($rdr);
 
 
-		if (!empty($data['soal_subtes1'])) {
-			$id_soal = $data['soal_subtes1']->id_soal;
-			$nomor_soal = $data['soal_subtes1']->nomor_soal;
+		if (!empty($data['soal_subtes2'])) {
+			$id_soal = $data['soal_subtes2']->id_soal;
+			$nomor_soal = $data['soal_subtes2']->nomor_soal;
 		}
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 2");
 
-		$data['jawaban'] = $query->row();
-		$this->load->view('pelamar/ujian/frame_ujian', $data);
+		$data['jawaban2'] = $query->row();
+		$this->load->view('pelamar/ujian/frame_ujian2', $data);
 	}
 
 
