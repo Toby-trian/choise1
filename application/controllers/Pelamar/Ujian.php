@@ -70,7 +70,9 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/frame_ujian2', $data);
 	}
 
-
+	public function frame_latihan_cfit(){
+		$this->load->view('frame_latihan_cfit');
+	}
 
 
 	public function start_ujian($rdr)
