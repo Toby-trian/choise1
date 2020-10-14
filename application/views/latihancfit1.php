@@ -12,7 +12,7 @@
 			</ol>
 		</div><!--/.row-->
 		
-		<div class="row">
+		<div class="row" style="margin-bottom: -50px;">
 			<div class="col-lg-9">
 				<h1 class="page-header">Soal Latihan</h1>
 			</div>
@@ -21,7 +21,7 @@
 			</div>
 		</div><!--/.row-->
 
-		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_latihan_cfit/') ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
+		<iframe style="margin-top: -60px;" id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_latihan_cfit/') ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
 		<script>
 // Set the date we're counting down to

@@ -76,52 +76,6 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="col-sm-12">
-			<div class="col-sm-12" style="background-color: #f9243f; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
-				<h4 style="color: #fff;"><b>Peraturan Ujian!</b></h4>
-				<li style="color: #fff;">Pada ujian CFIT ini akan terdapat 4 macam subtes.</li>
-				<li style="color: #fff;">Untuk subtes pertama, pilihlah kotak yang dapat melanjutkan pola sebelumnya!</li>
-				<li style="color: #fff;">Contoh soal:</li>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh1.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">a</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">b</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">c</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">d</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">e</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-					<p style="color: #fff;">f</p>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<p class="col-sm-12" style="color: #fff; margin: 10px;">Jawaban: (c) karena ranting pohon perlahan bergerak ke kanan.</p>
-			</div>
-		</div>
 		<?php $idUjian = $this->session->userdata('ses_ujian'); ?>
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin: 10px;">
 			<a href="<?php  echo base_url('Pelamar/Pelamar/latihancfit1/'.$idUjian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Ujian</a>

@@ -1,6 +1,51 @@
 <?php   $this->load->view('layout3/header') ?>
-<div class="col-sm-12" style="background-color: #fff; padding-top: 40px; padding-bottom: 40px; padding-right: 40px; padding-left: 40px; margin-bottom: 20px; border-radius: 5px; margin-top: -50px">
-	<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 1. Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya. Jadi cobalah menjawab mengikuti perintah dari subtes 1!</p>
+
+<div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
+	<h4 style="color: #fff;"><b>Petunjuk Pengerjaan Subtes 1</b></h4>
+	<p style="color: #fff;">Disetiap soal terdapat 4 buah kotak, dimana 3 kotak diantaranya sudah terisi dengan gambar dengan pola tertentu yang berurutan. Tugas anda, carilah 1 gambar untuk mengisi kotak kosong terakhir berdasarkan 5 pilihan jawaban yang tersedia sehingga menjadi berurutan satu sama lain.</p><br>
+	<p style="color: #fff;">Contoh soal:</p>
+	<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh1.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">a</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">b</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">c</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">d</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">e</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
+		<p style="color: #fff;">f</p>
+		<center>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+		</center>
+	</div>
+	<p class="col-sm-12" style="color: #fff; margin: 10px;">Jawaban: (c) karena ranting pohon perlahan bergerak ke kanan.</p>
+</div>
+
+<div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
+	<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 1. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
 	<div class="col-sm-12">
 		<p>1.</p>
 		<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh2.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
@@ -100,11 +145,8 @@
 	</div>
 </div>
 
-
-
 </div>
 <div class="col-sm-12">
-	<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
 </div>
 </div><!--/.row-->
 </div>	<!--/.main-->
