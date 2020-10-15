@@ -2,8 +2,10 @@
 
 <div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
 	<h4 style="color: #fff;"><b>Petunjuk Pengerjaan Subtes 1</b></h4>
-	<p style="color: #fff;">Disetiap soal terdapat 4 buah kotak, dimana 3 kotak diantaranya sudah terisi dengan gambar dengan pola tertentu yang berurutan. Tugas anda, carilah 1 gambar untuk mengisi kotak kosong terakhir berdasarkan 5 pilihan jawaban yang tersedia sehingga menjadi berurutan satu sama lain.</p><br>
-	<p style="color: #fff;">Contoh soal:</p>
+	<li style="color: #fff;">Disetiap soal terdapat 4 buah kotak, dimana 3 kotak diantaranya sudah terisi dengan gambar dengan pola tertentu yang berurutan.</li>
+	<li style="color: #fff;">Tugas anda, carilah 1 gambar untuk mengisi kotak kosong terakhir berdasarkan 5 pilihan jawaban yang tersedia sehingga menjadi berurutan satu sama lain.</li>
+	<br>
+	<li style="color: #fff;">Contoh soal:</li>
 	<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh1.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
 		<p style="color: #fff;">a</p>
@@ -41,7 +43,7 @@
 			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/1f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 		</center>
 	</div>
-	<p class="col-sm-12" style="color: #fff; margin: 10px;">Jawaban: (c) karena ranting pohon perlahan bergerak ke kanan.</p>
+	<p class="col-sm-12" style="color: #fff; margin: 10px;">Jawaban: (c). Karena ranting pohon perlahan bergerak ke kanan.</p>
 </div>
 
 <div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
