@@ -23,6 +23,13 @@
 
 		<iframe style="margin-top: -60px;" id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_latihan_cfit/') ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
+		
+	<?php $idUjian = $this->session->userdata('ses_ujian'); 
+	$id_pelamar = $this->session->userdata('ses_id');?>
+	<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
+		<a href="<?php  echo base_url('Pelamar/Pelamar/jawabancontoh/'.$idUjian . '/' . $id_pelamar) ?>" class="btn btn-primary mr-2 mb-2">Selanjutnya</a>
+	</div>
+
 		<script>
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 5, 2021 00:00:00").getTime();
