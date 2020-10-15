@@ -41,6 +41,22 @@
                   <th>Nama Ujian</th>
                   <th>Waktu Dimulai</th>
                   <th>Waktu Berakhir</th>
+                  <!-- <th>Mulai Latihan Subtes 1</th>
+                  <th>Berakhir Latihan Subtes 1</th>
+                  <th>Mulai Ujian Subtes 1</th>
+                  <th>Berakhir Ujian Subtes 1</th>
+                  <th>Mulai Subtes 2</th>
+                  <th>Berkahir Subtes 2</th>
+                  <th>Mulai Ujian Subtes 2</th>
+                  <th>Berakhir Ujian Subtes 2</th>
+                  <th>Mulai Latihan Subtes 3</th>
+                  <th>Berakhir Latihan Subtes 3</th>
+                  <th>Mulai Ujian Subtes 3</th>
+                  <th>Berakhir Ujian Subtes 3</th>
+                  <th>Mulai Latihan Subtes 4</th>
+                  <th>Berakhir Latihan Subtes 4</th>
+                  <th>Mulai Ujian Subtes 4</th>
+                  <th>Berakhir Ujian Subtes 4</th> -->
                   <th>Nama Admin</th>
                   <th>Status</th>
                   <th>Aksi</th>
@@ -94,6 +110,27 @@
                     <td><?php echo $key['nama_ujian'] ?></td>
                     <td><?php echo $key['waktu_dimulai'] ?></td>
                     <td><?php echo $key['waktu_berakhir'] ?></td>
+                    <!-- sub1 --><!-- 
+                    <td><?php echo $key['start_lat_sub1'] ?></td>
+                    <td><?php echo $key['end_lat_sub1'] ?></td>
+                    <td><?php echo $key['start_uji_sub1'] ?></td>
+                    <td><?php echo $key['end_uji_sub1'] ?></td> -->
+                    <!-- sub2 -->
+                    <!-- <td><?php echo $key['start_lat_sub2'] ?></td>
+                    <td><?php echo $key['end_lat_sub2'] ?></td>
+                    <td><?php echo $key['start_uji_sub2'] ?></td>
+                    <td><?php echo $key['end_uji_sub2'] ?></td> -->
+                    <!-- sub3 -->
+                    <!-- <td><?php echo $key['start_lat_sub3'] ?></td>
+                    <td><?php echo $key['end_lat_sub3'] ?></td>
+                    <td><?php echo $key['start_uji_sub3'] ?></td>
+                    <td><?php echo $key['end_uji_sub3'] ?></td> -->
+                    <!-- sub4 -->
+                    <!-- <td><?php echo $key['start_lat_sub4'] ?></td>
+                    <td><?php echo $key['end_lat_sub4'] ?></td>
+                    <td><?php echo $key['start_uji_sub4'] ?></td>
+                    <td><?php echo $key['end_uji_sub4'] ?></td>
+ -->
                     <td><?php echo $key['nama_pembuat'] ?></td>
                     <td><?php echo $key['status'] ?></td>
                     

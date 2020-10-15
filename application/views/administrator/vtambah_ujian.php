@@ -34,18 +34,147 @@
               <input class="form-control time" name="waktu_akhir" type="text">
             </div>
 
-            <input type="hidden" name="id_admin" value="<?php echo $this->session->userdata('ses_nama'); ?>">
+           <!--  <div class="card">
+              <div class="card-header">
+                Subtes 1
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 1</label>
+                      <input class="form-control time" name="start_lat_sub1" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 1</label>
+                    <input class="form-control time" name="end_lat_sub1" type="text">
+                  </div>
+                </div>    
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 1</label>
+                      <input class="form-control time" name="start_uji_sub1" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 1</label>
+                    <input class="form-control time" name="end_uji_sub1" type="text">
+                  </div>
+                </div>             
+              </div>
+            </div>
 
+            <br>
+            <div class="card">
+              <div class="card-header">
+                Subtes 2
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 2</label>
+                      <input class="form-control time" name="start_lat_sub2" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 2</label>
+                    <input class="form-control time" name="end_lat_sub2" type="text">
+                  </div>
+                </div>    
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 2</label>
+                      <input class="form-control time" name="start_uji_sub2" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 2</label>
+                    <input class="form-control time" name="end_uji_sub2" type="text">
+                  </div>
+                </div>             
+              </div>
+            </div>
 
+            <br>
+            <div class="card">
+              <div class="card-header">
+                Subtes 3
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 3</label>
+                      <input class="form-control time" name="start_lat_sub3" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 3</label>
+                    <input class="form-control time" name="end_lat_sub3" type="text">
+                  </div>
+                </div>    
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 3</label>
+                      <input class="form-control time" name="start_uji_sub3" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 3</label>
+                    <input class="form-control time" name="end_uji_sub3" type="text">
+                  </div>
+                </div>             
+              </div>
+            </div>
 
-            <input type="submit" value="Kirim" class="btn btn-primary">
-            <a href="<?php echo base_url('Administrator/Data_ujian') ?>" class="btn btn-secondary"> Cancel</a>
-          </form>
-        </div>
+            <br>
+            <div class="card">
+              <div class="card-header">
+                Subtes 4
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <input class="form-control time" name="start_lat_sub4" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <input class="form-control time" name="end_lat_sub4" type="text">
+                  </div>
+                </div>    
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <input class="form-control time" name="start_uji_sub4" type="text">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <input class="form-control time" name="end_uji_sub4" type="text">
+                  </div>
+                </div>             
+              </div>
+            </div> -->
 
+          <input type="hidden" name="id_admin" value="<?php echo $this->session->userdata('ses_nama'); ?>">
+
+          <input style="margin-top: 15px" type="submit" value="Kirim" class="btn btn-primary">
+          <a style="margin-top: 15px" href="<?php echo base_url('Administrator/Data_ujian') ?>" class="btn btn-secondary"> Cancel</a>
+        </form>
       </div>
+
     </div>
   </div>
+</div>
 </main>
 
 

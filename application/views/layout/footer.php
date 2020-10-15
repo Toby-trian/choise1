@@ -80,11 +80,15 @@ var pieChart = new Chart(ctxp).Pie(pdata);
 
 <script type="text/javascript">
   $(document).ready(function () {
-    $('.time').datetimepicker({format: 'yyyy-mm-dd hh:ii:ss', todayBtn: true,
+    $('.time').datetimepicker({
+      timeformat: 'yyyy-mm-dd hh:ii tt',
+      todayBtn: true,
       autoclose: true,
       pickerPosition: "top-left"});
   });
 </script>
+
+
 
 <script>
  $("#id_lowongan").change(function () {

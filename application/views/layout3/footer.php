@@ -1,4 +1,5 @@
-	<script src="<?php  echo base_url('assets3/js/jquery-1.11.1.min.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/jquery-1.11.1.min.js') ?>"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
 	<script src="<?php  echo base_url('assets3/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php  echo base_url('assets3/js/chart.min.js') ?>"></script>
 	<script src="<?php  echo base_url('assets3/js/chart-data.js') ?>"></script>

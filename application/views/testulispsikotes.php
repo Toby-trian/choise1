@@ -44,15 +44,19 @@ $id_pelamar=$this->session->userdata('ses_id');
 				      <td><?php echo $key['nama_ujian']; ?></td>
 				      <td><?php echo date('d F Y H:i:s', strtotime($key['waktu_dimulai'])) ?> WIB</td>
 				      <td><?php echo date('d F Y H:i:s', strtotime($key['waktu_berakhir'])) ?> WIB</td>
+				      <!-- <td><?php echo date('Y-m-d H:i:s') ?></td> -->
 				      <td>
-				      	<?php if(date('Y-m-d H:i:s') < date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){
 
-				      	} elseif(date('Y-m-d H:i:s') == date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){ ?>
-
-				      	<a href="<?php  echo base_url('Pelamar/Pelamar/cfit/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a></td>
-				      	<?php } elseif (date('Y-m-d H:i:s') > date('d F Y H:i:s', strtotime($key['waktu_dimulai']))){ ?>
-				      		Ujian sudah selesai
-				      	<?php } ?>
+				      	<?php 
+				      	date_default_timezone_set("Asia/Jakarta");
+				      	if (date('d F Y H:i:s') < date('d F Y H:i:s', strtotime($key['waktu_dimulai']))) {
+				      		echo "belum dimulai";
+				      	}elseif(date('d F Y H:i:s') >= date('d F Y H:i:s', strtotime($key['waktu_dimulai'])) && date('d F Y H:i:s') <= date('d F Y H:i:s', strtotime($key['waktu_berakhir']))){ ?>
+				      		<a href="<?php  echo base_url('Pelamar/Pelamar/cfit/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
+				      	<?php } elseif(date('d F Y H:i:s') > date('d F Y H:i:s', strtotime($key['waktu_berakhir']))){
+				      		echo "Ujian sudah berakhir";
+				      	}?>
+				      	</td>
 				    </tr>
 				<?php } ?>
 				  </tbody>
