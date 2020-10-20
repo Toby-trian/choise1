@@ -21,7 +21,8 @@
 		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
 			<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
 				<div class="col-sm-12">
-					<p>1. Jawaban:</p>
+					<!-- $jawaban1 =  -->
+					<p>1. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab1') ?>)</p>
 					<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 						<label class="form-check-label" for="latcfit11">e</label>
 						<center>
@@ -30,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-sm-12" style="margin-top: 10px;">
-					<p>2. Jawaban:</p>
+					<p>2. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab2') ?>)</p>
 					<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 						<label class="form-check-label" for="latcfit12">e</label>
 						<center>

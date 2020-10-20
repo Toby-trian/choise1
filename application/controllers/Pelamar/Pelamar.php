@@ -548,6 +548,11 @@ class Pelamar extends CI_Controller {
 
 	public function jawabancontoh()
 	{
+		$jawaban1 = $this->input->post('jawaban_latihan');
+		$jawaban2 = $this->input->post('jawaban_latihan2');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->session->set_userdata('ses_jawab2', $jawaban2);
 		$this->load->view('jawabancontoh');
 	}
 	

@@ -39,7 +39,7 @@
 			    </div>
 			    <div class="form-group col-sm-12">
 			      <label for="calendar">Tanggal Lahir</label>
-			      <input type="date" class="form-control" name="tgl_lahir">
+			      <input type="text" id="datepicker" class="form-control" name="tgl_lahir">
 			    </div>
 			    <div class="form-check form-check-inline col-sm-12 form-check">
 			      <div class="col-12">

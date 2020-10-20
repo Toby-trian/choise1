@@ -75,3 +75,22 @@
 </div>	<!--/.main-->
 
 <?php   $this->load->view('layout3/footer') ?>
+
+
+<script type="text/javascript">
+  $("input[type='file']").on("change", function() {
+
+    var val = $(this).val().toLowerCase(),
+    regex = new RegExp("(.*?)\.(pdf)$");
+
+    if(this.files[0].size > 3000000){
+      alert("Mohon unggah ukuran dibawah 3MB. Terima Kasih");
+      $(this).val('');
+    }
+    else if (!(regex.test(val))) {
+            $(this).val('');
+            alert('Format file salah, hanya pdf');
+        }
+
+  });
+</script>

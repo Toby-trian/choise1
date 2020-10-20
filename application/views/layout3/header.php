@@ -10,6 +10,7 @@
 	<link href="<?php  echo base_url('assets3/css/styles.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/custom.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/bie.css') ?>" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
 	
 	
 	<!--Custom Font-->
@@ -19,5 +20,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
-	<![endif]-->
+<![endif]-->
+<!-- <script type = "text/javascript" >
+	function preventBack(){window.history.forward();}
+	setTimeout("preventBack()", 0);
+	window.onunload=function(){null};
+</script> -->
 </head>

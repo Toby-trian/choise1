@@ -74,6 +74,10 @@ class Ujian extends CI_Controller {
 		$this->load->view('frame_latihan_cfit');
 	}
 
+	public function frame_latihan_cfit_2(){
+		$this->load->view('frame_latihan_cfit_2');
+	}
+
 
 	public function start_ujian($rdr)
 	{
@@ -159,7 +163,7 @@ class Ujian extends CI_Controller {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
 			}
-			redirect('Pelamar/Pelamar/latihancfit2/');
+			redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
 		}else{
 			$where = array(
 				'id_ujian' =>$id_ujian,
@@ -172,7 +176,7 @@ class Ujian extends CI_Controller {
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
 			}
-			redirect('Pelamar/Pelamar/latihancfit2/');
+			redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
 		}
 	}
 	

@@ -15,6 +15,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Tes CFIT</h1>
+				<p id="time"></p>
 			</div>
 		</div><!--/.row-->
 		<?php  
@@ -24,10 +25,34 @@
 		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
         </div>
-			<div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-			</div>
 		</div><!--/.row-->
+		
 	</div>	<!--/.main-->
 
+
+<script type="text/javascript">
+	var seconds = 60; // seconds for HTML
+var foo; // variable for clearInterval() function
+
+function redirect() {
+	document.location.href = '../jawabancontoh/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
+}
+
+function updateSecs() {
+	document.getElementById("time").innerHTML = seconds;
+	seconds--;
+	if (seconds == -1) {
+		clearInterval(foo);
+		redirect();
+	}
+}
+
+function countdownTimer() {
+	foo = setInterval(function () {
+		updateSecs()
+	}, 1000);
+}
+
+countdownTimer();
+</script>
 <?php   $this->load->view('layout3/footer') ?>

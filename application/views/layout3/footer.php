@@ -8,6 +8,20 @@
 	<script src="<?php  echo base_url('assets3/js/bootstrap-datepicker.js') ?>"></script>
 	<script src="<?php  echo base_url('assets3/js/custom.js') ?>"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+  var maxBirthdayDate = new Date();
+maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );
+
+$( "#datepicker" ).datepicker({
+  dateFormat: 'yy-mm-dd',
+  changeMonth: true,
+    changeYear: true,
+  maxDate: maxBirthdayDate
+});
+</script>
+
   <script>
     $(document).on('keydown', 'input[pattern]', function(e){
   var input = $(this);

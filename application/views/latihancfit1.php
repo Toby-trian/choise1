@@ -17,7 +17,7 @@
 			<h1 class="page-header">Soal Latihan</h1>
 		</div>
 		<div class="col-lg-3">
-			<h4 id="time" style="margin-top: 35px" align="right"></h4>
+			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
 		</div>
 	</div><!--/.row-->
 <!-- 
@@ -71,98 +71,105 @@
 <div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
 	<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 1. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
 	<div class="col-sm-12">
-		<p>1.</p>
-		<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh2.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">a</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option1">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
+
+		<?php $idUjian = $this->session->userdata('ses_ujian'); 
+		$id_pelamar = $this->session->userdata('ses_id');?>
+		<form method="post" action="<?php  echo base_url('Pelamar/Pelamar/jawabancontoh/'.$idUjian . '/' . $id_pelamar) ?>">
+			
+			<p>1.</p>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh2.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">a</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="a">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">b</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="b">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">c</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="c">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">d</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="d">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">e</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="e">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit11">f</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan" id="latcfit11" value="f">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
 		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">b</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option2">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">c</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option3">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">d</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option4">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">e</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option5">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit11">f</label>
-			<input class="form-check-input" type="radio" name="latcfit11" id="latcfit11" value="option6">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
+		<div class="col-sm-12" style="margin-top: 10px;">
+			<p>2.</p>
+			<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh3.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">a</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="a">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">b</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="b">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">c</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="c">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">d</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="d">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">e</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="e">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+				<label class="form-check-label" for="latcfit12">f</label>
+				<input class="form-check-input" type="radio" name="jawaban_latihan2" id="latcfit12" value="f">
+				<center>
+					<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+				</center>
+			</div>
+
+
 		</div>
 	</div>
-	<div class="col-sm-12" style="margin-top: 10px;">
-		<p>2.</p>
-		<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/contoh3.jpg') ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px;">
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">a</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option1">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">b</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option2">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">c</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option3">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">d</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option4">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">e</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option5">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-			<label class="form-check-label" for="latcfit12">f</label>
-			<input class="form-check-input" type="radio" name="latcfit12" id="latcfit12" value="option6">
-			<center>
-				<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3f.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-			</center>
-		</div>
-	</div>
-</div>
 
 </div>
 <div class="col-sm-12">
@@ -170,21 +177,47 @@
 </div><!--/.row-->
 </div>	<!--/.main-->
 
-<?php $idUjian = $this->session->userdata('ses_ujian'); 
-$id_pelamar = $this->session->userdata('ses_id');?>
 <div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-	<a href="<?php  echo base_url('Pelamar/Pelamar/jawabancontoh/'.$idUjian . '/' . $id_pelamar) ?>" class="btn btn-primary mr-2 mb-2">Selanjutnya</a>
+	<button type="submit" class="btn btn-primary mr-2 mb-2">Selanjutnya</button>
+</form>
 </div>
 
 
 <script type="text/javascript">
-	var start=Date.now(),r=document.getElementById('time');
-(function f(){
- var diff=Date.now()-start,ns=(((60000-diff)/1000)>>0),m=(ns/60)>>0,s=ns-m*60;
- r.textContent=""+m+':'+((''+s).length>1?'':'0')+s+' s';
- if(diff>(60000)){start=Date.now()}
- setTimeout(f,1000);
-})();
+	// var start=Date.now(),r=document.getElementById('time');
+	// (function f(){
+	// 	var diff=Date.now()-start,ns=(((60000-diff)/1000)>>0),m=(ns/60)>>0,s=ns-m*60;
+	// 	r.textContent=""+m+':'+((''+s).length>1?'':'0')+s+' s';
+	// 	if(diff>(60000)){
+	// 		start=Date.now()
+	// 	}
+	// 		setTimeout(f,1000);
+
+	// })();
+
+	var seconds = 60; // seconds for HTML
+var foo; // variable for clearInterval() function
+
+function redirect() {
+	document.location.href = '../jawabancontoh/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
+}
+
+function updateSecs() {
+	document.getElementById("time").innerHTML = seconds;
+	seconds--;
+	if (seconds == -1) {
+		clearInterval(foo);
+		redirect();
+	}
+}
+
+function countdownTimer() {
+	foo = setInterval(function () {
+		updateSecs()
+	}, 1000);
+}
+
+countdownTimer();
 </script>
 
 

@@ -1,8 +1,9 @@
 <?php   $this->load->view('layout3/header') ?>
 <div class="col-sm-12 box">
-	<div class="col-sm-12">
+	<div class="col-sm-6">
 		<h4><b>Subtes <?php echo $soal_subtes1->subtes; ?></b></h4>
 		<h3><b>Soal Nomor <?php echo $soal_subtes1->nomor_soal ?></b></h3>
+		<p id="time"></p>
 		<hr color="black">
 	</div>
 	<div class="col-md-7 col-sm-12" style="margin-bottom: 5px;">
@@ -94,11 +95,4 @@
 
 $this->load->view('layout3/footer') ?>
 
-<script>
-	function myFunction()
-	{
-		document.getElementById("page").style.opacity = 1;
-		document.getElementById("loading").style.opacity = 0;
-		document.getElementById("loading").style.display = "none";
-	}
-</script>
+
