@@ -163,7 +163,8 @@ class Ujian extends CI_Controller {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
 			}
-			redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
+			echo '<script>window.top.location.href = "start_ujian/2/";</script>'; 
+			//redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
 		}else{
 			$where = array(
 				'id_ujian' =>$id_ujian,
@@ -176,7 +177,8 @@ class Ujian extends CI_Controller {
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
 			}
-			redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
+			echo '<script>window.top.location.href = "start_ujian/2";</script>';
+			//redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
 		}
 	}
 	
