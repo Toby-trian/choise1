@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Okt 2020 pada 03.36
+-- Waktu pembuatan: 22 Okt 2020 pada 10.22
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -135,19 +135,23 @@ CREATE TABLE `tb_data_jawaban_cfit` (
   `nomor_soal` int(5) NOT NULL,
   `id_ujian` int(5) NOT NULL,
   `subtes` varchar(5) NOT NULL,
-  `jawaban` varchar(5) NOT NULL
+  `jawaban` varchar(5) NOT NULL,
+  `jawaban2` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_data_jawaban_cfit`
 --
 
-INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`) VALUES
-(1, 1, 3, 1, 1, '1', 'd'),
-(2, 1, 1, 3, 1, '1', 'b'),
-(3, 1, 1, 2, 1, '1', 'd'),
-(4, 1, 1, 4, 1, '1', 'c'),
-(5, 1, 1, 13, 1, '1', 'e');
+INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`) VALUES
+(1, 1, 3, 1, 1, '1', 'd', ''),
+(2, 1, 1, 3, 1, '1', 'b', ''),
+(3, 1, 1, 2, 1, '1', 'd', ''),
+(4, 1, 1, 4, 1, '1', 'c', ''),
+(5, 1, 1, 13, 1, '1', 'e', ''),
+(6, 1, 1, 5, 1, '1', 'c', ''),
+(7, 1, 1, 6, 1, '1', 'c', ''),
+(8, 1, 1, 7, 1, '1', 'c', '');
 
 -- --------------------------------------------------------
 
@@ -482,7 +486,7 @@ CREATE TABLE `tb_perusahaan` (
 
 INSERT INTO `tb_perusahaan` (`id_perusahaan`, `id_level`, `nama_perusahaan`, `jenis_usaha`, `alamat`, `email`, `logo_perusahaan`, `username`, `password`, `website`, `facebook`, `instagram`, `twitter`, `no_hp`) VALUES
 (1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002'),
-(2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', '16bb5a6238d9b0bc4d12c6f6d8c8eec8', '-', '-', '-', '-', '-');
+(2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', 'bd9dd885dfb6f61145824294180d7df0', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -628,6 +632,22 @@ CREATE TABLE `tb_ujian` (
   `nama_ujian` varchar(100) NOT NULL,
   `waktu_dimulai` datetime NOT NULL,
   `waktu_berakhir` datetime NOT NULL,
+  `start_lat_sub1` datetime NOT NULL,
+  `end_lat_sub1` datetime NOT NULL,
+  `start_uji_sub1` datetime NOT NULL,
+  `end_uji_sub1` datetime NOT NULL,
+  `start_lat_sub2` datetime NOT NULL,
+  `end_lat_sub2` datetime NOT NULL,
+  `start_uji_sub2` datetime NOT NULL,
+  `end_uji_sub2` datetime NOT NULL,
+  `start_lat_sub3` datetime NOT NULL,
+  `end_lat_sub3` datetime NOT NULL,
+  `start_uji_sub3` datetime NOT NULL,
+  `end_uji_sub3` datetime NOT NULL,
+  `start_lat_sub4` datetime NOT NULL,
+  `end_lat_sub4` datetime NOT NULL,
+  `start_uji_sub4` datetime NOT NULL,
+  `end_uji_sub4` datetime NOT NULL,
   `durasi` int(100) NOT NULL,
   `nama_pembuat` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL
@@ -637,8 +657,9 @@ CREATE TABLE `tb_ujian` (
 -- Dumping data untuk tabel `tb_ujian`
 --
 
-INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `durasi`, `nama_pembuat`, `status`) VALUES
-(1, 'Psikotes Chaakra', '2020-10-01 10:00:00', '2020-09-01 11:00:23', 1950, 'Administrator', 'tersedia');
+INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `durasi`, `nama_pembuat`, `status`) VALUES
+(1, 'Psikotes Chaakra', '2020-10-01 10:00:00', '2020-09-01 11:00:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1950, 'Administrator', 'tersedia'),
+(2, '123', '2020-10-15 13:57:21', '2020-10-15 16:57:23', '2020-10-15 13:57:47', '2020-10-15 13:57:50', '2020-10-15 13:57:53', '2020-10-15 13:57:55', '2020-10-15 13:57:57', '2020-10-15 13:57:59', '2020-10-15 13:58:01', '2020-10-15 13:58:03', '2020-10-15 13:58:06', '2020-10-15 13:58:08', '2020-10-15 13:58:11', '2020-10-15 13:58:12', '2020-10-15 13:58:15', '2020-10-15 13:58:16', '2020-10-15 13:58:19', '2020-10-15 13:58:21', 1950, 'Administrator', 'tersedia');
 
 --
 -- Indexes for dumped tables
@@ -808,7 +829,7 @@ ALTER TABLE `tb_berkas`
 -- AUTO_INCREMENT untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
-  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
@@ -916,7 +937,7 @@ ALTER TABLE `tb_soal_motlet`
 -- AUTO_INCREMENT untuk tabel `tb_ujian`
 --
 ALTER TABLE `tb_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
