@@ -29,6 +29,9 @@
 							<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 						</center>
 					</div>
+					<div style="padding-top: 3.9%">
+						<p> Jawaban yang benar</p>
+					</div>
 				</div>
 				<div class="col-sm-12" style="margin-top: 10px;">
 					<p>2. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab2') ?>)</p>
@@ -37,6 +40,9 @@
 						<center>
 							<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 						</center>
+					</div>
+					<div style="padding-top: 3.9%">
+						<p> Jawaban yang benar</p>
 					</div>
 				</div>
 			</div>

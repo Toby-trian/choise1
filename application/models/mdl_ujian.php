@@ -16,7 +16,7 @@ class Mdl_ujian extends CI_Model {
 	}
 
 	public function get_questions_subtes_2($rdr){
-		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 2 AND type_soal = 'Ujian' AND id_soal='$rdr' ");
+		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 2 AND type_soal = 'Ujian' AND nomor_soal='$rdr' ");
 		return $query->row();
 	}
 

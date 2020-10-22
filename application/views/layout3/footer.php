@@ -1,56 +1,83 @@
   <script src="<?php  echo base_url('assets3/js/jquery-1.11.1.min.js') ?>"></script>
   <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
-	<script src="<?php  echo base_url('assets3/js/bootstrap.min.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/chart.min.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/chart-data.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/easypiechart.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/easypiechart-data.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/bootstrap-datepicker.js') ?>"></script>
-	<script src="<?php  echo base_url('assets3/js/custom.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/bootstrap.min.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/chart.min.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/chart-data.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/easypiechart.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/easypiechart-data.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/bootstrap-datepicker.js') ?>"></script>
+  <script src="<?php  echo base_url('assets3/js/custom.js') ?>"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <script type="text/javascript">
-  var maxBirthdayDate = new Date();
-maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );
+    var maxBirthdayDate = new Date();
+    maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );
 
-$( "#datepicker" ).datepicker({
-  dateFormat: 'yy-mm-dd',
-  changeMonth: true,
-    changeYear: true,
-  maxDate: maxBirthdayDate
-});
-</script>
-
-  <script>
-    $(document).on('keydown', 'input[pattern]', function(e){
-  var input = $(this);
-  var oldVal = input.val();
-  var regex = new RegExp(input.attr('pattern'), 'g');
-
-  setTimeout(function(){
-    var newVal = input.val();
-    if(!regex.test(newVal)){
-      input.val(oldVal); 
-    }
-  }, 0);
-});
+    $( "#datepicker" ).datepicker({
+      dateFormat: 'yy-mm-dd',
+      changeMonth: true,
+      changeYear: true,
+      maxDate: maxBirthdayDate
+    });
   </script>
 
-
-  <script>
-    window.onload = function () {
-     var chart1 = document.getElementById("line-chart").getContext("2d");
-     window.myLine = new Chart(chart1).Line(lineChartData, {
-      responsive: true,
-      scaleLineColor: "rgba(0,0,0,.2)",
-      scaleGridLineColor: "rgba(0,0,0,.05)",
-      scaleFontColor: "#c5c7cc"
+  
+<script type="text/javascript">
+    $(document).ready(function () {
+    $("input[name='latcfit21']").change(function () {
+        var maxAllowed = 2;
+        var cnt = $("input[name='latcfit21']:checked").length;
+        if (cnt > maxAllowed) {
+            $(this).prop("checked", "");
+           
+        }
     });
-   };
+});
  </script>
 
- <script type="text/javascript">
+<script type="text/javascript">
+    $(document).ready(function () {
+    $("input[name='jawaban']").change(function () {
+        var maxAllowed = 2;
+        var cnt = $("input[name='jawaban']:checked").length;
+        if (cnt > maxAllowed) {
+            $(this).prop("checked", "");
+           
+        }
+    });
+});
+ </script>
+
+ <script>
+  $(document).on('keydown', 'input[pattern]', function(e){
+    var input = $(this);
+    var oldVal = input.val();
+    var regex = new RegExp(input.attr('pattern'), 'g');
+
+    setTimeout(function(){
+      var newVal = input.val();
+      if(!regex.test(newVal)){
+        input.val(oldVal); 
+      }
+    }, 0);
+  });
+</script>
+
+
+<script>
+  window.onload = function () {
+   var chart1 = document.getElementById("line-chart").getContext("2d");
+   window.myLine = new Chart(chart1).Line(lineChartData, {
+    responsive: true,
+    scaleLineColor: "rgba(0,0,0,.2)",
+    scaleGridLineColor: "rgba(0,0,0,.05)",
+    scaleFontColor: "#c5c7cc"
+  });
+ };
+</script>
+
+<script type="text/javascript">
   $('#notifikasi').delay(3000).slideUp('slow');
 
 </script>

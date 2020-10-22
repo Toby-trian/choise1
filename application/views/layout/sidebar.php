@@ -1,7 +1,14 @@
 <!-- Sidebar menu-->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
-  <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?php echo base_url('assets/faces/twitter/jsa/48.jpg') ?>" alt="User Image">
+  <?php 
+  $perusahaan = $this->session->userdata('ses_id');
+  $image = $this->db->query("SELECT * FROM tb_perusahaan WHERE id_perusahaan = $perusahaan");
+  foreach ($image->result() as $key) {
+    $logoPerusahaan = $key->logo_perusahaan;
+  }
+   ?>
+  <div class="app-sidebar__user"><img width="25%" class="app-sidebar__user-avatar" src="<?php echo ($logoPerusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logoPerusahaan) : base_url('./upload/logo_perusahaan/default.png')); ?>" alt="User Image">
     <div>
       <p class="app-sidebar__user-name"><?php echo $this->session->userdata('ses_nama') ?></p>
       <p class="app-sidebar__user-designation"><?php echo $this->session->userdata('ses_idLevel') ?></p>

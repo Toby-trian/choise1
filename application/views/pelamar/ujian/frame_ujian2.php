@@ -6,50 +6,42 @@
 		<hr color="black">
 	</div>
 	<div class="col-md-7 col-sm-12" style="margin-bottom: 5px;">
-		<div class="col-sm-12">
+		<div class="col-sm-12" style="padding-top: 4%">
 			<form method="post">
 				
-				<img src="<?php echo ($soal_subtes2->soal != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->soal) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 300px; margin: 10px; border-radius: 5px; border-radius: 5px">
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="cfit113">a</label>
-						<input class="form-check-input" type="radio" <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "a"){?> checked="checked" <?php } ?> name="jawaban" value="a">
+						<input class="form-check-input" type="checkbox" <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "a"){?> checked="checked" <?php } ?> name="jawaban" value="a">
 					<center>
 						<img src="<?php echo ($soal_subtes2->opsi_a != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_a) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="cfit113">b</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "b"){?> checked="checked" <?php } ?> name="jawaban" value="b">
+					<input class="form-check-input" type="checkbox"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "b"){?> checked="checked" <?php } ?> name="jawaban" value="b">
 					<center>
 						<img src="<?php echo ($soal_subtes2->opsi_b != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_b) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="cfit113">c</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "c"){?> checked="checked" <?php } ?> name="jawaban" value="c">
+					<input class="form-check-input" type="checkbox"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "c"){?> checked="checked" <?php } ?> name="jawaban" value="c">
 					<center>
 						<img src="<?php echo ($soal_subtes2->opsi_c != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_c) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="cfit113">d</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "d"){?> checked="checked" <?php } ?> name="jawaban" value="d">
+					<input class="form-check-input" type="checkbox"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "d"){?> checked="checked" <?php } ?> name="jawaban" value="d">
 					<center>
 						<img src="<?php echo ($soal_subtes2->opsi_d != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_d) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="cfit113">e</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "e"){?> checked="checked" <?php } ?> name="jawaban" value="e">
+					<input class="form-check-input" type="checkbox"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "e"){?> checked="checked" <?php } ?> name="jawaban" value="e">
 					<center>
 						<img src="<?php echo ($soal_subtes2->opsi_e != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_e) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="cfit113">f</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "f"){?> checked="checked" <?php } ?> name="jawaban" value="f">
-					<center>
-						<img src="<?php echo ($soal_subtes2->opsi_f != '' ? base_url('./upload/bank_soal/cfit/' . $soal_subtes2->opsi_f) : base_url('./upload/bank_soal/img_default.jpg')); ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 			</div>
@@ -61,19 +53,18 @@
 				<input type="hidden" name="id_ujian" value="<?php echo $this->session->userdata('ses_ujian') ?>">
 				<input type="hidden" name="nomor_soal" value="<?php echo $soal_subtes2->nomor_soal ?>">
 				<input type="hidden" name="subtes" value="<?php echo $soal_subtes2->subtes ?>">
-				<div class="baten">
-					<?php if ($soal_subtes2->nomor_soal != 1 && $soal_subtes2->subtes == 1) { ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/1') ?>"> <i class="fa fa-arrow-circle-left"> </i> Sebelumnya
+				<div class="baten" style="padding-top: 20%">
+					<?php if ($soal_subtes2->nomor_soal != 1 && $soal_subtes2->subtes == 2) { ?>
+						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_2/1') ?>"> <i class="fa fa-arrow-circle-left"> </i> Sebelumnya
 						</button>
 					<?php } ?>
-					<!-- <button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/0') ?>"> Konfirmasi -->
 					</button>
-					<?php if($soal_subtes2->nomor_soal !=13 && $soal_subtes2->subtes == 1){ ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
+					<?php if($soal_subtes2->nomor_soal !=14 && $soal_subtes2->subtes == 2){ ?>
+						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_2/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
-					<?php if($soal_subtes2->nomor_soal >= 13 && $soal_subtes2->subtes == 1){ ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_endSub1') ?>"> Subtes 2 <i class="fa fa-arrow-circle-right"></i>
+					<?php if($soal_subtes2->nomor_soal >= 14 && $soal_subtes2->subtes == 2){ ?>
+						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_endSub2') ?>"> Subtes 3 <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
 				</div>
@@ -82,7 +73,7 @@
 		</form>
 	</div>
 	<?php 
-	$this->load->view('pelamar/ujian/panel_ujian_1');
+	$this->load->view('pelamar/ujian/panel_ujian_2');
 	?>
 
 </div>
@@ -102,3 +93,4 @@ $this->load->view('layout3/footer') ?>
 		document.getElementById("loading").style.display = "none";
 	}
 </script>
+
