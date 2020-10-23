@@ -50,7 +50,7 @@ style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; bord
 <!-- 4 -->
 <div class="col-sm-2 justify-content-center text-center" 
 <?php
-$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = 1 AND subtes = 2 AND id_ujian = $id_ujian");
+$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = 4 AND subtes = 2 AND id_ujian = $id_ujian");
 if ($query->num_rows()>0) {
 	$warna = '#8ad919';
 	$warnaText = '#fff';

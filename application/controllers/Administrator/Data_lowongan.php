@@ -64,7 +64,7 @@ class Data_lowongan extends CI_Controller {
 			$send['gaji']=$this->input->post('gaji');
 
 			$kembalian['jumlah']=$this->Mdl_data_lowongan->tambahdata_lowongan($send);
-						
+
 			$this->load->view('administrator/data_lowongan',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Administrator/Data_lowongan/');
@@ -119,39 +119,189 @@ class Data_lowongan extends CI_Controller {
 	//detail pelamar
 	
 
-	public function terima_pelamar($id,$pelamar){
+	public function terima_pelamar($id){
 		$where = array('id_apply' => $id);
 		$this->Mdl_data_pelamar->terima_pelamar($where,'tb_apply');
 
-		/*Kirim email*/
 		$id_pelamar = $this->session->userdata('ses_id');
 		$queryMail = $this->db->query("SELECT * FROM tb_pelamar WHERE id_pelamar = $id_pelamar");
+		$queryApp = $this->db->query("SELECT * FROM tb_apply WHERE id_apply = $id");
+		$queryLowongan = $this->db->query("SELECT * FROM tb_lowongan");
+		$queryPerusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+
+		$queryData = $this->db->query("SELECT * FROM tb_data_diri");
+
+		foreach ($queryApp->result() as $keyApp) {
+			$idLowApp = $keyApp->id_lowongan;
+			$idPerApp = $keyApp->id_perusahaan;
+			$idPel = $keyApp->id_pelamar;
+
+			foreach ($queryLowongan->result() as $keyLow) {
+				if ($idLowApp == $keyLow->id_lowongan) {
+					$posisi = $keyLow->nama_jabatan;
+				}
+			}
+
+			foreach ($queryPerusahaan->result() as $keyPer) {
+				if ($idPerApp == $keyPer->id_perusahaan) {
+					$perusahaan = $keyPer->nama_perusahaan;
+				}
+			}
+
+			foreach ($queryData->result() as $keyData) {
+				if ($idPel == $keyData->id_pelamar) {
+				# code...
+				$nama = $keyData->nama_pelamar;
+				$no = $keyData->no_hp;
+				}
+			}
+		}
+
 		foreach ($queryMail->result() as $key) {
 			$penerima = $key->email;
 		}
 
-				$subject_="ADM CHOISE - Pengumuman (No Reply)";
-				
-				$pesan_='
-				<b>SELAMAT,</b> <br><br>
-				Anda dinyatakan lolos seleksi administrasi, untuk info selanjutnya bisa akses akun choise anda<br> <br> <br><br>
-				Terimakasih.<br><br> Tim Rekrutmen dan Assessment Chaakraconsulting
-				';
-				$to_=$penerima;
-				
-				$this->Mdl_home->send_mail($subject_,$pesan_,$to_);	
 
-		$this->session->set_flashdata('msg_success','Pelamar diterima');
-		redirect('Administrator/Data_lowongan/');
+		$message = '';             
+		$message .= '*Hai '.$nama.'* ';  
+		$message .= '\n2 Selamat anda dinyatakan lolos seleksi administrasi pada lowongan '.$posisi.'di perusahaan '.$perusahaan.'  \n ';
+		$message .= 'untuk jadwal seleksi selanjutnya bisa login ke akun CHOISE dan melihat jadwal seleksi pada menu LAMARAN SAYA. \n2 ';
+		$message .= ' *_Admin CHOISE_*';
+
+
+		/*Kirim email*/
+		
+
+		$subject_="ADM CHOISE - Pengumuman (No Reply)";
+
+		$pesan_='
+		<b>SELAMAT,</b> <br><br>
+		Anda dinyatakan lolos seleksi administrasi, untuk info selanjutnya bisa akses akun choise anda<br> <br> <br><br>
+		Terimakasih.<br><br> Tim Rekrutmen dan Assessment Chaakraconsulting
+		';
+		$to_=$penerima;
+
+		$this->Mdl_home->send_mail($subject_,$pesan_,$to_);	
+
+		// Send Wa
+		$curl = curl_init();
+		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
+		$data = [
+			'phone' => $no,
+			'message' => $message,
+		];
+
+		curl_setopt($curl, CURLOPT_HTTPHEADER,
+			array(
+				"Authorization: $token",
+			)
+		);
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		$result = curl_exec($curl);
+		curl_close($curl);
+
+		echo "<pre>";
+		print_r($result);
+
+		if ($result) {
+			$this->session->set_flashdata('msg_success','Pelamar diterima, pemberitahuan berhasil dikirim via Whatsapp');
+			redirect('Administrator/Data_lowongan/');	
+		} else{
+			$this->session->set_flashdata('msg_hapus','Gagal mengirim wa');
+			redirect('Administrator/Data_lowongan/');	
+		}
+
 	}
 
 	public function tolak_pelamar($id){
 		$where = array('id_apply' => $id);
 		$this->Mdl_data_pelamar->tolak_pelamar($where,'tb_apply');
-		$this->session->set_flashdata('msg_success','Pelamar ditolak');
-		redirect('Administrator/Data_lowongan/');
+
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$queryMail = $this->db->query("SELECT * FROM tb_pelamar WHERE id_pelamar = $id_pelamar");
+		$queryApp = $this->db->query("SELECT * FROM tb_apply WHERE id_apply = $id");
+		$queryLowongan = $this->db->query("SELECT * FROM tb_lowongan");
+		$queryPerusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+
+		$queryData = $this->db->query("SELECT * FROM tb_data_diri");
+
+		foreach ($queryApp->result() as $keyApp) {
+			$idLowApp = $keyApp->id_lowongan;
+			$idPerApp = $keyApp->id_perusahaan;
+			$idPel = $keyApp->id_pelamar;
+
+			foreach ($queryLowongan->result() as $keyLow) {
+				if ($idLowApp == $keyLow->id_lowongan) {
+					$posisi = $keyLow->nama_jabatan;
+				}
+			}
+
+			foreach ($queryPerusahaan->result() as $keyPer) {
+				if ($idPerApp == $keyPer->id_perusahaan) {
+					$perusahaan = $keyPer->nama_perusahaan;
+				}
+			}
+
+			foreach ($queryData->result() as $keyData) {
+				if ($idPel == $keyData->id_pelamar) {
+				# code...
+				$nama = $keyData->nama_pelamar;
+				$no = $keyData->no_hp;
+				}
+			}
+		}
+
+		foreach ($queryMail->result() as $key) {
+			$penerima = $key->email;
+		}
+
+
+		$message = '';             
+		$message .= '*Hai '.$nama.'* ';  
+		$message .= '\n2 Mohon maaf anda dinyatakan gagal seleksi administrasi pada lowongan '.$posisi.'di perusahaan '.$perusahaan.'  \n ';
+		$message .= 'Tetap semangat, Jangan menyerah. \n2 ';
+		$message .= ' *_Admin CHOISE_*';
+		
+		// Send Wa
+		$curl = curl_init();
+		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
+		$data = [
+			'phone' => $no,
+			'message' => $message,
+		];
+
+		curl_setopt($curl, CURLOPT_HTTPHEADER,
+			array(
+				"Authorization: $token",
+			)
+		);
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		$result = curl_exec($curl);
+		curl_close($curl);
+
+		echo "<pre>";
+		print_r($result);
+
+		if ($result) {
+			$this->session->set_flashdata('msg_success','Pelamar ditolak, pemberitahuan berhasil dikirim via Whatsapp');
+			redirect('Administrator/Data_lowongan/');	
+		} else{
+			$this->session->set_flashdata('msg_hapus','Gagal mengirim wa');
+			redirect('Administrator/Data_lowongan/');	
+		}
 	}
 
 
- 
+
 }

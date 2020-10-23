@@ -38,9 +38,9 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-    $("input[name='jawaban']").change(function () {
+    $("input[name='jawaban[]']").change(function () {
         var maxAllowed = 2;
-        var cnt = $("input[name='jawaban']:checked").length;
+        var cnt = $("input[name='jawaban[]']:checked").length;
         if (cnt > maxAllowed) {
             $(this).prop("checked", "");
            
