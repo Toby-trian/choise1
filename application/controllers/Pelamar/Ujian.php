@@ -144,8 +144,7 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban,
-				'jawaban2' => "tes"
+				'jawaban'=>$jawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
