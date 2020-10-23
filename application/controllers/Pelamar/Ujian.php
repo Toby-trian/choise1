@@ -108,7 +108,7 @@ class Ujian extends CI_Controller {
 		$id_ujian = $this->input->post('id_ujian');
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
-		$jawaban = $this->input->post('jawaban');
+
 
 		if ($redirect == 1) {
 			$rdr = $nomor_soal -1;
@@ -126,6 +126,7 @@ class Ujian extends CI_Controller {
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban
+
 			);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
@@ -142,7 +143,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban2' => "tes"
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -170,7 +172,6 @@ class Ujian extends CI_Controller {
 			$rdr = $nomor_soal;
 		}
 
-		
 
 		$data = array(
 			'id_jawaban_cfit'=>'',
@@ -179,7 +180,8 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1]
 			);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
@@ -188,7 +190,7 @@ class Ujian extends CI_Controller {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
 			}
-			redirect('Pelamar/Ujian/frame_ujian2/'.$id_ujian.'/'.$rdr);
+			redirect('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.$rdr);
 		}else{
 			$where = array(
 				'id_ujian' =>$id_ujian,
@@ -196,12 +198,13 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1]
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
 			}
-			redirect('Pelamar/Ujian/frame_ujian2/'.$id_ujian.'/'.$rdr);
+			redirect('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.$rdr);
 		}
 	}
 
