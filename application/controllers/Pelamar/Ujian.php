@@ -108,6 +108,7 @@ class Ujian extends CI_Controller {
 		$id_ujian = $this->input->post('id_ujian');
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
 
 
 		if ($redirect == 1) {
