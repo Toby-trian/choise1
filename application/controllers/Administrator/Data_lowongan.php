@@ -40,6 +40,15 @@ class Data_lowongan extends CI_Controller {
 		$this->load->view('administrator/data_lowongan',$paket);
 	}
 
+	public function download_pelamar($id){
+		$paket['pelamar']=$this->Mdl_data_lowongan->ambildata_apply($id);	
+		$paket['data_pelamar']=$this->Mdl_data_pelamar->ambildata_pelamar_();	
+		$paket['data_pendidikan']=$this->Mdl_data_pelamar->ambildata_pendidikan_();	
+		$paket['data_pengalaman']=$this->Mdl_data_pelamar->ambildata_pengalaman_();		
+		$paket['data_pelatihan']=$this->Mdl_data_pelamar->ambildata_pendidikan_non_();		
+		$this->load->view('administrator/export_excel',$paket);
+	}
+
 	
 	public function tambahdata(){
 		$this->form_validation->set_rules('nama_lowongan','Nama','trim|required');

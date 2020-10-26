@@ -78,11 +78,10 @@ class Ujian extends CI_Controller {
 	}
 
 	public function jawabancontoh2(){
-		$jawaban1 = $this->input->post('latcfit21');
-		$jawaban2 = $this->input->post('latcfit21');
+		$jawaban = $this->input->post('latcfit21');
 
-		$this->session->set_userdata('ses_jawab1', $jawaban1);
-		$this->session->set_userdata('ses_jawab1', $jawaban2);
+		$this->session->set_userdata('ses_jawab1', $jawaban[0]);
+		$this->session->set_userdata('ses_jawab2', $jawaban[1]);
 		$this->load->view('pelamar/ujian/jawabancontoh2');
 	}
 

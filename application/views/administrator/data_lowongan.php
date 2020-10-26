@@ -95,6 +95,8 @@
                     <td><?php echo $key['gaji'] ?></td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
+                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Download Pelamar" type="button" class="btn btn-dark"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/download_pelamar/'.$key['id_lowongan']) ?>"><i class="fa fa-download"></i></a></button> 
+
                        <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Pelamar" type="button" class="btn btn-primary"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/detail_lowongan/'.$key['id_lowongan']) ?>"><i class="fa fa-eye"></i></a></button> 
 
                        <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit" type="button" class="btn btn-warning"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_lowongan/edit_lowongan/'.$key['id_lowongan']) ?>"><i class="fa fa-edit"></i></a></button>

@@ -70,35 +70,35 @@
 			<form method="post" action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh2/'.$idUjian . '/' . $id_pelamar) ?>">
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">a</label>
-					<input class="form-check-input" type="checkbox" name="latcfit21" value="a">
+					<input class="form-check-input" type="checkbox" name="latcfit21[]" value="a">
 					<center>
 						<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh_22a.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">b</label>
-					<input class="form-check-input" type="checkbox" name="latcfit21" value="b">
+					<input class="form-check-input" type="checkbox" name="latcfit21[]" value="b">
 					<center>
 						<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh_22b.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">c</label>
-					<input class="form-check-input" type="checkbox" name="latcfit21" value="c">
+					<input class="form-check-input" type="checkbox" name="latcfit21[]" value="c">
 					<center>
 						<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh_22c.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">d</label>
-					<input class="form-check-input" type="checkbox" name="latcfit21" value="d">
+					<input class="form-check-input" type="checkbox" name="latcfit21[]" value="d">
 					<center>
 						<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh_22d.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
 				</div>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">e</label>
-					<input class="form-check-input" type="checkbox" name="latcfit21" value="e">
+					<input class="form-check-input" type="checkbox" name="latcfit21[]" value="e">
 					<center>
 						<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh_22e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
 					</center>
@@ -117,6 +117,31 @@
 	</div>
 </form>
 
+<script type="text/javascript">
+	var seconds = 60; // seconds for HTML
+var foo; // variable for clearInterval() function
 
+function redirect() {
+	document.location.href = '../Ujian/jawabancontoh2/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
+}
+
+function updateSecs() {
+	document.getElementById("time").innerHTML = seconds;
+	seconds--;
+	if (seconds == -1) {
+		clearInterval(foo);
+		redirect();
+	}
+}
+
+function countdownTimer() {
+	foo = setInterval(function () {
+		updateSecs()
+	}, 1000);
+}
+
+countdownTimer();
+</script>
+</script>
 
 <?php   $this->load->view('layout3/footer') ?>

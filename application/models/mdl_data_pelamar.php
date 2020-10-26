@@ -55,6 +55,21 @@ class Mdl_data_pelamar extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_pendidikan_(){
+		$query=$this->db->query("SELECT * FROM tb_data_pendidikan");
+		return $query->result_array();
+	}
+
+	public function ambildata_pendidikan_non_(){
+		$query=$this->db->query("SELECT * FROM tb_data_pendidikan_nonformal");
+		return $query->result_array();
+	}
+
+	public function ambildata_pengalaman_(){
+		$query=$this->db->query("SELECT * FROM tb_data_pengalaman_kerja");
+		return $query->result_array();
+	}
+
 	public function ambildata_pendidikan($id=FALSE){
 		
 		if($id==TRUE){

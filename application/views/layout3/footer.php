@@ -25,9 +25,9 @@
   
 <script type="text/javascript">
     $(document).ready(function () {
-    $("input[name='latcfit21']").change(function () {
+    $("input[name='latcfit21[]']").change(function () {
         var maxAllowed = 2;
-        var cnt = $("input[name='latcfit21']:checked").length;
+        var cnt = $("input[name='latcfit21[]']:checked").length;
         if (cnt > maxAllowed) {
             $(this).prop("checked", "");
            
