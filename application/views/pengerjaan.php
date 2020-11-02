@@ -1,4 +1,4 @@
-<?php   $this->load->view('layout3/header') ?>
+<?php   $this->load->view('layout3/header2') ?>
 <?php   $this->load->view('layout3/navbar') ?>
 
 <div class="col-sm-12 main">
