@@ -1,20 +1,11 @@
 <?php   $this->load->view('layout3/header') ?>
 <?php   $this->load->view('layout3/navbar') ?>
-<?php   $this->load->view('layout3/sidebar') ?>
 
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-	<div class="row">
-		<ol class="breadcrumb">
-			<li><a href="#">
-				<em class="fa fa-envelope color-amber"></em>
-			</a></li>
-			<li class="active">Tes CFIT</li>
-		</ol>
-	</div><!--/.row-->
+<div class="col-sm-12 main">
 
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h1 class="page-header">Soal Latihan</h1>
+			<h3>Soal Latihan</h3>
 		</div>
 		<div class="col-lg-3">
 			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
@@ -177,7 +168,7 @@
 </div><!--/.row-->
 </div>	<!--/.main-->
 
-<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
+<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px; margin-bottom: 20px">
 	<button type="submit" class="btn btn-primary mr-2 mb-2">Selanjutnya</button>
 </form>
 </div>

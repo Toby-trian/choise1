@@ -160,8 +160,8 @@ class Data_lowongan extends CI_Controller {
 			foreach ($queryData->result() as $keyData) {
 				if ($idPel == $keyData->id_pelamar) {
 				# code...
-				$nama = $keyData->nama_pelamar;
-				$no = $keyData->no_hp;
+					$nama = $keyData->nama_pelamar;
+					$no = $keyData->no_hp;
 				}
 			}
 		}
@@ -169,13 +169,22 @@ class Data_lowongan extends CI_Controller {
 		foreach ($queryMail->result() as $key) {
 			$penerima = $key->email;
 		}
-
+		'  \n ';
 
 		$message = '';             
 		$message .= '*Hai '.$nama.'* ';  
-		$message .= '\n2 Selamat anda dinyatakan lolos seleksi administrasi pada lowongan '.$posisi.'di perusahaan '.$perusahaan.'  \n ';
-		$message .= 'untuk jadwal seleksi selanjutnya bisa login ke akun CHOISE dan melihat jadwal seleksi pada menu LAMARAN SAYA. \n2 ';
-		$message .= ' *_Admin CHOISE_*';
+		$message .= '\n2 Selamat! Anda lolos seleksi administrasi sebagai kandidat '.$posisi.' dalam Tim '.$perusahaan.'. Anda diundang untuk mengikuti kegiatan seleksi tahap selanjutnya yang akan diselenggarakan pada: \n2 ';
+		$message .= 'Hari, tanggal : Rabu, 28 Oktober 2020 \n ';
+		$message .= 'Pukul : 08.00 - selesai \n '; 
+		$message .= 'Tempat : Kantor Chaakra Consulting, lantai 3, Gedung Virto Office, Ruko Galaxi Bumi Permai J1-23A, Semolowaru, Kec. Sukolilo, Surabaya. \n '; 
+		$message .= 'Dress code: office look. \n2 ';
+		$message .= ' Silahkan memeriksa email Anda untuk mendapatkan informasi lebih lanjut \n2 ';
+		$message .= ' *Mohon konfirmasi kehadiran Anda ke nomor ini SEBELUM HARI SELASA 27 Oktober 2020 pukul 10.00 WIB dengan format berikut* \n2 ';
+		$message .= ' IYA/TIDAK_NAMA';
+		$message .= ' *Wajib menggunakan masker & face shield yang dibawa sendiri selama tes berlangsung*  \n ';
+		$message .= '------- \n ';
+		$message .= 'Terima kasih 
+Tim Seleksi Chaakra Consulting';
 
 
 		/*Kirim email*/
@@ -194,7 +203,7 @@ class Data_lowongan extends CI_Controller {
 
 		// Send Wa
 		$curl = curl_init();
-		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
+		$token = "Q3TYHwfhluVn6eP6Ud3F6IisRJ7EhqlLpIYTm1qGgy7TfJBpdwJ3UPUJBbgsbBBi";
 		$data = [
 			'phone' => $no,
 			'message' => $message,
@@ -208,7 +217,7 @@ class Data_lowongan extends CI_Controller {
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_URL, "https://sawit.wablas.com/api/send-message");
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		$result = curl_exec($curl);
@@ -260,8 +269,8 @@ class Data_lowongan extends CI_Controller {
 			foreach ($queryData->result() as $keyData) {
 				if ($idPel == $keyData->id_pelamar) {
 				# code...
-				$nama = $keyData->nama_pelamar;
-				$no = $keyData->no_hp;
+					$nama = $keyData->nama_pelamar;
+					$no = $keyData->no_hp;
 				}
 			}
 		}
@@ -279,7 +288,7 @@ class Data_lowongan extends CI_Controller {
 		
 		// Send Wa
 		$curl = curl_init();
-		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
+		$token = "Q3TYHwfhluVn6eP6Ud3F6IisRJ7EhqlLpIYTm1qGgy7TfJBpdwJ3UPUJBbgsbBBi";
 		$data = [
 			'phone' => $no,
 			'message' => $message,
@@ -293,7 +302,7 @@ class Data_lowongan extends CI_Controller {
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_URL, "https://sawit.wablas.com/api/send-message");
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		$result = curl_exec($curl);

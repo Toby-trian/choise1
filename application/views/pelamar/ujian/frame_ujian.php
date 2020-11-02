@@ -64,17 +64,17 @@
 				<input type="hidden" name="subtes" value="<?php echo $soal_subtes1->subtes ?>">
 				<div class="baten">
 					<?php if ($soal_subtes1->nomor_soal != 1 && $soal_subtes1->subtes == 1) { ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/1') ?>"> <i class="fa fa-arrow-circle-left"> </i> Sebelumnya
+						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/1') ?>"> <i class="fa fa-arrow-circle-left"> </i> Sebelumnya
 						</button>
 					<?php } ?>
 					<!-- <button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/0') ?>"> Konfirmasi -->
 					</button>
 					<?php if($soal_subtes1->nomor_soal !=13 && $soal_subtes1->subtes == 1){ ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
+						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
 					<?php if($soal_subtes1->nomor_soal >= 13 && $soal_subtes1->subtes == 1){ ?>
-						<button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_endSub1') ?>" class="btn btn-primary"> Subtes 2 <i class="fa fa-arrow-circle-right"></i>
+						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_endSub1') ?>" class="btn btn-primary"> Subtes 2 <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
 				</div>

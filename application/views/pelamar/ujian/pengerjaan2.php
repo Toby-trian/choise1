@@ -1,20 +1,11 @@
 <?php   $this->load->view('layout3/header') ?>
 <?php   $this->load->view('layout3/navbar') ?>
-<?php   $this->load->view('layout3/sidebar') ?>
 
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-envelope color-amber"></em>
-				</a></li>
-				<li class="active">Tes CFIT</li>
-			</ol>
-		</div><!--/.row-->
+<div class="col-sm-12 main">
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Tes CFIT</h1>
+				<h3>Tes CFIT</h3>
 				<p id="time"></p>
 			</div>
 		</div><!--/.row-->

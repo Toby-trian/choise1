@@ -11,9 +11,9 @@
 		</div><!--/.row-->
 		<?php  
 		$id_ujian=  $this->session->userdata('ses_ujian');
-		$nomor = $soal_subtes1->nomor_soal;
+		$nomor = $soal_subtes3->nomor_soal;
 		 ?>
-		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
+		<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_sub3/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
         </div>
 		</div><!--/.row-->
