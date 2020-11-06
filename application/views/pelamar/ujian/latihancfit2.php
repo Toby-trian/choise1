@@ -57,7 +57,13 @@
 		<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 2. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
 		<div class="col-sm-12">
 			<?php $idUjian = $this->session->userdata('ses_ujian'); 
-			$id_pelamar = $this->session->userdata('ses_id');?>
+			$id_pelamar = $this->session->userdata('ses_id');
+
+			$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+			foreach ($ujian->result() as $key ) {
+				$end_lat2 = $key->end_lat_sub2;
+			}
+			?>
 			<form method="post" action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh2/'.$idUjian . '/' . $id_pelamar) ?>">
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 					<label class="form-check-label" for="latcfit21">a</label>
@@ -108,31 +114,39 @@
 	</div>
 </form>
 
+
 <script type="text/javascript">
-	var seconds = 60; // seconds for HTML
-var foo; // variable for clearInterval() function
+  var countDownDate = new Date("<?php echo $end_lat2 ?>").getTime();
 
-function redirect() {
-	document.location.href = '../Ujian/jawabancontoh2/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
-}
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-function updateSecs() {
-	document.getElementById("time").innerHTML = seconds;
-	seconds--;
-	if (seconds == -1) {
-		clearInterval(foo);
-		redirect();
-	}
-}
+  // Get today's date and time
+  var now = new Date().getTime();
 
-function countdownTimer() {
-	foo = setInterval(function () {
-		updateSecs()
-	}, 1000);
-}
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
-countdownTimer();
-</script>
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("time").innerHTML = minutes + " : " + seconds + " ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    // document.getElementById("time").innerHTML = "EXPIRED";
+    alert('Waktu latian subtes 2 sudah berakhir, selamat mengerjakan subtes 2');
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_sub2/'.$idUjian); ?>';
+
+    // document.getElementById('hentikan').click();
+  }
+}, 1000);
+
 </script>
 
 <?php   $this->load->view('layout3/footer') ?>

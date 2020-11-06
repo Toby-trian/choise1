@@ -15,6 +15,11 @@ class Mdl_ujian extends CI_Model {
 		return $query->row();
 	}
 
+	public function get_answer_subtes_1(){
+		$query=$this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = 1 ");
+		return $query->row_array();
+	}
+
 	public function get_questions_subtes_2($rdr){
 		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 2 AND type_soal = 'Ujian' AND nomor_soal='$rdr' ");
 		return $query->row();

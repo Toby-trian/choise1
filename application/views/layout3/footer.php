@@ -23,61 +23,61 @@
   </script>
 
   
-<script type="text/javascript">
+  <script type="text/javascript">
     $(document).ready(function () {
-    $("input[name='latcfit21[]']").change(function () {
+      $("input[name='latcfit21[]']").change(function () {
         var maxAllowed = 2;
         var cnt = $("input[name='latcfit21[]']:checked").length;
         if (cnt > maxAllowed) {
-            $(this).prop("checked", "");
-           
-        }
-    });
-});
- </script>
+          $(this).prop("checked", "");
 
-<script type="text/javascript">
+        }
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
     $(document).ready(function () {
-    $("input[name='jawaban[]']").change(function () {
+      $("input[name='jawaban[]']").change(function () {
         var maxAllowed = 2;
         var cnt = $("input[name='jawaban[]']:checked").length;
         if (cnt > maxAllowed) {
-            $(this).prop("checked", "");
-           
+          $(this).prop("checked", "");
+
         }
+      });
     });
-});
+  </script>
+
+  <script>
+    $(document).on('keydown', 'input[pattern]', function(e){
+      var input = $(this);
+      var oldVal = input.val();
+      var regex = new RegExp(input.attr('pattern'), 'g');
+
+      setTimeout(function(){
+        var newVal = input.val();
+        if(!regex.test(newVal)){
+          input.val(oldVal); 
+        }
+      }, 0);
+    });
+  </script>
+
+
+  <script>
+    window.onload = function () {
+     var chart1 = document.getElementById("line-chart").getContext("2d");
+     window.myLine = new Chart(chart1).Line(lineChartData, {
+      responsive: true,
+      scaleLineColor: "rgba(0,0,0,.2)",
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      scaleFontColor: "#c5c7cc"
+    });
+   };
  </script>
 
- <script>
-  $(document).on('keydown', 'input[pattern]', function(e){
-    var input = $(this);
-    var oldVal = input.val();
-    var regex = new RegExp(input.attr('pattern'), 'g');
-
-    setTimeout(function(){
-      var newVal = input.val();
-      if(!regex.test(newVal)){
-        input.val(oldVal); 
-      }
-    }, 0);
-  });
-</script>
-
-
-<script>
-  window.onload = function () {
-   var chart1 = document.getElementById("line-chart").getContext("2d");
-   window.myLine = new Chart(chart1).Line(lineChartData, {
-    responsive: true,
-    scaleLineColor: "rgba(0,0,0,.2)",
-    scaleGridLineColor: "rgba(0,0,0,.05)",
-    scaleFontColor: "#c5c7cc"
-  });
- };
-</script>
-
-<script type="text/javascript">
+ <script type="text/javascript">
   $('#notifikasi').delay(3000).slideUp('slow');
 
 </script>
@@ -207,13 +207,13 @@ confirm_password.onkeyup = validatePassword;
       }
     }
   }
-//   if(document.layers){
-//     document.captureEvents(Event.MOUSEDOWN);
-//     document.onmousedown=clickNS4;
-//   }else if(document.all&&!document.getElementById){
-//     document.onmousedown=clickIE4;
-//   }
-//   document.oncontextmenu=new Function("return false");
+  if(document.layers){
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown=clickNS4;
+  }else if(document.all&&!document.getElementById){
+    document.onmousedown=clickIE4;
+  }
+  document.oncontextmenu=new Function("return false");
 
 //   function copyToClipboard() {
 
@@ -235,5 +235,38 @@ confirm_password.onkeyup = validatePassword;
 
 
 </script><!--IE=internet explorer 4+ dan NS=netscape 4+0-->
+
+<script type="text/javascript">
+ document.addEventListener("keyup", function (e) {
+  var keyCode = e.keyCode ? e.keyCode : e.which;
+  if (keyCode == 44) {
+    stopPrntScr();
+  }
+});
+ function stopPrntScr() {
+
+  var inpFld = document.createElement("input");
+  inpFld.setAttribute("value", ".");
+  inpFld.setAttribute("width", "0");
+  inpFld.style.height = "0px";
+  inpFld.style.width = "0px";
+  inpFld.style.border = "0px";
+  document.body.appendChild(inpFld);
+  inpFld.select();
+  document.execCommand("copy");
+  inpFld.remove(inpFld);
+}
+function AccessClipboardData() {
+  try {
+    window.clipboardData.setData('text', "Access   Restricted");
+  } catch (err) {
+  }
+}
+setInterval("AccessClipboardData()", 300);
+</script>
+
+
+<!-- timer latihan 1 -->
+
 </body>
 </html>

@@ -65,107 +65,112 @@
 	<div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
 		<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 3. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
 
-<?php $idUjian = $this->session->userdata('ses_ujian'); 
-$id_pelamar = $this->session->userdata('ses_id');?>
+		<?php $idUjian = $this->session->userdata('ses_ujian');
+		$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+			foreach ($ujian->result() as $key ) {
+				$end_lat3 = $key->end_lat_sub3;
+			} 
+		$id_pelamar = $this->session->userdata('ses_id');?>
+
 		<div class="col-sm-12">
 			<form method="post" action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh3/'.$idUjian . '/' . $id_pelamar) ?>">
-			
-			<p>1.</p>
-			<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh21.jpg') ?>" class="img-responsive" alt="" style="width: 150px; margin: 10px; border-radius: 5px;">
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">a</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="a">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2a3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">b</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="b">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2b3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">c</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="c">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">d</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="d">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2d3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">e</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="e">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2e3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit31">f</label>
-				<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="f">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/2f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-		</div>
-		<div class="col-sm-12" style="margin-top: 10px;">
-			<p>2.</p>
-			<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh31.jpg') ?>" class="img-responsive" alt="" style="width: 150px; margin: 10px; border-radius: 5px;">
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">a</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="a">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3a3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">b</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="b">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3b3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">c</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="c">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">d</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="d">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3d3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">e</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="e">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3e3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-			<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-				<label class="form-check-label" for="latcfit32">f</label>
-				<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="f">
-				<center>
-					<img src="<?php  echo base_url('upload/bank_soal/cfit/3f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-				</center>
-			</div>
-		</div>
-	</div>
 
-</div>
-<div class="col-sm-12">
-</div>
+				<p>1.</p>
+				<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh21.jpg') ?>" class="img-responsive" alt="" style="width: 150px; margin: 10px; border-radius: 5px;">
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">a</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="a">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2a3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">b</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="b">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2b3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">c</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="c">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">d</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="d">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2d3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">e</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="e">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2e3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">f</label>
+					<input class="form-check-input" type="radio" name="latcfit31" id="latcfit31" value="f">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+			</div>
+			<div class="col-sm-12" style="margin-top: 10px;">
+				<p>2.</p>
+				<img src="<?php  echo base_url('upload/bank_soal/cfit/contoh31.jpg') ?>" class="img-responsive" alt="" style="width: 150px; margin: 10px; border-radius: 5px;">
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">a</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="a">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3a3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">b</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="b">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3b3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">c</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="c">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">d</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="d">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3d3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">e</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="e">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3e3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">f</label>
+					<input class="form-check-input" type="radio" name="latcfit32" id="latcfit32" value="f">
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-sm-12">
+	</div>
 </div><!--/.row-->
 </div>	<!--/.main-->
 
@@ -177,29 +182,37 @@ $id_pelamar = $this->session->userdata('ses_id');?>
 
 
 <script type="text/javascript">
-	var seconds = 60; // seconds for HTML
-var foo; // variable for clearInterval() function
+	var countDownDate = new Date("<?php echo $end_lat3 ?>").getTime();
 
-function redirect() {
-	document.location.href = '../jawabancontoh3/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("time").innerHTML = minutes + " : " + seconds + " ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+  	clearInterval(x);
+    // document.getElementById("time").innerHTML = "EXPIRED";
+    alert('Waktu latian subtes 3 sudah berakhir, selamat mengerjakan subtes 2');
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$idUjian); ?>';
+
+    // document.getElementById('hentikan').click();
 }
+}, 1000);
 
-function updateSecs() {
-	document.getElementById("time").innerHTML = seconds;
-	seconds--;
-	if (seconds == -1) {
-		clearInterval(foo);
-		redirect();
-	}
-}
-
-function countdownTimer() {
-	foo = setInterval(function () {
-		updateSecs()
-	}, 1000);
-}
-
-countdownTimer();
 </script>
 
 

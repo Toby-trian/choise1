@@ -5,10 +5,10 @@
 
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h3>Soal Latihan</h3>
+			<h1 class="page-header">Soal Latihan</h1>
 		</div>
 		<div class="col-lg-3">
-			<h4 id="timer" style="margin-top: 35px" align="right"></h4>
+			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
 		</div>
 	</div><!--/.row-->
 
@@ -60,6 +60,10 @@
 		<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 4. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
 
 		<?php $idUjian = $this->session->userdata('ses_ujian'); 
+		$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+		foreach ($ujian->result() as $key ) {
+			$end_lat4 = $key->end_lat_sub4;
+		} 
 		$id_pelamar = $this->session->userdata('ses_id');?>
 		<form action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh4/'.$idUjian . '/' . $id_pelamar) ?>" method="post">
 			<div class="col-sm-12">
@@ -153,5 +157,40 @@
 	<button type="submit" class="btn btn-primary mr-2 mb-2">Selanjutnya</button>
 </div>
 </form>
+
+
+<script type="text/javascript">
+	var countDownDate = new Date("<?php echo $end_lat4 ?>").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("time").innerHTML = minutes + " : " + seconds + " ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+  	clearInterval(x);
+    // document.getElementById("time").innerHTML = "EXPIRED";
+    alert('Waktu latian subtes 4 sudah berakhir, selamat mengerjakan subtes 4');
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_sub4/'.$idUjian); ?>';
+
+    // document.getElementById('hentikan').click();
+}
+}, 1000);
+
+</script>
 
 <?php   $this->load->view('layout3/footer') ?>

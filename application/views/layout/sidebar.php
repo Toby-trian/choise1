@@ -24,7 +24,7 @@
 
       <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_jadwal"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_jadwal') ?>"><i class="app-menu__icon fa fa-calendar-check-o"></i><span class="app-menu__label">Jadwal Seleksi </span></a></li>
 
-      <!-- <li><a class="app-menu__item  <?php if($this->uri->segment(3)=="nilai_pelamar"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_nilai/nilai_pelamar') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li> -->
+      <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_nilai"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_nilai/') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
 
       <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/') ?>"><i class="app-menu__icon fa fa-clipboard"></i><span class="app-menu__label">Ujian </span></a></li>
 

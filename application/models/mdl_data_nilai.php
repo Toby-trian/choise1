@@ -9,14 +9,14 @@ class Mdl_data_nilai extends CI_Model {
 			$this->load->database();
 		}
 
-	// DATA LEVEL
+	// DATA 
 	public function ambildata_nilai(){
 		$query=$this->db->query("SELECT * FROM tb_nilai");
 		return $query->result_array();
 	}
 
-	public function ambildata_nilai_perusahaan($id){
-		$query=$this->db->query("SELECT * FROM tb_nilai WHERE id_perusahaan = $id");
+	public function get_apply($id){
+		$query=$this->db->query("SELECT * FROM tb_apply WHERE id_perusahaan = $id AND status_lamaran = 'Diterima'");
 		return $query->result_array();
 	}
 

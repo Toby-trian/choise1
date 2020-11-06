@@ -55,25 +55,25 @@ class Data_ujian extends CI_Controller {
 			$send['waktu_dimulai']=$this->input->post('waktu_mulai');
 			$send['waktu_berakhir']=$this->input->post('waktu_akhir');
 			// sub1
-			// $send['start_lat_sub1']=$this->input->post('start_lat_sub1');
-			// $send['end_lat_sub1']=$this->input->post('end_lat_sub1');
-			// $send['start_uji_sub1']=$this->input->post('start_uji_sub1');
-			// $send['end_uji_sub1']=$this->input->post('end_uji_sub1');
+			$send['start_lat_sub1']=$this->input->post('start_lat_sub1');
+			$send['end_lat_sub1']=$this->input->post('end_lat_sub1');
+			$send['start_uji_sub1']=$this->input->post('start_uji_sub1');
+			$send['end_uji_sub1']=$this->input->post('end_uji_sub1');
 			// sub2
-			// $send['start_lat_sub2']=$this->input->post('start_lat_sub2');
-			// $send['end_lat_sub2']=$this->input->post('end_lat_sub2');
-			// $send['start_uji_sub2']=$this->input->post('start_uji_sub2');
-			// $send['end_uji_sub2']=$this->input->post('end_uji_sub2');
+			$send['start_lat_sub2']=$this->input->post('start_lat_sub2');
+			$send['end_lat_sub2']=$this->input->post('end_lat_sub2');
+			$send['start_uji_sub2']=$this->input->post('start_uji_sub2');
+			$send['end_uji_sub2']=$this->input->post('end_uji_sub2');
 			// sub3
-			// $send['start_lat_sub3']=$this->input->post('start_lat_sub3');
-			// $send['end_lat_sub3']=$this->input->post('end_lat_sub3');
-			// $send['start_uji_sub3']=$this->input->post('start_uji_sub3');
-			// $send['end_uji_sub3']=$this->input->post('end_uji_sub3');
+			$send['start_lat_sub3']=$this->input->post('start_lat_sub3');
+			$send['end_lat_sub3']=$this->input->post('end_lat_sub3');
+			$send['start_uji_sub3']=$this->input->post('start_uji_sub3');
+			$send['end_uji_sub3']=$this->input->post('end_uji_sub3');
 			// sub4
-			// $send['start_lat_sub4']=$this->input->post('start_lat_sub4');
-			// $send['end_lat_sub4']=$this->input->post('end_lat_sub4');
-			// $send['start_uji_sub4']=$this->input->post('start_uji_sub4');
-			// $send['end_uji_sub4']=$this->input->post('end_uji_sub4');
+			$send['start_lat_sub4']=$this->input->post('start_lat_sub4');
+			$send['end_lat_sub4']=$this->input->post('end_lat_sub4');
+			$send['start_uji_sub4']=$this->input->post('start_uji_sub4');
+			$send['end_uji_sub4']=$this->input->post('end_uji_sub4');
 
 			$send['nama_pembuat']=$this->input->post('id_admin');
 			$send['status']='tersedia';

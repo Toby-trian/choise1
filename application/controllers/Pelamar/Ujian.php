@@ -47,7 +47,7 @@ class Ujian extends CI_Controller {
 			$nomor_soal = $data['soal_subtes1']->nomor_soal;
 		}
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = 1");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = $id_ujian");
 
 		$data['jawaban'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian', $data);
@@ -178,6 +178,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		if ($redirect == 1) {
@@ -195,12 +196,13 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
 
-			);
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -213,7 +215,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -232,6 +235,8 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
 
 		if ($redirect == 1) {
 			$rdr = $nomor_soal -1;
@@ -250,11 +255,13 @@ class Ujian extends CI_Controller {
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban[0],
-			'jawaban2' => $jawaban[1]
-			);
+			'jawaban2' => $jawaban[1],
+			'jawaban_kunci' => $kuncijawaban1,
+			'jawaban_kunci2' =>$kuncijawaban2
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -268,7 +275,9 @@ class Ujian extends CI_Controller {
 			);
 			$data2 = array(
 				'jawaban' => $jawaban[0],
-				'jawaban2' => $jawaban[1]
+				'jawaban2' => $jawaban[1],
+				'jawaban_kunci' => $kuncijawaban1,
+			'jawaban_kunci2' =>$kuncijawaban2
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -287,6 +296,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		if ($redirect == 1) {
@@ -304,12 +314,13 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
 
-			);
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -322,7 +333,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -341,6 +353,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		if ($redirect == 1) {
@@ -358,12 +371,13 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
 
-			);
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -376,7 +390,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -394,6 +409,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		$data = array(
@@ -403,11 +419,12 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
-			);
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -421,7 +438,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -439,6 +457,8 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
 
 
 		$data = array(
@@ -448,11 +468,14 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
-			);
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1],
+			'jawaban_kunci' => $kuncijawaban1,
+			'jawaban_kunci2' =>$kuncijawaban2
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -466,7 +489,10 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1],
+				'jawaban_kunci' => $kuncijawaban1,
+				'jawaban_kunci2' =>$kuncijawaban2
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -484,6 +510,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		$data = array(
@@ -493,11 +520,12 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
-			);
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=> $kuncijawaban
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -511,7 +539,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban1
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -529,6 +558,7 @@ class Ujian extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
 		$data = array(
@@ -538,11 +568,12 @@ class Ujian extends CI_Controller {
 			'id_ujian' => $id_ujian,
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban
-			);
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
-	
+
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
 				$insert = $this->Mdl_ujian->insert_jawaban($data);
@@ -556,7 +587,8 @@ class Ujian extends CI_Controller {
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban'=>$jawaban
+				'jawaban'=>$jawaban,
+				'jawaban_kunci' =>$kuncijawaban1
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -565,6 +597,50 @@ class Ujian extends CI_Controller {
 			//redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
 		}
 	}
-	
+
+	public function penilaian(){
+		$jawaban_sub1 = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = 1");
+		$jawaban_sub2 = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = 2");
+		$jawaban_sub3 = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = 3");
+		$jawaban_sub4 = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = 4");
+
+		$nilai_sub1 = 0;
+		$nilai_sub2 = 0;
+		$nilai_sub3 = 0;
+		$nilai_sub4 = 0;
+
+		foreach ($jawaban_sub1->result() as $jawsub1) {
+			$nomor_soal = $jawsub1->nomor_soal;
+			if ($jawsub1->jawaban == $jawsub1->jawaban_kunci) {
+				$nilai_sub1 = $nilai_sub1 + 1;
+			}
+		}
+
+		foreach ($jawaban_sub2->result() as $jawsub2) {
+			$nomor_soal = $jawsub2->nomor_soal;
+			if ($jawsub2->jawaban == $jawsub2->jawaban_kunci && $jawsub2->jawaban2 == $jawsub2->jawaban_kunci2) {
+				$nilai_sub2 = $nilai_sub2 + 1;
+			}
+		}
+
+		foreach ($jawaban_sub3->result() as $jawsub3) {
+			$nomor_soal = $jawsub3->nomor_soal;
+			if ($jawsub3->jawaban == $jawsub3->jawaban_kunci) {
+				$nilai_sub3 = $nilai_sub3 + 1;
+			}
+		}
+
+		foreach ($jawaban_sub4->result() as $jawsub4) {
+			$nomor_soal = $jawsub4->nomor_soal;
+			if ($jawsub4->jawaban == $jawsub4->jawaban_kunci) {
+				$nilai_sub4 = $nilai_sub4 + 1;
+			}
+		}
+
+		echo "jawaban yang benar pada sub tes 1: ". $nilai_sub1 ."<br>";
+		echo "jawaban yang benar pada sub tes 2: ". $nilai_sub2 ."<br>";
+		echo "jawaban yang benar pada sub tes 3: ". $nilai_sub3 ."<br>";
+		echo "jawaban yang benar pada sub tes 4: ". $nilai_sub4 ."<br>";
+	}
 	
 }

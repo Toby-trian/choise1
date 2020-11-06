@@ -64,7 +64,13 @@
 	<div class="col-sm-12">
 
 		<?php $idUjian = $this->session->userdata('ses_ujian'); 
-		$id_pelamar = $this->session->userdata('ses_id');?>
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+		foreach ($ujian->result() as $key ) {
+			$end_lat1 = $key->end_lat_sub1;
+		}
+		?>
 		<form method="post" action="<?php  echo base_url('Pelamar/Pelamar/jawabancontoh/'.$idUjian . '/' . $id_pelamar) ?>">
 			
 			<p>1.</p>
@@ -173,75 +179,37 @@
 </form>
 </div>
 
-
 <script type="text/javascript">
-	// var start=Date.now(),r=document.getElementById('time');
-	// (function f(){
-	// 	var diff=Date.now()-start,ns=(((60000-diff)/1000)>>0),m=(ns/60)>>0,s=ns-m*60;
-	// 	r.textContent=""+m+':'+((''+s).length>1?'':'0')+s+' s';
-	// 	if(diff>(60000)){
-	// 		start=Date.now()
-	// 	}
-	// 		setTimeout(f,1000);
-
-	// })();
-
-	var seconds = 60; // seconds for HTML
-var foo; // variable for clearInterval() function
-
-function redirect() {
-	document.location.href = '../jawabancontoh/<?php echo $idUjian?>/<?php echo $id_pelamar ?>';
-}
-
-function updateSecs() {
-	document.getElementById("time").innerHTML = seconds;
-	seconds--;
-	if (seconds == -1) {
-		clearInterval(foo);
-		redirect();
-	}
-}
-
-function countdownTimer() {
-	foo = setInterval(function () {
-		updateSecs()
-	}, 1000);
-}
-
-countdownTimer();
-</script>
-
-
-		<!-- <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2021 00:00:00").getTime();
+  var countDownDate = new Date("<?php echo $end_lat1 ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
 
   // Get today's date and time
   var now = new Date().getTime();
-    
+
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
-    
+
   // Time calculations for days, hours, minutes and seconds
-  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="timer"
-  document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
+
+  // Display the result in the element with id="demo"
+  document.getElementById("time").innerHTML = minutes + " : " + seconds + " ";
+
+  // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
+    // document.getElementById("time").innerHTML = "EXPIRED";
+    alert('Waktu latian subtes 1 sudah berakhir, selamat mengerjakan subtes 1');
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian); ?>';
+
+    // document.getElementById('hentikan').click();
   }
 }, 1000);
-</script> -->
 
-
-
+</script>
 <?php   $this->load->view('layout3/footer') ?>

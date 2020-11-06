@@ -8,6 +8,7 @@ class Data_nilai extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url','form');
 		$this->load->model('Mdl_data_nilai');
+		$this->load->model('Mdl_data_lowongan');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -37,11 +38,17 @@ class Data_nilai extends CI_Controller {
 		$this->load->view('administrator/data_nilai',$paket);
 	}
 
-	// CRUD Motlet
+	public function data_nilai($id)
+	{
+		$paket['array']=$this->Mdl_data_nilai->get_apply($id);	
+		$this->load->view('administrator/data_nilai',$paket);
+	}
+
+
 	public function index()
 	{
-		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai();	
-		$this->load->view('administrator/data_nilai',$paket);
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_lowongan();	
+		$this->load->view('administrator/data_nilai_home',$paket);
 	}
 
 	public function detail_nilai($id_detail)

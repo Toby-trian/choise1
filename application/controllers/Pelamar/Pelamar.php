@@ -538,7 +538,10 @@ class Pelamar extends CI_Controller {
 	}
 	public function latihancfit1()
 	{
-		$this->load->view('latihancfit1');
+		$idUjian = $this->session->userdata('ses_ujian');
+
+		$paket['ujian']=$this->Mdl_data_ujian->ambildata_ujian2($idUjian);
+		$this->load->view('latihancfit1', $paket);
 	}
 
 	public function latihancfit2()
@@ -565,6 +568,10 @@ class Pelamar extends CI_Controller {
 	{
 		$this->load->view('uploadberkas');
 	}	
+
+	public function selesai(){
+		$this->load->view('selesai');
+	}
 
 	
 }

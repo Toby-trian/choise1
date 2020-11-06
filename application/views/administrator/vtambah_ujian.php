@@ -34,7 +34,7 @@
               <input class="form-control time" name="waktu_akhir" type="text">
             </div>
 
-           <!--  <div class="card">
+            <div class="card">
               <div class="card-header">
                 Subtes 1
               </div>
@@ -163,7 +163,7 @@
                   </div>
                 </div>             
               </div>
-            </div> -->
+            </div>
 
           <input type="hidden" name="id_admin" value="<?php echo $this->session->userdata('ses_nama'); ?>">
 
