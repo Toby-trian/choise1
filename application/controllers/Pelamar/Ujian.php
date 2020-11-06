@@ -63,7 +63,7 @@ class Ujian extends CI_Controller {
 			$id_soal = $data['soal_subtes2']->id_soal;
 			$nomor_soal = $data['soal_subtes2']->nomor_soal;
 		}
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 2");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 2 AND id_ujian = $id_ujian");
 
 		$data['jawaban2'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian2', $data);
@@ -79,7 +79,7 @@ class Ujian extends CI_Controller {
 			$id_soal = $data['soal_subtes3']->id_soal;
 			$nomor_soal = $data['soal_subtes3']->nomor_soal;
 		}
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 3");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 3 AND id_ujian = $id_ujian");
 
 		$data['jawaban3'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian3', $data);
@@ -95,7 +95,7 @@ class Ujian extends CI_Controller {
 			$id_soal = $data['soal_subtes4']->id_soal;
 			$nomor_soal = $data['soal_subtes4']->nomor_soal;
 		}
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 4");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 4 AND id_ujian = $id_ujian");
 
 		$data['jawaban4'] = $query->row();
 		$this->load->view('pelamar/ujian/frame_ujian4', $data);
@@ -201,7 +201,7 @@ class Ujian extends CI_Controller {
 
 		);
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian");
 
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
@@ -260,7 +260,7 @@ class Ujian extends CI_Controller {
 			'jawaban_kunci2' =>$kuncijawaban2
 		);
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian");
 
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
@@ -319,7 +319,7 @@ class Ujian extends CI_Controller {
 
 		);
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian");
 
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
@@ -376,7 +376,7 @@ class Ujian extends CI_Controller {
 
 		);
 
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal");
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian");
 
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {

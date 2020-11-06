@@ -14,7 +14,7 @@
 		$warnaText = 'black';
 	} ?> 
 	style="background-color: <?php echo $warna ?>; margin: 5px; padding: 10px; border-radius: 5px">
-	<a href="<?php echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/1') ?>" style="color: <?php echo $warnaText ?>"><b>1</b></a>
+	<a href="<?php echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'1') ?>" style="color: <?php echo $warnaText ?>"><b>1</b></a>
 </div>
 
 <!-- 2 -->
@@ -29,7 +29,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>; margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/2') ?>" style="color: <?php echo $warnaText ?>"><b>2</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'2') ?>" style="color: <?php echo $warnaText ?>"><b>2</b></a>
 </div>
 
 <!-- 3 -->
@@ -44,7 +44,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/3') ?>" style="color: <?php echo $warnaText ?>"><b>3</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'3') ?>" style="color: <?php echo $warnaText ?>"><b>3</b></a>
 </div>
 
 <!-- 4 -->
@@ -59,7 +59,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/4') ?>" style="color: <?php echo $warnaText ?>"><b>4</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'4') ?>" style="color: <?php echo $warnaText ?>"><b>4</b></a>
 </div>
 
 <!-- 5 -->
@@ -76,7 +76,7 @@ if ($query->num_rows()>0) {
  ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
 
-<a href="<?php echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/5') ?>" type="submit" style="background-color: $warna;color: <?php echo $warnaText ?>"><b>5</b></a>
+<a href="<?php echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'5') ?>" type="submit" style="background-color: $warna;color: <?php echo $warnaText ?>"><b>5</b></a>
 </div>
 
 <!-- 6 -->
@@ -91,7 +91,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/6') ?>" style="color: <?php echo $warnaText ?>"><b>6</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'6') ?>" style="color: <?php echo $warnaText ?>"><b>6</b></a>
 </div>
 
 <!-- 7 -->
@@ -106,7 +106,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/7') ?>" style="color: <?php echo $warnaText ?>"><b>7</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'7') ?>" style="color: <?php echo $warnaText ?>"><b>7</b></a>
 </div>
 
 <!-- 8 -->
@@ -121,7 +121,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/8') ?>" style="color: <?php echo $warnaText ?>"><b>8</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'8') ?>" style="color: <?php echo $warnaText ?>"><b>8</b></a>
 </div>
 
 <!-- 9 -->
@@ -136,7 +136,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/9') ?>" style="color: <?php echo $warnaText ?>"><b>9</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'9') ?>" style="color: <?php echo $warnaText ?>"><b>9</b></a>
 </div>
 
 <!-- 10 -->
@@ -151,7 +151,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/10') ?>" style="color: <?php echo $warnaText ?>"><b>10</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'10') ?>" style="color: <?php echo $warnaText ?>"><b>10</b></a>
 </div>
 
 <!-- 11 -->
@@ -166,7 +166,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/11') ?>" style="color: <?php echo $warnaText ?>"><b>11</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'11') ?>" style="color: <?php echo $warnaText ?>"><b>11</b></a>
 </div>
 
 <!-- 12 -->
@@ -181,7 +181,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: #f1f1f1;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/12') ?>" style="color: <?php echo $warnaText ?>"><b>12</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'12') ?>" style="color: <?php echo $warnaText ?>"><b>12</b></a>
 </div>
 
 <!-- 13 -->
@@ -196,7 +196,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/13') ?>" style="color: <?php echo $warnaText ?>"><b>13</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'13') ?>" style="color: <?php echo $warnaText ?>"><b>13</b></a>
 </div>
 
 <!-- 14 -->
@@ -211,7 +211,7 @@ if ($query->num_rows()>0) {
 	$warnaText = 'black';
 } ?> 
 style="background-color: <?php echo $warna ?>;  margin: 5px; padding: 10px; border-radius: 5px">
-<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/1/14') ?>" style="color: <?php echo $warnaText ?>"><b>14</b></a>
+<a href="<?php  echo base_url('Pelamar/Ujian/frame_ujian_sub2/'.$id_ujian.'/'.'14') ?>" style="color: <?php echo $warnaText ?>"><b>14</b></a>
 </div>
 </div>
 

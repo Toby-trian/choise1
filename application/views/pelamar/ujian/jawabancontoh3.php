@@ -2,46 +2,89 @@
 <?php   $this->load->view('layout3/navbar') ?>
 
 <div class="col-sm-12 main">
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h3>Soal Latihan</h3>
-			</div>
-		</div><!--/.row-->
 
-		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
-			<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
-				<div class="col-sm-12">
-					<p>1. Jawaban: (jawaban anda <?php echo $this->session->userdata('ses_jawab1') ?>)</p>
-					<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-						<label class="form-check-label" for="latcfit31">c</label>
-						<center>
-							<img src="<?php  echo base_url('upload/bank_soal/cfit/2c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-						</center>
-					</div>
-					<div style="padding-top: 3.5%">
-						<p> Jawaban yang benar</p>
-					</div>
-				</div>
-				<div class="col-sm-12" style="margin-top: 10px;">
-					<p>2. Jawaban: (jawaban anda <?php echo $this->session->userdata('ses_jawab2') ?>)</p>
-					<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-						<label class="form-check-label" for="latcfit32">f</label>
-						<center>
-							<img src="<?php  echo base_url('upload/bank_soal/cfit/3f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-						</center>
-					</div>
-					<div style="padding-top: 3.5%">
-						<p> Jawaban yang benar</p>
-					</div>
-				</div>
-			</div>
-			<?php $id_pelamar = $this->session->userdata('ses_id');
-			 ?>
-			<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-		        <a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
-		    </div>
+	<div class="row" style="margin-bottom: -50px;">
+		<div class="col-lg-9">
+			<h3>Soal Latihan</h3>
 		</div>
+		<div class="col-lg-3">
+			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
+		</div>
+	</div><!--/.row-->
+	<?php  
+	$idUjian=  $this->session->userdata('ses_ujian');
+	$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+	foreach ($ujian->result() as $key ) {
+		$end_lat3 = $key->end_lat_sub3;
+	}
+	?>
 
+	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
+		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
+			<div class="col-sm-12">
+				<p>1. Jawaban: (jawaban anda <?php echo $this->session->userdata('ses_jawab1') ?>)</p>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit31">c</label>
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/2c3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div style="padding-top: 3.5%">
+					<p> Jawaban yang benar</p>
+				</div>
+			</div>
+			<div class="col-sm-12" style="margin-top: 10px;">
+				<p>2. Jawaban: (jawaban anda <?php echo $this->session->userdata('ses_jawab2') ?>)</p>
+				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
+					<label class="form-check-label" for="latcfit32">f</label>
+					<center>
+						<img src="<?php  echo base_url('upload/bank_soal/cfit/3f3.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+					</center>
+				</div>
+				<div style="padding-top: 3.5%">
+					<p> Jawaban yang benar</p>
+				</div>
+			</div>
+		</div>
+		<?php $id_pelamar = $this->session->userdata('ses_id');
+		?>
+		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
+			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var countDownDate = new Date("<?php echo $end_lat3 ?>").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("time").innerHTML = minutes + " : " + seconds + " ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+  	clearInterval(x);
+    // document.getElementById("time").innerHTML = "EXPIRED";
+    alert('Waktu latian subtes 3 sudah berakhir, selamat mengerjakan subtes 2');
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$idUjian); ?>';
+
+    // document.getElementById('hentikan').click();
+}
+}, 1000);
+
+</script>
 
 <?php   $this->load->view('layout3/footer') ?>

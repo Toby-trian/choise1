@@ -8,7 +8,7 @@
 			<h3>Soal Latihan</h3>
 		</div>
 		<div class="col-lg-3">
-			<h4 style="margin-top: 35px" align="right">Waktu Ujian <span id="tier"></span> detik</h4>
+			<h4 style="margin-top: 35px" align="right">Waktu Ujian <span id="timer"></span> detik</h4>
 		</div>
 	</div><!--/.row-->
 	<?php  
@@ -27,7 +27,7 @@
 </div>	<!--/.main-->
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	var countDownDate = new Date("<?php echo $end_lat1 ?>").getTime();
 
 // Update the count down every 1 second
@@ -54,5 +54,5 @@ var x = setInterval(function() {
   }
 }, 1000);
 
-</script> -->
+</script>
 <?php   $this->load->view('layout3/footer') ?>
