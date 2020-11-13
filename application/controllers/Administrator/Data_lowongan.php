@@ -203,9 +203,9 @@ Tim Seleksi Chaakra Consulting';
 
 		// Send Wa
 		$curl = curl_init();
-		$token = "Q3TYHwfhluVn6eP6Ud3F6IisRJ7EhqlLpIYTm1qGgy7TfJBpdwJ3UPUJBbgsbBBi";
+		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
 		$data = [
-			'phone' => $no,
+			'phone' => '085707236937',
 			'message' => $message,
 		];
 
@@ -217,7 +217,7 @@ Tim Seleksi Chaakra Consulting';
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-		curl_setopt($curl, CURLOPT_URL, "https://sawit.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		$result = curl_exec($curl);

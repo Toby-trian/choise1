@@ -41,6 +41,12 @@ class Mdl_ujian extends CI_Model {
 			return $this->db->affected_rows();
 	}
 
+	public function jawaban_holland($paket)
+		{
+			$this->db->insert('tb_data_jawaban_holland', $paket);
+			return $this->db->affected_rows();
+	}
+
 	public function update($where,$data,$table){
     if($this->db->update($table, $data, $where)){
       return true;

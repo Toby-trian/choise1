@@ -47,9 +47,10 @@
 			</div>
 		</div>
 		<?php $id_pelamar = $this->session->userdata('ses_id');
+		$id_ujian = $this->session->userdata('ses_ujian');
 		?>
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$id_pelamar) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
+			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_sub3/'.$id_ujian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
 		</div>
 	</div>
 
