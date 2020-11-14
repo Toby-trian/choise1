@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Okt 2020 pada 10.22
+-- Waktu pembuatan: 14 Nov 2020 pada 04.22
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -64,7 +64,10 @@ CREATE TABLE `tb_apply` (
 
 INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `id_perusahaan`, `status_lamaran`) VALUES
 (7, 1, 1, 2, 'Diterima'),
-(8, 16, 1, 2, 'Tidak lolos');
+(8, 16, 1, 2, 'Tidak lolos'),
+(9, 29, 2, 1, 'Diterima'),
+(10, 31, 2, 1, 'Diterima'),
+(11, 30, 2, 1, 'Diterima');
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,10 @@ CREATE TABLE `tb_berkas` (
 
 INSERT INTO `tb_berkas` (`id_berkas`, `id_pelamar`, `berkas`) VALUES
 (1, 1, 'berkas_Salmon.pdf'),
-(2, 16, 'berkas_Dhiki_Sekti_Wibawa1.pdf');
+(2, 16, 'berkas_Dhiki_Sekti_Wibawa1.pdf'),
+(3, 29, 'berkas_Vivid_Amalia_Khusna.pdf'),
+(4, 30, ''),
+(5, 31, 'berkas_Firda_Elfinda_Nurhidayah.pdf');
 
 -- --------------------------------------------------------
 
@@ -116,10 +122,13 @@ CREATE TABLE `tb_data_diri` (
 --
 
 INSERT INTO `tb_data_diri` (`nik`, `id_pelamar`, `nama_pelamar`, `alamat`, `alamat_ktp`, `status_perkawinan`, `agama`, `anak_ke`, `dari_x_sdr`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `facebook`, `instagram`, `twitter`) VALUES
+('0', 30, 'R', 'O', 'E', 'Belum Menikah', 'Islam', '2', '5', '-', '2002-11-05', 'P', '8', 'A', 'E', 'I'),
 ('1212132442131', 3, 'Fulanah', 'Gempol', '', '', '', '', '', 'Malang', '2020-07-05', 'P', '323212121', '-', '-', '-'),
-('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '1998-05-11', 'P', '12345678', 'hahas', '-', '-'),
-('1298192819', 4, 'Test 123', 'hahah', '', '', '', '', '', 'Pasuruan', '2020-08-30', 'P', '980808090', 'skajsj', 'jkasjk', 'jkj'),
-('351', 16, 'Dhiki Sekti Wibawa', 'Sidoarjo', 'Sidoarjo', 'Belum Menikah', 'Islam', '1', '3', 'Sidoarjo', '1998-02-18', 'L', '089', '-', 'dhikiwibawa', '-'),
+('123456789101112', 1, 'Salmon', 'hehe', 'hehehe', 'Sudah Menikah', 'Kong Hu Cu', '2', '4', 'test', '1998-05-11', 'P', '085707236937', 'hahas', '-', '-'),
+('1298192819', 4, 'Test 123', 'hahah', '', '', '', '', '', 'Pasuruan', '2020-08-30', 'P', '-', 'skajsj', 'jkasjk', 'jkj'),
+('351', 16, 'Dhiki Sekti Wibawa', 'Sidoarjo', 'Sidoarjo', 'Belum Menikah', 'Islam', '1', '3', 'Sidoarjo', '1998-02-18', 'L', '0895384959837', '-', 'dhikiwibawa', '-'),
+('3516086503980002', 29, 'Vivid Amalia Khusna', 'Jl. Karangmenjangan VI No. 8D', 'Dsn. Lontar RT. 23 RW. 06 Ds. Kebondalem Kec. Mojosari Kab. Mojokerto', 'Belum Menikah', 'Islam', '3', '3', 'Mojokerto', '1998-03-25', 'P', '085790927663', '-', 'vmaliaa', '-'),
+('3523114106990004', 31, 'Firda Elfinda Nurhidayah', 'Sumurcinde Rt.004 Rw.004, Soko,Tuban', 'Sumurcinde Rt.004 Rw.004, Soko,Tuban', 'Belum Menikah', 'Islam', '1', '1', 'Tuban', '1999-06-01', 'P', '085606714331', 'Firda Elfinda Nurhidayah', '@firdaelfinda_n', '@_firdaelfinda'),
 ('78675654536879', 2, 'Fulan', 'Tak diketahui', '', '', '', '', '', 'Malang', '2019-06-10', 'L', '0887867656', '-', '-', '-');
 
 -- --------------------------------------------------------
@@ -136,22 +145,76 @@ CREATE TABLE `tb_data_jawaban_cfit` (
   `id_ujian` int(5) NOT NULL,
   `subtes` varchar(5) NOT NULL,
   `jawaban` varchar(5) NOT NULL,
-  `jawaban2` varchar(5) NOT NULL
+  `jawaban2` varchar(5) NOT NULL,
+  `jawaban_kunci` varchar(3) NOT NULL,
+  `jawaban_kunci2` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_data_jawaban_cfit`
 --
 
-INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`) VALUES
-(1, 1, 3, 1, 1, '1', 'd', ''),
-(2, 1, 1, 3, 1, '1', 'b', ''),
-(3, 1, 1, 2, 1, '1', 'd', ''),
-(4, 1, 1, 4, 1, '1', 'c', ''),
-(5, 1, 1, 13, 1, '1', 'e', ''),
-(6, 1, 1, 5, 1, '1', 'c', ''),
-(7, 1, 1, 6, 1, '1', 'c', ''),
-(8, 1, 1, 7, 1, '1', 'c', '');
+INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`, `jawaban_kunci`, `jawaban_kunci2`) VALUES
+(81, 30, 2, 2, 2, '1', 'C', '', 'C', ''),
+(82, 30, 2, 3, 2, '1', 'E', '', 'B', ''),
+(83, 30, 2, 4, 2, '1', 'A', '', 'D', ''),
+(84, 30, 2, 5, 2, '1', 'E', '', 'E', ''),
+(85, 30, 2, 6, 2, '1', 'B', '', 'B', ''),
+(86, 30, 2, 7, 2, '1', 'D', '', 'D', ''),
+(87, 30, 2, 8, 2, '1', 'D', '', 'B', ''),
+(88, 30, 2, 9, 2, '1', 'D', '', 'F', ''),
+(89, 30, 2, 10, 2, '1', 'D', '', 'C', ''),
+(90, 30, 2, 11, 2, '1', 'D', '', 'B', ''),
+(91, 30, 2, 12, 2, '1', 'D', '', 'B', ''),
+(92, 30, 2, 13, 2, '1', 'D', '', 'E', ''),
+(93, 1, 1, 1, 2, '1', 'D', '', 'B', ''),
+(94, 1, 1, 2, 2, '1', 'E', '', 'C', ''),
+(95, 31, 2, 1, 2, '1', 'D', '', 'B', ''),
+(96, 31, 2, 2, 2, '1', 'F', '', 'C', ''),
+(97, 1, 1, 13, 2, '1', 'E', '', 'E', ''),
+(98, 31, 2, 1, 2, '2', 'B', 'C', 'B', 'E'),
+(99, 1, 1, 2, 2, '2', 'C', 'E', 'A', 'E'),
+(100, 1, 1, 8, 2, '2', 'C', 'D', 'B', 'E'),
+(101, 31, 2, 2, 2, '2', 'C', 'E', 'A', 'E'),
+(102, 1, 1, 2, 2, '3', 'D', '', 'E', ''),
+(103, 1, 1, 1, 2, '3', 'D', '', 'E', ''),
+(104, 1, 1, 3, 2, '3', 'F', '', 'E', ''),
+(105, 31, 2, 1, 2, '3', 'B', '', 'E', ''),
+(106, 31, 2, 2, 2, '3', 'D', '', 'E', ''),
+(107, 31, 2, 3, 2, '3', 'E', '', 'E', ''),
+(108, 31, 2, 13, 2, '3', 'D', '', '', ''),
+(109, 31, 2, 2, 2, '4', 'C', '', 'A', ''),
+(110, 31, 2, 3, 2, '4', 'E', '', 'D', ''),
+(111, 1, 1, 2, 2, '4', 'C', '', 'A', ''),
+(112, 1, 1, 1, 2, '4', 'D', '', 'B', ''),
+(113, 1, 1, 3, 2, '4', 'E', '', 'D', ''),
+(114, 1, 1, 10, 2, '4', 'E', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_data_jawaban_holland`
+--
+
+CREATE TABLE `tb_data_jawaban_holland` (
+  `id_jawaban_holland` int(11) NOT NULL,
+  `id_pelamar` int(11) NOT NULL,
+  `id_lowongan` int(11) NOT NULL,
+  `id_ujian` int(11) NOT NULL,
+  `nilai_r` int(11) NOT NULL,
+  `nilai_i` int(11) NOT NULL,
+  `nilai_a` int(11) NOT NULL,
+  `nilai_s` int(11) NOT NULL,
+  `nilai_e` int(11) NOT NULL,
+  `nilai_k` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_data_jawaban_holland`
+--
+
+INSERT INTO `tb_data_jawaban_holland` (`id_jawaban_holland`, `id_pelamar`, `id_lowongan`, `id_ujian`, `nilai_r`, `nilai_i`, `nilai_a`, `nilai_s`, `nilai_e`, `nilai_k`) VALUES
+(1, 1, 0, 0, 3, 3, 2, 2, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -178,7 +241,10 @@ INSERT INTO `tb_data_keluarga` (`id_keluarga`, `id_pelamar`, `nama_ayah`, `peker
 (1, 1, 'Joko', 'Swasta', 'Siadah', 'Ibu rumah tangga', 'kang oleh', 'penjual odading'),
 (2, 2, 'Daniel', 'PNS', 'Nur', 'Guru', '', ''),
 (3, 4, 'hehe', 'swasta', 'huhu', 'dagang', '', ''),
-(4, 16, 'LP', 'W', 'DNW', 'B', '', '');
+(4, 16, 'LP', 'W', 'DNW', 'B', '', ''),
+(5, 29, 'asdsd', 'aa', 'asd', 'ss', '-', 'dd'),
+(6, 30, 'A', 'C', 'B', 'D', '', ''),
+(7, 31, 'Kastum Wibowo', 'Wiraswasta', 'Susanti', 'Ibu Rumah Tangga', '', '');
 
 -- --------------------------------------------------------
 
@@ -205,7 +271,10 @@ INSERT INTO `tb_data_pendidikan` (`id_pendidikan`, `id_pelamar`, `jenjang_pendid
 (1, 1, 'SMA/SMK', 'SMKN 10 Magelang', 'Akuntansi', '2017', '2020', '70'),
 (2, 2, 'S1', 'Univ Sendiri', 'Hukum', '2014', '2018', '4'),
 (3, 3, 'SMP', 'SMP Maju Putra', '-', '2009', '2012', '90'),
-(4, 16, 'D4/S1', 'UB', 'SI', '2016', '2020', '3.64');
+(4, 16, 'D4/S1', 'UB', 'SI', '2016', '2020', '3.64'),
+(6, 29, 'D4/S1', 'Universitas Airlangga', 'Ekonomi Pembangunan', '2016', '2020', '3'),
+(7, 30, 'S3', 'WAGENINGEN UNIVERSITY, EDINBURGH', 'Ekonomi Pembangunan', '1998', '2020', '5'),
+(8, 31, 'SMA/SMK', 'SMKN 1 BOJONEGORO', 'Administrasi Perkantoran', '2014', '2017', '6975');
 
 -- --------------------------------------------------------
 
@@ -221,6 +290,14 @@ CREATE TABLE `tb_data_pendidikan_nonformal` (
   `tahun_pendidikan_nonformal` varchar(4) NOT NULL,
   `nomor_sertifikat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_data_pendidikan_nonformal`
+--
+
+INSERT INTO `tb_data_pendidikan_nonformal` (`id_pendidikan_nonformal`, `id_pelamar`, `nama_pendidikan_nonformal`, `tujuan_pendidikan_nonformal`, `tahun_pendidikan_nonformal`, `nomor_sertifikat`) VALUES
+(2, 29, 'aa', 'sd', '2020', 'fs'),
+(3, 30, 'CALISTUNG', 'MEMBACA, MENULIS, BERHITUNG', '2003', '000');
 
 -- --------------------------------------------------------
 
@@ -245,7 +322,8 @@ CREATE TABLE `tb_data_pengalaman_kerja` (
 
 INSERT INTO `tb_data_pengalaman_kerja` (`id_pengalaman`, `id_pelamar`, `nama_perusahaan`, `periode`, `jabatan_akhir`, `alasan_keluar`, `nama_referensi`, `no_hp_referensi`) VALUES
 (1, 1, 'CV Palugada', '2016', 'Marketing', 'Kontrak Berakhir', '-', '-'),
-(2, 2, 'PT Mencari Berkah', '2018', 'Staff programmer', 'pekerjaan tidak sesuai dengan jobdesk', '-', '-');
+(2, 2, 'PT Mencari Berkah', '2018', 'Staff programmer', 'pekerjaan tidak sesuai dengan jobdesk', '-', '-'),
+(5, 30, 'BAKSO NARIZ', '7', 'ASISTEN', 'KELELAHAN', '-', '0');
 
 -- --------------------------------------------------------
 
@@ -325,7 +403,8 @@ CREATE TABLE `tb_lowongan` (
 --
 
 INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `id_jenis_motlet`, `nama_jabatan`, `jadwal_seleksi`, `kota_penempatan`, `persyaratan`, `gaji`) VALUES
-(1, 2, 1, 'Kepala Bagian (Kabag) HRD & GA', '2020-10-23', 'Sidoarjo - Jawa Timur', '<p>&nbsp;</p><ul><li>Berusia&nbsp; 27-35 tahun</li><li>Pendidikan Min. S1 Manajemen SDM / Psikologi Industri &amp; Organisasi / Teknik Industri / Ilmu Hukum</li><li>Menguasai UU Ketenagakerjaan dan Hubungan Internasional</li><li>Memiliki Jiwa Kepemimpinan</li><li>Mampu Berkomunikasi Secara Efektif</li></ul>', '-');
+(1, 2, 1, 'Kepala Bagian (Kabag) HRD & GA', '2020-10-23', 'Sidoarjo - Jawa Timur', '<p>&nbsp;</p><ul><li>Berusia&nbsp; 27-35 tahun</li><li>Pendidikan Min. S1 Manajemen SDM / Psikologi Industri &amp; Organisasi / Teknik Industri / Ilmu Hukum</li><li>Menguasai UU Ketenagakerjaan dan Hubungan Internasional</li><li>Memiliki Jiwa Kepemimpinan</li><li>Mampu Berkomunikasi Secara Efektif</li></ul>', '-'),
+(2, 1, 1, 'Freelance Surveyor', '2020-11-17', 'Surabaya', '<p>-</p>', '-');
 
 -- --------------------------------------------------------
 
@@ -353,7 +432,10 @@ INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jaw
 (6, 3, 5, 'mnbvfyukmnhdgh', '', ''),
 (18, 1, 0, 'test124', '1223433q3', ''),
 (21, 1, 0, 'test124', '1223433q3', ''),
-(22, 16, 0, 'Mencoba', 'Mencoba', '');
+(22, 16, 0, 'Mencoba', 'Mencoba', ''),
+(23, 29, 0, '-', '-', ''),
+(24, 31, 0, 'fddfd', 'gfgfgf\r\n', ''),
+(25, 30, 0, 'impian saya, saya ingin liburan, 1 hari tidur sepuasnya', 'menurut saya tidur adalah impian semua orang', '');
 
 -- --------------------------------------------------------
 
@@ -455,7 +537,10 @@ INSERT INTO `tb_pelamar` (`id_pelamar`, `id_level`, `username`, `email`, `passwo
 (13, 5, 'edwin', 'hunter_freaks@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '123456', '', '1987817f7b8bd5208dac87465928a751', 1),
 (15, 5, 'Dik-Dik', 'Arkep0701@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '1234567', '', 'a3d6f6523e4f912dc18f5477e6f5b7e2', 1),
 (16, 5, 'dhiki', 'dhikiwibawa@gmail.com', '47e9d84838ef62310de676ab919c59b1', 'dhiki', 'pelamar_c74d97b01eae257e44aa9d5bade97baf.jpg', 'a1cf9ad536d537788810069896268ff8', 1),
-(18, 5, 'Dik-Dik', 'Arkep0701@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '1234567', '', 'a3d6f6523e4f912dc18f5477e6f5b7e2', 1);
+(18, 5, 'Dik-Dik', 'Arkep0701@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '1234567', '', 'a3d6f6523e4f912dc18f5477e6f5b7e2', 1),
+(29, 5, 'Vivid Amalia', 'vividamalia@gmail.com', 'd40730d2823108fab9f861de39413ffb', 'vivid25', '', '8c867cb162897d45bba77051fad39710', 1),
+(30, 5, 'rizqatus', 'rizqatuss@gmail.com', '8afb51706f980c5795df957faf9375d1', '123456789OK', '', '997276b9ae1e4084c8f01ea5cffd19c4', 1),
+(31, 5, 'Firda Elfinda Nurhidayah', 'firdaelfinda@gmail.com', '5ed291923179b73cbc6ef968b35361ff', 'firda', '', '91f4faf8110624159f87829faf02171a', 1);
 
 -- --------------------------------------------------------
 
@@ -658,8 +743,8 @@ CREATE TABLE `tb_ujian` (
 --
 
 INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `durasi`, `nama_pembuat`, `status`) VALUES
-(1, 'Psikotes Chaakra', '2020-10-01 10:00:00', '2020-09-01 11:00:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1950, 'Administrator', 'tersedia'),
-(2, '123', '2020-10-15 13:57:21', '2020-10-15 16:57:23', '2020-10-15 13:57:47', '2020-10-15 13:57:50', '2020-10-15 13:57:53', '2020-10-15 13:57:55', '2020-10-15 13:57:57', '2020-10-15 13:57:59', '2020-10-15 13:58:01', '2020-10-15 13:58:03', '2020-10-15 13:58:06', '2020-10-15 13:58:08', '2020-10-15 13:58:11', '2020-10-15 13:58:12', '2020-10-15 13:58:15', '2020-10-15 13:58:16', '2020-10-15 13:58:19', '2020-10-15 13:58:21', 1950, 'Administrator', 'tersedia');
+(1, 'Testing', '2020-11-09 13:32:00', '2020-11-09 15:00:00', '2020-11-09 13:35:00', '2020-11-09 13:33:00', '2020-11-09 13:48:00', '2020-11-09 13:52:00', '2020-11-09 13:39:00', '2020-11-09 13:54:00', '2020-11-09 13:40:00', '2020-11-09 13:59:00', '2020-11-09 13:44:00', '2020-11-09 14:02:00', '2020-11-09 13:45:00', '2020-11-09 14:05:00', '2020-11-09 13:49:00', '2020-11-09 14:50:00', '2020-11-09 13:50:00', '2020-11-09 13:53:00', 1950, 'Administrator', 'tersedia'),
+(2, 'uhuy', '2020-11-12 08:10:00', '2020-11-12 10:00:00', '2020-11-04 15:10:00', '2020-11-12 08:45:00', '2020-11-11 15:11:00', '2020-11-12 08:43:00', '2020-11-11 15:15:00', '2020-11-12 08:44:00', '2020-11-11 15:17:00', '2020-11-12 08:47:00', '2020-11-11 15:20:00', '2020-11-12 08:48:00', '2020-11-11 15:21:00', '2020-11-12 08:51:00', '2020-11-11 15:25:00', '2020-11-12 08:52:00', '2020-11-11 15:26:00', '2020-11-12 08:56:00', 1950, 'Administrator', 'tersedia');
 
 --
 -- Indexes for dumped tables
@@ -694,6 +779,12 @@ ALTER TABLE `tb_data_diri`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
   ADD PRIMARY KEY (`id_jawaban_cfit`);
+
+--
+-- Indeks untuk tabel `tb_data_jawaban_holland`
+--
+ALTER TABLE `tb_data_jawaban_holland`
+  ADD PRIMARY KEY (`id_jawaban_holland`);
 
 --
 -- Indeks untuk tabel `tb_data_keluarga`
@@ -817,43 +908,49 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_apply`
 --
 ALTER TABLE `tb_apply`
-  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_berkas`
 --
 ALTER TABLE `tb_berkas`
-  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_berkas` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
-  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_data_jawaban_holland`
+--
+ALTER TABLE `tb_data_jawaban_holland`
+  MODIFY `id_jawaban_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
 --
 ALTER TABLE `tb_data_keluarga`
-  MODIFY `id_keluarga` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_keluarga` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pendidikan`
 --
 ALTER TABLE `tb_data_pendidikan`
-  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pendidikan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pendidikan_nonformal`
 --
 ALTER TABLE `tb_data_pendidikan_nonformal`
-  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendidikan_nonformal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_data_pengalaman_kerja`
-  MODIFY `id_pengalaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pengalaman` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_jadwal`
@@ -877,13 +974,13 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT untuk tabel `tb_lowongan`
 --
 ALTER TABLE `tb_lowongan`
-  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_nilai`
@@ -907,7 +1004,7 @@ ALTER TABLE `tb_nilai_pwb`
 -- AUTO_INCREMENT untuk tabel `tb_pelamar`
 --
 ALTER TABLE `tb_pelamar`
-  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pelamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_perusahaan`
