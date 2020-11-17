@@ -525,7 +525,8 @@ class Pelamar extends CI_Controller {
 	}
 	public function testulispsikotes()
 	{
-		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();	
+		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();
+		$paket['holland'] = $this->Mdl_data_ujian->ambildata_ujian_holland();	
 		$this->load->view('testulispsikotes',$paket);
 
 	}

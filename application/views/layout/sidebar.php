@@ -26,12 +26,19 @@
 
       <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_nilai"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_nilai/') ?>"><i class="app-menu__icon fa fa-wpforms"></i><span class="app-menu__label">Nilai Pelamar </span></a></li>
 
-      <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/') ?>"><i class="app-menu__icon fa fa-clipboard"></i><span class="app-menu__label">Ujian </span></a></li>
+      <!-- <li><a class="app-menu__item  <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/') ?>"><i class="app-menu__icon fa fa-clipboard"></i><span class="app-menu__label">Ujian </span></a></li> -->
+
+      <li class="treeview <?php if($this->uri->segment(2)=="Data_ujian"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Ujian</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_ujian_holland"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li>
+        </ul>
+      </li>
 
       <li class="treeview <?php if($this->uri->segment(2)=="Soal_cfit"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Bank Soal</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_cfit"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_cfit') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
-          <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_admin"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/Soal_Holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li>
+          <!-- <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_admin"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/Soal_Holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li> -->
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_perusahaan"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/data_perusahaan') ?>"><i class="icon fa fa-circle-o"></i> MBTI</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_psikolog"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/data_psikolog') ?>"><i class="icon fa fa-circle-o"></i> DISC</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_pelamar"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/data_pelamar') ?>"><i class="icon fa fa-circle-o"></i> Papiskotik</a></li>

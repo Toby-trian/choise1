@@ -15,6 +15,11 @@ class Mdl_data_ujian extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_ujian_holland(){
+		$query=$this->db->query("SELECT * FROM tb_ujian_holland");
+		return $query->result_array();
+	}
+
 	public function ambildata_ujian2($id){
 		$query=$this->db->query("SELECT * FROM tb_ujian WHERE id_ujian=$id");
 		return $query->result_array();
@@ -23,6 +28,12 @@ class Mdl_data_ujian extends CI_Model {
 	public function tambahdata_ujian($paket)
 	{
 		$this->db->insert('tb_ujian', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function tambahdata_ujian_holland($paket)
+	{
+		$this->db->insert('tb_ujian_holland', $paket);
 		return $this->db->affected_rows();
 	}
 

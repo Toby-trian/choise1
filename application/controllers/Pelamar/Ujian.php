@@ -648,7 +648,8 @@ class Ujian extends CI_Controller {
 		echo "jawaban yang benar pada sub tes 4: ". $nilai_sub4 ."<br>";
 	}
 
-	public function ujian_holland(){
+	public function ujian_holland($id_pelamar, $id_ujian){
+		$idUjianHolland = $this->session->set_userdata('ses_ujianHolland', $id_ujian);
 		$this->load->view('pelamar/ujian/holland');
 	}
 

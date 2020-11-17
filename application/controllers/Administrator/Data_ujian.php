@@ -111,6 +111,37 @@ class Data_ujian extends CI_Controller {
 
 	}
 
+	public function ujian_holland()
+	{
+		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian_holland();	
+		$this->load->view('administrator/data_ujian_holland',$paket);
+	}
+
+	public function tambahdata_holland(){
+		$this->form_validation->set_rules('nama_ujian','Nama','trim|required');
+		$this->form_validation->set_rules('waktu_mulai','Nama','trim|required');
+		$this->form_validation->set_rules('waktu_akhir','Nama','trim|required');
+
+
+		if ($this->form_validation->run()==FALSE ) {
+			$data['msg_error']="Silahkan isi semua kolom";
+			$this->load->view('administrator/vtambah_ujian_holland');
+		}
+		else{
+			$send['id_ujian_holland']='';
+			$send['nama_ujian']=$this->input->post('nama_ujian');
+			$send['waktu_mulai']=$this->input->post('waktu_mulai');
+			$send['waktu_akhir']=$this->input->post('waktu_akhir');
+
+			// var_dump($send);
+			$kembalian['jumlah']=$this->Mdl_data_ujian->tambahdata_ujian_holland($send);
+
+			$this->load->view('administrator/data_ujian_holland',$kembalian);
+			$this->session->set_flashdata('msg','Ujian Holland Berhasil Dibuat!!!');
+			redirect('Administrator/Data_Ujian/ujian_holland');
+		}
+	}
+
 
 	// END CRUD Ujian
 // ============================================================================================

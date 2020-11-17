@@ -3,17 +3,22 @@
 
 <?php 
 $id_pelamar = $this->session->userdata('ses_id');
+$idHolland = $this->session->userdata('ses_ujianHolland');
+
+$holland = $this->db->query("SELECT * FROM tb_ujian_holland WHERE id_ujian_holland = $idHolland");
+foreach ($holland->result() as $key_uHolland) {
+	$timeHolland = $key_uHolland->waktu_akhir;
+}
 ?>
 
 <div class="col-sm-12 main">
-
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
 			<h3 class="page-header" style="margin-top: 15px">HOLLAND SELF-ASSESSMENT INTERESTED INVENTORY</h3>
 		</div>
-		<!-- <div class="col-lg-3">
-			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
-		</div> -->
+		<div class="col-lg-3">
+			<h4 style="margin-top: 35px" align="right">Waktu pengerjaan <span id="time"></span> detik</h4>
+		</div>
 	</div><!--/.row-->
 
 
@@ -277,6 +282,7 @@ $id_pelamar = $this->session->userdata('ses_id');
 					</tr>
 					<input type="hidden" id="hasil_k" name="nilai_k">
 					<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
+					<input type="hidden" name="id_ujian" value="<?php echo $idHolland ?>">
 				</table>
 				
 			</div>
@@ -370,7 +376,7 @@ $id_pelamar = $this->session->userdata('ses_id');
 
 
 <!-- <script type="text/javascript">
-  var countDownDate = new Date("<?php echo $end_lat2 ?>").getTime();
+  var countDownDate = new Date("<?php echo $timeHolland ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -395,7 +401,6 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 2 sudah berakhir, selamat mengerjakan subtes 2');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_sub2/'.$idUjian); ?>';
 
     // document.getElementById('hentikan').click();
   }

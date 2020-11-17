@@ -3,18 +3,18 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-clipboard"></i> Ujian CFIT</h1>
+      <h1><i class="fa fa-clipboard"></i> Ujian Holland</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
       <li class="breadcrumb-item">User</li>
-      <li class="breadcrumb-item"><a href="#">Ujian CFIT</a></li>
+      <li class="breadcrumb-item"><a href="#">Ujian Holland</a></li>
     </ul>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <a href="<?php echo base_url('Administrator/Data_ujian/tambahdata') ?>" class="btn btn-primary" style="margin-bottom: 2%;">Tambah Data</a>
+        <a href="<?php echo base_url('Administrator/Data_ujian/tambahdata_holland') ?>" class="btn btn-primary" style="margin-bottom: 2%;">Tambah Data</a>
         <div id="notifikasi">
           <?php if($this->session->flashdata('msg')):?>
             <div class="alert alert-primary">
@@ -41,24 +41,8 @@
                   <th>Nama Ujian</th>
                   <th>Waktu Dimulai</th>
                   <th>Waktu Berakhir</th>
-                  <!-- <th>Mulai Latihan Subtes 1</th>
-                  <th>Berakhir Latihan Subtes 1</th>
-                  <th>Mulai Ujian Subtes 1</th>
-                  <th>Berakhir Ujian Subtes 1</th>
-                  <th>Mulai Subtes 2</th>
-                  <th>Berkahir Subtes 2</th>
-                  <th>Mulai Ujian Subtes 2</th>
-                  <th>Berakhir Ujian Subtes 2</th>
-                  <th>Mulai Latihan Subtes 3</th>
-                  <th>Berakhir Latihan Subtes 3</th>
-                  <th>Mulai Ujian Subtes 3</th>
-                  <th>Berakhir Ujian Subtes 3</th>
-                  <th>Mulai Latihan Subtes 4</th>
-                  <th>Berakhir Latihan Subtes 4</th>
-                  <th>Mulai Ujian Subtes 4</th>
-                  <th>Berakhir Ujian Subtes 4</th> -->
-                  <th>Nama Admin</th>
-                  <th>Status</th>
+                 <!--  <th>Nama Admin</th>
+                  <th>Status</th> -->
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -108,38 +92,15 @@
                   <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $key['nama_ujian'] ?></td>
-                    <td><?php echo $key['waktu_dimulai'] ?></td>
-                    <td><?php echo $key['waktu_berakhir'] ?></td>
-                    <!-- sub1 --><!-- 
-                    <td><?php echo $key['start_lat_sub1'] ?></td>
-                    <td><?php echo $key['end_lat_sub1'] ?></td>
-                    <td><?php echo $key['start_uji_sub1'] ?></td>
-                    <td><?php echo $key['end_uji_sub1'] ?></td> -->
-                    <!-- sub2 -->
-                    <!-- <td><?php echo $key['start_lat_sub2'] ?></td>
-                    <td><?php echo $key['end_lat_sub2'] ?></td>
-                    <td><?php echo $key['start_uji_sub2'] ?></td>
-                    <td><?php echo $key['end_uji_sub2'] ?></td> -->
-                    <!-- sub3 -->
-                    <!-- <td><?php echo $key['start_lat_sub3'] ?></td>
-                    <td><?php echo $key['end_lat_sub3'] ?></td>
-                    <td><?php echo $key['start_uji_sub3'] ?></td>
-                    <td><?php echo $key['end_uji_sub3'] ?></td> -->
-                    <!-- sub4 -->
-                    <!-- <td><?php echo $key['start_lat_sub4'] ?></td>
-                    <td><?php echo $key['end_lat_sub4'] ?></td>
-                    <td><?php echo $key['start_uji_sub4'] ?></td>
-                    <td><?php echo $key['end_uji_sub4'] ?></td>
- -->
-                    <td><?php echo $key['nama_pembuat'] ?></td>
-                    <td><?php echo $key['status'] ?></td>
+                    <td><?php echo $key['waktu_mulai'] ?></td>
+                    <td><?php echo $key['waktu_akhir'] ?></td>
                     
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                        <?php 
+                       <!--  <?php 
                         if ($key['status'] == "tersedia") { ?>
                         <button data-toggle="modal" data-target="#myModal<?php echo $modal ?>" style="color: #ffff" type="button" class="btn btn-dark"><i class="fa fa-stop text-danger"></i> Hentikan Ujian</button>
-                       <?php } ?>
+                       <?php } ?> -->
                        <button data-toggle="modal" data-target="#myModal2<?php echo $modal ?>" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
                      </div>
                    </td>
