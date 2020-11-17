@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Nov 2020 pada 04.22
+-- Waktu pembuatan: 17 Nov 2020 pada 02.26
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -746,6 +746,26 @@ INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakh
 (1, 'Testing', '2020-11-09 13:32:00', '2020-11-09 15:00:00', '2020-11-09 13:35:00', '2020-11-09 13:33:00', '2020-11-09 13:48:00', '2020-11-09 13:52:00', '2020-11-09 13:39:00', '2020-11-09 13:54:00', '2020-11-09 13:40:00', '2020-11-09 13:59:00', '2020-11-09 13:44:00', '2020-11-09 14:02:00', '2020-11-09 13:45:00', '2020-11-09 14:05:00', '2020-11-09 13:49:00', '2020-11-09 14:50:00', '2020-11-09 13:50:00', '2020-11-09 13:53:00', 1950, 'Administrator', 'tersedia'),
 (2, 'uhuy', '2020-11-12 08:10:00', '2020-11-12 10:00:00', '2020-11-04 15:10:00', '2020-11-12 08:45:00', '2020-11-11 15:11:00', '2020-11-12 08:43:00', '2020-11-11 15:15:00', '2020-11-12 08:44:00', '2020-11-11 15:17:00', '2020-11-12 08:47:00', '2020-11-11 15:20:00', '2020-11-12 08:48:00', '2020-11-11 15:21:00', '2020-11-12 08:51:00', '2020-11-11 15:25:00', '2020-11-12 08:52:00', '2020-11-11 15:26:00', '2020-11-12 08:56:00', 1950, 'Administrator', 'tersedia');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_ujian_holland`
+--
+
+CREATE TABLE `tb_ujian_holland` (
+  `id_ujian_holland` int(11) NOT NULL,
+  `nama_ujian` varchar(100) NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_ujian_holland`
+--
+
+INSERT INTO `tb_ujian_holland` (`id_ujian_holland`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`) VALUES
+(1, 'holland', '2020-11-16 13:10:00', '2020-11-17 18:30:00');
+
 --
 -- Indexes for dumped tables
 --
@@ -895,6 +915,12 @@ ALTER TABLE `tb_ujian`
   ADD PRIMARY KEY (`id_ujian`);
 
 --
+-- Indeks untuk tabel `tb_ujian_holland`
+--
+ALTER TABLE `tb_ujian_holland`
+  ADD PRIMARY KEY (`id_ujian_holland`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -1035,6 +1061,12 @@ ALTER TABLE `tb_soal_motlet`
 --
 ALTER TABLE `tb_ujian`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_ujian_holland`
+--
+ALTER TABLE `tb_ujian_holland`
+  MODIFY `id_ujian_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
