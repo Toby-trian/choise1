@@ -25,11 +25,12 @@ foreach ($holland->result() as $key_uHolland) {
 	<div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
 		<h4 style="color: #fff;"><b>Petunjuk Pengisian</b></h4>
 		<p style="color: #fff">Pada kuesioner ini terdiri atas 6 tabel, masing-masing tabel terdiri atas 3 kolom kosong yang harus diisi oleh Bapak/Ibu sekalian dengan menggunakan tanda (<i class="fa fa-check"></i>) pada pernyataan yang mencerminkan diri Bapak/Ibu sekalian pada beberapa pertanyaan yang telah disediakan. Untuk pemilihan masing-masing pernyataan sangat memungkinkan untuk memilih atau mencentang (<i class="fa fa-check"></i>) lebih dari satu pernyataan pada masing-masing kolom. Oleh karena itu, kami mengharapkan Bapak/Ibu mencermati dengan seksama setiap pernyataan yang ada, kemudian memilih satu atau lebih dari pernyataan pada masing-masing kolom yang tersedia pada tabel tersebut.</p>
+		<p>Dilarang untuk melakukan refresh pada ujian, karena akan menghilangkan jawaban</p>
 	</div>
 
 	<div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
 		<div class="table-responsive">
-			<form action="<?php echo base_url("Pelamar/Ujian/jawaban_holland") ?>" method="post">
+			<form action="<?php echo base_url("Pelamar/Ujian/jawaban_holland/") ?>" method="post">
 				<table class="table table-bordered">
 					<tr>
 						<th style="text-align: center; background-color: grey; color: #fff" colspan="3">REALISTIS</th>
@@ -374,8 +375,8 @@ foreach ($holland->result() as $key_uHolland) {
 </script>
 
 
-
-<!-- <script type="text/javascript">
+<!-- 
+<script type="text/javascript">
   var countDownDate = new Date("<?php echo $timeHolland ?>").getTime();
 
 // Update the count down every 1 second
@@ -400,9 +401,8 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
-    alert('Waktu latian subtes 2 sudah berakhir, selamat mengerjakan subtes 2');
-
-    // document.getElementById('hentikan').click();
+    alert('Waktu mengerjakan ujian holland sudah habis');
+    window.location.href = '<?php echo base_url('Pelamar/Pelamar/testulispsikotes'); ?>';
   }
 }, 1000);
 

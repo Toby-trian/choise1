@@ -283,7 +283,7 @@
                     elseif ($iq <= 69) {
                       $kategori = 'Intellectual deficient';
                     }
-                     ?>
+                    ?>
 
                     <!-- END PERHITUNGAN -->
 
@@ -292,18 +292,25 @@
                     <td><?php echo $kategori ?></td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
+                        <form method="post" action="<?php echo base_url('Administrator/Data_Nilai/detail_nilai/'.$key['id_lowongan'].'/'.$id_pelamar) ?>">
+                          <input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
+                          <input type="hidden" name="id_lowongan" value="<?php echo $id_lowongan ?>">
+                          <input type="hidden" name="nilai_cfit" value="<?php echo $total_nilai_sub ?>">
+                          <input type="hidden" name="iq" value="<?php echo $iq ?>">
+                          <input type="hidden" name="kategori" value="<?php echo $kategori?>">
+                          <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Pelamar" type="submit" class="btn btn-primary"><i class="fa fa-eye"></i>Lihat Nilai Pelamar</button> 
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
 
-                       <button data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Lihat Pelamar" type="button" class="btn btn-primary"><a style="color: #fff" href="<?php echo base_url('Administrator/Data_Nilai/data_nilai/'.$key['id_lowongan']) ?>"><i class="fa fa-eye"></i>Lihat Nilai Pelamar</a></button> 
-                     </div>
-                   </td>
-                 </tr>
-                 <?php $modal++; } ?>
-               </tbody>
-             </table>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </main>
- <?php $this->load->view('layout/footer'); ?>
+                  <?php $modal++; } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <?php $this->load->view('layout/footer'); ?>

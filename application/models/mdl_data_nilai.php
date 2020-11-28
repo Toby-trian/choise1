@@ -20,6 +20,11 @@ class Mdl_data_nilai extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambil_cfit($id_lowongan, $id_pelamar){
+		$query=$this->db->query("SELECT * FROM tb_nilai_cfit WHERE id_lowongan = $id_lowongan AND id_pelamar = $id_pelamar");
+		return $query->result_array();
+	}
+
 	public function ambildata_nilai2($id){
 		$query=$this->db->query("SELECT * FROM tb_nilai WHERE id_nilai=$id");
 		return $query->result_array();
@@ -40,11 +45,11 @@ class Mdl_data_nilai extends CI_Model {
 	// 	return $query->result_array();
 	// }
 
-	// public function tambahdata_motlet($paket)
-	// 	{
-	// 		$this->db->insert('tb_soal_motlet', $paket);
-	// 		return $this->db->affected_rows();
-	// 	}
+	public function input_nilai($paket)
+		{
+			$this->db->insert('tb_nilai_cfit', $paket);
+			return $this->db->affected_rows();
+		}
 
 	// public function do_delete($where,$table){
 	// 	$this->db->where($where);

@@ -37,7 +37,7 @@
               <tbody>
                 <?php
                 $modal = 0;
-                foreach ($array as $key) { 
+                foreach ($cfit as $key) { 
                  $id_pelamar = $key['id_pelamar']; 
                  $lowongan = $key['id_lowongan'];
                  $nmLowongan = $this->db->query("SELECT * FROM tb_lowongan");
@@ -62,8 +62,18 @@
                     $nama_pelamar = $key_diri->nama_pelamar;
                   }
                 }
-                ?>
 
+                $cekHolland = $this->db->query("SELECT * FROM tb_data_jawaban_holland WHERE id_pelamar = $id_pelamar");
+                foreach ($cekHolland->result() as $key_holland) {
+                  $nilai_r = $key_holland->nilai_r;
+                  $nilai_i = $key_holland->nilai_i;
+                  $nilai_a = $key_holland->nilai_a;
+                  $nilai_s = $key_holland->nilai_s;
+                  $nilai_e = $key_holland->nilai_e;
+                  $nilai_k = $key_holland->nilai_k;
+                }
+                ?>
+               <!--  
                 <div class="modal fade" id="myModal" role="dialog">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
@@ -90,7 +100,7 @@
                   </div>
                 </div> 
 
-                <!-- Modal 2 -->
+                Modal 2
                 <div class="modal fade" id="myModal2" role="dialog">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
@@ -115,75 +125,22 @@
                       </form>
                     </div>
                   </div>
-                </div> 
-
-
+                </div>  -->
 
                 <p>Nama Pelamar : <b><?php  echo $nama_pelamar ?></b></p>
                 <p>Posisi Jabatan / Lowongan : <b><?php  echo $namaJabatan ?></b></p>
                 <p>Perusahaan : <b><?php  echo $nmPerusahaan ?></b></p>
-
-                <tr>
-                  <?php 
-
-                  $nilai_iq = $key['nilai_iq'];
-
-                  if ($nilai_iq <= 69 ){
-                    $hasil = "Inteletual Deficient";
-                  }
-                  else if ($nilai_iq >=70 && $nilai_iq <=79){
-                    $hasil = "Borderline";
-                  }
-                  else if ($nilai_iq >=80 && $nilai_iq <=89){
-                    $hasil = "Dibawah rata-rata";
-                  }
-                  else if ($nilai_iq >=90 && $nilai_iq <=109){
-                    $hasil = "Rata-rata";
-                  }
-                  else if ($nilai_iq >=110 && $nilai_iq <=119){
-                    $hasil = "Diatas rata-rata";
-                  }
-                  else if ($nilai_iq >=120 && $nilai_iq <=129){
-                    $hasil = "Superior";
-                  }
-                  else if ($nilai_iq >=130){
-                    $hasil = "Sangat Superior";
-                  }
-
-                  ?>
-
-                  <?php 
-                  $id_level = $this->session->userdata('ses_idLevel');
-                  
-                  if ($id_level == 'Admin Sdm') { ?>
-
-                   <a style="margin-left: 89%; margin-bottom: 3%" data-toggle="modal" data-target="#myModal"  align="right" href="" class="btn btn-primary">Update Nilai</a> &nbsp;
-
-                 <?php } else if($id_level == 'Psikolog'){ ?>
-
-                  <a style="margin-left: 86%; margin-bottom: 3%" data-toggle="modal" data-target="#myModal2"  align="right" href="" class="btn btn-primary">Update Deskripsi</a>
-                  
-                <?php } else { ?>
-                  <a style="margin-left: 75%; margin-bottom: 3%" data-toggle="modal" data-target="#myModal"  align="right" href="" class="btn btn-primary">Update Nilai</a> &nbsp;
-                   <a style="margin-bottom: 3%" data-toggle="modal" data-target="#myModal2"  align="right" href="" class="btn btn-primary">Update Deskripsi</a>
-                <?php } ?> 
-
-
                 <tr >
-                  <th width="150">Nilai IQ</th>
-                  <td><?php echo $key['nilai_iq'] ?></td>
+                  <th width="150">Nilai CFIT</th>
+                  <td><?php echo $key['nilai_cfit'] ?></td>
                 </tr>
-                <tr>
-                  <th>Deskripsi IQ</th>
-                  <td><?php echo $hasil ?></td>
+                <tr >
+                  <th width="150">IQ</th>
+                  <td><?php echo $key['iq'] ?></td>
                 </tr>
-                <tr>
-                  <th>Gambaran Kepribadian</th>
-                  <td><?php echo $key['gambaran_kepribadian'] ?></td>
-                </tr>
-                <tr>
-                  <th>Nilai PWB</th>
-                  <td><?php echo $key['nilai_pwb'] ?></td>
+                <tr >
+                  <th width="150">Kategori</th>
+                  <td><?php echo $key['kategori'] ?></td>
                 </tr>
                 <tr>
                   <th>Nilai Holland :</th>
@@ -191,81 +148,36 @@
                 </tr>
                 <tr>
                   <th style="text-align: right">R</th>
-                  <td><?php echo $key['nilai_holand_r'] ?></td>
+                  <td><?php echo $nilai_r ?></td>
                 </tr>
                 <tr>
                   <th style="text-align: right">I</th>
-                  <td><?php echo $key['nilai_holand_i'] ?></td>
+                  <td><?php echo $nilai_i ?></td>
                 </tr>
                 <tr>
                   <th style="text-align: right">A</th>
-                  <td><?php echo $key['nilai_holand_a'] ?></td>
+                  <td><?php echo $nilai_a ?></td>
                 </tr>
                 <tr>
                   <th style="text-align: right">S</th>
-                  <td><?php echo $key['nilai_holand_s'] ?></td>
+                  <td><?php echo $nilai_s ?></td>
                 </tr>
                 <tr>
                   <th style="text-align: right">E</th>
-                  <td><?php echo $key['nilai_holand_e'] ?></td>
+                  <td><?php echo $nilai_e ?></td>
                 </tr>
                 <tr>
-                  <th style="text-align: right">C</th>
-                  <td><?php echo $key['nilai_holand_c'] ?></td>
+                  <th style="text-align: right">K</th>
+                  <td><?php echo $nilai_k ?></td>
                 </tr>
-                <tr>
-                  <th>Nilai Tes Kepribadian :</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th style="text-align: right;">Papiskotik</th>
-                  <td><?php echo $key['nilai_papiskotik'] ?></td>
-                </tr>
-                <tr>
-                  <th style="text-align: right;">MSDT</th>
-                  <td><?php echo $key['nilai_msdt'] ?></td>
-                </tr>
-                <tr>
-                  <th>Nilai CFIT</th>
-                  <td><?php echo $key['nilai_cfit'] ?></td>
-                </tr>
-              </tr>
-              <tr>
-                <th>Nilai TPA :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th style="text-align: right">Kemampuan Bidang</th>
-                <td><?php echo $key['nilai_kemampuan_bidang'] ?></td>
-              </tr>
-              <tr>
-                <th style="text-align: right">Studi Kasus</th>
-                <td><?php echo $key['nilai_studi_kasus'] ?></td>
-              </tr>
-              <tr>
-                <th style="text-align: right">Perhitungan</th>
-                <td><?php echo $key['nilai_perhitungan'] ?></td>
-              </tr>
-              <tr>
-                <th>Nilai Wawancara</th>
-                <td><?php echo $key['nilai_wawancara'] ?></td>
-              </tr>
-              <tr>
-                <th>Nilai FGD</th>
-                <td><?php echo $key['nilai_fgd'] ?></td>
-              </tr>
-              <tr>
-                <th>Kesimpulan</th>
-                <td><b><?php echo $key['kesimpulan'] ?></b></td>
-              </tr>
 
-              <?php $modal++; } ?>
-            </tbody>
-          </table>
+                <?php $modal++;  }?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </main>
 <?php $this->load->view('layout/footer'); ?>

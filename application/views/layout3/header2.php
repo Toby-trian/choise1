@@ -10,6 +10,7 @@
 	<link href="<?php  echo base_url('assets3/css/styles.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/custom.css') ?>" rel="stylesheet">
 	<link href="<?php  echo base_url('assets3/css/bie.css') ?>" rel="stylesheet">
+	<link href="<?php  echo base_url('assets3/css/box2.css') ?>" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
 	
 	<script type = "text/javascript" >

@@ -51,10 +51,28 @@ class Data_nilai extends CI_Controller {
 		$this->load->view('administrator/data_nilai_home',$paket);
 	}
 
-	public function detail_nilai($id_detail)
+	public function detail_nilai($id_lowongan, $id_pelamar)
 	{
-		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai2($id_detail);	
-		$this->load->view('administrator/detail_nilai',$paket);
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan =$this->input->post('id_lowongan');
+
+		$send['id_nilai_cfit']='';
+		$send['id_pelamar']=$this->input->post('id_pelamar');
+		$send['id_lowongan']=$this->input->post('id_lowongan');
+		$send['nilai_cfit']=$this->input->post('nilai_cfit');
+		$send['iq']=$this->input->post('iq');
+		$send['kategori']=$this->input->post('kategori');
+
+		$check = $this->db->query("SELECT * FROM tb_nilai_cfit WHERE id_pelamar= $id_pelamar AND id_lowongan= $id_lowongan");
+
+		if ($check->num_rows()<1) {
+			# code...
+			$kembalian['jumlah']=$this->Mdl_data_nilai->input_nilai($send);
+		}
+
+		$paket['cfit']=$this->Mdl_data_nilai->ambil_cfit($id_lowongan, $id_pelamar);
+		$this->load->view('administrator/detail_nilai', $paket);
 	}
 
 

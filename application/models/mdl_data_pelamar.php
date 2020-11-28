@@ -9,6 +9,22 @@ class Mdl_data_pelamar extends CI_Model {
 			$this->load->database();
 		}
 
+
+	public function ambil_apply(){
+		$query=$this->db->query("SELECT * FROM tb_apply");
+		return $query->result_array();
+	}
+
+	public function ambil_pesan(){
+		$query=$this->db->query("SELECT * FROM tb_pesan");
+		return $query->row();
+	}
+
+	public function update_pesan($kirim){
+		$sql="UPDATE tb_pesan SET id_pesan = ?, isi_pesan = ? WHERE id_pesan = ?";
+		$query=$this->db->query($sql, array( $kirim['id_pesan'], $kirim['isi_pesan'], $kirim['id_pesan']));
+	}
+
 	public function ambildata_pelamar($id){
 		$query=$this->db->query("SELECT * FROM tb_data_diri WHERE id_pelamar=$id");
 		return $query->result_array();
@@ -42,6 +58,12 @@ class Mdl_data_pelamar extends CI_Model {
 	public function inputBerkas($paket)
 	{
 		$this->db->insert('tb_berkas', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function tambah_pesan($paket)
+	{
+		$this->db->insert('tb_pesan', $paket);
 		return $this->db->affected_rows();
 	}
 

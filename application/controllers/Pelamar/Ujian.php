@@ -654,7 +654,11 @@ class Ujian extends CI_Controller {
 	}
 
 	public function jawaban_holland(){
+		$idPelamar = $this->input->post("id_pelamar");
+		$idUjian = $this->input->post("id_ujian");
+
 		$send['id_pelamar']=$this->input->post("id_pelamar");
+		$send['id_ujian']=$this->input->post("id_ujian");
 		$send['nilai_r']=$this->input->post("nilai_r");
 		$send['nilai_i']=$this->input->post("nilai_i");
 		$send['nilai_a']=$this->input->post("nilai_a");
@@ -666,7 +670,20 @@ class Ujian extends CI_Controller {
 
 		$this->load->view('pelamar/ujian/holland',$kembalian);
 		$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
-		redirect('Pelamar/Ujian/ujian_holland/');
+		redirect('Pelamar/Pelamar/testulispsikotes');
+	}
+
+	public function disc()
+	{
+		$this->load->view('pelamar/ujian/disc/disc');
+	}
+	public function discsoal1()
+	{
+		$this->load->view('pelamar/ujian/disc/discsoal1');
+	}
+	public function discsoal2()
+	{
+		$this->load->view('pelamar/ujian/disc/discsoal2');
 	}
 	
 }

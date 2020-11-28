@@ -215,23 +215,23 @@ confirm_password.onkeyup = validatePassword;
   }
   document.oncontextmenu=new Function("return false");
 
-//   function copyToClipboard() {
+  function copyToClipboard() {
 
-//   var aux = document.createElement("input");
-//   aux.setAttribute("value", "print screen disabled!");      
-//   document.body.appendChild(aux);
-//   aux.select();
-//   document.execCommand("copy");
-//   // Remove it from the body
-//   document.body.removeChild(aux);
-//   alert("Print screen disabled!");
-// }
+  var aux = document.createElement("input");
+  aux.setAttribute("value", "print screen dimatikan!");      
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
+  // Remove it from the body
+  document.body.removeChild(aux);
+  alert("Print screen dimatikan!");
+}
 
-// $(window).keyup(function(e){
-//   if(e.keyCode == 44){
-//     copyToClipboard();
-//   }
-// });
+$(window).keyup(function(e){
+  if(e.keyCode == 44){
+    copyToClipboard();
+  }
+});
 
 
 </script><!--IE=internet explorer 4+ dan NS=netscape 4+0-->

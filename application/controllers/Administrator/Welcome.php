@@ -35,8 +35,9 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		
-		$this->load->view('administrator/dashboard');
+		$paket['apply']=$this->Mdl_data_pelamar->ambil_apply();
+		$paket['massage']=$this->Mdl_data_pelamar->ambil_pesan();
+		$this->load->view('administrator/dashboard',$paket);
 	}
 
 	public function data_pelamar()
@@ -64,7 +65,7 @@ class Welcome extends CI_Controller {
 			$send['nama_level']=$this->input->post('nama_level');
 
 			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_level($send);
-						
+
 			$this->load->view('administrator/data_level',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Administrator/Welcome/data_level');
@@ -124,7 +125,7 @@ class Welcome extends CI_Controller {
 			var_dump($send);
 
 			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_admin($send);
-						
+
 			$this->load->view('administrator/data_admin',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Administrator/Welcome/data_admin');
@@ -217,7 +218,7 @@ class Welcome extends CI_Controller {
 			// var_dump($send);
 
 			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_perusahaan($send);
-						
+
 			$this->load->view('administrator/data_perusahaan',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Administrator/Welcome/data_perusahaan');
@@ -338,7 +339,7 @@ class Welcome extends CI_Controller {
 			var_dump($send);
 
 			$kembalian['jumlah']=$this->Mdl_data_level->tambahdata_psikolog($send);
-						
+
 			$this->load->view('administrator/data_psikolog',$kembalian);
 			$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
 			redirect('Administrator/Welcome/data_psikolog');
@@ -374,6 +375,64 @@ class Welcome extends CI_Controller {
 			$kembalian['jumlah']=$this->Mdl_data_level->modelupdate_psikolog($send);
 			$this->session->set_flashdata('msg_update', 'Data Berhasil diupdate');
 			redirect('Administrator/Welcome/data_psikolog');
+		}
+	}
+
+	public function send_massage(){
+		$no_wa = $this->input->post('no_wa');
+		$nama = $this->input->post('nama');
+		$pesan = $this->input->post('pesan');
+
+		// Send Wa
+		$curl = curl_init();
+		$token = "tGnodfhvWY9kybioIxk452fXGHhK7mCJjFjsKr3BWqtBa0M5WxtTbrdZ6xo4RNrg";
+		$data = [
+			'phone' => $no_wa,
+			'message' => $pesan,
+		];
+
+		curl_setopt($curl, CURLOPT_HTTPHEADER,
+			array(
+				"Authorization: $token",
+			)
+		);
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+		curl_setopt($curl, CURLOPT_URL, "https://teras.wablas.com/api/send-message");
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+		$result = curl_exec($curl);
+		curl_close($curl);
+
+		echo "<pre>";
+		print_r($result);
+
+		if ($result) {
+			$this->session->set_flashdata('msg_success','Pesan berhasil dikirim via wa');
+			redirect('Administrator/Welcome/');	
+		} else{
+			$this->session->set_flashdata('msg_hapus','Gagal mengirim wa');
+			redirect('Administrator/Welcome/');	
+		}
+	}
+
+
+	public function save_massage(){
+
+		$massage = $this->db->query("SELECT * FROM tb_pesan");
+		if ($massage->num_rows()>0) {
+			$kirim['id_pesan'] = 1;
+			$kirim['isi_pesan'] = $this->input->post('pesan');
+			$this->Mdl_data_pelamar->update_pesan($kirim);
+			$this->session->set_flashdata('msg_update', 'Pesan Berhasil diupdate');
+			redirect('Administrator/Welcome/');
+		}else{
+			$send['id_pesan'] = '';
+			$send['isi_pesan'] = $this->input->post('pesan');
+			$this->Mdl_data_pelamar->tambah_pesan($send);
+			$this->session->set_flashdata('msg_update', 'Data Berhasil tambah');
+			redirect('Administrator/Welcome/');
 		}
 	}
 
