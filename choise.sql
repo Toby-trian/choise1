@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Nov 2020 pada 02.26
+-- Waktu pembuatan: 25 Jan 2021 pada 08.26
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -150,46 +150,6 @@ CREATE TABLE `tb_data_jawaban_cfit` (
   `jawaban_kunci2` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_data_jawaban_cfit`
---
-
-INSERT INTO `tb_data_jawaban_cfit` (`id_jawaban_cfit`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`, `jawaban_kunci`, `jawaban_kunci2`) VALUES
-(81, 30, 2, 2, 2, '1', 'C', '', 'C', ''),
-(82, 30, 2, 3, 2, '1', 'E', '', 'B', ''),
-(83, 30, 2, 4, 2, '1', 'A', '', 'D', ''),
-(84, 30, 2, 5, 2, '1', 'E', '', 'E', ''),
-(85, 30, 2, 6, 2, '1', 'B', '', 'B', ''),
-(86, 30, 2, 7, 2, '1', 'D', '', 'D', ''),
-(87, 30, 2, 8, 2, '1', 'D', '', 'B', ''),
-(88, 30, 2, 9, 2, '1', 'D', '', 'F', ''),
-(89, 30, 2, 10, 2, '1', 'D', '', 'C', ''),
-(90, 30, 2, 11, 2, '1', 'D', '', 'B', ''),
-(91, 30, 2, 12, 2, '1', 'D', '', 'B', ''),
-(92, 30, 2, 13, 2, '1', 'D', '', 'E', ''),
-(93, 1, 1, 1, 2, '1', 'D', '', 'B', ''),
-(94, 1, 1, 2, 2, '1', 'E', '', 'C', ''),
-(95, 31, 2, 1, 2, '1', 'D', '', 'B', ''),
-(96, 31, 2, 2, 2, '1', 'F', '', 'C', ''),
-(97, 1, 1, 13, 2, '1', 'E', '', 'E', ''),
-(98, 31, 2, 1, 2, '2', 'B', 'C', 'B', 'E'),
-(99, 1, 1, 2, 2, '2', 'C', 'E', 'A', 'E'),
-(100, 1, 1, 8, 2, '2', 'C', 'D', 'B', 'E'),
-(101, 31, 2, 2, 2, '2', 'C', 'E', 'A', 'E'),
-(102, 1, 1, 2, 2, '3', 'D', '', 'E', ''),
-(103, 1, 1, 1, 2, '3', 'D', '', 'E', ''),
-(104, 1, 1, 3, 2, '3', 'F', '', 'E', ''),
-(105, 31, 2, 1, 2, '3', 'B', '', 'E', ''),
-(106, 31, 2, 2, 2, '3', 'D', '', 'E', ''),
-(107, 31, 2, 3, 2, '3', 'E', '', 'E', ''),
-(108, 31, 2, 13, 2, '3', 'D', '', '', ''),
-(109, 31, 2, 2, 2, '4', 'C', '', 'A', ''),
-(110, 31, 2, 3, 2, '4', 'E', '', 'D', ''),
-(111, 1, 1, 2, 2, '4', 'C', '', 'A', ''),
-(112, 1, 1, 1, 2, '4', 'D', '', 'B', ''),
-(113, 1, 1, 3, 2, '4', 'E', '', 'D', ''),
-(114, 1, 1, 10, 2, '4', 'E', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -214,7 +174,33 @@ CREATE TABLE `tb_data_jawaban_holland` (
 --
 
 INSERT INTO `tb_data_jawaban_holland` (`id_jawaban_holland`, `id_pelamar`, `id_lowongan`, `id_ujian`, `nilai_r`, `nilai_i`, `nilai_a`, `nilai_s`, `nilai_e`, `nilai_k`) VALUES
-(1, 1, 0, 0, 3, 3, 2, 2, 3, 3);
+(1, 1, 1, 1, 10, 7, 15, 7, 19, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_data_jawaban_papi`
+--
+
+CREATE TABLE `tb_data_jawaban_papi` (
+  `id_jawaban_papi` int(11) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_ujian` int(5) NOT NULL,
+  `no_soal` int(5) NOT NULL,
+  `jawaban` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_data_jawaban_papi`
+--
+
+INSERT INTO `tb_data_jawaban_papi` (`id_jawaban_papi`, `id_pelamar`, `id_lowongan`, `id_ujian`, `no_soal`, `jawaban`) VALUES
+(1, 1, 1, 1, 1, 'G'),
+(2, 1, 1, 1, 2, 'N'),
+(3, 1, 1, 1, 3, 'P'),
+(4, 1, 1, 1, 4, 'P'),
+(5, 1, 1, 1, 90, 'X');
 
 -- --------------------------------------------------------
 
@@ -487,10 +473,19 @@ CREATE TABLE `tb_nilai_cfit` (
   `id_nilai_cfit` int(5) NOT NULL,
   `id_pelamar` int(5) NOT NULL,
   `id_lowongan` int(5) NOT NULL,
-  `id_perusahaan` int(5) NOT NULL,
   `nilai_cfit` int(15) NOT NULL,
+  `iq` int(15) NOT NULL,
+  `kategori` varchar(50) NOT NULL,
   `gambaran_kepribadian` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_nilai_cfit`
+--
+
+INSERT INTO `tb_nilai_cfit` (`id_nilai_cfit`, `id_pelamar`, `id_lowongan`, `nilai_cfit`, `iq`, `kategori`, `gambaran_kepribadian`) VALUES
+(1, 29, 2, 0, 38, 'Intellectual deficient', ''),
+(2, 1, 1, 0, 38, 'Intellectual deficient', '');
 
 -- --------------------------------------------------------
 
@@ -572,6 +567,24 @@ CREATE TABLE `tb_perusahaan` (
 INSERT INTO `tb_perusahaan` (`id_perusahaan`, `id_level`, `nama_perusahaan`, `jenis_usaha`, `alamat`, `email`, `logo_perusahaan`, `username`, `password`, `website`, `facebook`, `instagram`, `twitter`, `no_hp`) VALUES
 (1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002'),
 (2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', 'bd9dd885dfb6f61145824294180d7df0', '-', '-', '-', '-', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pesan`
+--
+
+CREATE TABLE `tb_pesan` (
+  `id_pesan` int(11) NOT NULL,
+  `isi_pesan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_pesan`
+--
+
+INSERT INTO `tb_pesan` (`id_pesan`, `isi_pesan`) VALUES
+(1, '<p>*Selamat* sore, silahkan kunjungi http://choise.chaakraconsulting.com/Login_pelamar</p>');
 
 -- --------------------------------------------------------
 
@@ -687,6 +700,91 @@ INSERT INTO `tb_soal_cfit` (`id_soal`, `nomor_soal`, `soal`, `opsi_a`, `opsi_b`,
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_soal_ist`
+--
+
+CREATE TABLE `tb_soal_ist` (
+  `id_soal_ist` int(11) NOT NULL,
+  `no_soal` int(5) NOT NULL,
+  `soal_ist` varchar(255) NOT NULL,
+  `opsi_a` varchar(255) NOT NULL,
+  `opsi_b` varchar(255) NOT NULL,
+  `opsi_c` varchar(255) NOT NULL,
+  `opsi_d` varchar(255) NOT NULL,
+  `opsi_e` varchar(255) NOT NULL,
+  `jawaban` varchar(100) NOT NULL,
+  `subtes` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_soal_ist`
+--
+
+INSERT INTO `tb_soal_ist` (`id_soal_ist`, `no_soal`, `soal_ist`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `opsi_e`, `jawaban`, `subtes`) VALUES
+(1, 1, 'Pengaruh seseorang terhadap orang lain seharusnya bergantung pada ...', 'kekuasaan', 'bujukan', 'kekayaan', 'keberanian', 'kewibawaan', 'D', '1'),
+(3, 2, 'Lawannya \"hemat\" adalah ...', 'murah', 'kikir', 'boros', 'bernilai', 'kaya', 'C', '1'),
+(4, 3, '.... tidak termasuk cuaca', 'angin puyuh', 'halilintar', 'salju', 'gempa bumi', 'kabut', 'D', '1'),
+(5, 4, 'Lawannya \"setia\" adalah ...', 'cinta', 'benci', 'persahabatan', 'khianat', 'permusuhan', 'D', '1'),
+(6, 5, 'Seekor kuda selalu memiliki ...', 'kandang', 'ladam', 'pelana', 'kuku', 'surai', 'D', '1'),
+(7, 6, 'Seorang paman ..... lebih tua daripada keponakannya', 'jarang', 'biasanya', 'selalu', 'tak pernah', 'kadang-kadng', 'B', '1'),
+(8, 7, 'Pada jumlah yang sama, nilai kalori yang tertinggi terdapat pada ...', 'ikan', 'daging', 'lemak', 'tahu', 'sayuran', 'C', '1'),
+(9, 8, 'Pada suatu pertandingan selalu terdapat ...', 'lawan', 'wasit', 'penonton', 'sorak', 'kemenangan', 'A', '1'),
+(10, 9, 'Suatu pernyataan yang belum dapat dipastikan dikatakan sebagai pernyataan yang ...', 'paradoks', 'tergesa-gesa', 'mempunyai arti rangkap', 'menyesatkan', 'hipotesis', 'E', '1'),
+(11, 10, 'Pada sepatu kulit terdapat ...', 'kulit', 'sol', 'tali sepatu', 'gesper', 'lidah', 'B', '1'),
+(12, 11, 'Suatu ... tidak menyangkut persoalan pencegahan kecelakaan', 'lampu lalu lintas', 'kacamata pelindung', 'kotak P3K', 'tanda peringatan', 'palang kereta api', 'C', '1'),
+(13, 12, 'Mata uang dari Rp. 500 garis tengahnya adalah .... mm', '17', '29', '25', '24', '15', 'D', '1'),
+(14, 13, 'Seseorang yang bersikap menyangsikan setiap kemajuan ialah seorang yang ...', 'demokratis', 'radikal', 'liberal', 'konservatif', 'anarkis', 'D', '1'),
+(15, 14, 'Lawannya \"tidak pernah\" ialah ....', 'sering', 'kadang-kadang', 'jarang', 'kerapkali', 'selalu', 'E', '1'),
+(16, 15, 'Jarak antara Jakarta-Surabaya ialah kira-kira ... km', '650', '1000', '800', '600', '950', 'C', '1'),
+(17, 16, 'Untuk dapat membuat nada yang terendah dan mendalam, kita memerlukan banyak ....', 'kekuatan', 'peranan', 'ayunan', 'berat', 'suara', 'A', '1'),
+(18, 17, 'Ayah ... lebih berpengalaman daripada anaknya ...', 'selalu', 'biasanya', 'jauh', 'jarang', 'pada dasarnya', 'B', '1'),
+(19, 18, 'Di antara kota-kota berikut ini, maka kota ... letaknya paling selatan', 'Jakarta', 'Bandung', 'Cirebon', 'Semarang', 'Surabaya', 'B', '1'),
+(20, 19, 'Jika kita mengetahui jumlah persentase nomor-nomor lotre yang tidak menang, maka kita dapat menghitung ....', 'jumlah nomor yang menang', 'pajak lotre', 'kemungkinan menang', 'jumlah pengikut', 'tinggi keuntungan', 'C', '1'),
+(21, 20, 'Seorang anak yang berumur 10 tahun tingginya rata-rata .... cm', '150', '130', '110', '105', '115', 'A', '1'),
+(22, 21, '', 'lingkaran', 'panah', 'elips', 'busur', 'lengkungan', 'B', '2'),
+(23, 22, '', 'mengetuk', 'memaku', 'menjahit', 'menggergaji', 'memukul', 'B', '2'),
+(24, 23, '', 'lebar', 'keliling', 'luas', 'isi', 'panjang', 'D', '2'),
+(25, 24, '', 'mengikat', 'menyatukan', 'melepaskan', 'mengaitkan', 'meletakkan', 'C', '2'),
+(26, 25, '', 'arah', 'timur', 'perjalanan', 'tujuan', 'selatan', 'C', '2'),
+(27, 26, '', 'jarak', 'perpisahan', 'tugas', 'batas', 'perceraian', 'C', '2'),
+(28, 27, '', 'saringan', 'kelambu', 'payung', 'tapisan', 'jala', 'C', '2'),
+(29, 28, '', 'putih', 'pucat', 'buram', 'kasar', 'berkilauan', 'D', '2'),
+(30, 29, '', 'otobis', 'pesawat terbang', 'sepeda motor', 'sepeda', 'kapal api', 'D', '2'),
+(31, 30, '', 'biola', 'seruling', 'clarinet', 'terompet', 'saxophone', 'A', '2'),
+(32, 31, '', 'bergelombang', 'kasar', 'berduri', 'licin', 'lurus', 'E', '2'),
+(33, 32, '', 'jam', 'kompas', 'penunjuk jalan', 'bintang pari', 'arah', 'A', '2'),
+(34, 33, '', 'kebijaksanaan', 'pendidikan', 'perencanaan', 'penempatan', 'pengerahan', 'A', '2'),
+(35, 34, '', 'bermotor', 'berjalan', 'berlayar', 'bersepeda', 'berkuda', 'B', '2'),
+(36, 35, '', 'gambar', 'lukisan', 'potret', 'patung', 'ukiran', 'C', '2'),
+(37, 36, '', 'panjang', 'lonjong', 'runcing', 'bulat', 'bersudut', 'A', '2'),
+(38, 37, '', 'kunci', 'palang pintu', 'grendel', 'gunting', 'obeng', 'D', '2'),
+(39, 38, '', 'jembatan', 'batas', 'perkawinan', 'pagar', 'masyarakat', 'E', '2'),
+(40, 39, '', 'mengetam', 'memahat', 'mengasah', 'melicinkan', 'menggosok', 'B', '2'),
+(41, 40, '', 'batu', 'baja', 'bulu', 'karet', 'kayu', 'C', '2'),
+(42, 41, 'menemukan : menghilangkan = meningat : ?', 'menghafal', 'mengenai', 'melupakan', 'berpikir', 'memimpikan', 'C', '3'),
+(43, 42, 'bunga : jambangan   =   burung :   ?', 'sarang', 'langit', 'pagar', 'pohon', 'sangkar', 'E', '3'),
+(44, 33, 'kereta api : rel   =   otobis :  ?', 'roda', 'poros', 'ban', 'jalan raya', 'kecepatan', 'D', '3'),
+(45, 44, 'perak : emas   =   cincin :   ?', 'arloji', 'berlian ', 'permata', 'gelang', 'platina', 'D', '3'),
+(46, 45, 'lingkaran : bola   =   bujursangkar :   ?', 'bentuk', 'gambar', 'segiempat', 'kubus', 'piramida', 'D', '3'),
+(47, 46, 'saran : keputusan   =   merundingkan :   ?', 'menawarkan', 'menentukan', 'menilai', 'menimbang ', 'merenungkan', 'B', '3'),
+(48, 47, 'lidah : asam   =   hidung :   ?', 'mencium', 'bernafas', 'mengecap', 'tengik', 'asin', 'D', '3'),
+(49, 48, 'darah : pembuluh    =    air :   ?', 'pintu air', 'sungai', 'talang', 'hujan', 'ember', 'B', '3'),
+(50, 49, 'saraf : penyalur   =   pupil :   ?', 'penyinaran', 'mata', 'melihat', 'cahaya', 'pelindung', 'E', '3'),
+(51, 50, 'pengantar surat : pengantar telegram   =   pandai besi :   ?', 'palu godam', 'pedangan besi', 'api', 'tukang emas', 'besi tempa', 'D', '3'),
+(52, 51, 'buta : warna   =   tuli :   ?', 'pendengaran', 'mendengar', 'nada', 'kata', 'telinga', 'C', '3'),
+(53, 52, 'makanan : bumbu   =   ceramah :   ?', 'penghinaan', 'pidato', 'kelakar', 'kesan', 'ayat', 'C', '3'),
+(54, 53, 'marah : emosi   =   duka cita :   ?', 'suka cita', 'sakit hati', 'suasana hati', 'sedih', 'rindu', 'C', '3'),
+(55, 54, 'mantel : jubah   =   wool :   ?', 'bahan sandang', 'domba', 'sutera', 'jas', 'tekstil', 'C', '3'),
+(56, 55, 'ketinggian puncak : tekanan udara   =   ketinggian nada :   ?', 'garpu penala', 'sopran', 'nyanyian', 'penjang senar', 'suara', 'E', '3'),
+(57, 56, 'negara : revolusi   =   hidup :   ?', 'biologi', 'keturunan ', 'mutasi', 'seleksi', 'ilmu hewan', 'C', '3'),
+(58, 57, 'kekurangan : penemuan   =   panas :   ?', 'haus', 'khatulistiwa', 'es', 'matahari', 'dingin', 'C', '3'),
+(59, 58, 'kayu : diketam   =   besi :   ?', 'dipalu', 'digergaji', 'dituang', 'dikikir', 'ditempa', 'E', '3'),
+(60, 59, 'olahragawan : lembing   =   cendekiawan :   ?', 'perpustakaan', 'penelitian ', 'karya', 'studi', 'mikroskop', 'E', '3'),
+(61, 60, 'keledai : kuda pacuan   =    pembakaran :   ?', 'pemadam api', 'obor', 'letupan', 'korek api', 'lautan api', 'E', '3');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_soal_motlet`
 --
 
@@ -705,6 +803,163 @@ INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `so
 (1, 2, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
 (3, 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br />quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br />cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br />proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
 (5, 2, 1, '<p>tes12324</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_soal_papi`
+--
+
+CREATE TABLE `tb_soal_papi` (
+  `id_soal` int(11) NOT NULL,
+  `no_soal` int(2) NOT NULL,
+  `pernyataan1` varchar(150) NOT NULL,
+  `pernyataan2` varchar(150) NOT NULL,
+  `aspek` varchar(2) NOT NULL,
+  `aspek2` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_soal_papi`
+--
+
+INSERT INTO `tb_soal_papi` (`id_soal`, `no_soal`, `pernyataan1`, `pernyataan2`, `aspek`, `aspek2`) VALUES
+(1, 1, 'Saya seorang pekerja keras', 'Saya bukan seorang pemurung', 'G', 'E'),
+(2, 2, 'Saya suka bekerja lebih baik dari yang lain', 'Saya suka menekuni pekerjaan yang saya lakukan sampai selesai', 'A', 'N'),
+(3, 3, 'Saya suka memberi petunjuk kepada orang bagaimana melakukan sesuatu', 'Saya ingin berbuat semaksimal mungkin', 'P', 'A'),
+(4, 4, 'Saya suka melakukan hal-hal lucu', 'Saya suka memberitahukan orang apa yang harus dikerjakannya', 'X', 'P'),
+(5, 5, 'Saya suka bergabung dalam kelompok', 'Saya suka jika diperhatikan orang', 'B', 'X'),
+(6, 6, 'Saya suka membuat teman pribadi yang dekat', 'Saya suka berteman dengan suatu kelompok', 'O', 'B'),
+(7, 7, 'Saya cepat berubah jika saya rasa diperlukan', 'Saya berusaha membuat teman-teman menjadi dekat', 'Z', 'O'),
+(8, 8, 'Saya suka membalas jika saya disakiti', 'Saya suka melakukan hal-hal yang baru dan berbeda', 'K', 'Z'),
+(9, 9, 'Saya ingin agar atasan menyukai saya', 'Saya suka memberitahukan orang jika mereka salah', 'F', 'K'),
+(10, 10, 'Saya suka mengikuti petunjuk-petunjuk yang diberikan kepada saya', 'Saya suka mendukung pendapat atasan saya', 'X', 'F'),
+(11, 11, 'Saya berusaha sangat keras', 'Saya seorang yang teratur. Saya menaruh semua barang pada tempatnya', 'G', 'B'),
+(12, 12, 'Saya dapat membuat orang melakukan apa yang saya inginkan', 'Saya tidak mudah marah', 'L', 'B'),
+(13, 13, 'Saya suka memberitahukan kepada kelompok apa yang harus mereka kerjakan', 'Saya selalu menekuni suatu pekerjaan sampai selesai', 'P', 'N'),
+(14, 14, 'Saya ingin tampil menarik dan mendebarkan', 'Saya ingin menjadi orang yang sangat berhasil', 'X', 'A'),
+(15, 15, 'Saya ingin sesuai dan diterima dalam kelompok', 'Saya suka membantu orang dalam mengambil keputusan', 'B', 'P'),
+(16, 16, 'Saya cemas bila seseorang tidak menyukai saya', 'Saya suka orang memperhatikan saya', 'O', 'X'),
+(17, 17, 'Saya suka mencoba hal-hal baru', 'Saya lebih suka bekerja bersama orang lain daripada sendiri', 'Z', 'B'),
+(18, 18, 'Saya kadang-kadang menyalahkan orang lain jika terjadi kesalahan', 'Saya merasa terganggu jika ada yang tidak menyukai saya', 'K', 'B'),
+(19, 19, 'Saya suka mendukung pendapat atasan saya', 'Saya suka mencoba pekerjaan-pekerjaan yang baru dan berbeda', 'F', 'Z'),
+(20, 20, 'Saya menyukai petunjuk-petunjuk terperinci dalam menyelesaikan pekerjaan', 'Bila saya terganggu oleh siapapun, saya akan memberitahukannya', 'X', 'K'),
+(21, 21, 'Saya suka melaksanakan tugas setiap langkah dengan hati-hati', 'Saya selalu berusaha keras', 'G', 'D'),
+(22, 22, 'Saya benar-benar pemimpin yang baik', 'Saya dapat mengorganisir suatu pekerjaan dengan baik', 'L', 'C'),
+(23, 23, 'Saya mudah tersinggung', 'Saya lambat mengambil keputusan', 'I', 'E'),
+(24, 24, 'Bila saya berada dalam satu kelompok, saya suka berdiam diri', 'Saya suka mengerjakan beberapa pekerjaan sekaligus', 'X', 'N'),
+(25, 25, 'Saya sangat suka bila saya diundang', 'Saya ingin lebih baik dari yang lain dalam mengerjakan sesuatu', 'B', 'A'),
+(26, 26, 'Saya suka membuat teman-teman pribadi yang dekat', 'Saya suka menasehati orang lain', 'O', 'P'),
+(27, 27, 'Saya suka melakukan hal-hal yang baru dan berbeda', 'Saya suka menceritakan bagaimana saya berhasil dalam melakukan sesuatu', 'Z', 'P'),
+(28, 28, 'Bila saya betul, saya suka mempertahankannya', 'Saya ingin diterima dan diakui dalam suatu kelompok', 'K', 'B'),
+(29, 29, 'Saya menghindar menjadi seorang yang berbeda', 'Saya berusaha menjadi sangat dekat dengan seseorang', 'F', 'O'),
+(30, 30, 'Saya senang diberitahukan bagaimana saya melakukan sesuatu pekerjaan', 'Saya mudah bosan', 'X', 'Z'),
+(31, 31, 'Saya bekerja keras', 'Saya banyak berpikir dan menerima', 'G', 'R'),
+(32, 32, 'Saya memimpin kelompok', 'Detail (hal-hal kecil) menarik bagi saya', 'L', 'D'),
+(33, 33, 'Saya dapat mengambil keputusan secara mudah dan tepat', 'Saya menyimpan barang-barang saya secara rapi dan teratur', 'I', 'C'),
+(34, 34, 'Saya cepat dalam melaksanakan suatu pekerjaan', 'Saya tidak sering marah atau sedih', 'T', 'C'),
+(35, 35, 'Saya ingin menjadi bagian dari kelompok', 'Saya hanya ingin melakukan satu pekerjaan pada satu saat', 'B', 'N'),
+(36, 36, 'Saya berusaha membuat teman dekat', 'Saya suka bertanggung jawab untuk kepentingan orang lain', 'O', 'A'),
+(37, 37, 'Saya suka mode terbaru untuk pakaian atau mobil', 'Saya suka bertanggung jawab untuk kepentingan orang lain', 'Z', 'P'),
+(38, 38, 'Saya menyukai perdebatan', 'Saya suka mendapat pekerjaan', 'K', 'X'),
+(39, 39, 'Saya suka mendukung orang-orang yang menjadi atasan saya', 'Saya tertarik menjadi bagian kelompok', 'F', 'B'),
+(40, 40, 'Saya suka mengikuti peraturan dengan hati-hati', 'Saya suka orang mengenal saya dengan baik', 'X', 'O'),
+(41, 41, 'Saya benar-benar pekerja keras', 'Saya mempunyai sifat bersahabat', 'G', 'R'),
+(42, 42, 'Orang berpendapat bahwa saya benar-benar seorang pemimpin yang baik', 'Saya berpikir panjang dan berhati-hati', 'L', 'R'),
+(43, 43, 'Saya sering mengambil kesempatan', 'Saya senang mengurus hal-hal kecil', 'I', 'D'),
+(44, 44, 'Orang berpendapat bahwa saya bekerja cepat', 'Orang berpendapat bahwa saya rapi dan teratur', 'T', 'C'),
+(45, 45, 'Saya seanang berolah raga', 'Saya mempunyai pribadi yang menyenangkan', 'V', 'E'),
+(46, 46, 'Saya senang jika orang dekat dan bersahabat dengan saya', 'Saya selalu berusaha untuk menyelesaikan sesuatu yang telah saya mulai', 'O', 'N'),
+(47, 47, 'Saya senang bereksperimen dan mencoba hal-hal baru', 'Saya suka melaksanakan suatu pekerjaan sulit dengan baik', 'Z', 'A'),
+(48, 48, 'Saya suka diperlakukan secara adil', 'Saya suka memberitahu orang lain bagaimana melaksanakan sesuatu', 'K', 'P'),
+(49, 49, 'Saya suka melakukan apa yang diharapkan dari saya', 'Saya suka memperoleh perhatian', 'F', 'X'),
+(50, 50, 'Saya suka petunjuk-petunjuk terperinci dalam melaksanakan suatu pekerjaan', 'Saya suka berada diantara orang-orang banyak', 'X', 'B'),
+(51, 51, 'Saya selalu berusaha menyelesaikan pekerjaan secara sempurna', 'Orang mengatakan bahwa saya tidak mengenal lelah', 'G', 'V'),
+(52, 52, 'Saya tipe pemimpin', 'Saya mudah berteman', 'L', 'S'),
+(53, 53, 'Saya selalu berspekulasi', 'Saya banyak sekali berpikr', 'I', 'R'),
+(54, 54, 'Saya bekerja dengan kecepatan teratur', 'Saya senang bekerja dengan hal-hal kecil/terperinci', 'T', 'D'),
+(55, 55, 'Saya mempunyai banyak tenaga untuk berolah raga', 'Saya menyimpan barang-barang saya secara rapi dan teratur', 'V', 'C'),
+(56, 56, 'Saya dapat bergaul dengan baik terhadap semua orang', 'Saya seorang mempunyai pembawaan yang tenang (even tempered)', 'S', 'E'),
+(57, 57, 'Saya ingin bertemu dengan orang-orang baru dan melakukan hal yang baru', 'Saya selalu ingin menyelesaikan pekerjaan yang telah saya mulai', 'Z', 'N'),
+(58, 58, 'Saya  biasanya mempertahankan pendapat yang saya yakini', 'Saya biasanya suka bekerja keras', 'K', 'A'),
+(59, 59, 'Saya suka saran-saran dari orang-orang yang saya kagumi', 'Saya suka melayani orang-orang berwenang terhadap saya', 'R', 'P'),
+(60, 60, 'Saya berusaha bekerja keras', 'Saya suka mendapat perhatian', 'X', 'X'),
+(61, 61, 'Saya berusaha bekerja keras', 'Saya mengerjakan sesuatu dengan cepat', 'G', 'T'),
+(62, 62, 'Apabila saya bicara, kelompok mendengarkan', 'Saya terampil dengan perkakas (alat-alat)', 'L', 'V'),
+(63, 63, 'Saya lambat dalam mendapatkan teman', 'Saya lambat dalam mengambil keputus', 'I', 'S'),
+(64, 64, 'Saya biasanya makan secara cepat', 'Saya suka membaca', 'T', 'R'),
+(65, 65, 'Saya suka pekerjaan dimana saya bergerak', 'Saya suka pekerjaan yang harus dilaksanakan secara hati-hati', 'V', 'D'),
+(66, 66, 'Saya membuat sebanyak mungkin teman', 'Apa yang telah saya simpan, akan mudah saya temukan kembali', 'S', 'C'),
+(67, 67, 'Saya merencakan jauh-jauh sebelumnya', 'Saya selalu menyenangkan', 'R', 'E'),
+(68, 68, 'Saya mempertahankan dengan bangga nama baik saya', 'Saya terus menekuni suatu masalah sampai selesai', 'K', 'N'),
+(69, 69, 'Saya suka mendukung orang-orang yang saya kagumi', 'Saya ingin sukses', 'F', 'A'),
+(70, 70, 'Saya suka orang lain yang membuat keputusan-keputusan untuk kelompok', 'Saya suka membuat keputusan-keputusan untuk kelompok', 'X', 'P'),
+(71, 71, 'Saya selalu berusaha keras', 'Saya membuat keputusan dengan cepat dan tepat', 'G', 'I'),
+(72, 72, 'Kelompok biasanya melakukan apa yang saya inginkan', 'Saya biasa terburu-buru', 'L', 'T'),
+(73, 73, 'Saya sering merasa lelah', 'Sya lamban mengambil keputusan', 'I', 'V'),
+(74, 74, 'Saya bekerja cepat', 'Saya mudah berteman', 'T', 'S'),
+(75, 75, 'Saya biasanya punya gairah dan tenaga', 'Saya banyak menghabiskan waktu dengan berpikir', 'V', 'R'),
+(76, 76, 'Saya sangat ramah terhadap orang', 'Saya suka dengan pekerjaan yang memerlukan ketelitian', 'S', 'D'),
+(77, 77, 'Saya banyak berpikir dan berencana', 'Saya menyimpan segala sesuatu pada tempatnya', 'R', 'C'),
+(78, 78, 'Saya suka pekerjaan yang menuntut hal-hal yang terperinci', 'Saya tidak mudah marah', 'D', 'E'),
+(79, 79, 'Saya suka mengikuti orang yang saya kagumi', 'Saya selalu menyelesaikan pekerjaan yang telah saya mulai', 'R', 'N'),
+(80, 80, 'Saya suka petunjuk yang jelas', 'Saya suka bekerja keras', 'X', 'A'),
+(81, 81, 'Saya mengejar apa yang saya inginkan', 'Saya seorang pemimpin tang baik', 'G', 'L'),
+(82, 82, 'Saya membuat orang lain bekerja sesuai dengan yang saya inginkan', 'Saya seorang yang bertipe santai tapi beruntung', 'L', 'I'),
+(83, 83, 'Saya mengambil keputusan secara cepat', 'Saya bicara dengan cepat', 'I', 'T'),
+(84, 84, 'Saya biasa bekerja cepat', 'Saya berolah raga secara teratur', 'T', 'V'),
+(85, 85, 'Saya tidak suka bertemy orang', 'Saya cepat merasa lelah', 'V', 'S'),
+(86, 86, 'Saya membuat banyak sekali teman', 'Saya banyak menghabiskan waktu dengan berpikir', 'S', 'R'),
+(87, 87, 'Saya suka bekerja dengan teori', 'Saya suka bekerja dengan hal-hal terperinci', 'R', 'D'),
+(88, 88, 'Saya dapat menikmati hal-hal/pekerjaan yang terperinci', 'Saya suka mengorganisir pekerjaan saya', 'D', 'C'),
+(89, 89, 'Saya menaruh barang pada tempatnya', 'Saya selalu menyenangkan ', 'C', 'E'),
+(90, 90, 'Saya suka diberitahu tentang apa yang saya perlu lakukan', 'Saya harus menyelesaikan apa yang saya mulai', 'X', 'N');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_soal_tpa`
+--
+
+CREATE TABLE `tb_soal_tpa` (
+  `id_soal_tpa` int(3) NOT NULL,
+  `soal` varchar(50) NOT NULL,
+  `opsi_a` varchar(50) NOT NULL,
+  `opsi_b` varchar(50) NOT NULL,
+  `opsi_c` varchar(50) NOT NULL,
+  `opsi_d` varchar(50) NOT NULL,
+  `opsi_e` varchar(50) NOT NULL,
+  `jawaban` varchar(50) NOT NULL,
+  `seksi` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_soal_tpa`
+--
+
+INSERT INTO `tb_soal_tpa` (`id_soal_tpa`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `opsi_e`, `jawaban`, `seksi`) VALUES
+(1, 'Epidemi = ...', 'Penyakit', 'Wabah', 'Menular', 'Berbahaya', 'Stabil', 'Penyakit', 1),
+(2, 'Gegabah ><', 'Hati-hati', 'Berani', 'Kuat', 'Tangguh', 'Nekat', 'Hati-hati', 2),
+(3, 'Gegap ><', 'Gemetar', 'Gugup', 'Gempita', 'Lancar', 'Ramai', 'Lancar', 2),
+(4, 'Fusi = ...', 'Peleburan', 'Penghancuran', 'Pemersatu', 'Persatuan', 'Pemisahan', 'Peleburan', 1),
+(5, 'Imla = ...', 'Atur', 'Rapi', 'Dikte', 'Baca', 'Keras', 'Dikte', 1),
+(6, 'Ingsut = ...', 'Pecah', 'Jatuh', 'Pelan', 'Bergeser', 'Hilang', 'Bergeser', 1),
+(7, 'Kasual = ...', 'Mewah', 'Biasa', 'Sederhana', 'Santai', 'Rapi', 'Sederhana', 1),
+(8, 'Komperehensif = ...', 'Sempit', 'Lebar', 'Rasuk', 'Lengkap', 'Masuk', 'Lengkap', 1),
+(9, 'Leksinon = ...', 'Kosa Kata', 'Indeks', 'Bahasa', 'Kiasan', 'Peribahasa', 'Kosa Kata', 1),
+(10, 'Majasi = ...', 'Umpama', 'Hiasan', 'Kalimat Mutiara', 'Inden', 'Kiasan', 'Kiasan', 1),
+(11, 'Mala = ...', 'Tanda', 'Bencana', 'Bahaya', 'Ancaman', 'Percobaan', 'Bencana', 1),
+(12, 'Motorium = ...', 'Mufakat', 'Penundaan', 'Permalukan', 'Perizinan', 'Persetujuan', 'Penundaan', 1),
+(13, 'Nidera = ...', 'Tidur', 'Surga', 'Sehat', 'Terlelap', 'Bangun', 'Tidur', 1),
+(14, 'Oblak = ...', 'Sempit', 'Pancing', 'Lebar', 'Kail', 'Pantai', 'Lebar', 1),
+(15, 'Ogel = ...', 'Kibas', 'Lonjong', 'Bulat', 'Melengkung', 'Lurus', 'Kibas', 1),
+(16, 'Okulis = ...', 'Mikroskop', 'Dokter Mata', 'Penyakit', 'Buta', 'Kaca Mata', 'Dokter Mata', 1),
+(17, 'Okupasi = ...', 'Pekerjaan', 'Penjualan', 'Pelelangan', 'Penyembahan', 'Pendudukan', 'Pendudukan', 1),
+(18, 'Oposisi = ...', 'Penentangan', 'Musuh', 'Penyesuaian', 'Perdebatan', 'Diskusi', 'Penentangan', 1),
+(19, 'Pacak = ...', 'Pantas', 'Sesuai', 'Tepat', 'Berbakat', 'Cakap', 'Cakap', 1),
+(20, 'Pedar = ...', 'Pisah', 'Encer', 'Getir', 'Tajam', 'Temu', 'Getir', 1),
+(21, 'Ranah = ...', 'Asal', 'Lembah', 'Kampung', 'Keluarga', 'Gunung', 'Lembah', 1),
+(22, 'Skeptis = ...', 'Stabil', 'Ragu', 'Kasar', 'Tegas', 'Marah', 'Ragu', 1);
 
 -- --------------------------------------------------------
 
@@ -743,8 +998,7 @@ CREATE TABLE `tb_ujian` (
 --
 
 INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `durasi`, `nama_pembuat`, `status`) VALUES
-(1, 'Testing', '2020-11-09 13:32:00', '2020-11-09 15:00:00', '2020-11-09 13:35:00', '2020-11-09 13:33:00', '2020-11-09 13:48:00', '2020-11-09 13:52:00', '2020-11-09 13:39:00', '2020-11-09 13:54:00', '2020-11-09 13:40:00', '2020-11-09 13:59:00', '2020-11-09 13:44:00', '2020-11-09 14:02:00', '2020-11-09 13:45:00', '2020-11-09 14:05:00', '2020-11-09 13:49:00', '2020-11-09 14:50:00', '2020-11-09 13:50:00', '2020-11-09 13:53:00', 1950, 'Administrator', 'tersedia'),
-(2, 'uhuy', '2020-11-12 08:10:00', '2020-11-12 10:00:00', '2020-11-04 15:10:00', '2020-11-12 08:45:00', '2020-11-11 15:11:00', '2020-11-12 08:43:00', '2020-11-11 15:15:00', '2020-11-12 08:44:00', '2020-11-11 15:17:00', '2020-11-12 08:47:00', '2020-11-11 15:20:00', '2020-11-12 08:48:00', '2020-11-11 15:21:00', '2020-11-12 08:51:00', '2020-11-11 15:25:00', '2020-11-12 08:52:00', '2020-11-11 15:26:00', '2020-11-12 08:56:00', 1950, 'Administrator', 'tersedia');
+(1, 'lk', '2020-11-24 00:00:00', '2020-11-25 04:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -756,15 +1010,30 @@ CREATE TABLE `tb_ujian_holland` (
   `id_ujian_holland` int(11) NOT NULL,
   `nama_ujian` varchar(100) NOT NULL,
   `waktu_mulai` datetime NOT NULL,
-  `waktu_akhir` datetime NOT NULL
+  `waktu_akhir` datetime NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_ujian_papi`
+--
+
+CREATE TABLE `tb_ujian_papi` (
+  `id_ujian_papi` int(5) NOT NULL,
+  `nama_ujian` varchar(100) NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_ujian_holland`
+-- Dumping data untuk tabel `tb_ujian_papi`
 --
 
-INSERT INTO `tb_ujian_holland` (`id_ujian_holland`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`) VALUES
-(1, 'holland', '2020-11-16 13:10:00', '2020-11-17 18:30:00');
+INSERT INTO `tb_ujian_papi` (`id_ujian_papi`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
+(1, 'Papi Tes', '2020-12-22 08:00:00', '2020-12-23 15:00:00', 'tersedia');
 
 --
 -- Indexes for dumped tables
@@ -805,6 +1074,12 @@ ALTER TABLE `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_holland`
   ADD PRIMARY KEY (`id_jawaban_holland`);
+
+--
+-- Indeks untuk tabel `tb_data_jawaban_papi`
+--
+ALTER TABLE `tb_data_jawaban_papi`
+  ADD PRIMARY KEY (`id_jawaban_papi`);
 
 --
 -- Indeks untuk tabel `tb_data_keluarga`
@@ -891,6 +1166,12 @@ ALTER TABLE `tb_perusahaan`
   ADD PRIMARY KEY (`id_perusahaan`);
 
 --
+-- Indeks untuk tabel `tb_pesan`
+--
+ALTER TABLE `tb_pesan`
+  ADD PRIMARY KEY (`id_pesan`);
+
+--
 -- Indeks untuk tabel `tb_psikolog`
 --
 ALTER TABLE `tb_psikolog`
@@ -903,10 +1184,28 @@ ALTER TABLE `tb_soal_cfit`
   ADD PRIMARY KEY (`id_soal`);
 
 --
+-- Indeks untuk tabel `tb_soal_ist`
+--
+ALTER TABLE `tb_soal_ist`
+  ADD PRIMARY KEY (`id_soal_ist`);
+
+--
 -- Indeks untuk tabel `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
   ADD PRIMARY KEY (`id_soal`);
+
+--
+-- Indeks untuk tabel `tb_soal_papi`
+--
+ALTER TABLE `tb_soal_papi`
+  ADD PRIMARY KEY (`id_soal`);
+
+--
+-- Indeks untuk tabel `tb_soal_tpa`
+--
+ALTER TABLE `tb_soal_tpa`
+  ADD PRIMARY KEY (`id_soal_tpa`);
 
 --
 -- Indeks untuk tabel `tb_ujian`
@@ -919,6 +1218,12 @@ ALTER TABLE `tb_ujian`
 --
 ALTER TABLE `tb_ujian_holland`
   ADD PRIMARY KEY (`id_ujian_holland`);
+
+--
+-- Indeks untuk tabel `tb_ujian_papi`
+--
+ALTER TABLE `tb_ujian_papi`
+  ADD PRIMARY KEY (`id_ujian_papi`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -946,13 +1251,19 @@ ALTER TABLE `tb_berkas`
 -- AUTO_INCREMENT untuk tabel `tb_data_jawaban_cfit`
 --
 ALTER TABLE `tb_data_jawaban_cfit`
-  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id_jawaban_cfit` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_jawaban_holland`
 --
 ALTER TABLE `tb_data_jawaban_holland`
-  MODIFY `id_jawaban_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jawaban_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_data_jawaban_papi`
+--
+ALTER TABLE `tb_data_jawaban_papi`
+  MODIFY `id_jawaban_papi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_data_keluarga`
@@ -1018,7 +1329,7 @@ ALTER TABLE `tb_nilai`
 -- AUTO_INCREMENT untuk tabel `tb_nilai_cfit`
 --
 ALTER TABLE `tb_nilai_cfit`
-  MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_nilai_pwb`
@@ -1039,6 +1350,12 @@ ALTER TABLE `tb_perusahaan`
   MODIFY `id_perusahaan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_pesan`
+--
+ALTER TABLE `tb_pesan`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_psikolog`
 --
 ALTER TABLE `tb_psikolog`
@@ -1051,22 +1368,46 @@ ALTER TABLE `tb_soal_cfit`
   MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_soal_ist`
+--
+ALTER TABLE `tb_soal_ist`
+  MODIFY `id_soal_ist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
   MODIFY `id_soal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_soal_papi`
+--
+ALTER TABLE `tb_soal_papi`
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_soal_tpa`
+--
+ALTER TABLE `tb_soal_tpa`
+  MODIFY `id_soal_tpa` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_ujian`
 --
 ALTER TABLE `tb_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_ujian_holland`
 --
 ALTER TABLE `tb_ujian_holland`
-  MODIFY `id_ujian_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ujian_holland` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_ujian_papi`
+--
+ALTER TABLE `tb_ujian_papi`
+  MODIFY `id_ujian_papi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

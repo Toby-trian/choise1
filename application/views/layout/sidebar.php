@@ -39,8 +39,8 @@
         <ul class="treeview-menu">
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_cfit" || $this->uri->segment(2)=="Soal_cfit"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_cfit') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
           <!-- <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_admin"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/Soal_Holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li> -->
-          <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_perusahaan"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/data_perusahaan') ?>"><i class="icon fa fa-circle-o"></i> MBTI</a></li>
-          <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_psikolog"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/data_psikolog') ?>"><i class="icon fa fa-circle-o"></i> DISC</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_ist"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_ist') ?>"><i class="icon fa fa-circle-o"></i> IST</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_psikolog"){echo "active";}?>" href="<?php echo base_url('Soal/data_psikolog') ?>"><i class="icon fa fa-circle-o"></i> DISC</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_papi"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_papi') ?>"><i class="icon fa fa-circle-o"></i> Papikostik</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_tpa"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa') ?>"><i class="icon fa fa-circle-o"></i> TPA</a></li>
         </ul>

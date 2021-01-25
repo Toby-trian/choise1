@@ -73,4 +73,16 @@ class Mdl_soal extends CI_Model {
 		return $query->result_array();
 	}
 
+
+	// SOAL IST
+	public function ambildata_ist(){
+		$query=$this->db->get('tb_soal_ist');
+		return $query->result_array();
+	}
+
+	public function tambahdata_ist($paket)
+	{
+		$this->db->insert('tb_soal_ist', $paket);
+		return $this->db->affected_rows();
+	}
 }
