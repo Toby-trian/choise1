@@ -72,6 +72,7 @@
                   $nilai_e = $key_holland->nilai_e;
                   $nilai_k = $key_holland->nilai_k;
                 }
+
                 ?>
                <!--  
                 <div class="modal fade" id="myModal" role="dialog">
@@ -169,6 +170,43 @@
                 <tr>
                   <th style="text-align: right">K</th>
                   <td><?php echo $nilai_k ?></td>
+                </tr>
+                <tr>
+                  <th>Nilai Papikostik :</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="text-align: right;">G</th>
+                  <td>
+                    <?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_papi WHERE jawaban='G' AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+
+                    echo $result[0]['jumlah'];
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="text-align: right;">N</th>
+                  <td>
+                    <?php
+                     $n = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_papi WHERE jawaban='N' AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $n->result_array();
+
+                    echo $result[0]['jumlah'];
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="text-align: right;">A</th>
+                  <td>
+                    <?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_papi WHERE jawaban='A' AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+
+                    echo $result[0]['jumlah'];
+                    ?>
+                  </td>
                 </tr>
 
                 <?php $modal++;  }?>

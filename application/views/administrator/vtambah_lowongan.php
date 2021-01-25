@@ -19,7 +19,7 @@
           <form action="<?php echo base_url('Administrator/Data_lowongan/tambahdata') ?>" method="post">
             <div class="form-group">
               <label class="control-label">Nama Lowongan</label>
-              <input class="form-control" name="nama_lowongan" type="text" placeholder="Enter full name">
+              <input class="form-control form-control-user" name="nama_lowongan" type="text" placeholder="Enter full name">
             </div>
             <div class="form-group">
               <label class="control-label">Perusahaan</label>

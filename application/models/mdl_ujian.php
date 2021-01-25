@@ -36,25 +36,37 @@ class Mdl_ujian extends CI_Model {
 	}
 
 	public function insert_jawaban($paket)
-		{
-			$this->db->insert('tb_data_jawaban_cfit', $paket);
-			return $this->db->affected_rows();
+	{
+		$this->db->insert('tb_data_jawaban_cfit', $paket);
+		return $this->db->affected_rows();
 	}
 
 	public function jawaban_holland($paket)
-		{
-			$this->db->insert('tb_data_jawaban_holland', $paket);
-			return $this->db->affected_rows();
+	{
+		$this->db->insert('tb_data_jawaban_holland', $paket);
+		return $this->db->affected_rows();
 	}
 
 	public function update($where,$data,$table){
-    if($this->db->update($table, $data, $where)){
-      return true;
-    }else{
-      return false;
-    }
-  } 
+		if($this->db->update($table, $data, $where)){
+			return true;
+		}else{
+			return false;
+		}
+	} 
+
+
+	public function get_questions_papi($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_papi WHERE id_soal='$rdr' ");
+		return $query->row();
+	}
 	
+
+	public function insert_jawaban_papi($paket)
+	{
+		$this->db->insert('tb_data_jawaban_papi', $paket);
+		return $this->db->affected_rows();
+	}
 // ============================================================================================
 	
 }

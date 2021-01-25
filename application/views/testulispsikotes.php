@@ -82,6 +82,30 @@ $id_pelamar=$this->session->userdata('ses_id');
 							</td>
 						</tr>
 					<?php 	} ?>
+
+					<!-- Papi -->
+					<tr>
+						<?php
+						foreach ($papi as $key_papi) { ?>
+							<td><?php echo $no++; ?></td>
+							<td><?php echo $key_papi['nama_ujian']; ?></td>
+							<td><?php echo date('d F Y H:i:s', strtotime($key_papi['waktu_mulai'])) ?> WIB</td>
+							<td><?php echo date('d F Y H:i:s', strtotime($key_papi['waktu_akhir'])) ?> WIB</td>
+							<!-- <td><?php echo date('Y-m-d H:i:s') ?></td> -->
+							<td>
+
+								<?php 
+								date_default_timezone_set("Asia/Jakarta");
+								if (date('d F Y H:i:s') < date('d F Y H:i:s', strtotime($key_papi['waktu_mulai']))) {
+									echo "belum dimulai";
+								}elseif(date('d F Y H:i:s') >= date('d F Y H:i:s', strtotime($key_papi['waktu_mulai'])) && date('d F Y H:i:s') <= date('d F Y H:i:s', strtotime($key_papi['waktu_akhir']))){ ?>
+									<a href="<?php  echo base_url('Pelamar/Ujian/panduan_papi/'.$id_pelamar.'/'. $key_papi['id_ujian_papi']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
+								<?php } elseif(date('d F Y H:i:s') > date('d F Y H:i:s', strtotime($key_papi['waktu_akhir']))){
+									echo "Ujian sudah berakhir";
+								}?>
+							</td>
+						</tr>
+					<?php 	} ?>
 				</tbody>
 			</table>
 		</div>

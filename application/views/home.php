@@ -68,11 +68,8 @@
             <h1>Ayo mulai karir Anda disini!</h1>
             <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
             <div>
-<<<<<<< HEAD
               <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Daftar Sekarang</a>
-=======
               <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
->>>>>>> 285880794951d5a13e06fbd226b7e97d2827052f
             </div>
           </div>
         </div>

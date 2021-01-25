@@ -20,6 +20,11 @@ class Mdl_data_ujian extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_ujian_papi(){
+		$query=$this->db->query("SELECT * FROM tb_ujian_papi WHERE status='tersedia'");
+		return $query->result_array();
+	}
+
 	public function ambildata_ujian2($id){
 		$query=$this->db->query("SELECT * FROM tb_ujian WHERE id_ujian=$id");
 		return $query->result_array();

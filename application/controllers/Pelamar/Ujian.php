@@ -8,6 +8,7 @@ class Ujian extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url','form');
 		$this->load->model('Mdl_ujian');
+		$this->load->model('Mdl_data_ujian');
 		$this->load->library('form_validation');
 		$this->load->database();
 		if($this->session->userdata('masuk') == FALSE){
@@ -34,6 +35,17 @@ class Ujian extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('ujian');
+	}
+
+	public function testulispsikotes()
+	{
+		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();	
+		$paket['holland'] = $this->Mdl_data_ujian->ambildata_ujian_holland();
+		// $paket['essay'] = $this->Mdl_data_ujian->ambildata_ujian_essay();
+		// $paket['studi'] = $this->Mdl_data_ujian->ambildata_ujian_studi();
+		$paket['papi'] = $this->Mdl_data_ujian->ambildata_ujian_papi();
+		$this->load->view('testulispsikotes',$paket);
+
 	}
 
 	public function ujian()
@@ -685,5 +697,137 @@ class Ujian extends CI_Controller {
 	{
 		$this->load->view('pelamar/ujian/disc/discsoal2');
 	}
+
+
+// Papikostik
+
+
+	public function panduan_papi($id_pelamar, $idUjian_papi){
+		$this->session->set_userdata('ses_papi', $idUjian_papi);
+		$this->load->view('pelamar/ujian/papi/panduan');
+	}
 	
+	public function start_ujian_papikostik($rdr)
+	{
+		$data['papikos'] = $this->Mdl_ujian->get_questions_papi($rdr);
+		$this->load->view('pelamar/ujian/papi/v_papi',$data);
+	}
+
+	public function frame_ujian_papi($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['papikos'] = $this->Mdl_ujian->get_questions_papi($rdr);
+
+
+		if (!empty($data['papikos'])) {
+			$id_soal = $data['papikos']->id_soal;
+			$nomor_soal = $data['papikos']->no_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_papi WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban'] = $query->row();
+		$this->load->view('pelamar/ujian/papi/frame_ujian_papi', $data);
+	}
+
+	public function masukkan_jawaban_papi($redirect=null){
+
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_papi'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'no_soal' => $nomor_soal,
+			'jawaban' => $jawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_papi WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_papi($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_papi/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'no_soal' =>$nomor_soal
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_papi');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_papi/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_endpapi($redirect=null){
+
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_papi'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'no_soal' => $nomor_soal,
+			'jawaban' => $jawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_papi WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_papi($data);
+			}
+			echo '<script>window.top.location.href = "testulispsikotes";</script>';
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'no_soal' =>$nomor_soal
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_papi');
+			}
+			echo '<script>window.top.location.href = "testulispsikotes";</script>';
+		}
+	}
+
 }

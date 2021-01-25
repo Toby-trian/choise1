@@ -11,6 +11,7 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/dataTables.bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/datetimepicker/js/bootstrap-datetimepicker.js') ?>"></script>
 <script type="text/javascript">$('#sampleTable').DataTable();</script>
+<script type="text/javascript">$('#sampleTable2').DataTable();</script>
 <!-- The javascript plugin to display page loading on top-->
 <script src="<?php echo base_url('assets/js/plugins/pace.min.js') ?>"></script>
 <!-- Page specific javascripts-->
@@ -74,7 +75,7 @@ var pieChart = new Chart(ctxp).Pie(pdata);
  }
 </script>
 <script type="text/javascript">
-  $('#notifikasi').delay(5000).slideUp('slow');
+  $('#notifikasi').delay(3000).slideUp('slow');
 
 </script>
 
