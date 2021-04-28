@@ -63,7 +63,7 @@
 						<td><?php echo $nik ?></td>
 					</tr>
 					<tr>
-						<td><b>Posisi Dilamar</b></td>
+						<td><b>Tujuan</b></td>
 						<td><?php echo $nama_jabatan ?></td>
 					</tr>
 					<!-- <tr>
