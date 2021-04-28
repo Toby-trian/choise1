@@ -73,6 +73,24 @@ class Mdl_soal extends CI_Model {
 		return $query->result_array();
 	}
 
+	// SOAL TPA 3
+	public function ambildata_tpa_seksi3(){
+		$query = $this->db->get_where('tb_soal_tpa', array('seksi = ' => 3));
+		return $query->result_array();
+	}
+
+	// SOAL TPA 4
+	public function ambildata_tpa_seksi4(){
+		$query = $this->db->get_where('tb_soal_tpa', array('seksi = ' => 4));
+		return $query->result_array();
+	}
+
+	// SOAL TPA 5
+	public function ambildata_tpa_seksi5(){
+		$query = $this->db->get_where('tb_soal_tpa', array('seksi = ' => 5));
+		return $query->result_array();
+	}
+
 
 	// SOAL IST
 	public function ambildata_ist(){

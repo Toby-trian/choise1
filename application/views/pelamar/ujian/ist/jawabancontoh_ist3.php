@@ -13,9 +13,9 @@
 	</div><!--/.row-->
 	<?php  
 	$idUjian=  $this->session->userdata('ses_ujian');
-	$ujian = $this->db->query("SELECT * FROM tb_ujian WHERE id_ujian = $idUjian");
+	$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
 	foreach ($ujian->result() as $key ) {
-		$end_lat1 = $key->end_lat_sub1;
+		$end_lat3 = $key->end_lat_sub3;
 	}
 	?>
 
@@ -25,25 +25,13 @@
 				<!-- $jawaban1 =  -->
 				<p>1. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab1') ?>)</p>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="latcfit11">e.</label>
+					<label class="form-check-label" for="latist31">d.</label>
 					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/2e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
+						<p>(Berjalan)</p>
 					</center>
 				</div>
-				<div style="padding-top: 3.9%">
-					<p> Jawaban yang benar</p>
-				</div>
-			</div>
-			<div class="col-sm-12" style="margin-top: 10px;">
-				<p>2. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab2') ?>)</p>
-				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="latcfit12">e</label>
-					<center>
-						<img src="<?php  echo base_url('assets3/images/soalcfit/subtes1/contoh/3e.jpg') ?>" class="img-responsive" alt="" style="width: 50px; border-radius: 5px;">
-					</center>
-				</div>
-				<div style="padding-top: 3.9%">
-					<p> Jawaban yang benar</p>
+				<div style="padding-top: 6%">
+					<p> Adalah jawaban yang benar</p>
 				</div>
 			</div>
 		</div>
@@ -51,14 +39,14 @@
 		$id_ujian = $this->session->userdata('ses_ujian');
 		?>
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian/'.$id_ujian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
+			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_ist3/'.$id_ujian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
 		</div>
 	</div>
 
 </div>	<!--/.main-->
 
 <script type="text/javascript">
-  var countDownDate = new Date("<?php echo $end_lat1 ?>").getTime();
+  var countDownDate = new Date("<?php echo $end_lat3 ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

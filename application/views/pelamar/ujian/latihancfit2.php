@@ -5,7 +5,7 @@
 
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h3 class="page-header">Soal Latihan</h3>
+			<h3 class="page-header">Soal IST Subtes 2</h3>
 		</div>
 		<div class="col-lg-3">
 			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>

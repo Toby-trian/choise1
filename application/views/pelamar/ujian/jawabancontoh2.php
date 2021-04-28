@@ -26,7 +26,7 @@
 					</center>
 				</div>
 			</div>
-				<p style="margin-top: 11%">Jawaban anda: <?php echo $this->session->userdata('ses_jawab1')?> dan <?php echo $this->session->userdata('ses_jawab2') ?></p>
+				<p style="margin-top: 11%">Jawaban anda: <?php echo $this->session->userdata('ses_jawab1')?> ?></p>
 		</div>
 		<?php $id_pelamar = $this->session->userdata('ses_id');
 		$id_ujian = $this->session->userdata('ses_ujian');

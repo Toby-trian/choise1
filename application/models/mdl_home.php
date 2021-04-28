@@ -10,8 +10,10 @@ class Mdl_home extends CI_Model {
 	}
 
 	// DATA LEVEL
+	// Updated by Tobi 3 Feb 2021
+	// Menampilkan data di home sampai waktu yg di tentukan
 	public function ambildata(){
-		$query=$this->db->query("SELECT * FROM tb_lowongan");
+		$query=$this->db->query("SELECT * FROM tb_lowongan WHERE jadwal_seleksi >= CURRENT_DATE()");
 		return $query->result_array();
 	}
 

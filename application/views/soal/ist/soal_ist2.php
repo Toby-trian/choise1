@@ -22,34 +22,54 @@
                 <h4 class="modal-title">Tambah Data</h4>
               </div>
               <div class="modal-body">
-                <form action="<?php echo base_url('Soal/Soal_ist/tambahdata') ?>" method="post">
+                <form action="<?php echo base_url('Soal/soal_ist/tambahdata2') ?>" method="post">
                   <div class="form-group">
                     <label class="control-label">No Soal</label>
                     <input type="text" name="nomor_soal" class="form-control" required="required" autocomplete="off" >
                   </div>
                   <div class="form-group">
                     <label class="control-label">Soal IST</label>
-                    <input type="text" name="soal_ist" class="form-control" autocomplete="off" >
+                    <input type="text" name="soal_ist class="form-control" autocomplete="off" >
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Opsi A</label>
-                    <input type="text" name="opsi_a" class="form-control" required="required" autocomplete="off">
+                    <label class="control-label">Opsi 1</label>
+                    <input type="text" name="opsi_1" class="form-control" required="required" autocomplete="off">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Opsi B</label>
-                    <input type="text" name="opsi_b" class="form-control" required="required" autocomplete="off">
+                    <label class="control-label">Opsi 2</label>
+                    <input type="text" name="opsi_2" class="form-control" required="required" autocomplete="off">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Opsi C</label>
-                    <input type="text" name="opsi_c" class="form-control" required="required" autocomplete="off">
+                    <label class="control-label">Opsi 3</label>
+                    <input type="text" name="opsi_3" class="form-control" required="required" autocomplete="off">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Opsi D</label>
-                    <input type="text" name="opsi_d" class="form-control" required="required" autocomplete="off">
+                    <label class="control-label">Opsi 4</label>
+                    <input type="text" name="opsi_4" class="form-control" required="required" autocomplete="off">
                   </div>
                   <div class="form-group">
-                    <label class="control-label">Opsi E</label>
-                    <input type="text" name="opsi_e" class="form-control" required="required" autocomplete="off">
+                    <label class="control-label">Opsi 5</label>
+                    <input type="text" name="opsi_5" class="form-control" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Opsi 6</label>
+                    <input type="text" name="opsi_6" class="form-control" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Opsi 7</label>
+                    <input type="text" name="opsi_7" class="form-control" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Opsi 8</label>
+                    <input type="text" name="opsi_8" class="form-control" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Opsi 9</label>
+                    <input type="text" name="opsi_9" class="form-control" required="required" autocomplete="off">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Opsi 10</label>
+                    <input type="text" name="opsi_10" class="form-control" required="required" autocomplete="off">
                   </div>
                   <div class="form-group">
                     <label class="control-label">Jawaban</label>
@@ -96,11 +116,16 @@
                   <th>No</th>
                   <th>Soal</th>
                   <th>Subtes Ke-</th>
-                  <th>Opsi A</th>
-                  <th>Opsi B</th>
-                  <th>Opsi C</th>
-                  <th>Opsi D</th>
-                  <th>Opsi E</th>
+                  <th>Opsi 1</th>
+                  <th>Opsi 2</th>
+                  <th>Opsi 3</th>
+                  <th>Opsi 4</th>
+                  <th>Opsi 5</th>
+                  <th>Opsi 6</th>
+                  <th>Opsi 7</th>
+                  <th>Opsi 8</th>
+                  <th>Opsi 9</th>
+                  <th>Opsi 10</th>
                   <th>Jawaban</th>
                   <th>Aksi</th>
                 </tr>
@@ -119,36 +144,56 @@
                           <h4 class="modal-title">Tambah Data</h4>
                         </div>
                         <div class="modal-body">
-                          <form action="<?php echo base_url('Soal/Soal_ist/editist/'.$key['id_soal']) ?>" method="post">
+                          <form action="<?php echo base_url('Soal/soal_ist/editist2/'.$key['id_soal']) ?>" method="post">
                             <div class="form-group">
                               <label class="control-label">No Soal</label>
                               <input type="hidden" name="id_soal" value="<?php echo $key
                               ['id_soal'] ?>">
                               <input type="text" name="nomor_soal" class="form-control" required="required" autocomplete="off" value="<?php echo $key['nomor_soal'] ?>" readonly>
                             </div>
-                            <div class="form-group">
+                           <div class="form-group">
                               <label class="control-label">Soal IST</label>
                               <input type="text" name="soal_ist" class="form-control" autocomplete="off" value="<?php echo $key['soal'] ?>" >
                             </div>
                             <div class="form-group">
-                              <label class="control-label">Opsi A</label>
-                              <input type="text" name="opsi_a" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_a'] ?>">
+                              <label class="control-label">Opsi 1</label>
+                              <input type="text" name="opsi_a" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_1'] ?>">
                             </div>
                             <div class="form-group">
-                              <label class="control-label">Opsi B</label>
-                              <input type="text" name="opsi_b" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_b'] ?>">
+                              <label class="control-label">Opsi 2</label>
+                              <input type="text" name="opsi_b" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_2'] ?>">
                             </div>
                             <div class="form-group">
-                              <label class="control-label">Opsi C</label>
-                              <input type="text" name="opsi_c" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_c'] ?>">
+                              <label class="control-label">Opsi 3</label>
+                              <input type="text" name="opsi_c" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_3'] ?>">
                             </div>
                             <div class="form-group">
-                              <label class="control-label">Opsi D</label>
-                              <input type="text" name="opsi_d" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_d'] ?>">
+                              <label class="control-label">Opsi 4</label>
+                              <input type="text" name="opsi_d" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_4'] ?>">
                             </div>
                             <div class="form-group">
-                              <label class="control-label">Opsi E</label>
-                              <input type="text" name="opsi_e" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_e'] ?>">
+                              <label class="control-label">Opsi 5</label>
+                              <input type="text" name="opsi_e" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_5'] ?>">
+                            </div>
+                             <div class="form-group">
+                              <label class="control-label">Opsi 6</label>
+                              <input type="text" name="opsi_a" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_6'] ?>">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">Opsi 7</label>
+                              <input type="text" name="opsi_b" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_7'] ?>">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">Opsi 8</label>
+                              <input type="text" name="opsi_c" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_8'] ?>">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">Opsi 9</label>
+                              <input type="text" name="opsi_d" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_9'] ?>">
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label">Opsi 10</label>
+                              <input type="text" name="opsi_e" class="form-control" required="required" autocomplete="off" value="<?php echo $key['opsi_10'] ?>">
                             </div>
                             <div class="form-group">
                               <label class="control-label">Jawaban</label>
@@ -177,7 +222,7 @@
                         </div>
                         <div class="modal-body">
                           <p>Ingin hapus Soal Ini?</p>
-                          <a href="<?php echo base_url('Soal/Soal_ist/hapus/'.$key['id_soal']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
+                          <a href="<?php echo base_url('Soal/soal_ist/hapus/'.$key['id_soal']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;">Hapus <i class="fa fa-trash"></i></button></a>
                         </div>
                         <div class="modal-footer">
 
@@ -195,11 +240,16 @@
                     <td><?php echo $key['soal'] ?></td>
                     <td><?php echo $key['subtes'] ?></td>
                     <!-- jawaban -->
-                    <td><?php echo $key['opsi_a'] ?></td>
-                    <td><?php echo $key['opsi_b'] ?></td>
-                    <td><?php echo $key['opsi_c'] ?></td>
-                    <td><?php echo $key['opsi_d'] ?></td>
-                    <td><?php echo $key['opsi_e'] ?></td>
+                    <td><?php echo $key['opsi_1'] ?></td>
+                    <td><?php echo $key['opsi_2'] ?></td>
+                    <td><?php echo $key['opsi_3'] ?></td>
+                    <td><?php echo $key['opsi_4'] ?></td>
+                    <td><?php echo $key['opsi_5'] ?></td>
+                    <td><?php echo $key['opsi_6'] ?></td>
+                    <td><?php echo $key['opsi_7'] ?></td>
+                    <td><?php echo $key['opsi_8'] ?></td>
+                    <td><?php echo $key['opsi_9'] ?></td>
+                    <td><?php echo $key['opsi_10'] ?></td>
 
 
                     <td><?php echo $key['jawaban'] ?></td>
@@ -219,11 +269,16 @@
                     <th>No</th>
                     <th>Soal</th>
                     <th>Subtes Ke-</th>
-                    <th>Opsi A</th>
-                    <th>Opsi B</th>
-                    <th>Opsi C</th>
-                    <th>Opsi D</th>
-                    <th>Opsi E</th>
+                    <th>Opsi 1</th>
+                    <th>Opsi 2</th>
+                    <th>Opsi 3</th>
+                    <th>Opsi 4</th>
+                    <th>Opsi 5</th>
+                    <th>Opsi 6</th>
+                    <th>Opsi 7</th>
+                    <th>Opsi 8</th>
+                    <th>Opsi 9</th>
+                    <th>Opsi 10</th>
                     <th>Jawaban</th>
                     <th>Aksi</th>
                   </tr>

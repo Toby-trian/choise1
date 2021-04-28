@@ -53,17 +53,18 @@
 					<h3><?php echo $nama_lowongan ?></h3>
 					<p><?php echo $nama_perusahaan ?></p><br>
 					<?php if ($status_lamaran == "Diterima") { ?>
-						<!-- <div>
+						
+						<div>
 							<a href="<?php  echo base_url('Pelamar/Lamaran/jadwalseleksi/'.$id_lowongan) ?>" class="btn btn-primary btn-block mr-2 mb-2">Lihat Jadwal</a>
-						</div> -->
+						</div> 
 						<div class="button-lm-tittle">
 							<a href="<?php  echo base_url('Pelamar/Pelamar/ujian/'.$id_lowongan) ?>" class="btn btn-primary btn-block mr-2 mb-2">Ujian Saya</a>
 						</div>
 					<?php } ?>
 					<?php $id_pelamar = $this->session->userdata('ses_id') ?>
-					<div class="button-lm-tittle">
+					<!-- <div class="button-lm-tittle">
 						<a href="<?php  echo base_url('Pelamar/Pengumuman/pengumuman/'.$id_apply) ?>" class="btn btn-primary btn-block mr-2 mb-2">Pengumuman</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		<?php } ?>

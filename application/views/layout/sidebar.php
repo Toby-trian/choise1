@@ -30,21 +30,36 @@
 
       <li class="treeview <?php if($this->uri->segment(2)=="Data_ujian"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Ujian</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
+          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_ist') ?>"><i class="icon fa fa-circle-o"></i> IST</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_ist2') ?>"><i class="icon fa fa-circle-o"></i> IST 2</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_ujian_holland"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li>
         </ul>
       </li>
 
-      <li class="treeview <?php if($this->uri->segment(2)=="Soal_cfit" || $this->uri->segment(2)=="Soal_papi" || $this->uri->segment(2)=="Soal_tpa"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Bank Soal</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+      <li class="treeview <?php if($this->uri->segment(2)=="Soal_cfit" || $this->uri->segment(2)=="Soal_papi"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Bank Soal</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_cfit" || $this->uri->segment(2)=="Soal_cfit"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_cfit') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
+k          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_cfit" || $this->uri->segment(2)=="Soal_cfit"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_cfit') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
           <!-- <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_admin"){echo "active";}?>" href="<?php echo base_url('Administrator/Soal/Soal_Holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li> -->
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_ist"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_ist') ?>"><i class="icon fa fa-circle-o"></i> IST</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_psikolog"){echo "active";}?>" href="<?php echo base_url('Soal/data_psikolog') ?>"><i class="icon fa fa-circle-o"></i> DISC</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_papi"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_papi') ?>"><i class="icon fa fa-circle-o"></i> Papikostik</a></li>
-          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Soal_tpa"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa') ?>"><i class="icon fa fa-circle-o"></i> TPA</a></li>
         </ul>
       </li>
+
+      <!-- Sidebar Soal TPA baru by Tobi 8 Feb 2021  -->
+
+      <li class="treeview <?php if($this->uri->segment(4)=="Soal_tpa"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Soal TPA</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="treeview-item <?php if($this->uri->segment(3)=="Soal_tpa"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa') ?>"><i class="icon fa fa-circle-o"></i> Seksi 1</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(4)=="Soal_tpa_2"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa/Soal_tpa_2') ?>"><i class="icon fa fa-circle-o"></i> Seksi 2</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(4)=="Soal_tpa_3"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa/Soal_tpa_3') ?>"><i class="icon fa fa-circle-o"></i> Seksi 3</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(4)=="Soal_tpa_4"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa//Soal_tpa_4') ?>"><i class="icon fa fa-circle-o"></i> Seksi 4</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(4)=="Soal_tpa_5"){echo "active";}?>" href="<?php echo base_url('Soal/Soal_tpa//Soal_tpa_5') ?>"><i class="icon fa fa-circle-o"></i> Seksi 5</a></li>
+          </ul>
+      </li>
+
+
 
       <li class="treeview <?php if($this->uri->segment(3)=="data_level" || $this->uri->segment(3)=="data_admin" || $this->uri->segment(3)=="data_perusahaan" || $this->uri->segment(3)=="data_psikolog" || $this->uri->segment(3)=="data_pelamar"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">User</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
@@ -55,6 +70,8 @@
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_pelamar"){echo "active";}?>" href="<?php echo base_url('Administrator/Welcome/data_pelamar') ?>"><i class="icon fa fa-circle-o"></i> Pelamar</a></li>
         </ul>
       </li>
+
+
 
 
     <?php } else if ($this->session->userdata('ses_idLevel') == 'Admin Sdm') { ?>

@@ -39,8 +39,9 @@
                 <li><a href="#flow-section" class="nav-link">ALUR PENDAFTARAN</a></li>
                 <li><a href="#faq-section" class="nav-link">FAQ</a></li>
                 <!-- <li><a href="#contact-section" class="nav-link">HUBUNGI KAMI</a></li> -->
-                <li><a href="<?php echo base_url('Login_pelamar/') ?>" class="nav-link">MASUK</a></li>
-                <li><a href="<?php echo base_url('Daftar') ?>" class="nav-link">DAFTAR</a></li>
+                <li><a href="<?php echo base_url('Login_pelamar/') ?>" class="nav-link">MASUK / DAFTAR</a></li>
+	<!-- Commented by Tobi 4 Feb 2021 -->
+         <!--       <li><a href="<?php echo base_url('Daftar') ?>" class="nav-link">DAFTAR</a></li>	-->
 <!--                 <li><a href="#testimonials-section" class="nav-link">FAQ</a></li>
   <li><a href="#blog-section" class="nav-link">HUBUNGI KAMI</a></li> -->
 <!--                 <li><a class="nav-link">MASUK</a></li>
@@ -68,8 +69,8 @@
             <h1>Ayo mulai karir Anda disini!</h1>
             <p class="mb-5">Bangun masa depan Anda dengan menemukan pekerjaan impian Anda di sini.</p>
             <div>
+              <a href="<?php echo base_url('Login_pelamar') ?>" class="btn btn-primary mr-2 mb-2">Masuk</a>
               <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Daftar Sekarang</a>
-              <a href="<?php echo base_url('Daftar') ?>" class="btn btn-primary mr-2 mb-2">Registrasi Sekarang</a>
             </div>
           </div>
         </div>
@@ -87,29 +88,60 @@
       </div>
     </div>
 
-    <div class="row align-items-stretch">
+<!-- Edited by Tobi 3 Feb 2021 -->
+<!-- Menampilkan data di home sampai waktu yg di tentukan -->
+
+    <div class="row align-items-stretch" data-aos="fade-up">
       <?php 
-      foreach ($array as $key) { ?>
-        <?php $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
-        foreach ($perusahaan->result() as $key_perusahaan) {
-          if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) {
-            $nama_perusahaan = $key_perusahaan->nama_perusahaan;
-            $logo_perusahaan = $key_perusahaan->logo_perusahaan;
-          } 
-         } ?>
-        <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
-          <div class="unit-4 d-block">
-            <div class="card-img-block">
-              <img style="width: 130px" class="card-img-top" src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>">
-            </div><br>
-            <h3><?php echo $key['nama_jabatan'] ?></h3>
-            <p><?php echo $nama_perusahaan ?></p>
-            <div>
-              <a href="<?php echo base_url('Login_pelamar/') ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+      if (!$yoman) {?>
+        	<div class="col-12 text-center mb-3">
+          		<br><h4><b>Mohon maaf untuk saat ini belum tersedia lowongan pekerjaan.</b></h4></br>
+          	</div>
+    </div>
+
+     <div class="row align-items-stretch" data-aos="fade-up">
+     	<div class="col-12 text-center mb-3">
+			<br><p><b>Sering-sering pantau sosmed kami dbawah ini untuk mendapatkan update terbaru.</b></p>
+          		<p>
+          			<a href="https://www.facebook.com/chaakraconsulting/" target="blank" class="p-3"><span class="icon-facebook"></span></a>
+          			<a href="https://www.facebook.com/chaakraconsulting/"><b>Chaakra Consulting</b></a> 
+          		</p>
+          		<p>
+          			<a href="https://www.instagram.com/chaakraconsulting/" target="blank" class="p-3"><span class="icon-instagram"></span></a>
+          			<a href="https://www.instagram.com/chaakraconsulting/"><b>Chaakra Consulting</b></a>
+         		</p>
+
+          		<p><b>.</b></p></br>  
+         </div>      				
+     </div>
+ 
+
+      <?php } else { ?>
+      <?php
+          foreach ($yoman as $key) { ?>
+          <?php $perusahaan = $this->db->query("SELECT * FROM tb_perusahaan");
+          foreach ($perusahaan->result() as $key_perusahaan) {
+            if ($key_perusahaan->id_perusahaan==$key['id_perusahaan']) {
+              $nama_perusahaan = $key_perusahaan->nama_perusahaan;
+              $logo_perusahaan = $key_perusahaan->logo_perusahaan;
+            } 
+          } ?>
+          <div class="col-md-6 col-lg-3 mb-3 mb-lg-3" data-aos="fade-up">
+            <div class="unit-4 d-block">
+              <div class="card-img-block">
+                <img style="width: 130px" class="card-img-top" src="<?php echo ($logo_perusahaan != '' ? base_url('./upload/logo_perusahaan/' . $logo_perusahaan) : base_url('./upload/logo_perusahaan/img_default.jpg')); ?>">
+              </div><br>
+              <h3><?php echo $key['nama_jabatan'] ?></h3>
+              <p><?php echo $nama_perusahaan ?></p>
+              <div>
+                <a href="<?php echo base_url('Login_pelamar/') ?>" class="btn btn-primary mr-2 mb-2">Lamar Posisi</a>
+              </div>
             </div>
           </div>
-        </div>
+        <?php } ?>
       <?php } ?>
+      
+      
     </div>
   </div>
 </div>
@@ -208,31 +240,33 @@
         <div class="row" data-aos="fade-up">       
           <div class="col-md-12">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
+
+            <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Apakah proses rekrutmen dan seleksi akan dipungut biaya?
+                    Apakah perusahaan yang buka lowongan disini dijamin kredibilitasnya?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
-                    <p>Untuk seluruh proses rekrutmen dan seleksi yang dijalani oleh setiap pelamar TIDAK DIPUNGUT BIAYA APAPUN. Semua proses kegiatan rekrutmen dan seleksi dilakukan secara transparan dan bebas dari pungutan biaya apapun. Berhati-hatilah pada berbagai pihak yang menawarkan posisi jabatan yang mengatasnamakan perusahaan kami dengan membayar sejumlah uang tertentu. Selain 1 nomor yang sudah kami sediakan untuk menginformasikan (melalui SMS/Whatsapp) atas konfirmasi kehadiran dan pengumuman kelolosan peserta. Kami tidak bertanggung jawab atas kerugian yang ditanggung oleh pelamar atas ketidaksesuaian informasi dan mentaati alur yang sudah kami tetapkan. Adapun pengumuman kelolosan yang disampaikan panitia seleksi adalah bersifat SAH dan TIDAK BISA DIGANGGU GUGAT.</p>
+                    <p>Bahwa seluruh perusahaan yang menjadi klien kami dan membuka lowongan diaplikasi ini telah melewati review internal dan kami menjamin bahwa perusahaan yang ada memang kredibel.</p>
                   </div>
                 </div>
               </div>
+
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Apakah pelamar bisa melamar lebih dari 1 jabatan?
+                      Apakah proses rekrutmen dan seleksi akan dipungut biaya?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
-                    <p>TIDAK BISA. Setiap pelamar hanya diperbolehkan untuk memilih 1 posisi jabatan saja. oleh karena itu pertimbangkan terlebih dahulu sebelum melakukan submit pada posisi yang anda pilih. KECUALI bila Anda berniat untuk melamar di lebih dari satu perusahaan yang berbeda.</p>
+                    <p>Untuk seluruh proses rekrutmen dan seleksi yang dijalani oleh setiap pelamar TIDAK DIPUNGUT BIAYA APAPUN. Semua proses kegiatan rekrutmen dan seleksi dilakukan secara transparan dan bebas dari pungutan biaya apapun. Berhati-hatilah pada berbagai pihak yang menawarkan posisi jabatan yang mengatasnamakan perusahaan kami dengan membayar sejumlah uang tertentu. Selain 1 nomor yang sudah kami sediakan untuk menginformasikan (melalui SMS/Whatsapp) atas konfirmasi kehadiran dan pengumuman kelolosan peserta. Kami tidak bertanggung jawab atas kerugian yang ditanggung oleh pelamar atas ketidaksesuaian informasi dan mentaati alur yang sudah kami tetapkan. Adapun pengumuman kelolosan yang disampaikan panitia seleksi adalah bersifat SAH dan TIDAK BISA DIGANGGU GUGAT.</p>
                   </div>
                 </div>
               </div>
@@ -240,13 +274,13 @@
                 <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Bagaimana pelamar bisa mengetahui apakah lowongan kerjanya sudah diterima oleh Tim Seleksi Chaakra Consulting dengan baik?
+                      Apakah pelamar bisa melamar lebih dari 1 jabatan?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
-                    <p>Setiap data yang sudah lengkap dan sesuai dengan persyaratan yang diajukan akan diproses dengan baik sebagaimana mestinya. Adapun pelamar yang datanya sudah diterima dengan baik akan menerima notifikasi dari panitia. Oleh karena itu setiap pelamar diharapkan untuk mengisi kontak email aktif dan nomor handpone aktif yang digunakan untuk proses penginformasian tahapan pada kegiatan ini.</p>
+                    <p>TIDAK BISA. Setiap pelamar hanya diperbolehkan untuk memilih 1 posisi jabatan saja. oleh karena itu pertimbangkan terlebih dahulu sebelum melakukan submit pada posisi yang anda pilih. KECUALI bila Anda berniat untuk melamar di lebih dari satu perusahaan yang berbeda.</p>
                   </div>
                 </div>
               </div>
@@ -254,13 +288,13 @@
                 <div class="panel-heading" role="tab" id="headingFour">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Apakah kerahasiaan data yang diberikan oleh pelamar bisa dijamin kerahasiaannya?
+                      Bagaimana pelamar bisa mengetahui apakah lowongan kerjanya sudah diterima oleh Tim Seleksi Chaakra Consulting dengan baik?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                   <div class="panel-body">
-                    <p>Panitia menjamin penuh kerahasiaan data yang sudah diberikan oleh pelamar untuk semua rangkaian kegiatan rekrutmen dan seleksi. Adapun setiap data yang diberikan hanya digunakan untuk kepentingan rekrutmen dan seleksi sebagaimana yang menjadi tujuan kegiatan ini.</p>
+                    <p>Setiap data yang sudah lengkap dan sesuai dengan persyaratan yang diajukan akan diproses dengan baik sebagaimana mestinya. Adapun pelamar yang datanya sudah diterima dengan baik akan menerima notifikasi dari panitia. Oleh karena itu setiap pelamar diharapkan untuk mengisi kontak email aktif dan nomor handpone aktif yang digunakan untuk proses penginformasian tahapan pada kegiatan ini.</p>
                   </div>
                 </div>
               </div>
@@ -268,13 +302,13 @@
                 <div class="panel-heading" role="tab" id="headingFive">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      Kapan pengumuman kelolosan untuk kegiatan rekrutmen dan seleksi yang dijalani oleh pelamar?
+                      Apakah kerahasiaan data yang diberikan oleh pelamar bisa dijamin kerahasiaannya?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">
-                    <p>Untuk jadwal pengumuman tahapan kelolosan seleksi sudah ditampilkan di web yang sudah ditetapkan choise.chaakraconsulting.com. Silahkan dicermati untuk setiap detil tanggal pelaksanaannya. Setiap proses seleksi akan dilakukan sesuai dengan jadwal yang sudah ditetapkan oleh panitia. Adapun perubahan tanggal dan waktu akan tetap diinformasikan via web secara tepat waktu.</p>
+                    <p>Panitia menjamin penuh kerahasiaan data yang sudah diberikan oleh pelamar untuk semua rangkaian kegiatan rekrutmen dan seleksi. Adapun setiap data yang diberikan hanya digunakan untuk kepentingan rekrutmen dan seleksi sebagaimana yang menjadi tujuan kegiatan ini.</p>
                   </div>
                 </div>
               </div>
@@ -282,11 +316,25 @@
                 <div class="panel-heading" role="tab" id="headingSix">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                      Apa saja tahapan seleksi yang harus dilalui oleh pelamar? 
+                      Kapan pengumuman kelolosan untuk kegiatan rekrutmen dan seleksi yang dijalani oleh pelamar?
                     </a>
                   </h4>
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">
+                    <p>Untuk jadwal pengumuman tahapan kelolosan seleksi sudah ditampilkan di web yang sudah ditetapkan choise.chaakraconsulting.com. Silahkan dicermati untuk setiap detil tanggal pelaksanaannya. Setiap proses seleksi akan dilakukan sesuai dengan jadwal yang sudah ditetapkan oleh panitia. Adapun perubahan tanggal dan waktu akan tetap diinformasikan via web secara tepat waktu.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingSeven">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      Apa saja tahapan seleksi yang harus dilalui oleh pelamar? 
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                   <div class="panel-body">
                     <p>Untuk tahapan seleksi yang akan dijalankan oleh pelamar sudah ada di jadwal kegiatan seleksi di web choise.chaakraconsulting.com. Silahkan untuk dicermati tahapan dan waktu pelaksanaannya. Adapun tahapan seleksi yang diterapkan adalah melalui SISTEM GUGUR. Sehingga untuk nama-nama yang tidak ada dalam konfirmasi panitia berarti dinyatakan TIDAK LOLOS.</p>
                   </div>

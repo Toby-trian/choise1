@@ -510,9 +510,11 @@ class Pelamar extends CI_Controller {
 	
 	public function testulispsikotes()
 	{
-		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();
+		$paket['array'] = $this->Mdl_data_ujian->ambildata_ujian();
 		$paket['holland'] = $this->Mdl_data_ujian->ambildata_ujian_holland();	
-		$paket['papi'] = $this->Mdl_data_ujian->ambildata_ujian_papi();	
+		$paket['papi'] = $this->Mdl_data_ujian->ambildata_ujian_papi();
+		$paket['ist'] = $this->Mdl_data_ujian->ambildata_ujian_ist();
+		$paket['ist2'] = $this->Mdl_data_ujian->ambildata_ujian_ist2();	
 		$this->load->view('testulispsikotes',$paket);
 
 	}
@@ -544,6 +546,48 @@ class Pelamar extends CI_Controller {
 		$this->session->set_userdata('ses_jawab1', $jawaban1);
 		$this->session->set_userdata('ses_jawab2', $jawaban2);
 		$this->load->view('jawabancontoh');
+	}
+
+	public function ist($id_pelamar, $id_ujian)
+	{
+		$idUjian = $this->session->set_userdata('ses_ujian', $id_ujian);
+		$paket['ist']=$this->Mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$paket['istU']=$this->Mdl_data_ujian->ambildata_ujian_ist($id_ujian);
+		$this->load->view('ist',$paket);
+	}
+
+	public function latihanist1()
+	{
+		$idUjian = $this->session->userdata('ses_ujian');
+
+		$paket['ujian_ist']=$this->Mdl_data_ujian->ambildata_ujian_ist($idUjian);
+		$this->load->view('latihanist1', $paket);
+	}
+	
+	public function jawabancontoh_ist()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan');
+		$jawaban2 = $this->input->post('jawaban_latihan2');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->session->set_userdata('ses_jawab2', $jawaban2);
+		$this->load->view('jawabancontoh_ist');
+	}
+
+	public function ist2($id_pelamar, $id_ujian)
+	{
+		$idUjian = $this->session->set_userdata('ses_ujian', $id_ujian);
+		$paket['ist']=$this->Mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$paket['istU']=$this->Mdl_data_ujian->ambildata_ujian_ist2($id_ujian);
+		$this->load->view('ist2',$paket);
+	}
+
+	public function latihanist5()
+	{
+		$idUjian = $this->session->userdata('ses_ujian');
+
+		$paket['ujian_ist']=$this->Mdl_data_ujian->ambildata_ujian_ist2($idUjian);
+		$this->load->view('latihanist1', $paket);
 	}
 	
 	public function pengaturan()

@@ -74,8 +74,10 @@
 					<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 						<div class="panel panel-blue panel-widget border-right">
 							<div class="row no-padding"><em class="fa fa-xl fa-suitcase color-orange"></em>
+								<!-- Udated by Tobi 3 Feb 2021 -->
+								<!-- menambah query -->
 								<?php 
-								$query_low = $this->db->query("SELECT count(id_lowongan) AS jumlah FROM tb_lowongan");
+								$query_low = $this->db->query("SELECT count(id_lowongan) AS jumlah FROM tb_lowongan WHERE jadwal_seleksi >= CURRENT_DATE()");
 								$result = $query_low->result_array();
 								?>
 								<div class="large"><?php echo $result[0]['jumlah'] ?></div>
@@ -98,8 +100,10 @@
 					<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 						<div class="panel panel-red panel-widget ">
 							<div class="row no-padding"><em class="fa fa-xl fa-bullhorn color-red"></em>
+								<!-- Edited by Tobi 3 Feb 2021 -->
+								<!-- Mengubah query -->
 								<?php 
-								$query_low = $this->db->query("SELECT count(id_apply) AS jumlah FROM tb_apply WHERE id_pelamar = $ses_id AND status_lamaran = 'Diterima'|| status_lamaran = 'Tidak lolos'");
+								$query_low = $this->db->query("SELECT count(id_apply) AS jumlah FROM tb_apply WHERE id_pelamar = $ses_id AND (status_lamaran = 'Diterima'|| status_lamaran = 'Tidak lolos')");
 								$result = $query_low->result_array();
 								?>
 								<div class="large"><?php echo $result[0]['jumlah'] ?></div>

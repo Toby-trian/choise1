@@ -33,7 +33,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$paket['array']=$this->Mdl_home->ambildata();	
+		$paket['yoman']=$this->Mdl_home->ambildata();	
 		$this->load->view('home',$paket);
 	}
 

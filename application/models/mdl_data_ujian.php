@@ -20,8 +20,23 @@ class Mdl_data_ujian extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_ujian_tpa(){
+		$query=$this->db->query("SELECT * FROM tb_ujian_tpa");
+		return $query->result_array();
+	}
+
 	public function ambildata_ujian_papi(){
 		$query=$this->db->query("SELECT * FROM tb_ujian_papi WHERE status='tersedia'");
+		return $query->result_array();
+	}
+
+	public function ambildata_ujian_ist(){
+		$query=$this->db->query("SELECT * FROM tb_ujian_ist");
+		return $query->result_array();
+	}
+
+	public function ambildata_ujian_ist2(){
+		$query=$this->db->query("SELECT * FROM tb_ujian_ist2");
 		return $query->result_array();
 	}
 
@@ -39,6 +54,18 @@ class Mdl_data_ujian extends CI_Model {
 	public function tambahdata_ujian_holland($paket)
 	{
 		$this->db->insert('tb_ujian_holland', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function tambahdata_ujian_ist($paket)
+	{
+		$this->db->insert('tb_ujian_ist', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function tambahdata_ujian_ist2($paket)
+	{
+		$this->db->insert('tb_ujian_ist2', $paket);
 		return $this->db->affected_rows();
 	}
 

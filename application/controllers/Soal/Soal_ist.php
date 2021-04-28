@@ -22,9 +22,9 @@ class Soal_ist extends CI_Controller {
 
 	public function tambahdata(){
 
-		$send['id_soal_ist']='';
-		$send['no_soal']=$this->input->post('no_soal');
-		$send['soal_ist']=$this->input->post('soal_ist');
+		$send['id_soal']='';
+		$send['nomor_soal']=$this->input->post('nomor_soal');
+		$send['soal']=$this->input->post('soal_ist');
 		$send['opsi_a']=$this->input->post('opsi_a');
 		$send['opsi_b']=$this->input->post('opsi_b');
 		$send['opsi_c']=$this->input->post('opsi_c');
@@ -40,7 +40,7 @@ class Soal_ist extends CI_Controller {
 	}
 
 	public function editist(){
-		$id_soal_ist = $this->input->post('id_soal_ist');
+		$id_soal = $this->input->post('id_soal');
 		$soal_ist = $this->input->post('soal_ist');
 		$opsi_a = $this->input->post('opsi_a');
 		$opsi_b = $this->input->post('opsi_b');
@@ -51,7 +51,7 @@ class Soal_ist extends CI_Controller {
 		$subtes = $this->input->post('subtes');
 
 		$data = array(
-			'soal_ist' => $soal_ist,
+			'soal' => $soal_ist,
 			'opsi_a' => $opsi_a,
 			'opsi_b' => $opsi_b,
 			'opsi_c' => $opsi_c,
@@ -62,7 +62,7 @@ class Soal_ist extends CI_Controller {
 		);
 
 		$where = array(
-			'id_soal_ist' => $id_soal_ist
+			'id_soal' => $id_soal
 		);
 
 		$this->Mdl_soal->update_data($where,$data,'tb_soal_ist');
@@ -71,7 +71,7 @@ class Soal_ist extends CI_Controller {
 	}
 
 	public function hapus($id){
-		$where = array('id_soal_ist' => $id);
+		$where = array('id_soal' => $id);
 		$this->Mdl_soal->do_delete($where,'tb_soal_ist');
 		$this->session->set_flashdata('msg_hapus','Data Berhasil dihapus');
 		redirect('Soal/Soal_ist/');

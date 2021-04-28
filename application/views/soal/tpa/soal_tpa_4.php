@@ -32,9 +32,10 @@
           <?php endif ;?>
         </div> 
         <div class="tile-body">
-         <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab"><b>Soal Seksi 1</b></a></li>
+          <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab"><b>Soal Seksi 4</b></a></li>
         </ul>
+
 
         <div class="tab-content">
           <div id="seksi1" class="tab-pane fade in active">
@@ -47,7 +48,7 @@
                     <h4 class="modal-title">Tambah Data</h4>
                   </div>
                   <div class="modal-body">
-                    <form action="<?php echo base_url('Soal/Soal_tpa/tambahdata_1') ?>" method="post">
+                    <form action="<?php echo base_url('Soal/Soal_tpa/tambahdata_4') ?>" method="post">
                       <div class="form-group">
                         <label class="control-label">Soal</label>
                         <input type="text" name="soal" class="form-control" required="required" autocomplete="off" >
@@ -107,7 +108,7 @@
                 <tbody>
                   <?php 
                   $modal = 0; $no = 1; 
-                  foreach ($tpa1 as $key_s1) { ?>
+                  foreach ($tpa4 as $key_s4) { ?>
                     <!-- Edit -->
                     <div class="modal fade" id="modalEdit<?php echo $modal ?>" role="dialog">
                       <div class="modal-dialog modal-lg">
@@ -116,35 +117,35 @@
                             <h4 class="modal-title">Edit Soal</h4>
                           </div>
                           <div class="modal-body">
-                            <form action="<?php echo base_url('Soal/Soal_tpa/editdata/'.$key_s1['id_soal_tpa']) ?>" method="post">
-                              <input type="hidden" name="id_soal_tpa" value="<?php echo $key_s1['id_soal_tpa'] ?>">
+                            <form action="<?php echo base_url('Soal/Soal_tpa/editdata_4/'.$key_s4['id_soal_tpa']) ?>" method="post">
+                              <input type="hidden" name="id_soal_tpa" value="<?php echo $key_s4['id_soal_tpa'] ?>">
                               <div class="form-group">
                                 <label class="control-label">Soal</label>
-                                <input type="text" name="soal" class="form-control" value="<?php echo $key_s1['soal'] ?>">
+                                <input type="text" name="soal" class="form-control" value="<?php echo $key_s4['soal'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Opsi A</label>
-                                <input type="text" name="opsi_a" class="form-control" value="<?php echo $key_s1['opsi_a'] ?>">
+                                <input type="text" name="opsi_a" class="form-control" value="<?php echo $key_s4['opsi_a'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Opsi B</label>
-                                <input type="text" name="opsi_b" class="form-control" value="<?php echo $key_s1['opsi_b'] ?>">
+                                <input type="text" name="opsi_b" class="form-control" value="<?php echo $key_s4['opsi_b'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Opsi C</label>
-                                <input type="text" name="opsi_c" class="form-control" value="<?php echo $key_s1['opsi_c'] ?>">
+                                <input type="text" name="opsi_c" class="form-control" value="<?php echo $key_s4['opsi_c'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Opsi D</label>
-                                <input type="text" name="opsi_d" class="form-control" value="<?php echo $key_s1['opsi_d'] ?>">
+                                <input type="text" name="opsi_d" class="form-control" value="<?php echo $key_s4['opsi_d'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Opsi E</label>
-                                <input type="text" name="opsi_e" class="form-control" value="<?php echo $key_s1['opsi_e'] ?>">
+                                <input type="text" name="opsi_e" class="form-control" value="<?php echo $key_s4['opsi_e'] ?>">
                               </div>
                               <div class="form-group">
                                 <label class="control-label">Jawaban</label>
-                                <input type="text" name="jawaban" class="form-control" value="<?php echo $key_s1['jawaban'] ?>">
+                                <input type="text" name="jawaban" class="form-control" value="<?php echo $key_s4['jawaban'] ?>">
                               </div>
                             </div>
                             <div class="modal-footer">
@@ -164,10 +165,10 @@
                           <h4 class="modal-title">Hapus</h4>
                         </div>
                         <div class="modal-body">
-                          <p>Ingin hapus pernyataan ini? <b><?php echo $key_s1['soal'] ?></b></p>
+                          <p>Ingin hapus pernyataan ini? <b><?php echo $key_s4['soal'] ?></b></p>
                         </div>
                         <div class="modal-footer">
-                          <a href="<?php echo base_url('Soal/Soal_tpa/hapus/'.$key_s1['id_soal_tpa']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger">Hapus <i class="fa fa-trash"></i></button></a>
+                          <a href="<?php echo base_url('Soal/Soal_tpa/hapus_4/'.$key_s4['id_soal_tpa']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger">Hapus <i class="fa fa-trash"></i></button></a>
                         </div>
                       </div>
                     </div>
@@ -175,13 +176,13 @@
 
                     <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $key_s1['soal'] ?></td>
-                      <td><?php echo $key_s1['opsi_a'] ?></td>
-                      <td><?php echo $key_s1['opsi_b'] ?></td>
-                      <td><?php echo $key_s1['opsi_c'] ?></td>
-                      <td><?php echo $key_s1['opsi_d'] ?></td>
-                      <td><?php echo $key_s1['opsi_e'] ?></td>
-                      <td><b><?php echo $key_s1['jawaban'] ?></b></td>
+                      <td><?php echo $key_s4['soal'] ?></td>
+                      <td><?php echo $key_s4['opsi_a'] ?></td>
+                      <td><?php echo $key_s4['opsi_b'] ?></td>
+                      <td><?php echo $key_s4['opsi_c'] ?></td>
+                      <td><?php echo $key_s4['opsi_d'] ?></td>
+                      <td><?php echo $key_s4['opsi_e'] ?></td>
+                      <td><b><?php echo $key_s4['jawaban'] ?></b></td>
                       <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                           <button data-toggle="modal" data-target="#modalEdit<?php echo $modal ?>" title="Edit" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
