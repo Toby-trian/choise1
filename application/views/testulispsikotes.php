@@ -76,7 +76,7 @@ $id_pelamar=$this->session->userdata('ses_id');
 								if (date('d F Y H:i:s') < date('d F Y H:i:s', strtotime($key_ist['waktu_dimulai']))) {
 									echo "belum dimulai";
 								}elseif(date('d F Y H:i:s') >= date('d F Y H:i:s', strtotime($key_ist['waktu_dimulai'])) && date('d F Y H:i:s') <= date('d F Y H:i:s', strtotime($key_ist['waktu_berakhir']))){ ?>
-									<a href="<?php  echo base_url('Pelamar/Pelamar/ist/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
+									<a href="<?php  echo base_url('Pelamar/Pelamar/ist/'.$id_pelamar.'/'. $key_ist['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
 								<?php } elseif(date('d F Y H:i:s') > date('d F Y H:i:s', strtotime($key_ist['waktu_berakhir']))){
 									echo "Ujian sudah berakhir";
 								}?>
@@ -99,7 +99,7 @@ $id_pelamar=$this->session->userdata('ses_id');
 								if (date('d F Y H:i:s') < date('d F Y H:i:s', strtotime($key_ist2['waktu_dimulai']))) {
 									echo "belum dimulai";
 								}elseif(date('d F Y H:i:s') >= date('d F Y H:i:s', strtotime($key_ist2['waktu_dimulai'])) && date('d F Y H:i:s') <= date('d F Y H:i:s', strtotime($key_ist2['waktu_berakhir']))){ ?>
-									<a href="<?php  echo base_url('Pelamar/Pelamar/ist2/'.$id_pelamar.'/'. $key['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
+									<a href="<?php  echo base_url('Pelamar/Pelamar/ist2/'.$id_pelamar.'/'. $key_ist2['id_ujian']) ?>" class="btn btn-primary">Kerjakan Sekarang</a>
 								<?php } elseif(date('d F Y H:i:s') > date('d F Y H:i:s', strtotime($key_ist2['waktu_berakhir']))){
 									echo "Ujian sudah berakhir";
 								}?>
