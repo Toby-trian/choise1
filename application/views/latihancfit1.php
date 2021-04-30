@@ -205,7 +205,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 1 sudah berakhir, selamat mengerjakan subtes 1');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian.'/1'); ?>';
 
     // document.getElementById('hentikan').click();
   }
