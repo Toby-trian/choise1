@@ -39,7 +39,7 @@
 		$id_ujian = $this->session->userdata('ses_ujian');
 		?>
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_ist/'.$id_ujian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
+			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_ist/'.$id_ujian.'/1') ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
 		</div>
 	</div>
 
@@ -71,7 +71,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 1 sudah berakhir, selamat mengerjakan subtes 1');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist/'.$idUjian); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist/'.$idUjian.'/1'); ?>';
 
     // document.getElementById('hentikan').click();
   }
