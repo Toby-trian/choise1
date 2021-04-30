@@ -240,9 +240,20 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist3');
 	}
 
-	public function start_ujian_ist($rdr)
+	public function start_ujian_ist($id,$rdr)
 	{
 		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_ist_subtes_1($rdr);
+
+		if (!empty($data['soal_subtes1'])) {
+			$id_soal = $data['soal_subtes1']->id_soal;
+			$nomor_soal = $data['soal_subtes1']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = $id");
+
+		$data['jawaban'] = $query->row();
+
+
 		$this->load->view('pelamar/ujian/pengerjaan_ist',$data);
 	}
 
@@ -530,9 +541,21 @@ class Ujian extends CI_Controller {
 
 	//Ujian CFIT
 
-	public function start_ujian($rdr)
+	public function start_ujian($id,$rdr)
 	{
+
 		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_subtes_1($rdr);
+
+		if (!empty($data['soal_subtes1'])) {
+			$id_soal = $data['soal_subtes1']->id_soal;
+			$nomor_soal = $data['soal_subtes1']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = $id");
+
+		$data['jawaban'] = $query->row();
+
+
 		$this->load->view('pengerjaan',$data);
 	}
 
