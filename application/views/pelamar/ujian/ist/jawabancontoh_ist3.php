@@ -25,9 +25,9 @@
 				<!-- $jawaban1 =  -->
 				<p>1. Jawaban:  (jawaban anda <?php echo $this->session->userdata('ses_jawab1') ?>)</p>
 				<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="latist31">d.</label>
+					<label class="form-check-label" for="latist31">e.</label>
 					<center>
-						<p>(Berjalan)</p>
+						<p>(Kering)</p>
 					</center>
 				</div>
 				<div style="padding-top: 6%">
@@ -39,7 +39,7 @@
 		$id_ujian = $this->session->userdata('ses_ujian');
 		?>
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_ist3/'.$id_ujian) ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
+			<a href="<?php  echo base_url('Pelamar/Ujian/start_ujian_ist3/'.$id_ujian.'/41') ?>" class="btn btn-primary mr-2 mb-2">Mulai Sekarang</a>
 		</div>
 	</div>
 
@@ -71,7 +71,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 1 sudah berakhir, selamat mengerjakan subtes 1');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian); ?>';
+   window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian3/'.$idUjian.'/41'); ?>';
 
     // document.getElementById('hentikan').click();
   }

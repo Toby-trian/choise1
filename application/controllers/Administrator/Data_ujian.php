@@ -178,6 +178,36 @@ class Data_ujian extends CI_Controller {
 			$send['end_lat_sub3']=$this->input->post('end_lat_sub3');
 			$send['start_uji_sub3']=$this->input->post('start_uji_sub3');
 			$send['end_uji_sub3']=$this->input->post('end_uji_sub3');
+			// sub4
+			$send['start_lat_sub4']=$this->input->post('start_lat_sub4');
+			$send['end_lat_sub4']=$this->input->post('end_lat_sub4');
+			$send['start_uji_sub4']=$this->input->post('start_uji_sub4');
+			$send['end_uji_sub4']=$this->input->post('end_uji_sub4');
+			// sub5
+			$send['start_lat_sub5']=$this->input->post('start_lat_sub5');
+			$send['end_lat_sub5']=$this->input->post('end_lat_sub5');
+			$send['start_uji_sub5']=$this->input->post('start_uji_sub5');
+			$send['end_uji_sub5']=$this->input->post('end_uji_sub5');
+			// sub6
+			$send['start_lat_sub6']=$this->input->post('start_lat_sub6');
+			$send['end_lat_sub6']=$this->input->post('end_lat_sub6');
+			$send['start_uji_sub6']=$this->input->post('start_uji_sub6');
+			$send['end_uji_sub6']=$this->input->post('end_uji_sub6');
+			// sub7
+			$send['start_lat_sub7']=$this->input->post('start_lat_sub7');
+			$send['end_lat_sub7']=$this->input->post('end_lat_sub7');
+			$send['start_uji_sub7']=$this->input->post('start_uji_sub7');
+			$send['end_uji_sub7']=$this->input->post('end_uji_sub7');
+			// sub8
+			$send['start_lat_sub8']=$this->input->post('start_lat_sub8');
+			$send['end_lat_sub8']=$this->input->post('end_lat_sub8');
+			$send['start_uji_sub8']=$this->input->post('start_uji_sub8');
+			$send['end_uji_sub8']=$this->input->post('end_uji_sub8');
+			// sub9
+			$send['start_lat_sub9']=$this->input->post('start_lat_sub9');
+			$send['end_lat_sub9']=$this->input->post('end_lat_sub9');
+			$send['start_uji_sub9']=$this->input->post('start_uji_sub9');
+			$send['end_uji_sub9']=$this->input->post('end_uji_sub9');
 
 			$send['nama_pembuat']=$this->input->post('id_admin');
 			$send['status']='tersedia';

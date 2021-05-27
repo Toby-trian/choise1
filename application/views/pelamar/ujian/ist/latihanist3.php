@@ -21,32 +21,32 @@
 	<li style="color: #fff;">Contoh soal:</p>
 	<p style="color: #fff;">Hutan : Pohon = Tembok : ... ?</p>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">a</p>
 		<center>
-			<p style="color: #fff;">Batu bata</p>
+			<img src="<?php  echo base_url('assets3/images/abcd/a_coret.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
+			<p style="color: #fff;">Batu Bata</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">b</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/b.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Rumah</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">c</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/c.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Semen</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">d</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/d.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Putih</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">e</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/e.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Dinding</p>
 		</center>
 	</div>

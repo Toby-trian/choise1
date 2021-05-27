@@ -66,6 +66,37 @@ class Mdl_ujian extends CI_Model {
 		return $query->row();
 	}
 
+	public function get_questions_ist_subtes_4($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 4 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+	public function get_questions_ist_subtes_5($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 5 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+	public function get_questions_ist_subtes_6($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 6 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+	public function get_questions_ist_subtes_7($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 7 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+	public function get_questions_ist_subtes_8($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 8 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+	public function get_questions_ist_subtes_9($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_ist WHERE subtes = 9 AND nomor_soal='$rdr' ");
+		return $query->row();
+	}
+
+
 
 	/*public function get_questions_ist_subtes_4($rdr){
 		$query=$this->db->query("SELECT * FROM tb_soal_cfit WHERE subtes = 4 AND type_soal = 'Ujian' AND nomor_soal='$rdr' ");

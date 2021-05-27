@@ -15,36 +15,36 @@
 			</div>
 
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="ist220">a</label>
-						<input class="form-check-input" type="radio" <?php if(!empty($jawaban->jawaban) && $jawaban->jawaban== "A"){?> checked="checked" <?php } ?> name="jawaban" value="A">
+					<label class="form-check-label" for="ist120">a</label>
+					<input class="form-check-input" type="radio" <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "A"){?> checked="checked" <?php } ?> name="jawaban" value="A">
 					<center>
 					<?php echo $soal_subtes2->opsi_a; ?>
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="ist220">b</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban->jawaban) && $jawaban->jawaban== "B"){?> checked="checked" <?php } ?> name="jawaban" value="B">
+					<label class="form-check-label" for="ist120">b</label>
+					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "B"){?> checked="checked" <?php } ?> name="jawaban" value="B">
 					<center>
 					<?php echo $soal_subtes2->opsi_b; ?>
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="ist220">c</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban->jawaban) && $jawaban->jawaban== "C"){?> checked="checked" <?php } ?> name="jawaban" value="C">
+					<label class="form-check-label" for="ist120">c</label>
+					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "C"){?> checked="checked" <?php } ?> name="jawaban" value="C">
 					<center>
 					<?php echo $soal_subtes2->opsi_c; ?>
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="ist220">d</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban->jawaban) && $jawaban->jawaban== "D"){?> checked="checked" <?php } ?> name="jawaban" value="D">
+					<label class="form-check-label" for="ist120">d</label>
+					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban2->jawaban) && $jawaban2->jawaban== "D"){?> checked="checked" <?php } ?> name="jawaban" value="D">
 					<center>
 					<?php echo $soal_subtes2->opsi_d; ?>
 					</center>
 				</div>
 				<div class="form-check col-sm-2 text-center" style="margin-top: 5px;">
-					<label class="form-check-label" for="ist220">e</label>
-					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban->jawaban) && $jawaban->jawaban== "E"){?> checked="checked" <?php } ?> name="jawaban" value="E">
+					<label class="form-check-label" for="ist120">e</label>
+					<input class="form-check-input" type="radio"  <?php if(!empty($jawaban->jawaban) && $jawaban2->jawaban== "E"){?> checked="checked" <?php } ?> name="jawaban" value="E">
 					<center>
 					<?php echo $soal_subtes2->opsi_e; ?>
 					</center>

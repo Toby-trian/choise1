@@ -185,7 +185,7 @@ foreach ($array as $key) {
 					<p><b>Kontak</b></p>
 					<p class="card-text">Situs web: <?php echo $website ?></p>
 					<p class="card-text">Email: <?php echo $email ?></p>
-					<p class="card-text">WhatsApp: <?php echo $no_hp ?></p>
+					<p class="card-text">WhatsApp:  +6285648200701 </p>
 					<p class="card-text">Facebook : <?php echo $facebook ?></p>
 					<p class="card-text">Instagram: <?php echo $instagram ?></p><hr>
 				</div>

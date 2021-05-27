@@ -213,8 +213,104 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/ist/frame_ujian_ist3', $data);
 	}
 
+	public function frame_ujian_ist4($id_ujian, $rdr){
 
-	// Latihan dan Jawaban soal IST
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes4'] = $this->Mdl_ujian->get_questions_ist_subtes_4($rdr);
+
+
+		if (!empty($data['soal_subtes4'])) {
+			$id_soal = $data['soal_subtes4']->id_soal;
+			$nomor_soal = $data['soal_subtes4']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 4 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban4'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist4', $data);
+	}
+
+	public function frame_ujian_ist5($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes5'] = $this->Mdl_ujian->get_questions_ist_subtes_5($rdr);
+
+
+		if (!empty($data['soal_subtes5'])) {
+			$id_soal = $data['soal_subtes5']->id_soal;
+			$nomor_soal = $data['soal_subtes5']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 5 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban5'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist5', $data);
+	}
+
+	public function frame_ujian_ist6($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes6'] = $this->Mdl_ujian->get_questions_ist_subtes_6($rdr);
+
+
+		if (!empty($data['soal_subtes6'])) {
+			$id_soal = $data['soal_subtes6']->id_soal;
+			$nomor_soal = $data['soal_subtes6']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 6 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban6'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist6', $data);
+	}
+
+	public function frame_ujian_ist7($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes7'] = $this->Mdl_ujian->get_questions_ist_subtes_7($rdr);
+
+
+		if (!empty($data['soal_subtes7'])) {
+			$id_soal = $data['soal_subtes7']->id_soal;
+			$nomor_soal = $data['soal_subtes7']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 7 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban7'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist7', $data);
+	}
+
+	public function frame_ujian_ist8($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes8'] = $this->Mdl_ujian->get_questions_ist_subtes_8($rdr);
+
+
+		if (!empty($data['soal_subtes8'])) {
+			$id_soal = $data['soal_subtes8']->id_soal;
+			$nomor_soal = $data['soal_subtes8']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 8 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban8'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist8', $data);
+	}
+
+	public function frame_ujian_ist9($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['soal_subtes9'] = $this->Mdl_ujian->get_questions_ist_subtes_9($rdr);
+
+
+		if (!empty($data['soal_subtes9'])) {
+			$id_soal = $data['soal_subtes9']->id_soal;
+			$nomor_soal = $data['soal_subtes9']->nomor_soal;
+		}
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 9 AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban9'] = $query->row();
+		$this->load->view('pelamar/ujian/ist/frame_ujian_ist9', $data);
+	}
+
+
+// Latihan dan Jawaban soal IST
 
 	public function latihan_ist2(){
 		$this->load->view('pelamar/ujian/ist/latihanist2');
@@ -224,7 +320,32 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/ist/latihanist3');
 	}
 
-	public function jawabancontoh_ist2()
+	public function latihan_ist4(){
+		$this->load->view('pelamar/ujian/ist/latihanist4');
+	}
+
+	public function latihan_ist5(){
+		$this->load->view('pelamar/ujian/ist/latihanist5');
+	}
+
+	public function latihan_ist6(){
+		$this->load->view('pelamar/ujian/ist/latihanist6');
+	}
+
+	public function latihan_ist7(){
+		$this->load->view('pelamar/ujian/ist/latihanist7');
+	}
+
+	public function latihan_ist8(){
+		$this->load->view('pelamar/ujian/ist/latihanist8');
+	}
+
+	public function latihan_ist9(){
+		$this->load->view('pelamar/ujian/ist/latihanist9');
+	}
+
+
+ 	public function jawabancontoh_ist2()
 	{
 		$jawaban1 = $this->input->post('jawaban_latihan');
 
@@ -240,10 +361,56 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist3');
 	}
 
+	public function jawabancontoh_ist4()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist4');
+	}
+
+	public function jawabancontoh_ist5()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan1');
+		$jawaban2 = $this->input->post('jawaban_latihan2');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->session->set_userdata('ses_jawab2', $jawaban2);
+
+		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist5');
+	}
+
+	public function jawabancontoh_ist6()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan1');
+		$jawaban2 = $this->input->post('jawaban_latihan2');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->session->set_userdata('ses_jawab2', $jawaban2);
+
+		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist6');
+	}
+
+	public function jawabancontoh_ist7()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist7');
+	}
+
+	public function jawabancontoh_ist9()
+	{
+		$jawaban1 = $this->input->post('jawaban_latihan');
+
+		$this->session->set_userdata('ses_jawab1', $jawaban1);
+		$this->load->view('pelamar/ujian/ist/jawabancontoh_ist9');
+	}
+
 	public function start_ujian_ist($id,$rdr)
 	{
 		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_ist_subtes_1($rdr);
-
+ 
 		if (!empty($data['soal_subtes1'])) {
 			$id_soal = $data['soal_subtes1']->id_soal;
 			$nomor_soal = $data['soal_subtes1']->nomor_soal;
@@ -257,16 +424,125 @@ class Ujian extends CI_Controller {
 		$this->load->view('pelamar/ujian/pengerjaan_ist',$data);
 	}
 
-	public function start_ujian_ist2($rdr)
+public function start_ujian_ist2($id,$rdr)
 	{
 		$data['soal_subtes2'] = $this->Mdl_ujian->get_questions_ist_subtes_2($rdr);
+		if (!empty($data['soal_subtes2'])) {
+			$id_soal = $data['soal_subtes2']->id_soal;
+			$nomor_soal = $data['soal_subtes2']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 2 AND id_ujian = $id");
+
+		$data['jawaban2'] = $query->row();
+
 		$this->load->view('pelamar/ujian/ist/pengerjaan_ist2',$data);
 	}
 
-	public function start_ujian_ist3($rdr)
+public function start_ujian_ist3($id,$rdr)
 	{
 		$data['soal_subtes3'] = $this->Mdl_ujian->get_questions_ist_subtes_3($rdr);
+		if (!empty($data['soal_subtes3'])) {
+			$id_soal = $data['soal_subtes3']->id_soal;
+			$nomor_soal = $data['soal_subtes3']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 3 AND id_ujian = $id");
+
+		$data['jawaban3'] = $query->row();
+
 		$this->load->view('pelamar/ujian/ist/pengerjaan_ist3',$data);
+	}
+
+	public function start_ujian_ist4($id,$rdr)
+	{
+		$data['soal_subtes4'] = $this->Mdl_ujian->get_questions_ist_subtes_4($rdr);
+		if (!empty($data['soal_subtes4'])) {
+			$id_soal = $data['soal_subtes4']->id_soal;
+			$nomor_soal = $data['soal_subtes4']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 4 AND id_ujian = $id");
+
+		$data['jawaban4'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist4',$data);
+	}
+
+
+	public function start_ujian_ist5($id,$rdr)
+	{
+		$data['soal_subtes5'] = $this->Mdl_ujian->get_questions_ist_subtes_5($rdr);
+		if (!empty($data['soal_subtes5'])) {
+			$id_soal = $data['soal_subtes5']->id_soal;
+			$nomor_soal = $data['soal_subtes5']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 5 AND id_ujian = $id");
+
+		$data['jawaban5'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist5',$data);
+	}
+
+	public function start_ujian_ist6($id,$rdr)
+	{
+		$data['soal_subtes6'] = $this->Mdl_ujian->get_questions_ist_subtes_6($rdr);
+		if (!empty($data['soal_subtes6'])) {
+			$id_soal = $data['soal_subtes6']->id_soal;
+			$nomor_soal = $data['soal_subtes6']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 6 AND id_ujian = $id");
+
+		$data['jawaban6'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist6',$data);
+	}
+
+	public function start_ujian_ist7($id,$rdr)
+	{
+		$data['soal_subtes7'] = $this->Mdl_ujian->get_questions_ist_subtes_7($rdr);
+		if (!empty($data['soal_subtes7'])) {
+			$id_soal = $data['soal_subtes7']->id_soal;
+			$nomor_soal = $data['soal_subtes7']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 7 AND id_ujian = $id");
+
+		$data['jawaban7'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist7',$data);
+	}
+
+	public function start_ujian_ist8($id,$rdr)
+	{
+		$data['soal_subtes8'] = $this->Mdl_ujian->get_questions_ist_subtes_8($rdr);
+		if (!empty($data['soal_subtes8'])) {
+			$id_soal = $data['soal_subtes8']->id_soal;
+			$nomor_soal = $data['soal_subtes8']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 8 AND id_ujian = $id");
+
+		$data['jawaban8'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist8',$data);
+	}
+
+	public function start_ujian_ist9($id,$rdr)
+	{
+		$data['soal_subtes9'] = $this->Mdl_ujian->get_questions_ist_subtes_9($rdr);
+		if (!empty($data['soal_subtes9'])) {
+			$id_soal = $data['soal_subtes9']->id_soal;
+			$nomor_soal = $data['soal_subtes9']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE nomor_soal = $nomor_soal AND subtes = 9 AND id_ujian = $id");
+
+		$data['jawaban9'] = $query->row();
+
+		$this->load->view('pelamar/ujian/ist/pengerjaan_ist9',$data);
 	}
 
 	public function masukkan_jawaban_ist($redirect=null){
@@ -352,7 +628,7 @@ class Ujian extends CI_Controller {
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
 			'jawaban_kunci' => $kuncijawaban
@@ -372,7 +648,7 @@ class Ujian extends CI_Controller {
 				'nomor_soal' =>$nomor_soal,
 				'subtes' =>$subtes
 			);
-			$data2 = array(
+ 			$data2 = array(
 				'jawaban'=>$jawaban,
 				'jawaban_kunci'=>$kuncijawaban
 			);
@@ -432,13 +708,370 @@ class Ujian extends CI_Controller {
 			$data2 = array(
 				'jawaban'=>$jawaban,
 				'jawaban_kunci'=>$kuncijawaban
-			);
+ 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
 			}
 			redirect('Pelamar/Ujian/frame_ujian_ist3/'.$id_ujian.'/'.$rdr);
 		}
 	}
+
+	public function masukkan_jawaban_ist4($redirect=null){
+			if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+ 		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+ 
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+ 			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist4/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+ 				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist4/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+
+	public function masukkan_jawaban_ist5($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+ 
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+ 			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1],
+			//'jawaban3' => $jawaban3,
+			'jawaban_kunci' => $kuncijawaban1,
+			'jawaban_kunci' => $kuncijawaban2,
+			//'jawaban_kunci3' => $kuncijawaban3
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist5/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+ 				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1],
+				//'jawaban3' => $jawaban3,
+				'jawaban_kunci' => $kuncijawaban1,
+				'jawaban_kunci2' => $kuncijawaban2,
+				//'jawaban_kunci3' => $kuncijawaban3
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist5/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_ist6($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+			$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban2' => $jawaban2,
+			'jawaban_kunci' => $kuncijawaban,
+			'jawaban_kunci2' => $kuncijawaban2,
+
+);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist6/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban' => $jawaban,
+				'jawaban2' => $jawaban2,
+				'jawaban_kunci' => $kuncijawaban,
+				'jawaban_kunci2' => $kuncijawaban2,
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist6/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_ist7($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist7/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist7/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_ist8($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist8/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist8/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_ist9($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist9/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_ist9/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
 
 
 	public function masukkan_jawaban_ist_endSub1(){
@@ -537,28 +1170,376 @@ class Ujian extends CI_Controller {
 		}
 	}
 
+	public function masukkan_jawaban_ist_endSub3(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
+		$kuncijawaban3 = $this->input->post('kunci_jawaban3');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1],
+			'jawaban3' => $jawaban[2],
+			'jawaban_kunci'=>$kuncijawaban1,
+			'jawaban_kunci2'=>$kuncijawaban2,
+			'jawaban_kunci3'=>$kuncijawaban3
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist4/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1],
+				'jawaban3' => $jawaban[2],
+				'jawaban_kunci'=>$kuncijawaban1,
+				'jawaban_kunci2'=>$kuncijawaban2,
+				'jawaban_kunci3'=>$kuncijawaban3
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist4";</script>';
+			
+		}
+	}
+
+	public function masukkan_jawaban_ist_endSub4(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist5/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist5";</script>';
+			
+		}
+	}
+
+
+
+	public function masukkan_jawaban_ist_endSub5(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1],
+			'jawaban_kunci'=>$kuncijawaban1,
+			'jawaban_kunci2'=>$kuncijawaban2,
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist6/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1],
+				'jawaban_kunci'=>$kuncijawaban1,
+				'jawaban_kunci2'=>$kuncijawaban2,
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist6";</script>';
+			
+		}
+	}
+
+	public function masukkan_jawaban_ist_endSub6(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
+		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban[0],
+			'jawaban2' => $jawaban[1],
+			'jawaban_kunci'=>$kuncijawaban1,
+			'jawaban_kunci2'=>$kuncijawaban2,
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist7/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban' => $jawaban[0],
+				'jawaban2' => $jawaban[1],
+				'jawaban_kunci'=>$kuncijawaban1,
+				'jawaban_kunci2'=>$kuncijawaban2,
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist7";</script>';
+			
+		}
+	}
+
+	public function masukkan_jawaban_ist_endSub7(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist8/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist8";</script>';
+			
+		}
+	}
+
+	public function masukkan_jawaban_ist_endSub8(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		$data = array(
+			'id_jawaban_ist'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
+			}
+			echo '<script>window.top.location.href = "latihan_ist9/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
+			}
+			echo '<script>window.top.location.href = "latihan_ist9";</script>';
+			
+		}
+	}
+
+	public function masukkan_jawaban_ist_endSub9(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		$data = array(
+			'id_jawaban_cfit'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban($data);
+			}
+			echo '<script>window.top.location.href = "index/";</script>'; 
+			
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci' =>$kuncijawaban1
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
+			}
+			echo '<script>window.top.location.href = "index";</script>';
+			
+		}
+	}
+
+
+
 
 
 	//Ujian CFIT
 
-	public function start_ujian($id,$rdr)
+	public function start_ujian($rdr)
 	{
-
 		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_subtes_1($rdr);
-
-		if (!empty($data['soal_subtes1'])) {
-			$id_soal = $data['soal_subtes1']->id_soal;
-			$nomor_soal = $data['soal_subtes1']->nomor_soal;
-		}
-
-		$query = $this->db->query("SELECT * FROM tb_data_jawaban_cfit WHERE nomor_soal = $nomor_soal AND subtes = 1 AND id_ujian = $id");
-
-		$data['jawaban'] = $query->row();
-
-
 		$this->load->view('pengerjaan',$data);
 	}
-
+ 
 	public function start_ujian_sub2($rdr)
 	{
 		$data['soal_subtes2'] = $this->Mdl_ujian->get_questions_subtes_2($rdr);

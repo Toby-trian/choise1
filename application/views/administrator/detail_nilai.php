@@ -208,6 +208,79 @@
                     ?>
                   </td>
                 </tr>
+                <tr>
+                  <th>Nilai Ist :</th>
+                  <td></td>
+                </tr>
+              <style>
+                table, th, td {
+                  border: 1px solid black;
+                }
+
+                th, td {
+                  padding: 10px;
+                }
+                </style>
+                <body>
+                <table>
+                  <tr>
+                    <th>Subtes</th>
+                    <th>RS</th>
+                    <th>SS</th>
+                  </tr>
+                  <tr>
+                    <td>SE</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>WA</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>AN</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>GE</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>RA</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>ZR</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>FA</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>WU</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>ME</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>GESAMT</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+
+                </body>
 
                 <?php $modal++;  }?>
               </tbody>

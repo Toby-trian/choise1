@@ -21,32 +21,32 @@
 	<p style="color: #fff;">Contoh soal :</p>
 	<p style="color: #fff;">Seekor kuda mempunyai kesamaan terbanyak dengan seekor ......</p>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">a</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/a.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Kucing</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">b</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/b.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Bajing</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">c</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/c_coret.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Keledai</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">d</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/d.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Lembu</p>
 		</center>
 	</div>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
-		<p style="color: #fff;">e</p>
 		<center>
+			<img src="<?php  echo base_url('assets3/images/abcd/e.jpg') ?>" class="img-responsive" alt="" style="width: 18px; border-radius: 15px; margin-bottom: 5px">
 			<p style="color: #fff;">Anjing</p>
 		</center>
 	</div>
