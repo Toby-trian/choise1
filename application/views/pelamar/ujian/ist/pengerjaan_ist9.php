@@ -16,7 +16,7 @@
 	$nomor = $soal_subtes9->nomor_soal;
 	$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $id_ujian");
 	foreach ($ujian->result() as $key ) {
-		$end_lat8 = $key->end_uji_sub8;
+		$end_lat9 = $key->end_uji_sub9;
 	}
 	?>
 	<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_ist9/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
@@ -28,7 +28,7 @@
 
 
 <script type="text/javascript">
-	var countDownDate = new Date("<?php echo $end_lat8 ?>").getTime();
+	var countDownDate = new Date("<?php echo $end_lat9 ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

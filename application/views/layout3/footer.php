@@ -49,6 +49,8 @@
     });
   </script>
 
+
+
   <script>
     $(document).on('keydown', 'input[pattern]', function(e){
       var input = $(this);

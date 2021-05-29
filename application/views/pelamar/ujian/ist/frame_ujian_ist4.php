@@ -20,10 +20,8 @@
 					<center>
 					<?php echo $soal_subtes4->opsi_a; ?>
 					</center> -->
-					<form>
-						<br><input class="form-check-input" type="text" <?php if(!empty($jawaban4->jawaban) && $jawaban4->jawaban== ""){?> <?php } ?> name="jawaban" ></br>
-						<br><input type="submit" value="Submit"></br>
-					</form>
+						<br><input class="form-check-input" type="text" value="<?= isset($jawaban4->jawaban) ? $jawaban4->jawaban : "" ?> " name="jawaban" ></br>
+						<!-- <br><input type="submit" value="Submit"></br> -->
 				</div>
 				
 			
@@ -38,14 +36,13 @@
 				<input type="hidden" name="subtes" value="<?php echo $soal_subtes4->subtes ?>">
 				<input type="hidden" name="kunci_jawaban" value="<?php echo $soal_subtes4->jawaban ?>">
 				<div class="baten">
-					<?php if ($soal_subtes4->nomor_soal != 61 && $soal_subtes4->subtes == 4) { ?>
+					<!-- <?php if ($soal_subtes4->nomor_soal != 61 && $soal_subtes4->subtes == 4) { ?>
 						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_ist4/1') ?>"> <i class="fa fa-arrow-circle-left"> </i> Sebelumnya
 						</button>
-					<?php } ?>
-					<!-- <button type="submit" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban/0') ?>"> Konfirmasi -->
+					<?php } ?> -->
 					</button>
 					<?php if($soal_subtes4->nomor_soal !=76 && $soal_subtes4->subtes == 4){ ?>
-						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_ist4/2') ?>"> Selanjutnya <i class="fa fa-arrow-circle-right"></i>
+						<button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/masukkan_jawaban_ist4/2') ?>"> Submit <i class="fa fa-arrow-circle-right"></i>
 						</button>
 					<?php } ?>
 					<?php if($soal_subtes4->nomor_soal >= 76 && $soal_subtes4->subtes == 4){ ?>
