@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 29, 2021 at 07:30 AM
+-- Generation Time: May 31, 2021 at 08:50 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.21
 
@@ -70,7 +70,8 @@ INSERT INTO `tb_apply` (`id_apply`, `id_pelamar`, `id_lowongan`, `id_perusahaan`
 (12, 1, 2, 1, 'Tidak lolos'),
 (13, 1, 3, 2, 'Diterima'),
 (14, 2, 3, 2, 'Diterima'),
-(15, 1, 4, 1, 'Diterima');
+(15, 1, 4, 1, 'Diterima'),
+(16, 1, 6, 1, 'Diterima');
 
 -- --------------------------------------------------------
 
@@ -350,40 +351,195 @@ CREATE TABLE `tb_data_jawaban_ist` (
   `id_ujian` int(5) NOT NULL,
   `subtes` varchar(5) CHARACTER SET latin1 NOT NULL,
   `jawaban` varchar(25) CHARACTER SET latin1 NOT NULL,
-  `jawaban2` varchar(5) CHARACTER SET latin1 NOT NULL,
-  `jawaban3` varchar(5) CHARACTER SET latin1 NOT NULL,
+  `jawaban2` varchar(5) CHARACTER SET latin1 DEFAULT NULL,
+  `jawaban3` varchar(5) CHARACTER SET latin1 DEFAULT NULL,
   `jawaban_kunci` varchar(25) CHARACTER SET latin1 NOT NULL,
   `jawaban_kunci2` varchar(3) CHARACTER SET latin1 NOT NULL,
-  `jawaban_kunci3` varchar(3) CHARACTER SET latin1 NOT NULL
+  `jawaban_kunci3` varchar(3) CHARACTER SET latin1 DEFAULT NULL,
+  `nilai` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_data_jawaban_ist`
 --
 
-INSERT INTO `tb_data_jawaban_ist` (`id_jawaban_ist`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`, `jawaban3`, `jawaban_kunci`, `jawaban_kunci2`, `jawaban_kunci3`) VALUES
-(82, 1, 3, 1, 80, '1', 'A', '', '', 'D', '', ''),
-(83, 1, 3, 3, 80, '1', 'B', '', '', 'D', '', ''),
-(84, 1, 3, 4, 80, '1', 'C', '', '', 'D', '', ''),
-(85, 1, 3, 41, 80, '3', 'A', '', '', 'C', '', ''),
-(86, 1, 3, 137, 80, '8', 'C', '', '', 'A', '', ''),
-(87, 1, 3, 157, 80, '9', 'A', '', '', 'D', '', ''),
-(88, 1, 3, 62, 80, '4', 'hahah', '', '', '', '', ''),
-(89, 1, 3, 61, 80, '4', 'halo', '', '', 'asu', '', ''),
-(90, 1, 3, 76, 80, '4', ' ', '', '', '', '', ''),
-(93, 1, 3, 78, 82, '5', '2', '9', '0', '2', '8', '0'),
-(94, 1, 3, 97, 83, '6', '1', '7', '', '2', '7', ''),
-(95, 1, 3, 98, 83, '6', '2', '6', '0', '2', '5', ''),
-(96, 1, 3, 61, 83, '4', 'asu sialan ', '', '', 'bunga', '', ''),
-(97, 1, 3, 62, 83, '4', 'ehmmm   ', '', '', 'indera', '', ''),
-(98, 1, 3, 63, 83, '4', '  ', '', '', 'kristal', '', ''),
-(99, 1, 3, 64, 83, '4', '  ', '', '', 'cuaca', '', ''),
-(100, 1, 3, 65, 83, '4', ' ', '', '', 'pembawa berita', '', ''),
-(101, 1, 3, 68, 83, '4', ' dwdawdwd', '', '', 'jumlah', '', ''),
-(102, 1, 3, 67, 83, '4', ' ', '', '', 'alat pencernaan', '', ''),
-(103, 1, 3, 69, 83, '4', ' bibit', '', '', 'bibit', '', ''),
-(104, 1, 3, 74, 83, '4', ' 123', '', '', 'watak', '', ''),
-(105, 1, 3, 75, 83, '4', ' apasih maumu', '', '', 'pengertian ekonomi', '', '');
+INSERT INTO `tb_data_jawaban_ist` (`id_jawaban_ist`, `id_pelamar`, `id_lowongan`, `nomor_soal`, `id_ujian`, `subtes`, `jawaban`, `jawaban2`, `jawaban3`, `jawaban_kunci`, `jawaban_kunci2`, `jawaban_kunci3`, `nilai`) VALUES
+(247, 1, 6, 1, 89, '1', 'E', NULL, NULL, 'D', '', NULL, 0),
+(248, 1, 6, 2, 89, '1', 'C', NULL, NULL, 'C', '', NULL, 1),
+(249, 1, 6, 3, 89, '1', 'D', NULL, NULL, 'D', '', NULL, 1),
+(250, 1, 6, 4, 89, '1', 'D', NULL, NULL, 'D', '', NULL, 1),
+(251, 1, 6, 5, 89, '1', 'C', NULL, NULL, 'D', '', NULL, 0),
+(252, 1, 6, 6, 89, '1', 'B', NULL, NULL, 'B', '', NULL, 1),
+(253, 1, 6, 7, 89, '1', 'C', NULL, NULL, 'C', '', NULL, 1),
+(254, 1, 6, 8, 89, '1', 'A', NULL, NULL, 'A', '', NULL, 1),
+(255, 1, 6, 9, 89, '1', 'E', NULL, NULL, 'E', '', NULL, 1),
+(256, 1, 6, 10, 89, '1', 'A', NULL, NULL, 'B', '', NULL, 0),
+(257, 1, 6, 11, 89, '1', 'C', NULL, NULL, 'C', '', NULL, 1),
+(258, 1, 6, 12, 89, '1', 'E', NULL, NULL, 'D', '', NULL, 0),
+(259, 1, 6, 13, 89, '1', 'A', NULL, NULL, 'D', '', NULL, 0),
+(260, 1, 6, 14, 89, '1', 'E', NULL, NULL, 'E', '', NULL, 1),
+(261, 1, 6, 15, 89, '1', 'A', NULL, NULL, 'C', '', NULL, 0),
+(262, 1, 6, 16, 89, '1', 'A', NULL, NULL, 'A', '', NULL, 1),
+(263, 1, 6, 17, 89, '1', 'A', NULL, NULL, 'B', '', NULL, 0),
+(264, 1, 6, 18, 89, '1', 'D', NULL, NULL, 'B', '', NULL, 0),
+(265, 1, 6, 19, 89, '1', 'A', NULL, NULL, 'C', '', NULL, 0),
+(266, 1, 6, 20, 89, '1', 'C', NULL, NULL, 'A', '', NULL, 0),
+(267, 1, 6, 21, 89, '2', 'B', NULL, NULL, 'B', '', NULL, 1),
+(268, 1, 6, 22, 89, '2', 'E', NULL, NULL, 'B', '', NULL, 0),
+(269, 1, 6, 23, 89, '2', 'D', NULL, NULL, 'D', '', NULL, 1),
+(270, 1, 6, 24, 89, '2', 'E', NULL, NULL, 'C', '', NULL, 0),
+(271, 1, 6, 25, 89, '2', 'C', NULL, NULL, 'C', '', NULL, 1),
+(272, 1, 6, 26, 89, '2', 'C', NULL, NULL, 'C', '', NULL, 1),
+(273, 1, 6, 27, 89, '2', 'C', NULL, NULL, 'C', '', NULL, 1),
+(274, 1, 6, 28, 89, '2', 'D', NULL, NULL, 'D', '', NULL, 1),
+(275, 1, 6, 29, 89, '2', 'D', NULL, NULL, 'D', '', NULL, 1),
+(276, 1, 6, 30, 89, '2', 'A', NULL, NULL, 'A', '', NULL, 1),
+(277, 1, 6, 31, 89, '2', 'E', NULL, NULL, 'E', '', NULL, 1),
+(278, 1, 6, 32, 89, '2', 'A', NULL, NULL, 'A', '', NULL, 1),
+(279, 1, 6, 33, 89, '2', 'A', NULL, NULL, 'A', '', NULL, 1),
+(280, 1, 6, 34, 89, '2', 'B', NULL, NULL, 'B', '', NULL, 1),
+(281, 1, 6, 35, 89, '2', 'D', NULL, NULL, 'C', '', NULL, 0),
+(282, 1, 6, 36, 89, '2', 'E', NULL, NULL, 'A', '', NULL, 0),
+(283, 1, 6, 37, 89, '2', 'B', NULL, NULL, 'D', '', NULL, 0),
+(284, 1, 6, 38, 89, '2', 'E', NULL, NULL, 'E', '', NULL, 1),
+(285, 1, 6, 39, 89, '2', 'A', NULL, NULL, 'B', '', NULL, 0),
+(286, 1, 6, 40, 89, '2', 'C', NULL, NULL, 'C', '', NULL, 1),
+(287, 1, 6, 41, 89, '3', 'C', NULL, NULL, 'C', '', NULL, 1),
+(288, 1, 6, 42, 89, '3', 'A', NULL, NULL, 'E', '', NULL, 0),
+(289, 1, 6, 43, 89, '3', 'A', NULL, NULL, 'D', '', NULL, 0),
+(290, 1, 6, 44, 89, '3', 'D', NULL, NULL, 'D', '', NULL, 1),
+(291, 1, 6, 45, 89, '3', 'C', NULL, NULL, 'D', '', NULL, 0),
+(292, 1, 6, 46, 89, '3', 'B', NULL, NULL, 'B', '', NULL, 1),
+(293, 1, 6, 47, 89, '3', 'D', NULL, NULL, 'D', '', NULL, 1),
+(294, 1, 6, 48, 89, '3', 'B', NULL, NULL, 'B', '', NULL, 1),
+(295, 1, 6, 49, 89, '3', 'E', NULL, NULL, 'E', '', NULL, 1),
+(296, 1, 6, 50, 89, '3', 'E', NULL, NULL, 'D', '', NULL, 0),
+(297, 1, 6, 51, 89, '3', 'A', NULL, NULL, 'C', '', NULL, 0),
+(298, 1, 6, 52, 89, '3', 'E', NULL, NULL, 'C', '', NULL, 0),
+(299, 1, 6, 53, 89, '3', 'D', NULL, NULL, 'C', '', NULL, 0),
+(300, 1, 6, 54, 89, '3', 'D', NULL, NULL, 'C', '', NULL, 0),
+(301, 1, 6, 55, 89, '3', 'C', NULL, NULL, 'E', '', NULL, 0),
+(302, 1, 6, 56, 89, '3', 'C', NULL, NULL, 'C', '', NULL, 1),
+(303, 1, 6, 57, 89, '3', 'C', NULL, NULL, 'C', '', NULL, 1),
+(304, 1, 6, 58, 89, '3', 'E', NULL, NULL, 'E', '', NULL, 1),
+(305, 1, 6, 59, 89, '3', 'C', NULL, NULL, 'E', '', NULL, 0),
+(306, 1, 6, 60, 89, '3', 'B', NULL, NULL, 'E', '', NULL, 0),
+(307, 1, 6, 61, 89, '4', 'bunga', NULL, NULL, 'bunga', '', NULL, 1),
+(308, 1, 6, 62, 89, '4', 'indera', NULL, NULL, 'indera', '', NULL, 1),
+(309, 1, 6, 63, 89, '4', 'kristal', NULL, NULL, 'kristal', '', NULL, 1),
+(310, 1, 6, 64, 89, '4', 'cuaca', NULL, NULL, 'cuaca', '', NULL, 1),
+(311, 1, 6, 65, 89, '4', 'pembawa berita', NULL, NULL, 'pembawa berita', '', NULL, 1),
+(312, 1, 6, 66, 89, '4', 'alat optik', NULL, NULL, 'alat optik', '', NULL, 1),
+(313, 1, 6, 67, 89, '4', 'alat pencernaan', NULL, NULL, 'alat pencernaan', '', NULL, 1),
+(314, 1, 6, 68, 89, '4', 'jumlah', NULL, NULL, 'jumlah', '', NULL, 1),
+(315, 1, 6, 69, 89, '4', 'bibit', NULL, NULL, 'bibit', '', NULL, 1),
+(316, 1, 6, 70, 89, '4', 'lambang', NULL, NULL, 'simbol', '', NULL, 0),
+(317, 1, 6, 71, 89, '4', 'jenis', NULL, NULL, 'makhluk hidup', '', NULL, 0),
+(318, 1, 6, 72, 89, '4', 'wadah', NULL, NULL, 'wadah', '', NULL, 1),
+(319, 1, 6, 73, 89, '4', 'waktu', NULL, NULL, 'batas', '', NULL, 0),
+(320, 1, 6, 74, 89, '4', 'watak', NULL, NULL, 'watak', '', NULL, 1),
+(321, 1, 6, 75, 89, '4', 'promosi', NULL, NULL, 'pengertian ekonomi', '', NULL, 0),
+(322, 1, 6, 76, 89, '4', 'ruang', NULL, NULL, 'pengertian ruang', '', NULL, 0),
+(323, 1, 6, 77, 89, '5', '3', '5', NULL, '3', '5', '', 1),
+(324, 1, 6, 78, 89, '5', '2', '8', '0', '2', '8', '0', 1),
+(325, 1, 6, 79, 89, '5', '2', '5', '9', '2', '5', '0', 1),
+(326, 1, 6, 80, 89, '5', '2', '6', NULL, '2', '6', '', 1),
+(327, 1, 6, 81, 89, '5', '2', '8', NULL, '3', '0', '', 0),
+(328, 1, 6, 82, 89, '5', '3', '0', NULL, '7', '0', '', 0),
+(329, 1, 6, 83, 89, '5', '4', '5', NULL, '4', '5', '', 1),
+(330, 1, 6, 84, 89, '5', '4', '0', NULL, '5', '0', '', 0),
+(331, 1, 6, 85, 89, '5', '5', '8', NULL, '4', '8', '', 0),
+(332, 1, 6, 86, 89, '5', '7', '8', NULL, '7', '8', '', 1),
+(333, 1, 6, 87, 89, '5', '1', '9', NULL, '1', '9', '', 1),
+(334, 1, 6, 88, 89, '5', '6', NULL, NULL, '6', '', '', 1),
+(335, 1, 6, 89, 89, '5', '5', '7', NULL, '5', '7', '', 1),
+(336, 1, 6, 90, 89, '5', '7', '9', NULL, '9', '0', '', 0),
+(337, 1, 6, 91, 89, '5', '1', '2', '0', '1', '2', '0', 1),
+(338, 1, 6, 92, 89, '5', '3', '8', NULL, '1', '7', '', 0),
+(339, 1, 6, 93, 89, '5', '4', '5', '0', '2', '4', '', 0),
+(340, 1, 6, 94, 89, '5', '3', '4', NULL, '5', '', '', 0),
+(341, 1, 6, 95, 89, '5', '4', '5', '0', '4', '8', '', 0),
+(342, 1, 6, 96, 89, '5', '2', '3', '9', '3', '', '', 0),
+(343, 1, 6, 97, 89, '6', '2', '7', NULL, '2', '7', '', 1),
+(344, 1, 6, 98, 89, '6', '2', '5', NULL, '2', '5', '', 1),
+(345, 1, 6, 99, 89, '6', '2', '7', NULL, '2', '7', '', 1),
+(346, 1, 6, 100, 89, '6', '1', '5', NULL, '1', '5', '', 1),
+(347, 1, 6, 101, 89, '6', '4', '6', NULL, '4', '6', '', 1),
+(348, 1, 6, 102, 89, '6', '1', '0', NULL, '1', '0', '', 1),
+(349, 1, 6, 103, 89, '6', '2', '4', NULL, '2', '4', '', 1),
+(350, 1, 6, 104, 89, '6', '7', NULL, NULL, '7', '', '', 1),
+(351, 1, 6, 105, 89, '6', '5', NULL, NULL, '5', '', '', 1),
+(352, 1, 6, 106, 89, '6', '1', '4', NULL, '1', '4', '', 1),
+(353, 1, 6, 107, 89, '6', '3', '4', '0', '8', '', '', 0),
+(354, 1, 6, 108, 89, '6', '2', '3', '9', '1', '4', '', 0),
+(355, 1, 6, 109, 89, '6', '3', '4', '8', '4', '5', '', 0),
+(356, 1, 6, 110, 89, '6', '1', '4', '5', '3', '6', '', 0),
+(357, 1, 6, 111, 89, '6', '3', '4', '9', '1', '2', '', 0),
+(358, 1, 6, 112, 89, '6', '4', '5', '0', '8', '0', '', 0),
+(359, 1, 6, 113, 89, '6', '2', '3', '9', '1', '4', '', 0),
+(360, 1, 6, 114, 89, '6', '4', '5', '0', '1', '2', '', 0),
+(361, 1, 6, 115, 89, '6', '2', '8', '9', '3', '6', '', 0),
+(362, 1, 6, 116, 89, '6', '5', '0', NULL, '1', '0', '', 0),
+(363, 1, 6, 117, 89, '7', 'A', NULL, NULL, 'A', '', NULL, 1),
+(364, 1, 6, 118, 89, '7', 'C', NULL, NULL, 'C', '', NULL, 1),
+(365, 1, 6, 119, 89, '7', 'D', NULL, NULL, 'B', '', NULL, 0),
+(366, 1, 6, 120, 89, '7', 'B', NULL, NULL, 'A', '', NULL, 0),
+(367, 1, 6, 121, 89, '7', 'D', NULL, NULL, 'D', '', NULL, 1),
+(368, 1, 6, 122, 89, '7', 'B', NULL, NULL, 'B', '', NULL, 1),
+(369, 1, 6, 123, 89, '7', 'C', NULL, NULL, 'C', '', NULL, 1),
+(370, 1, 6, 124, 89, '7', 'E', NULL, NULL, 'E', '', NULL, 1),
+(371, 1, 6, 125, 89, '7', 'E', NULL, NULL, 'E', '', NULL, 1),
+(372, 1, 6, 126, 89, '7', 'E', NULL, NULL, 'D', '', NULL, 0),
+(373, 1, 6, 127, 89, '7', 'E', NULL, NULL, 'E', '', NULL, 1),
+(374, 1, 6, 128, 89, '7', 'B', NULL, NULL, 'B', '', NULL, 1),
+(375, 1, 6, 129, 89, '7', 'D', NULL, NULL, 'D', '', NULL, 1),
+(376, 1, 6, 130, 89, '7', 'C', NULL, NULL, 'C', '', NULL, 1),
+(377, 1, 6, 131, 89, '7', 'B', NULL, NULL, 'B', '', NULL, 1),
+(378, 1, 6, 132, 89, '7', 'A', NULL, NULL, 'A', '', NULL, 1),
+(379, 1, 6, 133, 89, '7', 'B', NULL, NULL, 'B', '', NULL, 1),
+(380, 1, 6, 134, 89, '7', 'D', NULL, NULL, 'D', '', NULL, 1),
+(381, 1, 6, 135, 89, '7', 'C', NULL, NULL, 'C', '', NULL, 1),
+(382, 1, 6, 136, 89, '7', 'B', NULL, NULL, 'C', '', NULL, 0),
+(383, 1, 6, 137, 89, '8', 'A', NULL, NULL, 'A', '', NULL, 1),
+(384, 1, 6, 138, 89, '8', 'A', NULL, NULL, 'C', '', NULL, 0),
+(385, 1, 6, 139, 89, '8', 'D', NULL, NULL, 'D', '', NULL, 1),
+(386, 1, 6, 140, 89, '8', 'E', NULL, NULL, 'E', '', NULL, 1),
+(387, 1, 6, 141, 89, '8', 'A', NULL, NULL, 'A', '', NULL, 1),
+(388, 1, 6, 142, 89, '8', 'C', NULL, NULL, 'C', '', NULL, 1),
+(389, 1, 6, 143, 89, '8', 'D', NULL, NULL, 'D', '', NULL, 1),
+(390, 1, 6, 144, 89, '8', 'C', NULL, NULL, 'C', '', NULL, 1),
+(391, 1, 6, 145, 89, '8', 'E', NULL, NULL, 'E', '', NULL, 1),
+(392, 1, 6, 146, 89, '8', 'A', NULL, NULL, 'A', '', NULL, 1),
+(393, 1, 6, 147, 89, '8', 'B', NULL, NULL, 'B', '', NULL, 1),
+(394, 1, 6, 148, 89, '8', 'D', NULL, NULL, 'D', '', NULL, 1),
+(395, 1, 6, 149, 89, '8', 'E', NULL, NULL, 'E', '', NULL, 1),
+(396, 1, 6, 150, 89, '8', 'B', NULL, NULL, 'B', '', NULL, 1),
+(397, 1, 6, 151, 89, '8', 'D', NULL, NULL, 'D', '', NULL, 1),
+(398, 1, 6, 152, 89, '8', 'C', NULL, NULL, 'B', '', NULL, 0),
+(399, 1, 6, 153, 89, '8', 'B', NULL, NULL, 'A', '', NULL, 0),
+(400, 1, 6, 154, 89, '8', 'D', NULL, NULL, 'E', '', NULL, 0),
+(401, 1, 6, 155, 89, '8', 'B', NULL, NULL, 'B', '', NULL, 1),
+(402, 1, 6, 156, 89, '8', 'C', NULL, NULL, 'C', '', NULL, 1),
+(403, 1, 6, 157, 89, '9', 'B', NULL, NULL, 'D', '', NULL, 0),
+(404, 1, 6, 158, 89, '9', 'E', NULL, NULL, 'E', '', NULL, 1),
+(405, 1, 6, 159, 89, '9', 'B', NULL, NULL, 'B', '', NULL, 1),
+(406, 1, 6, 160, 89, '9', 'A', NULL, NULL, 'A', '', NULL, 1),
+(407, 1, 6, 161, 89, '9', 'C', NULL, NULL, 'C', '', NULL, 1),
+(408, 1, 6, 162, 89, '9', 'A', NULL, NULL, 'A', '', NULL, 1),
+(409, 1, 6, 163, 89, '9', 'D', NULL, NULL, 'D', '', NULL, 1),
+(410, 1, 6, 164, 89, '9', 'E', NULL, NULL, 'E', '', NULL, 1),
+(411, 1, 6, 165, 89, '9', 'C', NULL, NULL, 'C', '', NULL, 1),
+(412, 1, 6, 166, 89, '9', 'B', NULL, NULL, 'B', '', NULL, 1),
+(413, 1, 6, 167, 89, '9', 'B', NULL, NULL, 'B', '', NULL, 1),
+(414, 1, 6, 168, 89, '9', 'A', NULL, NULL, 'A', '', NULL, 1),
+(415, 1, 6, 169, 89, '9', 'E', NULL, NULL, 'E', '', NULL, 1),
+(416, 1, 6, 170, 89, '9', 'C', NULL, NULL, 'C', '', NULL, 1),
+(417, 1, 6, 171, 89, '9', 'B', NULL, NULL, 'D', '', NULL, 0),
+(418, 1, 6, 172, 89, '9', 'D', NULL, NULL, 'B', '', NULL, 0),
+(419, 1, 6, 173, 89, '9', 'B', NULL, NULL, 'E', '', NULL, 0),
+(420, 1, 6, 174, 89, '9', 'E', NULL, NULL, 'A', '', NULL, 0),
+(421, 1, 6, 175, 89, '9', 'A', NULL, NULL, 'C', '', NULL, 0),
+(422, 1, 6, 176, 89, '9', 'C', NULL, NULL, 'D', '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -608,7 +764,8 @@ INSERT INTO `tb_lowongan` (`id_lowongan`, `id_perusahaan`, `id_jenis_motlet`, `n
 (2, 1, 1, 'Freelance Surveyor', '2021-02-03', 'Surabaya', '<p>-</p>', '-'),
 (3, 2, 1, 'tetew', '2021-04-15', 'surabaya', '<p>tetew</p>', '12000'),
 (4, 1, 2, 'Kenaikan Jabatan', '2021-04-20', 'Surabaya', '<p>Waras</p>', 'Rp 10.000.'),
-(5, 2, 1, 'test', '2021-05-25', 'tgregreg', '<p>rgeg</p>', '123');
+(5, 2, 1, 'test', '2021-05-25', 'tgregreg', '<p>rgeg</p>', '123'),
+(6, 1, 1, 'COBA', '2021-06-01', 'Surabaya', '<p>ehem</p>', '-');
 
 -- --------------------------------------------------------
 
@@ -643,7 +800,8 @@ INSERT INTO `tb_motivation_letter` (`id_motivasi`, `id_pelamar`, `id_soal`, `jaw
 (26, 1, 0, 'test124', '1223433q3', ''),
 (27, 1, 0, 'test124', '1223433q3', ''),
 (28, 2, 0, 'az nm,nhgfdxcg', 'qdqdwqdqwd', ''),
-(29, 1, 0, 'test124', '1223433q3', '');
+(29, 1, 0, 'test124', '1223433q3', ''),
+(30, 1, 0, 'test124', '1223433q3', '');
 
 -- --------------------------------------------------------
 
@@ -712,6 +870,30 @@ INSERT INTO `tb_nilai_cfit` (`id_nilai_cfit`, `id_pelamar`, `id_lowongan`, `nila
 (4, 1, 4, 0, 38, 'Intellectual deficient', ''),
 (5, 2, 3, 0, 38, 'Intellectual deficient', ''),
 (6, 30, 2, 0, 38, 'Intellectual deficient', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_nilai_ist`
+--
+
+CREATE TABLE `tb_nilai_ist` (
+  `id_nilai_ist` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL DEFAULT 0,
+  `id_lowongan` int(5) NOT NULL DEFAULT 0,
+  `nilai_ist` int(5) NOT NULL DEFAULT 0,
+  `iq` int(5) NOT NULL DEFAULT 0,
+  `se` int(5) NOT NULL DEFAULT 0,
+  `wa` int(5) NOT NULL DEFAULT 0,
+  `an` int(5) NOT NULL DEFAULT 0,
+  `ge` int(5) NOT NULL DEFAULT 0,
+  `ra` int(5) NOT NULL DEFAULT 0,
+  `zr` int(5) NOT NULL DEFAULT 0,
+  `fa` int(5) NOT NULL DEFAULT 0,
+  `wu` int(5) NOT NULL DEFAULT 0,
+  `me` int(5) NOT NULL DEFAULT 0,
+  `kategori` varchar(50) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -995,7 +1177,7 @@ INSERT INTO `tb_soal_ist` (`id_soal`, `nomor_soal`, `soal`, `opsi_a`, `opsi_b`, 
 (38, 38, '', 'jembatan', 'batas', 'perkawinan', 'pagar', 'masyarakat', '', '', '', '', '', 'E', '', '', '2'),
 (39, 39, '', 'mengetam', 'memahat', 'mengasah', 'melicinkan', 'menggosok', '', '', '', '', '', 'B', '', '', '2'),
 (40, 40, '', 'batu', 'baja', 'bulu', 'karet', 'kayu', '', '', '', '', '', 'C', '', '', '2'),
-(41, 41, 'menemukan : menghilangkan = meningat : ?', 'menghafal', 'mengenai', 'melupakan', 'berpikir', 'memimpikan', '', '', '', '', '', 'C', '', '', '3'),
+(41, 41, 'menemukan : menghilangkan = mengingat : ?', 'menghafal', 'mengenai', 'melupakan', 'berpikir', 'memimpikan', '', '', '', '', '', 'C', '', '', '3'),
 (42, 42, 'bunga : jambangan   =   burung :   ?', 'sarang', 'langit', 'pagar', 'pohon', 'sangkar', '', '', '', '', '', 'E', '', '', '3'),
 (43, 43, 'kereta api : rel   =   otobis :  ?', 'roda', 'poros', 'ban', 'jalan raya', 'kecepatan', '', '', '', '', '', 'D', '', '', '3'),
 (44, 44, 'perak : emas   =   cincin :   ?', 'arloji', 'berlian ', 'permata', 'gelang', 'platina', '', '', '', '', '', 'D', '', '', '3'),
@@ -1530,7 +1712,7 @@ CREATE TABLE `tb_ujian_ist` (
 --
 
 INSERT INTO `tb_ujian_ist` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `start_lat_sub5`, `end_lat_sub5`, `start_uji_sub5`, `end_uji_sub5`, `start_lat_sub6`, `end_lat_sub6`, `start_uji_sub6`, `end_uji_sub6`, `start_lat_sub7`, `end_lat_sub7`, `start_uji_sub7`, `end_uji_sub7`, `start_lat_sub8`, `end_lat_sub8`, `start_uji_sub8`, `end_uji_sub8`, `start_lat_sub9`, `end_lat_sub9`, `start_uji_sub9`, `end_uji_sub9`, `durasi`, `nama_pembuat`, `status`) VALUES
-(83, 'Tes Intelegensi 2 ( IST )', '2021-05-29 08:36:00', '2021-05-29 08:56:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:36:00', '2021-05-29 08:46:00', '2021-05-29 08:46:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', '2021-05-29 08:56:00', 1950, 'Administrator', 'tersedia');
+(89, 'Tes Intelegensi 2 ( IST )', '2021-05-31 12:30:00', '2021-05-31 13:51:00', '2021-05-31 12:30:00', '2021-05-31 12:31:00', '2021-05-31 12:31:00', '2021-05-31 12:37:00', '2021-05-31 12:37:00', '2021-05-31 12:38:00', '2021-05-31 12:38:00', '2021-05-31 12:44:00', '2021-05-31 12:44:00', '2021-05-31 12:45:00', '2021-05-31 12:45:00', '2021-05-31 12:52:00', '2021-05-31 12:52:00', '2021-05-31 12:53:00', '2021-05-31 12:53:00', '2021-05-31 13:01:00', '2021-05-31 13:01:00', '2021-05-31 13:02:00', '2021-05-31 13:02:00', '2021-05-31 13:12:00', '2021-05-31 13:12:00', '2021-05-31 13:13:00', '2021-05-31 13:13:00', '2021-05-31 13:23:00', '2021-05-31 13:23:00', '2021-05-31 13:24:00', '2021-05-31 13:24:00', '2021-05-31 13:31:00', '2021-05-31 13:31:00', '2021-05-31 13:32:00', '2021-05-31 13:32:00', '2021-05-31 13:41:00', '2021-05-31 13:41:00', '2021-05-31 13:45:00', '2021-05-31 13:45:00', '2021-05-31 13:51:00', 1950, 'Administrator', 'tersedia');
 
 -- --------------------------------------------------------
 
@@ -1710,6 +1892,12 @@ ALTER TABLE `tb_nilai_cfit`
   ADD PRIMARY KEY (`id_nilai_cfit`);
 
 --
+-- Indexes for table `tb_nilai_ist`
+--
+ALTER TABLE `tb_nilai_ist`
+  ADD PRIMARY KEY (`id_nilai_ist`);
+
+--
 -- Indexes for table `tb_nilai_pwb`
 --
 ALTER TABLE `tb_nilai_pwb`
@@ -1825,7 +2013,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_apply`
 --
 ALTER TABLE `tb_apply`
-  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_apply` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_berkas`
@@ -1849,7 +2037,7 @@ ALTER TABLE `tb_data_jawaban_holland`
 -- AUTO_INCREMENT for table `tb_data_jawaban_ist`
 --
 ALTER TABLE `tb_data_jawaban_ist`
-  MODIFY `id_jawaban_ist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id_jawaban_ist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=423;
 
 --
 -- AUTO_INCREMENT for table `tb_data_jawaban_papi`
@@ -1903,13 +2091,13 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT for table `tb_lowongan`
 --
 ALTER TABLE `tb_lowongan`
-  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_lowongan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_motivation_letter`
 --
 ALTER TABLE `tb_motivation_letter`
-  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_motivasi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tb_nilai`
@@ -1922,6 +2110,12 @@ ALTER TABLE `tb_nilai`
 --
 ALTER TABLE `tb_nilai_cfit`
   MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_nilai_ist`
+--
+ALTER TABLE `tb_nilai_ist`
+  MODIFY `id_nilai_ist` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_nilai_pwb`
@@ -2005,7 +2199,7 @@ ALTER TABLE `tb_ujian_holland`
 -- AUTO_INCREMENT for table `tb_ujian_ist`
 --
 ALTER TABLE `tb_ujian_ist`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `tb_ujian_ist2`

@@ -112,14 +112,14 @@
 
 	<div class="col-sm-12">
 
-	<h4><b>Setelah anda klik " Lanjutkan " silahkan untuk segera menghafalkan kelompok kata yang tersedia !</b></h4>
+	<h4 style="color : red"><b>Setelah anda klik " Lanjutkan " silahkan untuk segera menghafalkan kelompok kata yang tersedia !</b></h4>
 
 		<?php $idUjian = $this->session->userdata('ses_ujian'); 
 		$id_pelamar = $this->session->userdata('ses_id');
 
 		$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
 		foreach ($ujian->result() as $key ) {
-			$end_lat9 = $key->end_lat_sub9;
+			//$end_lat9 = $key->end_lat_sub9;
 		}
 		?>
 		<form method="post" action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh_ist9/'.$idUjian) ?>">

@@ -67,6 +67,13 @@
 			<p>...................</p>
 		</center>
 	</div>
+
+	<p class="col-sm-12" margin: 10px;">Pada contoh ini jawaban ialah : <strong>" pakaian "</strong>. Maka <strong>" pakaian "</strong> yang harus ditulis.</p>
+	
+
+	<b class="col-sm-12" style="color: red; margin: 10px;">" Isilah kolom jawaban hanya dengan kalimat berhuruf kecil semua ( bukan kapital ) "</b>
+
+	
 </div>
 
 </div>

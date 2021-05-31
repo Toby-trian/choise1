@@ -44,6 +44,17 @@ class Data_nilai extends CI_Controller {
 		$this->load->view('administrator/data_nilai',$paket);
 	}
 
+	private function data_nilai_ist(int $id)
+	{
+		$nilai_ist = $this->db->query(
+			"select * from tb_nilai_ist where id_pelamar = ".$id
+		);
+
+		foreach ($nilai_ist as $row) {
+			//
+		}
+	}
+
 
 	public function index()
 	{

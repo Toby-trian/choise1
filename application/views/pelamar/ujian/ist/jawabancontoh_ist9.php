@@ -3,11 +3,22 @@
 
 <div class="col-sm-12 main">
 
-	<div class="row">
-		<div class="col-lg-12">
+  <div class="row" style="margin-bottom: -50px;">
+		<div class="col-lg-9">
 			<h3></h3>
 		</div>
+		<div class="col-lg-3">
+			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
+		</div>
 	</div><!--/.row-->
+	<?php  
+	$idUjian=  $this->session->userdata('ses_ujian');
+	$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
+	foreach ($ujian->result() as $key ) {
+		$end_lat9 = $key->end_lat_sub9;
+	}
+  ?>
+  
 	<div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
 	<h4 style="color: #fff;"><b>Disediakan waktu 3 menit untuk menghafalkan kata-kata di bawah ini.</b></h4>
 	<img src="<?php  echo base_url('assets3/images/soalist/subtes9/hafalkan.jpg') ?>" class="img-responsive" alt="" style="width: 900px; margin: 50px; border-radius: 5px;">

@@ -20,7 +20,7 @@
 					<center>
 					<?php echo $soal_subtes4->opsi_a; ?>
 					</center> -->
-						<br><input class="form-check-input" type="text" value="<?= isset($jawaban4->jawaban) ? $jawaban4->jawaban : "" ?> " name="jawaban" ></br>
+						<br><input class="form-check-input" type="text" value="<?= isset($jawaban4->jawaban) ? $jawaban4->jawaban : "" ?>"name="jawaban" ></br>
 						<!-- <br><input type="submit" value="Submit"></br> -->
 				</div>
 				

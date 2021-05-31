@@ -48,7 +48,7 @@ var x = setInterval(function() {
 
   if (distance < 0) {
   	clearInterval(x);
-  	alert('Waktu Ujian Subtes2 Telah Berakhir');
+  	alert('Waktu Ujian Subtes 3 Telah Berakhir');
   	window.location.href = '<?php echo base_url('Pelamar/Ujian/latihan_ist4/'.$id_ujian); ?>';
 
   }

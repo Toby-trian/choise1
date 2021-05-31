@@ -7,7 +7,18 @@
 		<div class="col-lg-12">
 			<h3>Soal Latihan</h3>
 		</div>
+		<div class="col-lg-3">
+			<h4 style="margin-top: 35px" align="right">Waktu latihan <span id="time"></span> detik</h4>
+		</div>
 	</div><!--/.row-->
+	<?php $idUjian = $this->session->userdata('ses_ujian'); 
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
+		foreach ($ujian->result() as $key ) {
+			$end_lat5 = $key->end_lat_sub5;
+		}
+		?>
 
 	<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border-radius: 5px;">
 		<div class="col-sm-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 20px; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; border-radius: 5px;">
@@ -20,7 +31,7 @@
 					<label class="form-check-label" for="latist51">0</label>
 				</div>
 			</div>
-				<p style="margin-top: 11%">Jawaban anda: <?php echo $this->session->userdata('ses_jawab1')?> dan <?php echo $this->session->userdata('ses_jawab2')?>
+				<!-- <p style="margin-top: 11%">Jawaban anda: <?php echo $this->session->userdata('ses_jawab1')?> dan <?php echo $this->session->userdata('ses_jawab2')?> -->
 		<?php $id_pelamar = $this->session->userdata('ses_id');
 		$id_ujian = $this->session->userdata('ses_ujian');
 		?>

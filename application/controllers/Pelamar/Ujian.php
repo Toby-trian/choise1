@@ -566,6 +566,12 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
@@ -574,8 +580,8 @@ public function start_ujian_ist3($id,$rdr)
 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
-
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
@@ -593,7 +599,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -623,16 +630,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
- 			'subtes' => $subtes,
+			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
-
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
@@ -648,9 +661,10 @@ public function start_ujian_ist3($id,$rdr)
 				'nomor_soal' =>$nomor_soal,
 				'subtes' =>$subtes
 			);
- 			$data2 = array(
+			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai' => $nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -680,15 +694,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
 		);
 
@@ -737,15 +758,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
- 			'id_lowongan' => $id_lowongan,
+			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
 		);
 
@@ -764,7 +792,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -797,6 +826,20 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		
+
+		if ($kuncijawaban3) {
+			if ($jawaban[0] === $kuncijawaban1 && $jawaban[1] === $kuncijawaban2 && $jawaban[2] === $kuncijawaban3 ) {
+				$nilai = 1;
+			}
+		} else {
+			if ($jawaban[0] == $kuncijawaban1 && $jawaban[1] == $kuncijawaban2 ) {
+				$nilai = 1;
+			}
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
@@ -806,10 +849,11 @@ public function start_ujian_ist3($id,$rdr)
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban[0],
 			'jawaban2' => $jawaban[1],
-			'jawaban3' => $jawaban[2],
+			'jawaban3' => (isset($jawaban[2])) ? $jawaban[2] : null,
 			'jawaban_kunci' => $kuncijawaban1,
 			'jawaban_kunci2' => $kuncijawaban2,
-			'jawaban_kunci3' => $kuncijawaban3
+			'jawaban_kunci3' => $kuncijawaban3,
+			'nilai' => $nilai,
 
 		);
 
@@ -832,7 +876,8 @@ public function start_ujian_ist3($id,$rdr)
 				'jawaban3' => $jawaban[2],
 				'jawaban_kunci' => $kuncijawaban1,
 				'jawaban_kunci2' => $kuncijawaban2,
-				'jawaban_kunci3' => $kuncijawaban3
+				'jawaban_kunci3' => $kuncijawaban3,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -864,6 +909,20 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		
+
+		if ($kuncijawaban3) {
+			if ($jawaban[0] === $kuncijawaban1 && $jawaban[1] === $kuncijawaban2 && $jawaban[2] === $kuncijawaban3 ) {
+				$nilai = 1;
+			}
+		} else {
+			if ($jawaban[0] == $kuncijawaban1 && $jawaban[1] == $kuncijawaban2 ) {
+				$nilai = 1;
+			}
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
@@ -873,10 +932,11 @@ public function start_ujian_ist3($id,$rdr)
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban[0],
 			'jawaban2' => $jawaban[1],
-			'jawaban3' => $jawaban[2],
+			'jawaban3' => (isset($jawaban[2])) ? $jawaban[2] : null,
 			'jawaban_kunci' => $kuncijawaban1,
 			'jawaban_kunci2' => $kuncijawaban2,
-			'jawaban_kunci3' => $kuncijawaban3
+			'jawaban_kunci3' => $kuncijawaban3,
+			'nilai' => $nilai,
 
 		);
 
@@ -899,7 +959,8 @@ public function start_ujian_ist3($id,$rdr)
 				'jawaban3' => $jawaban[2],
 				'jawaban_kunci' => $kuncijawaban1,
 				'jawaban_kunci2' => $kuncijawaban2,
-				'jawaban_kunci3' => $kuncijawaban3
+				'jawaban_kunci3' => $kuncijawaban3,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -929,15 +990,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
 		);
 
@@ -956,7 +1024,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -986,15 +1055,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
 		);
 
@@ -1013,7 +1089,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1043,15 +1120,22 @@ public function start_ujian_ist3($id,$rdr)
 			$rdr = $nomor_soal;
 		}
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci' => $kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
 		);
 
@@ -1070,7 +1154,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1092,15 +1177,23 @@ public function start_ujian_ist3($id,$rdr)
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1119,7 +1212,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1140,15 +1234,24 @@ public function start_ujian_ist3($id,$rdr)
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
+		
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1167,7 +1270,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1185,24 +1289,26 @@ public function start_ujian_ist3($id,$rdr)
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
 		$jawaban = $this->input->post('jawaban');
-		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
-		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
-		$kuncijawaban3 = $this->input->post('kunci_jawaban3');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
 
+
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
 
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
-			'jawaban' => $jawaban[0],
-			'jawaban2' => $jawaban[1],
-			'jawaban3' => $jawaban[2],
-			'jawaban_kunci'=>$kuncijawaban1,
-			'jawaban_kunci2'=>$kuncijawaban2,
-			'jawaban_kunci3'=>$kuncijawaban3
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1220,12 +1326,9 @@ public function start_ujian_ist3($id,$rdr)
 				'subtes' =>$subtes
 			);
 			$data2 = array(
-				'jawaban' => $jawaban[0],
-				'jawaban2' => $jawaban[1],
-				'jawaban3' => $jawaban[2],
-				'jawaban_kunci'=>$kuncijawaban1,
-				'jawaban_kunci2'=>$kuncijawaban2,
-				'jawaban_kunci3'=>$kuncijawaban3
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1246,15 +1349,23 @@ public function start_ujian_ist3($id,$rdr)
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
+		$nilai = 0;
+
+		if ($jawaban == $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1273,7 +1384,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1292,10 +1404,24 @@ public function start_ujian_ist3($id,$rdr)
 		$id_ujian = $this->input->post('id_ujian');
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
-		$jawaban = $this->input->post('jawaban');
+		$jawaban = $this->input->post('jawaban1');
 		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
 		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
+		$kuncijawaban3 = $this->input->post('kunci_jawaban3');
 
+		$nilai = 0;
+
+		
+
+		if ($kuncijawaban3) {
+			if ($jawaban[0] === $kuncijawaban1 && $jawaban[1] === $kuncijawaban2 && $jawaban[2] === $kuncijawaban3 ) {
+				$nilai = 1;
+			}
+		} else {
+			if ($jawaban[0] == $kuncijawaban1 && $jawaban[1] == $kuncijawaban2 ) {
+				$nilai = 1;
+			}
+		}
 
 		$data = array(
 			'id_jawaban_ist'=>'',
@@ -1306,8 +1432,11 @@ public function start_ujian_ist3($id,$rdr)
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban[0],
 			'jawaban2' => $jawaban[1],
+			'jawaban3' => (isset($jawaban[2])) ? $jawaban[2] : null,
 			'jawaban_kunci'=>$kuncijawaban1,
 			'jawaban_kunci2'=>$kuncijawaban2,
+			'jawaban_kunci3'=>$kuncijawaban3,
+			'nilai'=>$nilai
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1329,6 +1458,7 @@ public function start_ujian_ist3($id,$rdr)
 				'jawaban2' => $jawaban[1],
 				'jawaban_kunci'=>$kuncijawaban1,
 				'jawaban_kunci2'=>$kuncijawaban2,
+				'nilai' => $nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1345,10 +1475,24 @@ public function start_ujian_ist3($id,$rdr)
 		$id_ujian = $this->input->post('id_ujian');
 		$subtes = $this->input->post('subtes');
 		$nomor_soal = $this->input->post('nomor_soal');
-		$jawaban = $this->input->post('jawaban');
+		$jawaban = $this->input->post('jawaban1');
 		$kuncijawaban1 = $this->input->post('kunci_jawaban1');
 		$kuncijawaban2 = $this->input->post('kunci_jawaban2');
+		$kuncijawaban3 = $this->input->post('kunci_jawaban3');
 
+		$nilai = 0;
+
+		
+
+		if ($kuncijawaban3) {
+			if ($jawaban[0] === $kuncijawaban1 && $jawaban[1] === $kuncijawaban2 && $jawaban[2] === $kuncijawaban3 ) {
+				$nilai = 1;
+			}
+		} else {
+			if ($jawaban[0] == $kuncijawaban1 && $jawaban[1] == $kuncijawaban2 ) {
+				$nilai = 1;
+			}
+		}
 
 		$data = array(
 			'id_jawaban_ist'=>'',
@@ -1359,8 +1503,11 @@ public function start_ujian_ist3($id,$rdr)
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban[0],
 			'jawaban2' => $jawaban[1],
+			'jawaban3' => (isset($jawaban[2])) ? $jawaban[2] : null,
 			'jawaban_kunci'=>$kuncijawaban1,
 			'jawaban_kunci2'=>$kuncijawaban2,
+			'jawaban_kunci3'=>$kuncijawaban3,
+			'nilai'=>$nilai
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1382,6 +1529,7 @@ public function start_ujian_ist3($id,$rdr)
 				'jawaban2' => $jawaban[1],
 				'jawaban_kunci'=>$kuncijawaban1,
 				'jawaban_kunci2'=>$kuncijawaban2,
+				'nilai' => $nilai,
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1401,16 +1549,23 @@ public function start_ujian_ist3($id,$rdr)
 		$jawaban = $this->input->post('jawaban');
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
 
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
@@ -1429,7 +1584,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1450,17 +1606,24 @@ public function start_ujian_ist3($id,$rdr)
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
+
 		$data = array(
 			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
-		);
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
 
+		);
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
 
 		if ($query->num_rows() == 0) {
@@ -1477,7 +1640,8 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
@@ -1497,23 +1661,30 @@ public function start_ujian_ist3($id,$rdr)
 		$jawaban = $this->input->post('jawaban');
 		$kuncijawaban = $this->input->post('kunci_jawaban');
 
+		$nilai = 0;
+
+		if ($jawaban === $kuncijawaban) {
+			$nilai = 1;
+		}
 
 		$data = array(
-			'id_jawaban_cfit'=>'',
+			'id_jawaban_ist'=>'',
 			'id_pelamar'=>$id_pelamar,
 			'id_lowongan' => $id_lowongan,
 			'id_ujian' => $id_ujian,
-			'subtes' => $subtes,
+ 			'subtes' => $subtes,
 			'nomor_soal' => $nomor_soal,
 			'jawaban' => $jawaban,
-			'jawaban_kunci'=>$kuncijawaban
+			'jawaban_kunci' => $kuncijawaban,
+			'nilai' => $nilai,
+
 		);
 
 		$query = $this->db->query("SELECT * FROM tb_data_jawaban_ist WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
 
 		if ($query->num_rows() == 0) {
 			if (!empty($jawaban)) {
-				$insert = $this->Mdl_ujian->insert_jawaban($data);
+				$insert = $this->Mdl_ujian->insert_jawaban_ist($data);
 			}
 			echo '<script>window.top.location.href = "index/";</script>'; 
 			
@@ -1525,15 +1696,17 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci' =>$kuncijawaban1
+				'jawaban_kunci'=>$kuncijawaban,
+				'nilai'=>$nilai
 			);
 			if (!empty($jawaban)) {
-				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_ist');
 			}
 			echo '<script>window.top.location.href = "index";</script>';
 			
 		}
 	}
+
 
 
 
@@ -1939,7 +2112,7 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci'=>$kuncijawaban1
+				'jawaban_kunci'=>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');
@@ -1987,7 +2160,7 @@ public function start_ujian_ist3($id,$rdr)
 			);
 			$data2 = array(
 				'jawaban'=>$jawaban,
-				'jawaban_kunci' =>$kuncijawaban1
+				'jawaban_kunci' =>$kuncijawaban
 			);
 			if (!empty($jawaban)) {
 				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_cfit');

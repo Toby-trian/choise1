@@ -15,7 +15,7 @@
 	$idUjian=  $this->session->userdata('ses_ujian');
 	$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
 	foreach ($ujian->result() as $key ) {
-		$end_lat1 = $key->end_lat_sub1;
+		//$end_lat1 = $key->end_lat_sub1;
 	}
 	?>
 

@@ -208,6 +208,14 @@
                     ?>
                   </td>
                 </tr>
+                <tr >
+                  <th width="150">IQ</th>
+                  <td></td>
+                </tr>
+                <tr >
+                  <th width="150">Kategori</th>
+                  <td></td>
+                </tr>
                 <tr>
                   <th>Nilai Ist :</th>
                   <td></td>

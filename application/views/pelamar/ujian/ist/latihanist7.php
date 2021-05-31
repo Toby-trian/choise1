@@ -196,7 +196,7 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
-    alert('Waktu latian subtes 1 sudah berakhir, selamat mengerjakan subtes 1');
+    alert('Waktu latian subtes 7 sudah berakhir, selamat mengerjakan subtes 7');
     window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian.'/117'); ?>';
 
     // document.getElementById('hentikan').click();

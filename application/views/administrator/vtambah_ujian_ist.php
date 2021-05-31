@@ -174,24 +174,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 5</label>
                       <input class="form-control time" name="start_lat_sub5" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 5</label>
                     <input class="form-control time" name="end_lat_sub5" type="text" required>
                   </div>
                 </div>    
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 5</label>
                       <input class="form-control time" name="start_uji_sub5" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 5</label>
                     <input class="form-control time" name="end_uji_sub5" type="text" required>
                   </div>
                 </div>             
@@ -207,24 +207,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 6</label>
                       <input class="form-control time" name="start_lat_sub6" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 6</label>
                     <input class="form-control time" name="end_lat_sub6" type="text" required>
                   </div>
                 </div>    
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 6</label>
                       <input class="form-control time" name="start_uji_sub6" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 6</label>
                     <input class="form-control time" name="end_uji_sub6" type="text" required>
                   </div>
                 </div>             
@@ -240,24 +240,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 7</label>
                       <input class="form-control time" name="start_lat_sub7" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 7</label>
                     <input class="form-control time" name="end_lat_sub7" type="text" required>
                   </div>
                 </div>    
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 7</label>
                       <input class="form-control time" name="start_uji_sub7" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 7</label>
                     <input class="form-control time" name="end_uji_sub7" type="text" required>
                   </div>
                 </div>             
@@ -273,24 +273,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 8</label>
                       <input class="form-control time" name="start_lat_sub8" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 8</label>
                     <input class="form-control time" name="end_lat_sub8" type="text" required>
                   </div>
                 </div>    
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 8</label>
                       <input class="form-control time" name="start_uji_sub8" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 8</label>
                     <input class="form-control time" name="end_uji_sub8" type="text" required>
                   </div>
                 </div>             
@@ -306,24 +306,24 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 4</label>
+                      <label style="margin-top: 8px" class="control-label">Waktu Mulai Latihan Subtes 9</label>
                       <input class="form-control time" name="start_lat_sub9" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 4</label>
+                    <label style="margin-top: 8px" class="control-label">Waktu Berkahir Latihan Subtes 9</label>
                     <input class="form-control time" name="end_lat_sub9" type="text" required>
                   </div>
                 </div>    
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <label  class="control-label">Waktu Mulai Ujian Subtes 4</label>
+                      <label  class="control-label">Waktu Mulai Ujian Subtes 9</label>
                       <input class="form-control time" name="start_uji_sub9" type="text" required>
                     </div>
                   </div>
                   <div class="col">
-                    <label class="control-label">Waktu Berkahir Ujian Subtes 4</label>
+                    <label class="control-label">Waktu Berkahir Ujian Subtes 9</label>
                     <input class="form-control time" name="end_uji_sub9" type="text" required>
                   </div>
                 </div>             

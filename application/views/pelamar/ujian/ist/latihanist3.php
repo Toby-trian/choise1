@@ -143,7 +143,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 3 sudah berakhir, selamat mengerjakan subtes 3');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist3/'.$idUjian); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist3/'.$idUjian.'/41'); ?>';
 
     // document.getElementById('hentikan').click();
   }

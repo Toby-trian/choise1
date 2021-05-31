@@ -49,7 +49,7 @@ var x = setInterval(function() {
   if (distance < 0) {
   	clearInterval(x);
   	alert('Waktu Ujian Subtes 9 Telah Berakhir');
-  	window.location.href = '<?php echo base_url('Pelamar/Ujian/latihan_ist9/'.$id_ujian); ?>';
+  	window.location.href = '<?php echo base_url('Pelamar/Pelamar/testulispsikotes/'.$id_ujian); ?>';
 
   }
 }, 1000);
