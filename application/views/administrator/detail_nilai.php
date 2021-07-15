@@ -66,7 +66,11 @@
                     $umur = $from->diff($to)->y;
                   }
 
+<<<<<<< HEAD
 
+=======
+                   
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                 }
 
                 $cekHolland = $this->db->query("SELECT * FROM tb_data_jawaban_holland WHERE id_pelamar = $id_pelamar");
@@ -84,7 +88,11 @@
                     $id_pelamar_ist = $key_ist->id_pelamar;
                     $id_lowongan_ist = $key_ist->id_lowongan;
                   }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
 
                 ?>
                <!--  
@@ -417,7 +425,11 @@
                   </tr>
                   <tr>
                     <td>SE</td>
+<<<<<<< HEAD
 					          <td><?php
+=======
+                    <td><?php
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     $nilai = $this->db->query("SELECT count(tb_data_jawaban_ist.nilai) AS jumlah,tb_data_diri.tanggal_lahir as tgl_lhr FROM tb_data_jawaban_ist INNER JOIN tb_data_diri ON tb_data_jawaban_ist.id_pelamar=tb_data_diri.id_pelamar WHERE tb_data_jawaban_ist.subtes=1 AND tb_data_jawaban_ist.nilai=1 AND tb_data_jawaban_ist.id_lowongan = $id_lowongan_ist AND tb_data_jawaban_ist.id_pelamar=$id_pelamar_ist");
                     $result = $nilai->result_array();
                     $nilai_se=$result[0]['jumlah'];
@@ -428,7 +440,11 @@
 
 
                     echo "<input type='hidden' id='nilai_se' value='".$nilai_se."'><span>".$nilai_se."</span>";                 
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     //UMUR 21 - 25
                     if($umur>=21 AND $umur<=25){
                       //benar 0
@@ -518,7 +534,11 @@
 
 
                     }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     else if($umur>=26 AND $umur<=30){
                       //benar 0
                       if($nilai_se==0){
@@ -609,7 +629,11 @@
                   </tr>
                   <tr>
                     <td>WA</td>
+<<<<<<< HEAD
 				          	<td><?php
+=======
+                    <td><?php
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     $nilai = $this->db->query("SELECT count(tb_data_jawaban_ist.nilai) AS jumlah,tb_data_diri.tanggal_lahir as tgl_lhr FROM tb_data_jawaban_ist INNER JOIN tb_data_diri ON tb_data_jawaban_ist.id_pelamar=tb_data_diri.id_pelamar WHERE tb_data_jawaban_ist.subtes=2 AND tb_data_jawaban_ist.nilai=1 AND tb_data_jawaban_ist.id_lowongan = $id_lowongan_ist AND tb_data_jawaban_ist.id_pelamar=$id_pelamar_ist");
                     $result = $nilai->result_array();
                     $nilai_wa=$result[0]['jumlah'];
@@ -620,7 +644,11 @@
 
 
                     echo "<input type='hidden' id='nilai_wa' value='".$nilai_wa."'><span>".$nilai_wa."</span>";                 
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     //UMUR 21 - 25
                     if($umur>=21 AND $umur<=25){
                       //benar 0
@@ -710,7 +738,11 @@
 
 
                     }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     else if($umur>=26 AND $umur<=30){
                       //benar 0
                       if($nilai_wa==0){
@@ -801,7 +833,11 @@
                   </tr>
                   <tr>
                     <td>AN</td>
+<<<<<<< HEAD
 					          <td><?php
+=======
+                    <td><?php
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     $nilai = $this->db->query("SELECT count(tb_data_jawaban_ist.nilai) AS jumlah,tb_data_diri.tanggal_lahir as tgl_lhr FROM tb_data_jawaban_ist INNER JOIN tb_data_diri ON tb_data_jawaban_ist.id_pelamar=tb_data_diri.id_pelamar WHERE tb_data_jawaban_ist.subtes=3 AND tb_data_jawaban_ist.nilai=1 AND tb_data_jawaban_ist.id_lowongan = $id_lowongan_ist AND tb_data_jawaban_ist.id_pelamar=$id_pelamar_ist");
                     $result = $nilai->result_array();
                     $nilai_an=$result[0]['jumlah'];
@@ -812,7 +848,11 @@
 
 
                     echo "<input type='hidden' id='nilai_an' value='".$nilai_an."'><span>".$nilai_an."</span>";                 
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     //UMUR 21 - 25
                     if($umur>=21 AND $umur<=25){
                       //benar 0
@@ -902,7 +942,11 @@
 
 
                     }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     else if($umur>=26 AND $umur<=30){
                       //benar 0
                       if($nilai_an==0){
@@ -993,6 +1037,7 @@
                   </tr>
                   <tr>
                     <td>GE</td>
+<<<<<<< HEAD
                     <td><?php
                     $nilai = $this->db->query("SELECT count(tb_data_jawaban_ist.nilai) AS jumlah,tb_data_diri.tanggal_lahir as tgl_lhr FROM tb_data_jawaban_ist INNER JOIN tb_data_diri ON tb_data_jawaban_ist.id_pelamar=tb_data_diri.id_pelamar WHERE tb_data_jawaban_ist.subtes=4 AND tb_data_jawaban_ist.nilai=1 AND tb_data_jawaban_ist.id_lowongan = $id_lowongan_ist AND tb_data_jawaban_ist.id_pelamar=$id_pelamar_ist");
                     $result = $nilai->result_array();
@@ -1373,6 +1418,15 @@
                       }
                     }
                     ?></td>
+=======
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>RA</td>
+                    <td></td>
+                    <td></td>
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                   </tr>
                   <tr>
                     <td>ZR</td>
@@ -2136,7 +2190,11 @@
                   </tr>
                   <tr>
                     <td>GESAMT</td>
+<<<<<<< HEAD
 				          	<td><span id="rs_gesamt"></span></td>
+=======
+                    <td><span id="rs_gesamt"></span></td>
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
                     <td><span id="ss_gesamt"></span></td>
                   </tr>
                 </table>
@@ -2160,6 +2218,7 @@ var nilaiwa = document.getElementById("nilai_wa").value;
 var nilai_wa = parseInt(nilaiwa, 10);
 var nilaian = document.getElementById("nilai_an").value;
 var nilai_an = parseInt(nilaian, 10);
+<<<<<<< HEAD
 var nilaige = document.getElementById("nilai_ge").value;
 var nilai_ge = parseInt(nilaige, 10);
 var nilaira = document.getElementById("nilai_ra").value;
@@ -2173,6 +2232,9 @@ var nilai_wu = parseInt(nilaiwu, 10);
 var nilaime = document.getElementById("nilai_me").value;
 var nilai_me = parseInt(nilaime, 10);
 var rs = nilai_se+nilai_wa+nilai_an+nilai_ge+nilai_ra+nilai_zr+nilai_fa+nilai_wu+nilai_me;
+=======
+var rs = nilai_se+nilai_wa+nilai_an;
+>>>>>>> f390e1a3f5943e85397fa50015911a9317bbeba0
 var ss = parseInt(rs, 10);
 
 var umur = document.getElementById("umur").value;
