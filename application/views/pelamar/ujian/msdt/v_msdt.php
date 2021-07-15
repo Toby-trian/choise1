@@ -5,21 +5,21 @@
 
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h3>Papikostik</h3>
+			<h3>Managerial Style Diagnostic Test</h3>
 		</div>
 		<div class="col-lg-3">
 			<h4 style="margin-top: 35px" align="right">Waktu Ujian <span id="time"></span> detik</h4>
 		</div>
 	</div><!--/.row-->
 	<?php  
-	$id_ujian=  $this->session->userdata('ses_papi');
-	$nomor = $papikos->no_soal;
-	$ujian = $this->db->query("SELECT * FROM tb_ujian_papi WHERE id_ujian_papi = $id_ujian");
+	$id_ujian=  $this->session->userdata('ses_msdt');
+	$nomor = $msdt->no_soal;
+	$ujian = $this->db->query("SELECT * FROM tb_ujian_msdt WHERE id_ujian_msdt = $id_ujian");
 	foreach ($ujian->result() as $key ) {
-		$end_papi = $key->waktu_akhir;
+		$end_msdt = $key->waktu_akhir;
 	}
 	?>
-	<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_papi/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
+	<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_msdt/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
 </div>
 </div><!--/.row-->
@@ -28,7 +28,7 @@
 
 
 <script type="text/javascript">
-	var countDownDate = new Date("<?php echo $end_papi ?>").getTime();
+	var countDownDate = new Date("<?php echo $end_msdt ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -52,7 +52,7 @@ var x = setInterval(function() {
   if (distance < 0) {
   	clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
-    alert('Waktu Ujian papikostik Telah Berakhir');
+    alert('Waktu Ujian MSDT Telah Berakhir');
     window.location.href = '<?php echo base_url('Pelamar/Pelamar/testulispsikotes/'.$id_ujian); ?>';
 
     // document.getElementById('hentikan').click();

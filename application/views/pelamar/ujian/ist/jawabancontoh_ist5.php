@@ -70,7 +70,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 5 sudah berakhir, selamat mengerjakan subtes 5');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian.'/77'); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist5/'.$idUjian.'/77'); ?>';
 
     // document.getElementById('hentikan').click();
   }

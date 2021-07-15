@@ -41,6 +41,12 @@ class Mdl_ujian extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+	public function insert_jawaban_leadership($paket)
+	{
+		$this->db->insert('tb_data_jawaban_leadership', $paket);
+		return $this->db->affected_rows();
+	}
+
 	// DATA IST
 
 	public function get_questions_ist_subtes_1($rdr){
@@ -109,6 +115,47 @@ class Mdl_ujian extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+	//Data Essay
+	public function jawaban_essay($paket)
+
+	{
+
+		$this->db->insert('tb_jawaban_essay', $paket);
+
+		return $this->db->affected_rows();
+
+	}
+
+	//Data Studi Kasus
+
+	public function insert_jawaban_studi($paket)
+	{
+		$this->db->insert('tb_jawaban_studi', $paket);
+		return $this->db->affected_rows();
+	}
+
+	public function jawaban_studi($paket)
+
+	{
+
+		$this->db->insert('tb_jawaban_studi', $paket);
+
+		return $this->db->affected_rows();
+
+	}
+
+	//Data Hitung
+	public function jawaban_hitung($paket)
+
+	{
+
+		$this->db->insert('tb_jawaban_hitung', $paket);
+
+		return $this->db->affected_rows();
+
+	}
+
+
 	//DATA Holland
 
 	public function jawaban_holland($paket)
@@ -125,6 +172,22 @@ class Mdl_ujian extends CI_Model {
 		}
 	} 
 
+	//DATA Leadership
+
+	// public function jawaban_leadership($paket)
+	// {
+	// 	$this->db->insert('tb_data_jawaban_leadership', $paket);
+	// 	return $this->db->affected_rows();
+	// }
+
+	// public function update_leader($where,$data,$table){
+	// 	if($this->db->update($table, $data, $where)){
+	// 		return true;
+	// 	}else{
+	// 		return false;
+	// 	}
+	// } 
+
 	//Data papi
 
 	public function get_questions_papi($rdr){
@@ -138,6 +201,38 @@ class Mdl_ujian extends CI_Model {
 		$this->db->insert('tb_data_jawaban_papi', $paket);
 		return $this->db->affected_rows();
 	}
+
+	//Data msdt
+
+	public function get_questions_msdt($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_msdt WHERE id_soal='$rdr' ");
+		return $query->row();
+	}
+	
+
+	public function insert_jawaban_msdt($paket)
+	{
+		$this->db->insert('tb_data_jawaban_msdt', $paket);
+		return $this->db->affected_rows();
+	}
+
+	// Data Leadership
+
+	public function get_questions_leadership($rdr){
+		$query=$this->db->query("SELECT * FROM tb_soal_leadership WHERE subtes = 1 AND id_soal='$rdr' ");
+		return $query->row();
+	}
+
+	// public function get_questions_leadership($rdr){
+	// 	$query=$this->db->query("SELECT * FROM tb_soal_leadership WHERE id_soal='$rdr' ");
+	// 	return $query->row();
+	// }
+
+	// public function insert_jawaban_leader($paket)
+	// {
+	// 	$this->db->insert('tb_data_jawaban_leadership', $paket);
+	// 	return $this->db->affected_rows();
+	// }
 // ============================================================================================
 	
 }

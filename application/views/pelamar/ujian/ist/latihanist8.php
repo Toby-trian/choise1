@@ -200,7 +200,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 8 sudah berakhir, selamat mengerjakan subtes 8');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian.'/137'); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist8/'.$idUjian.'/137'); ?>';
 
     // document.getElementById('hentikan').click();
   }

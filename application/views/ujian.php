@@ -5,9 +5,9 @@
 <?php 
 $query=$this->db->query("select * from tb_ujian");
 foreach ($query->result() as $key) {
-	$tanggal = $key->waktu_dimulai;
+$tanggal = $key->waktu_dimulai;
 }
- ?>
+?>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">

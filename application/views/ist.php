@@ -61,15 +61,18 @@
 					<tr>
 						<td><b>NIK</b></td>
 						<td><?php echo $nik ?></td>
+					<tr>
+						<td><b>Jenis</b></td>
+						<td>Recruitment</td>
 					</tr>
 					<tr>
-						<td><b>Tujuan</b></td>
+						<td><b>Perusahaan</b></td>
+						<td>PT. Eka Ormed Indonesia</td>
+					</tr>
+					<tr>
+						<td><b>Posisi yang dilamar</b></td>
 						<td><?php echo $nama_jabatan ?></td>
 					</tr>
-					<!-- <tr>
-						<td><b>Nama Ujian</b></td>
-						<td><?php echo $nama_u ?></td>
-					</tr> -->
 					<tr>
 						<td><b>Waktu Pengerjaan</b></td>
 						<td><?php echo $durasi?> Menit</td>

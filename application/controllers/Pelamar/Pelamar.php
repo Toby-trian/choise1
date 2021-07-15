@@ -514,7 +514,11 @@ class Pelamar extends CI_Controller {
 		$paket['holland'] = $this->Mdl_data_ujian->ambildata_ujian_holland();	
 		$paket['papi'] = $this->Mdl_data_ujian->ambildata_ujian_papi();
 		$paket['ist'] = $this->Mdl_data_ujian->ambildata_ujian_ist();
-		$paket['ist2'] = $this->Mdl_data_ujian->ambildata_ujian_ist2();	
+		$paket['leader'] = $this->Mdl_data_ujian->ambildata_ujian_leader();
+		$paket['essay'] = $this->Mdl_data_ujian->ambildata_ujian_essay();
+		$paket['studi'] = $this->Mdl_data_ujian->ambildata_ujian_studi();
+		$paket['hitung'] = $this->Mdl_data_ujian->ambildata_ujian_hitung();
+		$paket['msdt'] = $this->Mdl_data_ujian->ambildata_ujian_msdt();
 		$this->load->view('testulispsikotes',$paket);
 
 	}
@@ -556,6 +560,14 @@ class Pelamar extends CI_Controller {
 		$this->load->view('ist',$paket);
 	}
 
+	public function leader($id_pelamar, $id_ujian)
+	{
+		$idUjian = $this->session->set_userdata('ses_ujian', $id_ujian);
+		$paket['leader']=$this->Mdl_data_pelamar->ambildata_pelamar($id_pelamar);	
+		$paket['leaderU']=$this->Mdl_data_ujian->ambildata_ujian_leader($id_ujian);
+		$this->load->view('pelamar/ujian/leadership/leader',$paket);
+	}
+
 	public function latihanist1()
 	{
 		$idUjian = $this->session->userdata('ses_ujian');
@@ -582,13 +594,13 @@ class Pelamar extends CI_Controller {
 		$this->load->view('ist2',$paket);
 	}
 
-	public function latihanist5()
-	{
-		$idUjian = $this->session->userdata('ses_ujian');
+	// public function latihanist5()
+	// {
+	// 	$idUjian = $this->session->userdata('ses_ujian');
 
-		$paket['ujian_ist']=$this->Mdl_data_ujian->ambildata_ujian_ist2($idUjian);
-		$this->load->view('latihanist1', $paket);
-	}
+	// 	$paket['ujian_ist']=$this->Mdl_data_ujian->ambildata_ujian_ist2($idUjian);
+	// 	$this->load->view('latihanist1', $paket);
+	// }
 	
 	public function pengaturan()
 	{

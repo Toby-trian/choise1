@@ -41,8 +41,8 @@ class Ujian extends CI_Controller {
 	{
 		$paket['array']=$this->Mdl_data_ujian->ambildata_ujian();	
 		$paket['holland'] = $this->Mdl_data_ujian->ambildata_ujian_holland();
-		// $paket['essay'] = $this->Mdl_data_ujian->ambildata_ujian_essay();
-		// $paket['studi'] = $this->Mdl_data_ujian->ambildata_ujian_studi();
+		$paket['essay'] = $this->Mdl_data_ujian->ambildata_ujian_essay();
+		$paket['studi'] = $this->Mdl_data_ujian->ambildata_ujian_studi();
 		$paket['papi'] = $this->Mdl_data_ujian->ambildata_ujian_papi();
 		$paket['ist'] = $this->Mdl_data_ujian->ambildata_ujian_ist();
 		$this->load->view('testulispsikotes',$paket);
@@ -2217,7 +2217,6 @@ public function start_ujian_ist3($id,$rdr)
 
 	// Holland
 	
-
 	public function ujian_holland($id_pelamar, $id_ujian){
 		$idUjianHolland = $this->session->set_userdata('ses_ujianHolland', $id_ujian);
 		$this->load->view('pelamar/ujian/holland');
@@ -2255,6 +2254,170 @@ public function start_ujian_ist3($id,$rdr)
 	{
 		$this->load->view('pelamar/ujian/disc/discsoal2');
 	}
+
+
+// Essay
+
+public function ujian_essay($id_pelamar, $id_ujian){
+
+	$idUjianEssay = $this->session->set_userdata('ses_ujianEssay', $id_ujian);
+
+	$this->load->view('pelamar/ujian/essay');
+
+}
+
+
+
+public function jawaban_essay(){
+
+	$idPelamar = $this->input->post("id_pelamar");
+
+	$idUjian = $this->input->post("id_ujian");
+
+
+
+	$send['id_pelamar']=$this->input->post("id_pelamar");
+
+	$send['id_ujian_essay']=$this->input->post("id_ujian");
+
+	$send['id_lowongan']=$this->input->post("id_lowongan");
+
+	$send['jawaban1']=$this->input->post("jawaban1");
+
+	$send['jawaban2']=$this->input->post("jawaban2");
+
+	$send['jawaban3']=$this->input->post("jawaban3");
+
+	$send['jawaban4']=$this->input->post("jawaban4");
+
+	$send['jawaban5']=$this->input->post("jawaban5");
+
+	$send['jawaban5b']=$this->input->post("jawaban5b");
+
+	$send['jawaban5c']=$this->input->post("jawaban5c");
+
+	$send['jawaban6']=$this->input->post("jawaban6");
+
+	$send['jawaban7']=$this->input->post("jawaban7");
+
+	$send['jawaban8']=$this->input->post("jawaban8");
+
+
+
+
+	$kembalian['jumlah']=$this->Mdl_ujian->jawaban_essay($send);
+
+
+
+	$this->load->view('pelamar/ujian/essay',$kembalian);
+
+	$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+
+	redirect('Pelamar/Pelamar/testulispsikotes');
+
+}
+
+// Studi Kasus
+
+public function ujian_studi($id_pelamar, $id_ujian){
+
+	$idUjianHolland = $this->session->set_userdata('ses_ujianStudi', $id_ujian);
+
+	$this->load->view('pelamar/ujian/studi');
+
+}
+
+
+
+public function jawaban_studi(){
+
+	$idPelamar = $this->input->post("id_pelamar");
+
+	$idUjian = $this->input->post("id_ujian");
+
+
+
+	$send['id_pelamar']=$this->input->post("id_pelamar");
+
+	$send['id_ujian_studi']=$this->input->post("id_ujian");
+
+	$send['id_lowongan']=$this->input->post("id_lowongan");
+
+	$send['jawaban1']=$this->input->post("jawaban1");
+
+	$send['jawaban2']=$this->input->post("jawaban2");
+
+
+	$kembalian['jumlah']=$this->Mdl_ujian->jawaban_studi($send);
+
+
+	$this->load->view('pelamar/ujian/studi',$kembalian);
+
+	$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+
+	redirect('Pelamar/Pelamar/testulispsikotes');
+
+}
+
+
+
+//Tes Hitung Akuntansi
+
+public function ujian_hitung($id_pelamar, $id_ujian){
+
+	$idUjianEssay = $this->session->set_userdata('ses_ujianHitung', $id_ujian);
+
+	$this->load->view('pelamar/ujian/tes_hitung');
+
+}
+
+public function jawaban_hitung(){
+
+	$idPelamar = $this->input->post("id_pelamar");
+
+	$idUjian = $this->input->post("id_ujian");
+
+
+
+	$send['id_pelamar']=$this->input->post("id_pelamar");
+
+	$send['id_ujian_essay']=$this->input->post("id_ujian");
+
+	$send['id_lowongan']=$this->input->post("id_lowongan");
+
+	$send['jawaban1']=$this->input->post("jawaban1a");
+
+	$send['jawaban2']=$this->input->post("jawaban1b");
+
+	$send['jawaban3']=$this->input->post("jawaban1c");
+
+	$send['jawaban4']=$this->input->post("jawaban1d");
+
+	$send['jawaban5']=$this->input->post("jawaban2a");
+
+	$send['jawaban5b']=$this->input->post("jawaban2b");
+
+	$send['jawaban5c']=$this->input->post("jawaban2c");
+
+	$send['jawaban6']=$this->input->post("jawaban3a");
+
+	$send['jawaban7']=$this->input->post("jawaban3b");
+
+
+
+	$kembalian['jumlah']=$this->Mdl_ujian->jawaban_essay($send);
+
+
+
+	$this->load->view('pelamar/ujian/tes_hitung',$kembalian);
+
+	$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+
+	redirect('Pelamar/Pelamar/testulispsikotes');
+
+}
+
+
 
 
 // Papikostik
@@ -2387,5 +2550,432 @@ public function start_ujian_ist3($id,$rdr)
 			echo '<script>window.top.location.href = "testulispsikotes";</script>';
 		}
 	}
+
+
+	// Msdt
+
+
+	public function panduan_msdt($id_pelamar, $idUjian_msdt){
+		$this->session->set_userdata('ses_msdt', $idUjian_msdt);
+		$this->load->view('pelamar/ujian/msdt/panduan');
+	}
+	
+	public function start_ujian_msdt($rdr)
+	{
+		$data['msdt'] = $this->Mdl_ujian->get_questions_msdt($rdr);
+		$this->load->view('pelamar/ujian/msdt/v_msdt',$data);
+	}
+
+	public function frame_ujian_msdt($id_ujian, $rdr){
+
+		$id_pelamar = $this->session->userdata('ses_id');
+		$data['msdt'] = $this->Mdl_ujian->get_questions_msdt($rdr);
+
+
+		if (!empty($data['msdt'])) {
+			$id_soal = $data['msdt']->id_soal;
+			$nomor_soal = $data['msdt']->no_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_msdt WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		$data['jawaban'] = $query->row();
+		$this->load->view('pelamar/ujian/msdt/frame_ujian_msdt', $data);
+	}
+
+	public function masukkan_jawaban_msdt($redirect=null){
+
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_msdt'=>'',
+			'id_pelamar' =>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'no_soal' => $nomor_soal,
+			'jawaban' => $jawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_msdt WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_msdt($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_msdt/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'no_soal' =>$nomor_soal
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_msdt');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_msdt/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_endmsdt($redirect=null){
+
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_msdt'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'no_soal' => $nomor_soal,
+			'jawaban' => $jawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_msdt WHERE no_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_msdt($data);
+			}
+			echo '<script>window.top.location.href = "testulispsikotes";</script>';
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'no_soal' =>$nomor_soal
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_msdt');
+			}
+			echo '<script>window.top.location.href = "testulispsikotes";</script>';
+		}
+	}
+
+
+	// Leadership
+	public function frame_ujian_leadership($id_ujian, $rdr){
+
+		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_leadership($rdr);
+		$id_pelamar = $this->session->userdata('ses_id');
+
+		if (!empty($data['soal_subtes1'])) {
+			$id_soal = $data['soal_subtes1']->id_soal;
+			$nomor_soal = $data['soal_subtes1']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE nomor_soal = ".$nomor_soal." AND subtes = 1 AND id_ujian = ".$id_ujian." AND id_pelamar = ".$id_pelamar);
+
+		$data['jawaban'] = $query->row();
+		$this->load->view('pelamar/ujian/leadership/frame_ujian_leadership', $data);
+	}
+
+
+	public function start_ujian_leadership($id,$rdr)
+	{
+		$id_ujian = $this->session->set_userdata(['ses_leader'=>$id]);
+		$data['soal_subtes1'] = $this->Mdl_ujian->get_questions_leadership($rdr);
+
+		if (!empty($data['soal_subtes1'])) {
+			$id_soal = $data['soal_subtes1']->id_soal;
+			$nomor_soal = $data['soal_subtes1']->nomor_soal;
+		}
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE nomor_soal = ".$nomor_soal." AND subtes = 1 AND id_ujian = ".$id);
+
+		$data['jawaban'] = $query->row();
+
+
+		$this->load->view('pelamar/ujian/leadership/v_leader',$data);
+	}
+
+	public function masukkan_jawaban_leadership($redirect=null){
+
+		if ($redirect =='') redirect('Pelamar/Ujian/') ;
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		if ($redirect == 1) {
+			$rdr = $nomor_soal -1;
+		}elseif($redirect == 2){
+			$rdr = $nomor_soal +1;
+		}elseif($redirect == 0){
+			$rdr = $nomor_soal;
+		}
+
+		$data = array(
+			'id_jawaban_leadership'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci' => $kuncijawaban
+
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban_leadership($data);
+			}
+			redirect('Pelamar/Ujian/frame_ujian_leadership/'.$id_ujian.'/'.$rdr);
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_leadership');
+			}
+			redirect('Pelamar/Ujian/frame_ujian_leadership/'.$id_ujian.'/'.$rdr);
+		}
+	}
+
+	public function masukkan_jawaban_endLeader(){
+
+		$id_pelamar = $this->input->post('id_pelamar');
+		$id_lowongan = $this->input->post('id_lowongan');
+		$id_ujian = $this->input->post('id_ujian');
+		$subtes = $this->input->post('subtes');
+		$nomor_soal = $this->input->post('nomor_soal');
+		$jawaban = $this->input->post('jawaban');
+		$kuncijawaban = $this->input->post('kunci_jawaban');
+
+
+		$data = array(
+			'id_jawaban_leadership'=>'',
+			'id_pelamar'=>$id_pelamar,
+			'id_lowongan' => $id_lowongan,
+			'id_ujian' => $id_ujian,
+			'subtes' => $subtes,
+			'nomor_soal' => $nomor_soal,
+			'jawaban' => $jawaban,
+			'jawaban_kunci'=>$kuncijawaban
+		);
+
+		$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE subtes = $subtes AND nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND $id_pelamar = $id_pelamar");
+
+		if ($query->num_rows() == 0) {
+			if (!empty($jawaban)) {
+				$insert = $this->Mdl_ujian->insert_jawaban($data);
+			}
+			echo '<script>window.top.location.href = "testulispsikotes/";</script>'; 
+			//redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
+		}else{
+			$where = array(
+				'id_ujian' =>$id_ujian,
+				'nomor_soal' =>$nomor_soal,
+				'subtes' =>$subtes
+			);
+			$data2 = array(
+				'jawaban'=>$jawaban,
+				'jawaban_kunci'=>$kuncijawaban
+			);
+			if (!empty($jawaban)) {
+				$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_leadership');
+			}
+			echo '<script>window.top.location.href = "testulspsikotes/";</script>';
+			//redirect('Pelamar/Ujian/frame_latihan_cfit_2/');
+		}
+	}
+
+
+	// public function panduan_leadership($id_pelamar, $idUjian_leader){
+	// 	$this->session->set_userdata('ses_leader', $idUjian_leader);
+	// 	$this->load->view('pelamar/ujian/leadership/panduan');
+	// }
+
+
+	// public function ujian_leadership($id_pelamar, $id_ujian){
+	// 	$idUjianLeadership = $this->session->set_userdata('ses_ujianLeadership', $id_ujian);
+	// 	$this->load->view('pelamar/ujian/leadership/leadership');
+	// }
+
+	// public function jawaban_leadership(){
+	// 	$idPelamar = $this->input->post("id_pelamar");
+	// 	$idUjian = $this->input->post("id_ujian");
+
+	// 	$send['id_pelamar']=$this->input->post("id_pelamar");
+	// 	$send['id_ujian']=$this->input->post("id_ujian");
+	// 	$send['jawaban']=$this->input->post("jawaban");
+		
+
+	// 	$kembalian['jumlah']=$this->Mdl_ujian->jawaban_leadership($send);
+
+	// 	$this->load->view('pelamar/ujian/leadership/leadership',$kembalian);
+	// 	$this->session->set_flashdata('msg','Data Berhasil Ditambahkan!!!');
+	// 	redirect('Pelamar/Pelamar/testulispsikotes');
+	// }
+
+
+	// public function start_ujian_leadership($rdr)
+	// {
+	// 	$data['leader'] = $this->Mdl_ujian->get_questions_leadership($rdr);
+	// 	$this->load->view('pelamar/ujian/leadership/v_leader',$data);
+	// }
+
+
+	// public function frame_ujian_leadership($id_ujian, $rdr)
+	// {
+	// 	$id_pelamar = $this->session->userdata('ses_id');
+	// 	$data['leader'] = $this->Mdl_ujian->get_questions_leadership($rdr);
+
+
+	// 	if (!empty($data['leader'])) {
+	// 		$id_soal = $data['leader']->id_soal;
+	// 		$nomor_soal = $data['leader']->nomor_soal;
+	// 	}
+
+	// 	$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+		
+	// 	$data['jawaban'] = $query->row();
+	// 	$this->load->view('pelamar/ujian/leadership/frame_ujian_leadership', $data);
+	// }
+
+	// public function masukkan_jawaban_leadership($redirect=null){
+
+
+	// 	$id_pelamar = $this->input->post('id_pelamar');
+	// 	$id_lowongan = $this->input->post('id_lowongan');
+	// 	$id_ujian = $this->input->post('id_ujian');
+	// 	$nomor_soal = $this->input->post('nomor_soal');
+	// 	$jawaban = $this->input->post('jawaban');
+
+
+	// 	if ($redirect == 1) {
+	// 		$rdr = $nomor_soal -1;
+	// 	}elseif($redirect == 2){
+	// 		$rdr = $nomor_soal +1;
+	// 	}elseif($redirect == 0){
+	// 		$rdr = $nomor_soal;
+	// 	}
+
+	// 	$data = array(
+	// 		'id_jawaban_leadership'=>'',
+	// 		'id_pelamar'=>$id_pelamar,
+	// 		'id_lowongan' => $id_lowongan,
+	// 		'id_ujian' => $id_ujian,
+	// 		'nomor_soal' => $nomor_soal,
+	// 		'jawaban' => $jawaban
+
+	// 	);
+
+	// 	$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+	// 	if ($query->num_rows() == 0) {
+	// 		if (!empty($jawaban)) {
+	// 			$insert = $this->Mdl_ujian->insert_jawaban_leader($data);
+	// 		}
+	// 		redirect('Pelamar/Ujian/frame_ujian_leadership/'.$id_ujian.'/'.$rdr);
+	// 	}else{
+	// 		$where = array(
+	// 			'id_ujian' =>$id_ujian,
+	// 			'nomor_soal' =>$nomor_soal
+	// 		);
+	// 		$data2 = array(
+	// 			'jawaban'=>$jawaban
+	// 		);
+	// 		if (!empty($jawaban)) {
+	// 			$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_leadership');
+	// 		}
+	// 		redirect('Pelamar/Ujian/frame_ujian_leadership/'.$id_ujian.'/'.$rdr);
+	// 	}
+	// }
+
+	// public function masukkan_jawaban_endleader($redirect=null){
+
+
+	// 	$id_pelamar = $this->input->post('id_pelamar');
+	// 	$id_lowongan = $this->input->post('id_lowongan');
+	// 	$id_ujian = $this->input->post('id_ujian');
+	// 	$nomor_soal = $this->input->post('nomor_soal');
+	// 	$jawaban = $this->input->post('jawaban');
+
+
+	// 	if ($redirect == 1) {
+	// 		$rdr = $nomor_soal -1;
+	// 	}elseif($redirect == 2){
+	// 		$rdr = $nomor_soal +1;
+	// 	}elseif($redirect == 0){
+	// 		$rdr = $nomor_soal;
+	// 	}
+
+	// 	$data = array(
+	// 		'id_jawaban_leadership'=>'',
+	// 		'id_pelamar'=>$id_pelamar,
+	// 		'id_lowongan' => $id_lowongan,
+	// 		'id_ujian' => $id_ujian,
+	// 		'nomor_soal' => $nomor_soal,
+	// 		'jawaban' => $jawaban
+
+	// 	);
+
+	// 	$query = $this->db->query("SELECT * FROM tb_data_jawaban_leadership WHERE nomor_soal = $nomor_soal AND id_ujian = $id_ujian AND id_pelamar = $id_pelamar");
+
+	// 	if ($query->num_rows() == 0) {
+	// 		if (!empty($jawaban)) {
+	// 			$insert = $this->Mdl_ujian->insert_jawaban_leader($data);
+	// 		}
+	// 		echo '<script>window.top.location.href = "testulispsikotes";</script>';
+	// 	}else{
+	// 		$where = array(
+	// 			'id_ujian' =>$id_ujian,
+	// 			'nomor_soal' =>$nomor_soal
+	// 		);
+	// 		$data2 = array(
+	// 			'jawaban'=>$jawaban
+	// 		);
+	// 		if (!empty($jawaban)) {
+	// 			$update = $this->Mdl_ujian->update($where,$data2,'tb_data_jawaban_leadership');
+	// 		}
+	// 		echo '<script>window.top.location.href = "testulispsikotes";</script>';
+	// 	}
+	// }
 
 }

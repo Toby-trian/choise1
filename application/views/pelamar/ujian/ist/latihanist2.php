@@ -14,9 +14,8 @@
 
 <div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
 	<h4 style="color: #fff;"><b>Petunjuk Pengerjaan Subtes 2</b></h4>
-	<p style="color: #fff;">Ditentukan 5 kata.</p>
-	<p style="color: #fff;">Pada 4 dari 5 kata itu terdapat suatu kesamaan.</li>
-	<p style="color: #fff;">Carilah kata yang ke-5 yang tidak memiliki kesamaan dengan keempat kata itu !</p>
+	<p style="color: #fff;">Pada 4 dari 5 kata dibawah ini terdapat suatu kesamaan.</li>
+	<p style="color: #fff;">Carilah kata yang ke-5, yang tidak memiliki kesamaan dengan keempat kata itu !</p>
 	<br>
 	<li style="color: #fff;">Contoh soal:</p>
 	<div class="form-check col-sm-1 text-center" style="margin: 5px;">
@@ -54,17 +53,24 @@
 </div>
 
 <div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
-	<p>Soal dibawah ini merupakan soal latihan sebelum mengerjakan subtes 2. Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
+	<strong>
+	<p>Contoh pengerjaan subtes 2</p>
+	<p> Cobalah untuk mengerjakan contoh soal di bawah ini! Apapun jawaban anda pada tahap latihan ini tidak akan dihitung poinnya.</p>
+	</strong>
 
 	<?php $idUjian = $this->session->userdata('ses_ujian'); 
 		$id_pelamar = $this->session->userdata('ses_id');
 
 		$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $idUjian");
 		foreach ($ujian->result() as $key ) {
-			$end_lat2 = $key->end_lat_sub2;
+			//$end_lat2 = $key->end_lat_sub2;
 		}
 		?>
 		<form method="post" action="<?php  echo base_url('Pelamar/Ujian/jawabancontoh_ist2/'.$idUjian . '/' . $id_pelamar) ?>">
+
+		<br>
+		<strong><h5>Carilah perbedaan dari pilihan kata dibawah ini !</h5></strong>
+		</br>
 
 		<div class="form-check col-sm-1 text-center" style="margin-top: 5px;">
 				<label class="form-check-label" for="latist21">a.</label>

@@ -34,8 +34,8 @@ class Data_nilai extends CI_Controller {
 
 	public function nilai_pelamar()
 	{
-		$paket['array']=$this->Mdl_data_nilai->ambildata_nilai();	
-		$this->load->view('administrator/data_nilai',$paket);
+		$paket['array']=$this->Mdl_data_lowongan->ambildata_lowongan();	
+		$this->load->view('administrator/data_nilai_home',$paket);
 	}
 
 	public function data_nilai($id)

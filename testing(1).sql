@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 31, 2021 at 08:50 AM
+-- Generation Time: Jul 15, 2021 at 06:35 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.21
 
@@ -334,8 +334,7 @@ CREATE TABLE `tb_data_jawaban_holland` (
 --
 
 INSERT INTO `tb_data_jawaban_holland` (`id_jawaban_holland`, `id_pelamar`, `id_lowongan`, `id_ujian`, `nilai_r`, `nilai_i`, `nilai_a`, `nilai_s`, `nilai_e`, `nilai_k`) VALUES
-(1, 1, 1, 1, 10, 7, 15, 7, 19, 10),
-(2, 1, 0, 1, 3, 3, 3, 3, 3, 3);
+(4, 1, 0, 1, 1, 3, 1, 3, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -460,18 +459,8 @@ INSERT INTO `tb_data_jawaban_ist` (`id_jawaban_ist`, `id_pelamar`, `id_lowongan`
 (340, 1, 6, 94, 89, '5', '3', '4', NULL, '5', '', '', 0),
 (341, 1, 6, 95, 89, '5', '4', '5', '0', '4', '8', '', 0),
 (342, 1, 6, 96, 89, '5', '2', '3', '9', '3', '', '', 0),
-(343, 1, 6, 97, 89, '6', '2', '7', NULL, '2', '7', '', 1),
-(344, 1, 6, 98, 89, '6', '2', '5', NULL, '2', '5', '', 1),
-(345, 1, 6, 99, 89, '6', '2', '7', NULL, '2', '7', '', 1),
-(346, 1, 6, 100, 89, '6', '1', '5', NULL, '1', '5', '', 1),
-(347, 1, 6, 101, 89, '6', '4', '6', NULL, '4', '6', '', 1),
-(348, 1, 6, 102, 89, '6', '1', '0', NULL, '1', '0', '', 1),
-(349, 1, 6, 103, 89, '6', '2', '4', NULL, '2', '4', '', 1),
-(350, 1, 6, 104, 89, '6', '7', NULL, NULL, '7', '', '', 1),
-(351, 1, 6, 105, 89, '6', '5', NULL, NULL, '5', '', '', 1),
-(352, 1, 6, 106, 89, '6', '1', '4', NULL, '1', '4', '', 1),
-(353, 1, 6, 107, 89, '6', '3', '4', '0', '8', '', '', 0),
-(354, 1, 6, 108, 89, '6', '2', '3', '9', '1', '4', '', 0),
+(353, 1, 6, 107, 89, '6', '8', '', '', '8', '', '', 1),
+(354, 1, 6, 108, 89, '6', '1', '4', '', '1', '4', '', 1),
 (355, 1, 6, 109, 89, '6', '3', '4', '8', '4', '5', '', 0),
 (356, 1, 6, 110, 89, '6', '1', '4', '5', '3', '6', '', 0),
 (357, 1, 6, 111, 89, '6', '3', '4', '9', '1', '2', '', 0),
@@ -539,7 +528,132 @@ INSERT INTO `tb_data_jawaban_ist` (`id_jawaban_ist`, `id_pelamar`, `id_lowongan`
 (419, 1, 6, 173, 89, '9', 'B', NULL, NULL, 'E', '', NULL, 0),
 (420, 1, 6, 174, 89, '9', 'E', NULL, NULL, 'A', '', NULL, 0),
 (421, 1, 6, 175, 89, '9', 'A', NULL, NULL, 'C', '', NULL, 0),
-(422, 1, 6, 176, 89, '9', 'C', NULL, NULL, 'D', '', NULL, 0);
+(422, 1, 6, 176, 89, '9', 'C', NULL, NULL, 'D', '', NULL, 0),
+(423, 1, 1, 77, 90, '5', '3', NULL, NULL, '3', '5', '', 0),
+(424, 1, 1, 78, 90, '5', '3', '4', NULL, '2', '8', '0', 0),
+(425, 1, 1, 79, 90, '5', '3', '4', '5', '2', '5', '0', 0),
+(426, 1, 1, 97, 90, '6', '2', NULL, NULL, '2', '7', '', 0),
+(427, 1, 1, 98, 90, '6', '3', '4', NULL, '2', '5', '', 0),
+(428, 1, 1, 99, 90, '6', '3', '4', '5', '2', '7', '', 0),
+(429, 1, 1, 100, 90, '6', '3', NULL, NULL, '1', '5', '', 0),
+(430, 1, 1, 101, 90, '6', '3', '4', NULL, '4', '6', '', 0),
+(431, 1, 1, 102, 90, '6', '4', NULL, NULL, '1', '0', '', 0),
+(432, 1, 1, 103, 90, '6', '4', '5', '6', '2', '4', '', 0),
+(433, 1, 1, 104, 90, '6', '9', '0', NULL, '7', '', '', 0),
+(434, 1, 1, 105, 90, '6', '4', NULL, NULL, '5', '', '', 0),
+(435, 1, 1, 106, 90, '6', '3', '9', NULL, '1', '4', '', 0),
+(436, 1, 1, 107, 90, '6', '4', '9', '0', '8', '', '', 0),
+(437, 1, 1, 108, 90, '6', '6', NULL, NULL, '1', '4', '', 0),
+(438, 1, 1, 109, 90, '6', '4', '5', '0', '4', '5', '', 1),
+(439, 1, 1, 110, 90, '6', '3', '9', NULL, '3', '6', '', 0),
+(440, 1, 4, 77, 91, '5', '3', '5', NULL, '3', '5', '', 1),
+(441, 1, 4, 78, 91, '5', '2', '3', NULL, '2', '8', '0', 0),
+(442, 1, 4, 79, 91, '5', '3', '4', '5', '2', '5', '0', 0),
+(443, 1, 4, 80, 91, '5', '4', NULL, NULL, '2', '6', '', 0),
+(444, 1, 4, 81, 91, '5', '3', '4', NULL, '3', '0', '', 0),
+(445, 1, 4, 82, 91, '5', '3', NULL, NULL, '7', '0', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_data_jawaban_leadership`
+--
+
+CREATE TABLE `tb_data_jawaban_leadership` (
+  `id_jawaban_leadership` int(11) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_ujian` int(5) NOT NULL,
+  `subtes` varchar(5) CHARACTER SET latin1 NOT NULL,
+  `nomor_soal` int(5) NOT NULL,
+  `jawaban` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `jawaban_kunci` varchar(20) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_data_jawaban_msdt`
+--
+
+CREATE TABLE `tb_data_jawaban_msdt` (
+  `id_jawaban_msdt` int(11) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_ujian` int(5) NOT NULL,
+  `no_soal` int(5) NOT NULL,
+  `jawaban` varchar(150) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_data_jawaban_msdt`
+--
+
+INSERT INTO `tb_data_jawaban_msdt` (`id_jawaban_msdt`, `id_pelamar`, `id_lowongan`, `id_ujian`, `no_soal`, `jawaban`) VALUES
+(9, 1, 3, 1, 1, 'A'),
+(10, 1, 3, 1, 2, 'A'),
+(11, 1, 3, 1, 3, 'A'),
+(12, 1, 3, 1, 4, 'A'),
+(13, 1, 3, 1, 5, 'A'),
+(14, 1, 3, 1, 6, 'A'),
+(15, 1, 3, 1, 7, 'A'),
+(16, 1, 3, 1, 8, 'B'),
+(17, 1, 3, 1, 9, 'B'),
+(18, 1, 3, 1, 10, 'B'),
+(19, 1, 4, 1, 11, 'B'),
+(20, 1, 4, 1, 12, 'A'),
+(21, 1, 4, 1, 13, 'B'),
+(22, 1, 4, 1, 14, 'B'),
+(23, 1, 4, 1, 15, 'A'),
+(24, 1, 4, 1, 16, 'B'),
+(25, 1, 4, 1, 17, 'A'),
+(26, 1, 4, 1, 18, 'B'),
+(27, 1, 4, 1, 19, 'B'),
+(28, 1, 4, 1, 20, 'A'),
+(29, 1, 4, 1, 21, 'B'),
+(30, 1, 4, 1, 22, 'A'),
+(31, 1, 4, 1, 23, 'A'),
+(32, 1, 4, 1, 24, 'B'),
+(33, 1, 4, 1, 25, 'B'),
+(34, 1, 4, 1, 26, 'A'),
+(35, 1, 4, 1, 27, 'B'),
+(36, 1, 4, 1, 28, 'B'),
+(37, 1, 4, 1, 29, 'A'),
+(38, 1, 4, 1, 30, 'B'),
+(39, 1, 4, 1, 31, 'A'),
+(40, 1, 4, 1, 32, 'B'),
+(41, 1, 4, 1, 33, 'A'),
+(42, 1, 4, 1, 34, 'B'),
+(43, 1, 4, 1, 35, 'A'),
+(44, 1, 4, 1, 36, 'A'),
+(45, 1, 4, 1, 37, 'B'),
+(46, 1, 4, 1, 38, 'A'),
+(47, 1, 4, 1, 39, 'B'),
+(48, 1, 4, 1, 40, 'A'),
+(49, 1, 4, 1, 41, 'B'),
+(50, 1, 4, 1, 42, 'B'),
+(51, 1, 4, 1, 43, 'A'),
+(52, 1, 4, 1, 44, 'B'),
+(53, 1, 4, 1, 45, 'A'),
+(54, 1, 4, 1, 46, 'B'),
+(55, 1, 4, 1, 47, 'A'),
+(56, 1, 4, 1, 48, 'B'),
+(57, 1, 4, 1, 49, 'A'),
+(58, 1, 4, 1, 50, 'A'),
+(59, 1, 4, 1, 51, 'B'),
+(60, 1, 4, 1, 52, 'A'),
+(61, 1, 4, 1, 53, 'B'),
+(62, 1, 4, 1, 54, 'A'),
+(63, 1, 4, 1, 55, 'B'),
+(64, 1, 4, 1, 56, 'A'),
+(65, 1, 4, 1, 57, 'A'),
+(66, 1, 4, 1, 58, 'B'),
+(67, 1, 4, 1, 59, 'A'),
+(68, 1, 4, 1, 60, 'B'),
+(69, 1, 4, 1, 61, 'B'),
+(70, 1, 4, 1, 62, 'A'),
+(71, 1, 4, 1, 63, 'B'),
+(72, 1, 4, 1, 64, 'A');
 
 -- --------------------------------------------------------
 
@@ -561,17 +675,96 @@ CREATE TABLE `tb_data_jawaban_papi` (
 --
 
 INSERT INTO `tb_data_jawaban_papi` (`id_jawaban_papi`, `id_pelamar`, `id_lowongan`, `id_ujian`, `no_soal`, `jawaban`) VALUES
-(1, 1, 1, 1, 1, 'G'),
-(2, 1, 1, 1, 2, 'N'),
-(3, 1, 1, 1, 3, 'P'),
-(4, 1, 1, 1, 4, 'P'),
-(5, 1, 1, 1, 90, 'X'),
-(6, 1, 3, 1, 5, 'X'),
-(7, 1, 3, 1, 6, 'O'),
-(8, 1, 3, 1, 7, 'O'),
-(9, 1, 3, 1, 8, 'Z'),
-(10, 1, 3, 1, 9, 'F'),
-(11, 1, 3, 1, 10, 'F');
+(12, 1, 1, 1, 1, 'G'),
+(13, 1, 1, 1, 12, 'L'),
+(14, 1, 1, 1, 2, 'A'),
+(15, 1, 1, 1, 3, 'A'),
+(16, 1, 1, 1, 4, 'X'),
+(17, 1, 1, 1, 5, 'X'),
+(18, 1, 1, 1, 6, 'O'),
+(19, 1, 1, 1, 7, 'O'),
+(20, 1, 1, 1, 8, 'K'),
+(21, 1, 1, 1, 9, 'K'),
+(22, 1, 1, 1, 10, 'X'),
+(23, 1, 1, 1, 11, 'B'),
+(24, 1, 1, 1, 13, 'N'),
+(25, 1, 1, 1, 14, 'X'),
+(26, 1, 1, 1, 15, 'P'),
+(27, 1, 1, 1, 16, 'X'),
+(28, 1, 1, 1, 17, 'Z'),
+(29, 1, 1, 1, 18, 'B'),
+(30, 1, 1, 1, 19, 'F'),
+(31, 1, 1, 1, 20, 'X'),
+(32, 1, 1, 1, 21, 'D'),
+(33, 1, 1, 1, 22, 'L'),
+(34, 1, 1, 1, 23, 'E'),
+(35, 1, 1, 1, 24, 'X'),
+(36, 1, 1, 1, 25, 'A'),
+(37, 1, 1, 1, 26, 'O'),
+(38, 1, 1, 1, 27, 'P'),
+(39, 1, 1, 1, 28, 'K'),
+(40, 1, 1, 1, 29, 'O'),
+(41, 1, 1, 1, 30, 'X'),
+(42, 1, 1, 1, 31, 'R'),
+(43, 1, 1, 1, 32, 'L'),
+(44, 1, 1, 1, 33, 'C'),
+(45, 1, 1, 1, 34, 'T'),
+(46, 1, 1, 1, 35, 'N'),
+(47, 1, 1, 1, 36, 'O'),
+(48, 1, 1, 1, 37, 'P'),
+(49, 1, 1, 1, 38, 'K'),
+(50, 1, 1, 1, 39, 'B'),
+(51, 1, 1, 1, 40, 'X'),
+(52, 1, 1, 1, 41, 'R'),
+(53, 1, 1, 1, 42, 'L'),
+(54, 1, 1, 1, 43, 'I'),
+(55, 1, 1, 1, 44, 'C'),
+(56, 1, 1, 1, 45, 'V'),
+(57, 1, 1, 1, 46, 'N'),
+(58, 1, 1, 1, 47, 'Z'),
+(59, 1, 1, 1, 48, 'P'),
+(60, 1, 1, 1, 49, 'X'),
+(61, 1, 1, 1, 50, 'X'),
+(62, 1, 1, 1, 51, 'V'),
+(63, 1, 1, 1, 52, 'S'),
+(64, 1, 1, 1, 53, 'I'),
+(65, 1, 1, 1, 54, 'T'),
+(66, 1, 1, 1, 55, 'C'),
+(67, 1, 1, 1, 56, 'S'),
+(68, 1, 1, 1, 57, 'N'),
+(69, 1, 1, 1, 58, 'K'),
+(70, 1, 1, 1, 59, 'P'),
+(71, 1, 1, 1, 60, 'X'),
+(72, 1, 1, 1, 61, 'T'),
+(73, 1, 1, 1, 62, 'L'),
+(74, 1, 1, 1, 63, 'I'),
+(75, 1, 1, 1, 64, 'R'),
+(76, 1, 1, 1, 65, 'V'),
+(77, 1, 1, 1, 66, 'C'),
+(78, 1, 1, 1, 67, 'R'),
+(79, 1, 1, 1, 68, 'N'),
+(80, 1, 1, 1, 69, 'F'),
+(81, 1, 1, 1, 70, 'P'),
+(82, 1, 1, 1, 71, 'G'),
+(83, 1, 1, 1, 72, 'L'),
+(84, 1, 1, 1, 73, 'V'),
+(85, 1, 1, 1, 74, 'S'),
+(86, 1, 1, 1, 75, 'V'),
+(87, 1, 1, 1, 76, 'D'),
+(88, 1, 1, 1, 77, 'R'),
+(89, 1, 1, 1, 78, 'E'),
+(90, 1, 1, 1, 79, 'N'),
+(91, 1, 1, 1, 80, 'A'),
+(92, 1, 1, 1, 81, 'G'),
+(93, 1, 1, 1, 82, 'L'),
+(94, 1, 1, 1, 83, 'T'),
+(95, 1, 1, 1, 84, 'V'),
+(96, 1, 1, 1, 85, 'V'),
+(97, 1, 1, 1, 86, 'R'),
+(98, 1, 1, 1, 87, 'R'),
+(99, 1, 1, 1, 88, 'C'),
+(100, 1, 1, 1, 89, 'C'),
+(101, 1, 1, 1, 90, 'N');
 
 -- --------------------------------------------------------
 
@@ -696,6 +889,99 @@ CREATE TABLE `tb_jadwal` (
   `tes_wawancara` date NOT NULL,
   `test_fgd` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_jawaban_essay`
+--
+
+CREATE TABLE `tb_jawaban_essay` (
+  `id_jawaban` int(5) NOT NULL,
+  `id_ujian_essay` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `jawaban1` text NOT NULL,
+  `jawaban2` text NOT NULL,
+  `jawaban3` text NOT NULL,
+  `jawaban4` text NOT NULL,
+  `jawaban5` text NOT NULL,
+  `jawaban5b` text NOT NULL,
+  `jawaban5c` text NOT NULL,
+  `jawaban6` text NOT NULL,
+  `jawaban7` text NOT NULL,
+  `jawaban8` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_jawaban_essay`
+--
+
+INSERT INTO `tb_jawaban_essay` (`id_jawaban`, `id_ujian_essay`, `id_lowongan`, `id_pelamar`, `jawaban1`, `jawaban2`, `jawaban3`, `jawaban4`, `jawaban5`, `jawaban5b`, `jawaban5c`, `jawaban6`, `jawaban7`, `jawaban8`) VALUES
+(4, 1, 6, 383, 'HahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahahHahah', 'heheheheheehehehehehehehehehehheheheheheehehehehehehehehehehheheheheheehehehehehehehehehehheheheheheehehehehehehehehehehheheheheheeheheheheheheheheheh', 'huhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuhhuhuhuhuh', 'hhihihihihihihhihihihihihihhihihihihihihhihihihihihihhihihihihihihhihihihihihi', 'huuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuhhuuhuhuh', '', '', 'haihaihaihaihaihaihaihaihai', '', ''),
+(12, 1, 7, 1368, 'Apotik yang jual aneka obat-obatan', 'Melayani customer dgn baik', 'Karena ingin menjadi yg lebih baik lagi', 'Sebaiknya memohon maaf terlebih dahulu agar konsumen mengurangi rasa marahnya', 'Iya sanggup saya akan mengatur waktu untuk istirahat dan waktu untuk bekerja', '', '', 'Kita harus berupaya agar bisa tetap untuk tidak ada konflik antar teman', '', ''),
+(13, 1, 7, 997, 'jl.raden patah 7 sidoarjo', 'melayani pembeli dan resep dari castamer', 'untuk memajukan perusahaan yang bapak/ibu pimpin', 'tidak pernah, karena selama saya bekerja di tempat yang lama tidak ada castamer yang komplain', 'sanggup, dan mentaati peraturan protokol kesehatan dan peraturabn pemerintah serta peraturan apotek', '', '', 'pernah, mampu mengerjakan bersama tim yang di sudah di bentuk dan bisa bermusyawarah secara mufakat.', '', ''),
+(14, 1, 7, 1368, 'Toko yg melayani obat obatan', 'Melayani konsumen untuk menjual barang yg dijual', 'Ingin mencari yg lebih baik lagi', 'Harus memohon maaf terlebih dahulu', 'Iya saya bersedia saya akan mengatur untuk istirahat dan bekerja', '', '', 'Kita harus saling menjaga komunikasi antar sesama teman', '', ''),
+(15, 1, 7, 1789, 'Apotek 7 merupakan apotek lengkap di sidoarjo yg sudah mempunyai 2 cabang', 'Melayani pembeli dengan sabar dan ramah ', 'Ingin menjadi seorang pelayan obat yg sabar dan ramah, dan ingin menjadi salah satu karyawan di apotek 7', 'Pernah, saya tanya terlebih dahulu permasalahan nya, lalu saya diskusikan dengan konsumen solusi dan jalan keluarnya', 'Sanggup, saya akan tetap menyelesaikan tugas² dengan teoat waktu, dan tetap menjaga kesehatan dengan minum vitamin daya tahan tubuh', '', '', 'Pernah, saya pernah bekerja  dalam sebuah tim untuk menjual sebuah produk, dalam menghadapi konflik saya tetap bersikap tenang, lalu membicarakan kepada rekan² saya untuk menemukan solusi konflik tersebut', '', ''),
+(16, 1, 7, 662, 'Apotek terlengkap dan cukup terkenal  diisidoarho', 'Melayani customer dengan senang hati', 'Menambah ilmu dan turut berkontribusi untuk toko', 'Memberikan solusi terbaik untuk pelanggan maupun toko', 'Mematuhi kewajiban sebagai mana mestinya karyawan', '', '', 'Bermusyawarah mencari solusi', '', ''),
+(17, 1, 7, 1876, 'apotik adalah sebuah perusaahaan yang berkembang dibidang barang atau jasa', 'memberi pelayanan yang terbaik untuk customer,', 'mengembangkan perusahaan lebih maju', 'belum, tindakan yang saya lakukan adalah mencari titik permasalahanya, kemudian bias diselesaikan dengan baik', 'siap saya sanggup, dengan cara  mengikuti protocol kesehatan yang sudah diterapkan', '', '', 'pernah, bekerja disebuah tim adalah suatu motifasi baru, ', '', ''),
+(18, 1, 7, 975, 'Apotek kecil yang berkembang dengan pesat dan menjadi apotek yang besar dan terdapat dimana mana', 'bertanggung jawab dengan kebersihan Apotek\r\nbertanggung jawab dengan stok obat dan peralatan apapun yang di apotek\r\nmelayani pembeli dengan ramah dan sopan', 'orang lain bisa melakukan artinya saya juga bisa melakukannya lebih baik lagi', 'pernah, mendengarkan konsumen berbicara, menanggapi dengan tenang dan sopan,memberi solusi kepada konsumen', 'sanggup, apabila tugas saya ada yang belum selesai dan harus selesai hari itu juga saya akan menyelesaikannya meskipun itu di luar jam kerja , dan apabila tugas itu bisa di bagi dengan tim maka saya hanya perlu berpesan kepada teman lawan shift', '', '', 'pernah, bekerja dengan tim banyak sekali masukan dan kita harus memutuskannya berdasarkan pemikiran satu tim\r\nkonflik bisa di selesaikan dengan cara berkomunikasi dengan baik', '', ''),
+(19, 1, 7, 1605, 'apotek 7 merupakan apotik jenis besar di kota Sidoarjo, apotik 7 sudah memiliki 3 cabang dan akan terus membuka cabang usahanya di berbagai wilayah lagi.', 'melayani customer yang membeli produk barang yang kami jual, dan menangani kesulitan atau pertanyaan dari pihak customer sebagai simbol service excelent.', 'menambah pengalaman kerja serta menambah pengetahuan dan belajar hal baru,dan akan terus meningkatakan kualitas diri.', 'belum pernah, akan tetapi jika sudah terjadi komplain maka kita harus mendengarkan terlebih dulu keluhan dan segera membuat saran serta meminta maaf.', 'iya sanggup. menjaga sistim imun tubuh dengan pola hidup sehat. tentunya juga selalu bertanggung jawab terhadap pekerjaa atau wewenang yang sudah diberikan dalam bekerja.', '', '', 'pernah psg, dalam sebuah konflik tidak diperbolehkan mengambil langkah dengan kondisi marah, selalu konfirmasi dan didiskusikan terlebih dahulu saat mengambil tindakan atau sebuah keputusan. ', '', ''),
+(20, 1, 7, 992, 'apotek 7 adalah salah satu perusahaan ternama di kota sidoarjo yang bergerak di bidang farmasi. apotek 7 memiliki 3 cabang dan akan terus berkembang kedepannya.', 'dapat memahami konsumen, bersikap ramah, mengerti tentang obat-obatan.', 'motivasi saya untuk melamar ini adalah agar bisa meringankan beban orang tua, agar dapat lebih mandiri, dan membentuk individu yang matang.', 'saya belum pernah menerima komplain.', 'saya kurang setuju untuk sistem shift karena saya masih harus belajar, tetapi jika apotek 7 sistem kerja shift maka saya akan lebih menata waktu saya untuk belajar.', '', '', 'pengalaman bekerja dala tim sangat menyenangkan dapat bertukar pendapat, menemukan ide-ide baru, mempunyai pengethuan luas dan masih banyak lagi. cara saya untuk menyelesaikan masalah dalam tim yaitu dengan mencari tahu penyebab masalahnya seperti apa kemudian mencari solusi, dan bermusyawarah bersama denga teman-teman yang lainya.', '', ''),
+(21, 1, 7, 662, 'Apotek terlengkap dan cukup terkenal  diisidoarho', 'Melayani customer dengan senang hati', 'Menambah ilmu dan turut berkontribusi untuk toko', 'Memberikan solusi terbaik untuk pelanggan maupun toko', 'Mematuhi kewajiban sebagai mana mestinya karyawan', '', '', 'Bermusyawarah mencari solusi', '', ''),
+(22, 1, 7, 1055, 'apotek 7 adalah tempat dimana melayani dan menyediakan segala kebutuhan medis dan rekomendasi dari dokter atau rumah sakit\r\nlebih mudah mendapatkan kebutuhan medis', 'melayani permintaan pasien atau konsumen sesuai yang di butuhkan dan tersedia', 'untuk bekerja semaksimal dalam memberikan pelayanan di bidang medis', 'pernah, tetap memberikan pelayanan yang terbaik dan memberikan solusi ke konsumen agar konsumen merasa puas dan tetap menanamkan rasa kepercayaannya', 'sanggup, saya mengutamakan pekerjaan saya dan kesehatan saya di masa pandemik ini dengan makan2 nan yang sehat dan konsumsi vitamin dan protokol kesehatan', '', '', 'tetap kita musyawarahkan bersama sama dengan anggota tim untuk mencari solusi dan kesepakatan bersama apabila diperlukan meminta pertimbangan atasan atau pimpinan', '', ''),
+(23, 1, 7, 744, 'apotek 7 adalah sebuah perusahaan yang menjual beberapa obat. dan memiliki beberpa cabang.', 'melayani customer yang membeli obat atau bertanya tanya mengenai  obat yang akan dikonsumsi', 'karena sesuai dengan passion saya dan saya ingin mengembangkan minat bakat saya', 'tidak sampai saat ini belum pernah, namun jika saya menghadapi situasi tersebut saya akan mendengarkan keluh kesah customer dan akan menghadapinya dengan tenang.', 'iya saya sanggup, saya akan melakukannya dengan baik dan tidak menunda nunda agar tugas yang diberikan tidak menumpuk , dan saya menjaga kesehatan dengan cara menjaga pola tidur dan pola makan saya.', '', '', 'iya pernah, terkadang yang saya alami didalam berkelompok sering kali terjadi beda pendapat. dan  saya akan mendengarkan pendapat teman teman saya dan mempertimbangkannya. dan memusyawarahkan hasil yang terbaik bersama sama', '', ''),
+(24, 1, 7, 1572, 'apotik 7 ada cabang didaerah gedangan, sidoarjo\r\nmenjual berbagai macam obat obat', 'melayani pasien yang sedang membutuhkan obat\r\nmelayani resep\r\nmenginformasikan kepasien tentang kegunaan obat tersebut', 'mencari pengalaman baru dan menambah wawasan baru', 'saya tanya baik baik\r\ndan apabila pasien masih kurang mengerti tentang kegunaan obat saya memberi arahan yang sesuai', 'mengkonsumsi vitamin\r\ntidur yang cukup\r\nolahraga teratur', '', '', 'dimusyawarahkan secara baik baik dan mendengarkan keluhan lalu mencari solusi yang terbaik tanpa menyudutkan pihak manapun', '', ''),
+(25, 1, 7, 591, 'apotek 7 adalah apotek terkemuka di disidoarjo yang menurut ulasan memiliki kinerja yang bagus tetapi harga obat terjangkau', 'melayani pelanggan dengan baik dan menjelaskan kegunaan dan aturan pakai obat yang akan digunakan pelanggan \r\nmenjelaskan obat apa yang pas untuk penyakit yang diidap pelanggan sesuai resep ataupun obat yang atau anjuran dokter \r\nmenjelaskan harga dan melayani pembayaran dengan baik ', 'saya ingin bekerja didunia kesehatan \r\nkarena sejak kecil itu adalah cita-cita saya dan karena ayah saya juga dulu ada seorang sales obat yang membuat saya tertarik dengan dunia kesehatan \r\n\r\nselain itu saya ingin bekerja sambil belajar berbagai macam obat dan kegunaannya karena jika saya memahami itu saya dapat membantu saudara atau teman yang menanyakan referenshi ke saya ', 'pernah karena pelayanan yang agak lama atau tidak cekatan \r\n\r\nsaya selalu memohon maaf jika pelayanan saya kurang cepat \r\n\r\npada saat itu saya kerja di apotik sendiri dan kebetulan banyak konsumen sehingga saya harus mengatur pembelian sesuai antrian', 'saya sanggup  tentunya saya selalu menerapkan protokol kesehatan saat bekerja selama pandemi \r\n\r\nselain itu saya adalah orang yang rajin menjaga kesehatan tubuh dengan meminum vitamin yang baik bagi tubuh dan mampu mengatur istirahat yang cukup untuk tubuh saya \r\n', '', '', 'pernah, dalam pekerjaan saya sebelumnya selalu berhubungan dengan tim dan kelompok \r\njika ada konflik saya selalu menyelesaikan dengan diskusi baik secara pribadi dengan individu yang bersangkutan dan keseluruhan kelompok atau tim \r\n\r\ndiskusi tidak hanya menjelaskan atau menyelesaikan masalah tetapi juga menemukan jalan keluar yang baik dan inovasi-inovasi yang baru dan lebih baik ', '', ''),
+(26, 1, 7, 1422, 'Apotek 7 adalah salah satu perusahaan yang bergerak di bidang farmasi. Terletak di Kabupaten Sidoarjo dan memiliki 3 cabang.', 'Melayani setiap pembeli yang datang untuk membeli obat. Mengecek ketersediaan stok obat.', 'Karena ingin mencari pekerjaan (karena di masa pandemi ini sulit untuk mencari pekerjaan), menambah pengalaman kerja, serta membantu perekonomian keluarga.', 'Pernah. Ketika sedang melayani pelanggan terjadi kurangnya komunikasi sehingga terjadi kesalahpahaman. Maka dari itu saya meminta maaf atas apa yang terjadi dan meningkatkan kualitas serta memberi pelayan yang lebih baik.', 'Sanggup. Karena jika sudah diterima di perusahaan, hal tersebut sudah menjadi ketentuan. Sehingga saya akan menaati ketentuan yang ada dan akan melakukan yang terbaik untuk perusahaan.\r\nDikarenakan adanya pandemi ini tentunya untuk menjaga kesehatan yaitu dengan minum vitamin, makan makanan yang bergizi, serta berolahraga.', '', '', 'Pernah. Saat itu saya bekerja di sebuah toko. Ketika terjadi suatu masalah tentunya saya dan teman saya berdiskusi dalam menyelesaikan suatu masalah. Selain itu kami juga saling membantu jika ada kesulitan dalam hal bekerja. Saya dan teman saya tak lupa selalu melaporkan apa yang terjadi saat jam kerja.', '', ''),
+(27, 1, 7, 1572, 'apotek 7 memiliki cabang didaerah gedangan, sidoarjo\r\nmenjual berbagai macam obat lengkap', 'melayani pasien yang sedang membutuhkan obat\r\nmelakukan swamedikasi kepasien\r\nmelayani resep atas petunjuk apoteker', 'menambah pengalaman dan wawasan', 'saya tanya baik baik dan menanyakan apa yang dikeluhkan\r\nmemberi swamedikasi yang benar ', 'mengkonsumsi vitamin\r\nistirahat cukup\r\nolahraga teratur', '', '', 'dimusyawarahkan bersama, dibicarakan baik baik, mencari solusi tanpa menyudutkan pihak manapun', '', ''),
+(28, 1, 7, 949, 'Sebuah perusahaan yang menjual obat secara lengkap dan harganya lebih murah', 'Harus memahami setiap jenis obat dan manfaatnya', 'Saya ingin memulai pengalaman baru karna sebelumnya saya belum pernah bekerja menjadi pramuniaga apotek dan saya ingin belajar ', 'Tidak pernah karna sebelum open toko barang harus dicek apakah ada yg exp atau tidak', 'Iyaa saya sanggup. Karna saya sering bekerja fulltime dimall yang terpenting tidak telat makan dan selalu mencuci tangan setiap habis bertransaksi', '', '', 'Pernah. Sebenarnya konflik disebabkan oleh salah satu individu yang tidak jujur jadi jika kita saling terbuka konflik tersebut tidak akan terjadi', '', ''),
+(29, 1, 7, 558, 'Salah satu Apotek yang berada di Daerah Sidoarjo, menyediakan berbagai jenis obat guna pelayanan terhadap masyarakat. Selain itu, mempromosikan pentingnya kesehatan dengan melakukan penjualan berbagai produk tidak hanya secara offline, namun juga melalui sosial media. ', 'Melayani pembeli yang datang dengan membawa resep dari dokter maupun keluhan, bahkan permintaan obat dengan penyakit tertentu. ', 'Guna menambah wawasan di bidang obat-obatan serta membantu orang tua dalam bidang finansial.', 'Tidak pernah. Sebab saya sangat minim melakukan kesalahan. Bahkan, hampir tidak pernah. ', 'Sanggup. Guna menjaga kesehatan pastinya saya akan melakukan anjuran pemerintah dan mengkonsumsi vitamin, sekaligus menerapkan pola hidup sehat. Sehingga, saya mampu melakukan tugas sebagai pramuniaga sekaligus tetap sehat.', '', '', 'Pernah. Ketika saya berada di bangku sekolah menjadi salah satu anggota OSIS. Ketika ada konflik terjadi dalam organisasi, langkah pertama yang dilakukan adalah \"mengkomunikasikan\" hal yang menjadi masalah. Sebab, konflik terjadi karena sebuah kesalahpahaman informasi dalam komunikasi. ', '', ''),
+(30, 1, 7, 1838, 'apotek 7 merupakan usaha dalam pelayanan kesehatan yang terletak di sidoarjo. Siap membantu melayani customer yang membutuhkan obat, baik obat umum, maupun resep dokter.', 'pramuniaga bertugas melayani pembeli yang datang. Jika terdapat customer datang dengan resep, maka pramuniaga bertugas untuk memberikan resep tersebut kepada apoteker atau asisten apoteker dan menyerahkan obat yang telah dipersiapkan oleh apoteker kepada pembeli.  untuk customer yang hanya menyampaikan keluhannya maka pramuniaga akan mendiskusikan dengan apoteker mengenai obat yang akan diberikan. ', 'Selain untuk memenuhi kebutuhan finansial saya, saya juga berkeinginan mencari pekerjaan di bidang yang baru seperti menjadi pramuniaga apotek. Ada pula keinginan saya untuk mengasah karir sebagai pramuniaga yang baik dan bertanggung jawab terhadap pelayanan kepada customer', 'Belum pernah mendapat pengalaman bekerja. Jika saya mendapat komplain. tentu saya akan bertanya dengan sopan, mengapa konsumen tersebut komplain, dan jika benar murni saya yang salah, maka saya akan bertanggung jawab dengan langsung menanyai apa yang konsumen butuhkan.', 'iya, saya sanggup. Karena apa yang sudah saya mulai harus saya selesaikan.\r\nlangkah saya untuk menyelesaikan tugas tentu dengan langsung mengerjakannya dengan fokus dan terliti, tidak lupa jika saya merasa kesuitan, saya akan bertanya kepada senior maupun rekan kerja saya.\r\nsaya terbiasa hidup sehat, mulai dengan sarapan pagi dengan oatmilk, dan meminum vitamin sebelum tidur, sehingga daya tahan tubuh saya kuat dan tidak mudah sakit. tidak lupa dengan selalu menjaga kebersihan.', '', '', 'jika berkerja, saya belum pernah.\r\nnamun saya memiliki backrounf aktif di organisasi\r\nsaya aktif di organisasi sejak SMP dan SMA\r\ndan saat ini saya aktif pada organisasi UKM di kampus saya.\r\nsaya juga mengikuti berbagai komunitas yang ada di luar kampus dan komunitas yang ada di surabaya.\r\nketika kami memiliki masalah seperti berbeda pendapat. \r\nyang pertama saya lakukan adalah menengahi pembicaraan\r\nkemudian saya akan menanyai satu persatu anggota tim. mendengarkan opini mereka. lalu saya akan mengadakan voting dan menanyai alasan mengapa para anggota memilih jawaban tersebut.\r\nsehingga kesalahpahaman dan keberhasilan menggapai mufakat , dapat dengan mudah terselesaikan.', '', ''),
+(31, 1, 7, 589, 'Apotek 7 adalah sebuah toko yang menjual obat-obatan dan sedang berkembang dan membesar namanya.', 'Tugas utama pramuniaga adalah melayani pembeli yang datang. customer biasanya membawa resep dari dokter maupun dengan keluhan permintaan customer.', 'Motivasi saya melamar untuk bekerja menafkahi kehidupan sehari-hari.', 'Pernah, saya menyelesaikan dengan sikap tenang , mencari titik masalah dan menyelesaikannya.', 'iya sanggup, selalu taati protokol kesehatan,minum vitamin dan makan makanan yang bergizi.', '', '', 'pernah, bekerja dengan team sangatlah tidak mudah tergantung bagaimana kita menghadapinya dan menyikapinya terutama adalah nekerja sama karena dengan kebersamaan akan tercipta suatu kekompakan. untuk menghadapi konflik dalam sebuah tim salah satunya adalah memecahkan konflik tersebut dengan kepala dingin ,duduk bersama,berdiskusi dan kooperatif.', '', ''),
+(36, 1, 11, 1, 'coba1', 'coba2', 'coba3', 'coba4', 'coba5', 'coba6', 'coba7', 'coba8', 'coba9', 'coba10'),
+(37, 1, 11, 2147, 'izzah1', 'izzah2', 'izzah3', 'izzah4', 'izzah5', 'izzah6', 'izzah7', 'izzah8', 'izzah9', 'izzah10'),
+(38, 1, 11, 1, 'salmon1', 'salmon2', 'salmon3', 'salmon4', 'salmon5', 'salmon6', 'salmon7', 'salmon8', 'salmon9', 'salmon10'),
+(39, 1, 11, 2691, 'surveyor adalah seseorang yang betugas atau membantu mengumpulkan data melalui beberapa metode yaitu wawancara ', 'ditolak oleh responden, ditolak dengan solusi siap membawa surat tugas dan menjelaskan bahwa dari lembaga/dinas jika masih diragukan harus melaporkan kepada spv sehingga bisa membantu menjelaskan. atau menghubungi penanggung jawab misalnya dari desa/RT', 'fleksibel dengan waktu karena pekerjaan tidak membutuhkan waktu yang lama', 'jujur, sabar dan bisa berbicara dengan tutur kata baik', 'bertindak secara konsisten/jujur', 'bekerja sesuai profesional dan kejujuran', 'bekerja dengan jujur, baik dan sesuai arahan', 'ya, harus membangun karakter yang baik sehingga bekerja sesuai tim', 'bekerja dengan target dan melaporkan setiap ada kendala yang dihadapi.', 'belum pernah memimpin dalam tim, tetapi ketika saya amati bahwa seorang pemimpin harus bisa menjalin komunikasi dengan sesama anggota dan berkoordinasi maupun ada kendala dilapangan siap untuk membantu dalam segala hal dan waktu'),
+(40, 1, 11, 2936, 'Freelance surveyor ialah seseorang yang dapat melakukan pemeriksaan atau mengawasi dan mengamati dalam suatu pekerjaan..', 'Masalah seperti susah untuk mencapai target dengan tepat waktu. Tidak mudah untuk menghubungi client dengan cepat.  Solusi menurut saya ialah dengan ditambahnya team work dalam melakukan target baru yang akan dilaksanakan.', 'Dapat bekerja dengan tim dan banyak bertemu dengan orang baru, karena dapat juga mendapatkan wawasan baru dari pengalaman atau kejadian yang terjadi di lapangan.', 'Dapat berkomunikasi dengan baik', 'Integritas adalah suatu tindakan secara konsisten antara apa yang dikatakan dengan tingkah lakunya apakah sesuai dengan nilai-nilai yang dipelajari selama hidupnya (misalnya attitude nya).', 'Bersikap ramah, mau mendengarkan saran dari orang lain, menghargai pendapat orang lain, tidak menghakimi suatu kesalahan.', 'Selalu mengingatkan bahwa tidak semua keinginannya harus terpenuhi dan terwujud, selalu bersikap rendah hati, berwibawa, sabar.', '-', 'Saya akan terus belajar dari atasan saya guna untuk memperbaiki pekerjaan atau target yang akan dikerjakan. Selalu bekerja dalam team work agar lebih mudah dan cepat untuk mencapai target yang diberikan.', 'Belum pernah, karena saya tidak mudah untuk mengambil keputusan yang cepat dan benar.'),
+(41, 1, 11, 3122, 'mencari data dengan terjun langsung ke lapangan, setelah selesai memperolehnya data tersebut akan diolah menjadi sebuah laporan', 'bertemu dengan orang-orang baru merupakan tantangan tersendiri, misalnya kita harus siap secara mental ketika bertemu dengan masyarakat yang tidak mau/menolak untuk diajak bekerjasama (dijadikan informan), jadi kita harus sabar dan pandai-pandai untuk mempersuasif mereka.', 'saya suka bekerja dilapangan karena saya dapat menemukan hal-hal baru yang belum pernah saya temui sebelumnya, dan itu dapat menambah pengetahuan saya tentang realitas yang ada dilapangan itu seperti apa.', 'saya adalah seseorang yang pekerja keras, dan sanggup mengerjakan suatu hal dengan tekun sesuai dengan arahan, dan saya cenderung begitu teliti jika itu menyangkut sebuah hal yang konkret', 'konsisten terhadap apa yang dikatakan dengan apa yang dia kerjakan', 'tetap berpegang teguh pada aturan yang ada dan yang telah disepakati', 'saling memberitahukan atau mengingatkan kepada sesama rekan kerja serta saling memahami dan terbuka agar tercipta kondisi kerja yang nyaman dan kondusif', 'pernah, saya tetap melakukan pekerjaan saya dikala yang lainnya sedang dalam waktu senggangnya, karena saya cenderung suka menyelesaikan pekerjaan saya terlebih dahulu sebelum beristirahat', 'membuat rincian tugas apa saja yang perlu dikerjakan dan diselesaikan agar mendapat waktu yang efisien dan tepat', 'tidak pernah.'),
+(42, 1, 12, 2933, 'Sesuai bidang administrasi pada umumnya. Mengerjakan laporan, arsip file', 'Biasanya miss komunikasi sering terjadi dalam pekerjaan. Maka dari itu bagi saya komunikasi itu penting. Dan harus teliti juga', 'Saya suka bekerja dibalik layar. Mengerjakan laporan, arsip file/dokumen, dll. Karena passion saya di admin', 'Admin bagi saya memegang peranan penting di dalam perusahaan. Saya mahir menggunakan ms.office, saya mampu bekerja sesuai dengan deadline dan saya mau belajar hal baru', 'Konsisten antara omongan dan perilaku', 'Komunikasi', 'Dengan komunikasi, bertukar pikiran', 'Pernah. Saya menjadi panitia dalam suatu event lomba musik dan ujian musik tingkat nasional. Saya biasanya berperan mengurus segala sesuatu dari awal sampai akhir acara', 'Saya akan bekerja sebaik mungkin. Saya mau belajar apabila ada hal baru', 'Tidak'),
+(43, 1, 12, 2508, 'Posisi yang saya lamar adalah staff administrasi dimana saya harus mengelola data di computer serta menerima panggilan telepon dari customer.', 'Biasanya terjadi perselisihan antar pegawai , seperti saat pegawai si A sudah mendapat telepon dari customer tetapi saat customer ingin menghubungi si pegawai A tidak mendapat respon jadi si customer menelepon dengan nomor pegawai yang lain. Hal ini dapat menjadikan perselisihan antar pegawai. Solusi yang harus dilakukan adalah si pegawai B tidak harus mengambil alih customer si A , yang harus dilakukan si B adalah membantu untuk menyampaikan kepada si A dan memberi tahu kepada customer kalau dia harus tetap berkomunikasi dengan si A.', 'Melakukan pengelolaan data. Karena disini saya dapat mengeksplor lebih jauh tentang penggunaan computer dan dapat menambah skill saya dalam mengoperasikan computer.', 'Saya suka berjumpa dengan orang baru baik secara online maupun offline. Saya juga paham dalam mengoperasikan dasar dari Ms.Office.', 'Dimana sebuah ucapan yang kita katakan harus sepadan dengan tingkah laku kita.', 'Mengikuti peraturan yang sudah ditetapkan oleh perusahaan.', 'Mengingatkan dengan bahasa yang baik dan santai supaya rekan kerja saya tidak merasa tersinggung.', 'Saya oernah terlibat dalam sebuah kelompok , peran yang saya lakukan adalah mengerjakan apa yang sudah diperintahkan oleh ketua dan jika saya merasa keberatan saya meminta bantuan dari rekan tim saya.', 'Berusaha dengan semaksimal mungkin dengan mencari ide ide baru yang bisa menarik perhatian perusahaan lain agar mau bekerja sama dengan perusahaan kita supaya bisa memenuhi target.', 'Saya belum pernah memimpin sebuat tim kerja ataupun kelompok.'),
+(44, 1, 12, 2651, 'staff administrasi merupakan bagian penting dalam perusahaan yang bertugas menjalankan bagian administrasi dalam perusahaan seperti mengurusi masalah pemberkasan atau pendaftaran serta pembukuan sederhana', 'kesalahan pemberkasan. soalusi untuk mengatasinya yaitu dengan melakukan pengecekan ulang secara cermat dan teliti', 'pemberkasan dan pembukuan, karena saya merasa kemampuan dan baground pendidikan sesuai dengan hal tersebut', 'saya memahami akuntansi dan pembukuan serta saya merupakan seorang yang teliti', 'suatu keadaan yang utuh yang dapat memancarkan aura kewibawaan, kejujuran dan kompleksitas seseorang', 'bekerja secara teratur dan mengedepankan nilai, norma dan etika, kejujuran serta sesuai dengan kebijakan atau peraturan yang ada', 'melakukan evaluasi disetiap akhir pekerjaan, mengajak berdiskusi', 'tidak', 'disiplin, taat, kerja keras, lebih teliti dan cermat', 'tidak'),
+(45, 1, 12, 2626, 'staff administrasi bertugas membuat surat menyurat, melengkapi dokumen-dokumen yang dibutuhkan oleh manajer atau divisi yang lain, mengerjakan laporan yang biasanya menggunakan ms excell ', 'permasalahan internal biasanya sering terjadi kesalahan typo dalam penulisan tanggal maupun nomor surat. solusinya biar tidak salah, sebaiknya diteliti lagi sebelum di printout atau dikirimkan ke pihak yang dituju', 'membuat surat menyurat, karena sangat efisien sudah ada formatnya tinggal mengganti tanggal,nomor surat dan isi kepentingan surat.', 'kompetensi: menguasai ms office (word,excell,power point) \r\nkarakter: rajin,teliti,kerja sama team. ', 'komitmen, kejujuran dan konsistensi dalam diri seseorang', 'dengan melakukan pekerjaan dengan ikhlas dan berupaya mengerjakannya dengan baik dan benar. ', 'kita sebaiknya melakukannya terlebih dahulu baru memberikan contoh ataupun solusi terhadap rekan kerja kita. ', 'pernah, saya pernah bekerja di perusahaan kontraktor. jadi kerjasama tim sangat penting dalam mewujudkan kerja yang selaras. kita setiap pagi melakukan safety talk dan pengarahan jobdesk kepada mandor dan sipil agar pekerjaan menjadi terarah dan tidak simpang siur. ', 'dengan melakukan pekerjaan secara rajin,teratur dan tepat waktu. ', 'pernah, saya sebagai sekretaris kkn harus mengatur setiap divisi kkn untuk mengumpulkan proposal setiap program kerja. dan harus mengarahkan setiap divisi untuk pengerjaan proposal harus sesuai dengan ketentuan DPL. '),
+(46, 1, 1, 1, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_jawaban_studi`
+--
+
+CREATE TABLE `tb_jawaban_studi` (
+  `id_jawaban` int(5) NOT NULL,
+  `id_ujian_studi` int(5) NOT NULL,
+  `id_lowongan` int(5) NOT NULL,
+  `id_pelamar` int(5) NOT NULL,
+  `jawaban1` text CHARACTER SET latin1 NOT NULL,
+  `jawaban2` text CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_jawaban_studi`
+--
+
+INSERT INTO `tb_jawaban_studi` (`id_jawaban`, `id_ujian_studi`, `id_lowongan`, `id_pelamar`, `jawaban1`, `jawaban2`) VALUES
+(1, 1, 0, 1, 'Testing', ''),
+(2, 1, 4, 1, 'testing', ''),
+(3, 1, 4, 1, 'ayeyy', ''),
+(4, 1, 3, 2, 'asoy geboy broo', ''),
+(5, 1, 3, 2, 'sayangi ususmu minum baygon tiap hari mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\r\n', ''),
+(6, 1, 1, 1, 'hahaha iya se bener', ''),
+(8, 1, 1, 1, 'embo opo yo', ''),
+(9, 1, 1, 1, 'ahahahah mboh gangerti yaopo karepe cok', ''),
+(10, 1, 1, 1, 'testing1', ''),
+(11, 1, 1, 1, 'hahaha', 'halolo'),
+(12, 1, 1, 1, 'hoaaaammmmmmm', 'hooooooooooooiiiiiiiiiimmmmmmmmmm');
 
 -- --------------------------------------------------------
 
@@ -869,7 +1155,9 @@ INSERT INTO `tb_nilai_cfit` (`id_nilai_cfit`, `id_pelamar`, `id_lowongan`, `nila
 (3, 1, 3, 1, 40, 'Intellectual deficient', ''),
 (4, 1, 4, 0, 38, 'Intellectual deficient', ''),
 (5, 2, 3, 0, 38, 'Intellectual deficient', ''),
-(6, 30, 2, 0, 38, 'Intellectual deficient', '');
+(6, 30, 2, 0, 38, 'Intellectual deficient', ''),
+(7, 1, 6, 0, 38, 'Intellectual deficient', ''),
+(8, 31, 2, 0, 38, 'Intellectual deficient', '');
 
 -- --------------------------------------------------------
 
@@ -974,8 +1262,8 @@ CREATE TABLE `tb_perusahaan` (
 --
 
 INSERT INTO `tb_perusahaan` (`id_perusahaan`, `id_level`, `nama_perusahaan`, `jenis_usaha`, `alamat`, `email`, `logo_perusahaan`, `username`, `password`, `website`, `facebook`, `instagram`, `twitter`, `no_hp`) VALUES
-(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', 'e572a8f3b6c1d24036ff76ac16eb08b0', 'chaakraconsulting.com', '', '', '', '0872676289002'),
-(2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', 'bd9dd885dfb6f61145824294180d7df0', '-', '-', '-', '-', '-');
+(1, 3, 'Chaakraconsulting', 'Konsultan Bisnis', 'Virto Office lt 3', 'adm@chaakraconsulting.com', 'Logo200921_1.png', 'chaakra', '558d63dd9feb215d19b8e08a0ae503c7', 'chaakraconsulting.com', '', '', '', '0872676289002'),
+(2, 3, 'PT Eka Ormed Indonesia', 'Bidang Kesehatan', 'Komplek Industri & Pergudangan Meiko Abadi I, Blk. B No.2, Wedi, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254', '-', 'Logo201008_.png', 'ekaormedindonesia', 'e48ec16d066a59dffbe1e352ad0710d7', '-', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -1341,6 +1629,50 @@ CREATE TABLE `tb_soal_ist2` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_soal_leadership`
+--
+
+CREATE TABLE `tb_soal_leadership` (
+  `id_soal` int(11) NOT NULL,
+  `nomor_soal` int(5) NOT NULL,
+  `soal` varchar(355) CHARACTER SET latin1 NOT NULL,
+  `opsi_a` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `opsi_b` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `jawaban` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `subtes` varchar(5) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_soal_leadership`
+--
+
+INSERT INTO `tb_soal_leadership` (`id_soal`, `nomor_soal`, `soal`, `opsi_a`, `opsi_b`, `jawaban`, `subtes`) VALUES
+(1, 1, 'Saya menyadari disekitar saya banyak terdapat sosok pemimpin.', 'Ya', 'Tidak', 'Ya', '1'),
+(2, 2, 'Saya sudah terlibat secara langsung menjadi anggota dalam organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(3, 3, 'Saya mengetahui model kepemimpinan partisipatif dan berusaha menerapkannya.', 'Ya', 'Tidak', 'Ya', '1'),
+(4, 4, 'Saya dapat menyelesaikan tugas-tugas organisasi yang saya mulai hingga tuntas.', 'Ya', 'Tidak', 'Ya', '1'),
+(5, 5, 'Saya berusaha mengembangkan kepemimpinan pada anggota organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(6, 6, 'Saya merasa sudah menjadi pemimpin yang ideal.', 'Ya', 'Tidak', 'Ya', '1'),
+(7, 7, 'Saya mendukung proses belajar anggota di dalam organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(8, 8, 'Saya bertindak sebagai fasilitator untuk orang lain dalam mencapai tujuan organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(9, 9, 'Saya berusaha menjaga hubungan yang baik dengan anggota organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(10, 10, 'Saya belum tertarik untuk terlibat menjadi anggota dalam organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(11, 11, 'Saya berusaha untuk  terlibat dalam setiap kegiatan dalam organisasi yang saya menjadi anggota di dalamnya.', 'Ya', 'Tidak', 'Ya', '1'),
+(12, 12, 'Saya mengetahui keahlian yang dibutuhkan untuk menjadi pemimpin yang berhasil.', 'Ya', 'Tidak', 'Ya', '1'),
+(13, 13, 'Saya mendukung ide-ide yang dikemukakan oleh anggota organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(14, 14, 'Saya merasa bahwa kepemimpinan merupakan bagian dari hidup saya.', 'Ya', 'Tidak', 'Ya', '1'),
+(15, 15, 'Saya mempercayai anggota yang terlibat aktif dalam kegiatan organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(16, 16, 'Saya mengembangkan kepemimpinan terus-menerus  dalam diri saya.', 'Ya', 'Tidak', 'Ya', '1'),
+(17, 17, 'Kepercayaan diri saya muncul ketika saya sudah terlibat dalam kegiatan organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(18, 18, 'Saya mulai mencoba peran sebagai pemimpin dan mengambil tanggung jawab di organisasi yang saya menjadi anggotanya.', 'Ya', 'Tidak', 'Ya', '1'),
+(19, 19, 'Saya bertindak sebagai fasilitator dalam membentuk kepemimpinan pada anggota baru dalam organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(20, 20, 'Saya dapat menjadi seorang pemimpin yang berhasil dimanapun saya berada.', 'Ya', 'Tidak', 'Ya', '1'),
+(21, 21, 'Saya dapat membedakan tugas serta peran pada pemimpin dan juga anggota dalam organisasi.', 'Ya', 'Tidak', 'Ya', '1'),
+(22, 22, 'Saya mengetahui kekuatan dan kelemahan diri setelah saya menjadi anggota organisasi.', 'Ya', 'Tidak', 'Ya', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_soal_motlet`
 --
 
@@ -1359,6 +1691,91 @@ INSERT INTO `tb_soal_motlet` (`id_soal`, `id_perusahaan`, `id_jenis_motlet`, `so
 (1, 2, 1, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
 (3, 1, 2, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br />tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<br />quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br />consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse<br />cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br />proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
 (5, 2, 1, '<p>tes12324</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_soal_msdt`
+--
+
+CREATE TABLE `tb_soal_msdt` (
+  `id_soal` int(11) NOT NULL,
+  `no_soal` int(5) NOT NULL,
+  `pernyataan1` varchar(450) CHARACTER SET latin1 NOT NULL,
+  `pernyataan2` varchar(450) CHARACTER SET latin1 NOT NULL,
+  `aspek1` varchar(5) CHARACTER SET latin1 NOT NULL,
+  `aspek2` varchar(5) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_soal_msdt`
+--
+
+INSERT INTO `tb_soal_msdt` (`id_soal`, `no_soal`, `pernyataan1`, `pernyataan2`, `aspek1`, `aspek2`) VALUES
+(1, 1, 'Saya tidak akan menegur pelanggar - pelanggar peraturan bila saya merasa pasti bahwa tidak ada satu orangpun yang mengetahui tentang pelanggar - pelanggar tersebut.', 'Bila saya mengumumkan suatu keputusan yang kurang menyenangkan, saya akan menjelaskan kepada bawahan saya bahwa keputusan ini dibuat oleh direktur.', 'A', 'B'),
+(2, 2, 'Bila ada seorang karyawan yang hasil kerjanya selalu tidak memuaskan saya, saya akan menunggu suatu kesempatan untuk memindahkannya dan bukan untuk memecatnya.', 'Bila ada bawahan saya yang dikucilkan dari kelompok kerjanya, saya akan mencari jalan agar orang lain dapat berteman dengannya.', 'A', 'B'),
+(3, 3, 'Bila direktur memberikan perintah yang kurang menyenangkan, saya pikir adalah cukup bijaksana bila saya menyebutkan namanya dan bukan nama saya.', 'Saya biasanya membuat keputusan-keputusan sendiri dan menyampaikannya kepada bawahan saya.', 'A', 'B'),
+(4, 4, 'Bila saya ditegur oleh atasan saya, saya akan memanggil semua bawahan saya dan mengatakan semua teguran tersebut kepada mereka.', 'Saya selalu memberikan tugas - tugas yang sangat sulit kepada karyawan - karyawan yang paling berpengalaman.', 'A', 'B'),
+(5, 5, 'Saya selalu melakukan diskusi - diskusi untuk mencapai kata sepakat.', 'Saya selalu menganjurkan kepada bawahan saya untuk memberikan usul - usul, tetapi kadang - kadang saya langsung mengambil tindakan tertentu.', 'A', 'B'),
+(6, 6, 'Seringkali saya lebih mementingkan tugas daripada diri saya sendiri.', 'Saya mengijinkan bawahan - bawahan saya untuk ikut serta dalam mengambil keputusan.', 'A', 'B'),
+(7, 7, 'Bila jumlah dan mutu hasil kerja bagian saya tidak memuaskan, saya mengatakan kepada bawahan - bawahan saya bahwa direktur merasa kecewa. Oleh karena itu mereka harus memperbaiki kerja mereka.', 'Saya membuat keputusan - keputusan sendiri dan kemudian saya mencoba untuk \" menjual \" keputusan - keputusan itu kepada bawahan saya.', 'A', 'B'),
+(8, 8, 'Bila saya mengumumkan suatu keputusan yang kurang menyenangkan, saya akan menjelaskan kepada bawahan saya bahwa keputusan ini dibuat oleh direktur.', 'Saya mengijinkan bawahan - bawahan saya untuk ikut serta di dalam pengambilan keputusan, tetapi sayapun menyediakan sesuatu yang jitu sebagai keputusan terakhir.', 'A', 'B'),
+(9, 9, 'Saya akan memberikan tugas - tugas yang sulit kepada bawahan saya yang belum berpengalaman, tetapi bila mereka memperoleh kesukaran, saya akan mengambil alih tanggung jawab mereka.', 'Bila jumlah dan mutu hasil kerja bagian saya tidak memuaskan, saya menjelaskan kepada bawahan - bawahan saya bahwa direktur merasa kecewa. Oleh karena itu mereka harus memperbaiki mutu kerja mereka itu.', 'A', 'B'),
+(10, 10, 'Saya merasa bahwa dengan bekerja keras untuk bawahan saya, mereka akan menyukai saya.', 'Saya membiarkan orang lain menangani tugas mereka masing - masing, walaupun mereka membuat banyak kesalahan.', 'A', 'B'),
+(11, 11, 'Saya menunjukan minat saya terhadap kehidupan pribadi bawahan - bawahan saya, karena sayapun mengharapkan mereka berbuat seperti itu kepada saya.', 'Saya merasa bahwa bawahan - bawahan saya tidak perlu mengerti mengapa mereka mengerjakan sesuatu hal, sejauh mereka mengerjakan hal terebut.', 'A', 'B'),
+(12, 12, 'Saya percaya bahwa bawahan - bawahan yang tidak disiplin tidak akan memperbaiki jumlah atau mutu kerja mereka dalam jangka waktu yang panjang.', 'Bila menghadapi masalah yang sulit, saya berusaha untuk mencapai pemecahan yang dapat diterima oleh sebagian besar orang.', 'A', 'B'),
+(13, 13, 'Bila beberapa bawahan saya merasa tidak berbahagia, saya akan mencoba melakukan sesuatu untuk mengatasi hal tersebut.', 'Saya berusaha bekerja sebaik mungkin dan memberikan ide - ide pengembangan pada pimpinan.', 'A', 'B'),
+(14, 14, 'Saya menyetujui kenaikan tunjangan - tunjangan untuk staf dan karyawan.', 'Saya mendukung bawahan saya yang ingin meningkatkan pengetahuan tentang pekerjaan dan perusahaan, walaupun hal itu sebenarnya belum diperlukan untuk kedudukan mereka sekarang.', 'A', 'B'),
+(15, 15, 'Saya membiarkan orang lain menangani tugas mereka masing - masing, walaupun mereka banyak membuat kesalahan.', 'Saya membuat keputusan - keputusan sendiri, tetapi saya akan mempertimbangkan usul - usul dari bawahan - bawahan saya.', 'A', 'B'),
+(16, 16, 'Bila ada bawahan saya yang dikucilkan dari kelompok kerjanya, saya akan mencari cara agar orang lain dapat berteman dengannya.', 'Bila seorang karyawan tidak sanggup menyelesaikan tugasnya, saya akan membantu dia untuk menyelesaikan tugas tersebut.', 'A', 'B'),
+(17, 17, 'Saya percaya bahwa penerapan disiplin merupakan contoh untuk karyawan - karyawan lain.', 'Saya merasa saya lebih mementingkan tugas daripada diri saya sendiri.', 'A', 'B'),
+(18, 18, 'Saya mencela pembicaraan - pembicaraan yang tidak perlu di antara bawahan - bawahan saya, selama mereka bekerja.', 'Saya menyetujui kenaikan tunjangan - tunjangan untuk staf dan karyawan.', 'A', 'B'),
+(19, 19, 'Saya selalu memperhatikan keterlambatan dan kemangkiran bawahan saya.', 'Saya percaya bahwa serikat - serikat buruh akan mencoba meruntuhkan kewibawaan pimpinan perusahaan.', 'A', 'B'),
+(20, 20, 'Kadang - kadang saya merasa bahwa apa yang dikeluhkan oleh serikat buruh bukanlah masalah yang mendasar.', 'Saya merasa bahwa keluhan - keluhan tidak dapat dicegah dan saya akan berusaha untuk menghilangkan keluhan tersebut.', 'A', 'B'),
+(21, 21, 'Adalah penting bagi saya untuk memperoleh penghargaan atas ide - ide saya yang baik.', 'Saya mengemukakan pendapat - pendapat saya dimuka umum hanya bila saya merasa bahwa orang lain akan setuju dengan saya.', 'A', 'B'),
+(22, 22, 'Saya percaya bahwa serikat - serikat buruh akan mencoba meruntuhkan kewibawaan pimpinan perusahaan.', 'Saya percaya bahwa pertemuan - pertemuan yang sering dengan karyawan secara pribadi akan membantu pengembangan diri mereka.', 'A', 'B'),
+(23, 23, 'Saya merasa bawahan - bawahan saya tidak perlu mengerti mengapa mereka mengerjakan sesuatu hal sejauh mereka mengerjakan hal tersebut.', 'Saya merasa bahwa jam pencatat waktu datang dan pulangnya para pegawai akan mengurangi keterlambatan.', 'A', 'B'),
+(24, 24, 'Saya biasanya membuat keputusan - keputusan sendiri dan menyampaikannya kepada bawahan saya.', 'Saya merasa bahwa serikat - serikat buruh dan pimpinan perusahaan dapat bekerjasama untuk mencapai tujuan - tujuan bersama.', 'A', 'B'),
+(25, 25, 'Saya menyukai penggunaan skala penggajian karyawan.', 'Saya selalu melakukan diskusi - diskusi untuk mencapai kata sepakat.', 'A', 'B'),
+(26, 26, 'Saya tidak akan memberikan tugas yang tidak saya senangi kepada orang lain.', 'Bila beberapa bawahan saya merasa tidak berbahagia, saya akan mencoba melakukan sesuatu untuk mengatasi hal tersebut.', 'A', 'B'),
+(27, 27, 'Bila ada tugas yang mendesak, walaupun semua peralatannya sudah disediakan, saya akan membiarkannya saja dan meminta salah seorang bawahan saya untuk mengerjakan tugas tersebut.', 'Adalah penting bagi saya untuk memperoleh penghargaan atas ide - ide saya yang baik.', 'A', 'B'),
+(28, 28, 'Tujuan saya adalah berusaha mengerjakan tugas sebaik mungkin tanpa mengeluh.', 'Saya memberikan tugas kepada bawahan saya tanpa banyak mempertimbangkan pengalaman atau kemampuan saya lebih menuntut pencapaian hasilnya saja', 'A', 'B'),
+(29, 29, 'Saya memberikan tugas kepada bawahan saya tanpa banyak mempertimbangkan pengalaman atau kemampuan. Saya lebih menuntut pada pencapaian hasilnya saja.', 'Saya dengan sabar mendengarkan keluhan - keluhan dan ketidakpuasan - ketidakpuasan bawahan saya, tetapi seringkali saya meralat apa yang mereka katakan.', 'A', 'B'),
+(30, 30, 'Saya merasa bahwa keluhan - keluhan tidak dapat dicegah dan saya berusaha untuk menghilangkan keluhan tersebut.', 'Saya percaya bahwa bawahan - bawahan saya akan merasakan kepuasan kerja tanpa merasa tertekan oleh saya.', 'A', 'B'),
+(31, 31, 'Bila menghadapi masalah yang sulit, saya berusaha untuk mencapai pemecahan yang dapat diterima oleh sebagian besar orang.', 'Saya percaya bahwa pengalaman bekerja lebih bermanfaat daripada pendidikan teoritis.', 'A', 'B'),
+(32, 32, 'Saya selalu memberikan tugas - tugas yang sangat sulit kepada karyawan - karyawan yang paling berpengalaman.', 'Saya percaya bahwa kenaikan jabatan adalah semata - mata berdasarkan kemampuan yang ada.', 'A', 'B'),
+(33, 33, 'Saya merasa bahwa masalah - masalah yang timbul di antara para karyawan biasanya akan dapat diselesaikan di antara mereka sendiri, tanpa campur tangan dari saya.', 'Bila saya ditegur oleh atasan saya, saya akan memanggil semua bawahan saya dan mengatakan semua teguran tersebut kepada mereka.', 'A', 'B'),
+(34, 34, 'Saya tidak peduli dengan apa yang dikerjakan oleh karyawan saya di luar jam kerja kantornya.', 'Saya percaya bahwa bawahan - bawahan yang tidak disiplin tidak akan memperbaiki jumlah atau mutu kerja mereka dalam jangka waktu yang panjang.', 'A', 'B'),
+(35, 35, 'Saya memberikan informasi kepada pimpinan perusahaan tidak lebih dari apa yang mereka tanyakan.', 'Kadang - kadang saya merasa bahwa apa yang dikeluhkan oleh serikat buruh bukanlah masalah yang mendasar.', 'A', 'B'),
+(36, 36, 'Saya kadang ragu - ragu untuk membuat suatu keputusan yang akan tidak disukai oleh bawahan - bawahan saya.', 'Tujuan saya adalah berusaha mengerjakan tugas sebaik mungkin tanpa mengeluh.', 'A', 'B'),
+(37, 37, 'Saya dengan sabar mendengarkan keluhan - keluhan dan ketidakpuasan - ketidakpuasan dari bawahan saya, tetapi seringkali saya meralat apa yang mereka katakan.', 'Saya kadang ragu - ragu untuk membuat suatu keputusan yang akan tidak disukai oleh bawahan - bawahan saya.', 'A', 'B'),
+(38, 38, 'Saya mengemukakan pendapat - pendapat saya dimuka umum hanya bila saya merasa bahwa orang lain akan setuju dengan saya.', 'Sebagian besar dari bawahan-bawahan saya dapat menyelesaikan tugas-tugas mereka, bila perlu, tanpa kehadiran saya.', 'A', 'B'),
+(39, 39, 'Saya berusaha bekerja sebaik mungkin dan memberikan ide-ide pengembangan pada pimpinan perusahaan.', 'Bila saya memberikan tugas kepada bawahan-bawahan saya saya menentukan batas waktu penyelesaiannya.', 'A', 'B'),
+(40, 40, 'Saya selalu menganjurkan kepada bawahan saya untuk memberikan usul-usul, tetapi kadang-kadang saya langsung mengambil tindakan tertentu.', 'Saya mencoba membuat bawahan-bawahan saya merasa senang apabila mereka berbicara dengan saya.', 'A', 'B'),
+(41, 41, 'Di dalam diskusi-diskusi saya memberikan fakta-fakta sesuai pemahaman bawahan saya, dan membiarkan mereka untuk membuat keimpulan sendiri.', 'Bila direktur memberikan perintah yang kurang menyenangkan, saya pikir adalah cukup bijaksana bila saya menyebutkan namanya dan bukan nama saya.', 'A', 'B'),
+(42, 42, 'Bila ada tugas-tugas mendadak atau tugas yag tidak menyenangkan, sebelumnya saya akan meminta beberapa sukarelawan yang mau mengerjakan tugas tersebut.', 'Saya menunjukkan minat saya terhadap kehidupan pribadi bawahan-bawahan saya, karena saya pun mengharapkan mereka berbuat seperti itu kepada saya.', 'A', 'B'),
+(43, 43, 'Saya selalu memperhatikan kebahagiaan karyawan-karyawan saya saat mereka mengerjakan tugas-tugas mereka.', 'Saya selalu memperhatikan keterlambatan dan kemangkiran bawahan saya.', 'A', 'B'),
+(44, 44, 'Sebagian besar dari bawahan-bawahan saya dapat menyelesaikan tugas-tugas mereka, bila perlu, tanpa kehadiran saya.', 'Bila ada sesuatu tugas yang mendesak, walaupun semua peralatannya sudah disediakan, saya akan membiarkannya saja dan meminta salah seorang bawahan saya untuk mengerjakan tugas tersebut.', 'A', 'B'),
+(45, 45, 'Saya percaya bahwa bawahan-bawahan saya akan merasakan kepuasan kerja tanpa merasa tertekan oleh saya.', 'Saya memberikan informasi kepada \"dewan pimpinan perusahaan\" tidak lebih dari apa yang mereka tanyakan.', 'A', 'B'),
+(46, 46, 'Saya percaya bahwa pertemuan-pertemuan yang sering dengan karyawan secara pribadi akan membantu pengembangan diri mereka.', 'Saya selalu memperhatikan kebahagiaan karyawan-karyawan saya saat mereka mengerjakan tugas-tugas mereka.', 'A', 'B'),
+(47, 47, 'Saya mendukung bawahan saya yang ingin meningkatkan pengetahuan tentang pekerjaan dan perusahaan, walaupun hal itu sebenarnya belum diperlukan untuk kedudukan mereka sekarang.', 'Saya mengawasi benar bawahan-bawahan saya yang kurang mahir dalam pekerjaannya atau bawahan-bawahan saya yang hasil kerjanya kurang memuaskan.', 'A', 'B'),
+(48, 48, 'Saya mengijinkan bawahan-bawahan saya untuk ikut serta dalam mengambil keputusan dan saya selalu mematuhi keputusan yang dibuat berdasarkan suara terbanyak.', 'Saya membuat bawahan-bawahan saya bekerja keras, dan saya berusaha meyakinkan mereka bahwa biasanya mereka akan mendapat perlakuan yang adil dari pimpinan perusahaan.', 'A', 'B'),
+(49, 49, 'Saya merasa bahwa semua karyawan pada jabatan yang sama seharusnya memperoleh gaji yang sama.', 'Bila ada seorang karyawan yang hasil kerjanya selalu tidak memuaskan saya, saya akan menunggu suatu kesempatan untuk memindahkannya dan bukan untuk memecatnya.', 'A', 'B'),
+(50, 50, 'Saya merasa bahwa tujuan-tujuan serikat buruh dan tujuan-tujuan perusahaan saling berbeda.', 'Saya merasa bahwa dengan bekerja keras bagi bawahan saya, mereka akan menyenangi saya.', 'A', 'B'),
+(51, 51, 'Saya mengawasi benar bawahan-bawahan saya yang kurang mahir dalam pekerjaannya atau bawahan-bawahan saya yang hasil kerjanya kurang memuaskan.', 'Saya mencela pembicaraan-pembicaraan yang tidak perlu diantara bawahan-bawahan saya, selama mereka bekerja.', 'A', 'B'),
+(52, 52, 'Bila saya memberikan tugas kepada bawahan-bawahan saya, saya menentukan batas waktu penyelesaiannya.', 'Saya tidak akan memberikan tugas yang tidak saya senangi kepada orang lain.', 'A', 'B'),
+(53, 53, 'Saya percaya bahwa pengalaman bekerja lebih bermanfaat daripada pendidikan teoritis.', 'Saya tidak peduli dengan apa yang dikerjakan oleh para pegawai saya diluar jam kantornya.', 'A', 'B'),
+(54, 54, 'Saya merasa bahwa jam pencatat waktu datang dan pulangnya para pegawai akan mengurangi keterlambatan.', 'Saya mengijinkan bawahan-bawahan saya untuk ikut serta dalam pengambilan keputusan dan saya selalu mematuhi keputusan yang dibuat berdasarkan suara terbanyak.', 'A', 'B'),
+(55, 55, 'Saya membuat keputusan-keputusan sendiri, tetapi saya dapat mempertimbangkan saran-saran yang wajar dari bawahan-bawahan saya.', 'Saya merasa bahwa tujuan-tujuan serikat buruh dan tujuan-tujuan perusahaan adalah saling berbeda.', 'A', 'B'),
+(56, 56, 'Saya membuat keputusan-keputusan sendiri dan kemudian saya mencoba untuk \"menjual\" keputusan-keputusan itu kepada bawahan saya.', 'Apabila mungkin, saya akan membentuk kelompok-kelompok kerja yang terdiri dari orang-orang yang sudah menjadi teman-teman baik saya.', 'A', 'B'),
+(57, 57, 'Saya tidak akan ragu-ragu untuk memperkerjakan pegawai-pegawai yang cacat jasmani, bilamana saya merasa pasti bahwa mereka dapat menangani pekerjaannya.', 'Saya tidak akan menegur pelanggar-pelanggar peraturan, bila saya merasa pasti bahwa tidak ada satu orangpun yang mengetahui tentang pelanggaran-pelanggaran tersebut.', 'A', 'B'),
+(58, 58, 'Apabila mungkin, saya akan membentuk kelompok-kelompok kerja yang terdiri dari orang-orang yang sudah menjadi teman-teman baik saya.', 'Saya akan memberikan tugas-tugas yang sulit kepada bawahan-bawahan saya yang belum berpengalaman, tetapi bila mereka memperoleh kesukaran, saya akan mengambil alih tanggung jawab mereka.', 'A', 'B'),
+(59, 59, 'Saya membuat bawahan-bawahan saya bekerja keras, dan saya berusaha meyakinkan mereka bahwa biasanya mereka akan mendapat perlakuan yang adil dari pimpinan perusahaan.', 'Saya percaya bahwa penerapan disiplin adalah merupakan contoh untuk karyawan-karyawan lainnya.', 'A', 'B'),
+(60, 60, 'Saya mencoba untuk membuat bawahan-bawahan saya merasa senang apabila mereka berbicara dengan saya.', 'Saya menyukai penggunaan skala penggajian karyawan.', 'A', 'B'),
+(61, 61, 'Saya percaya bahwa kenaikan jabatan adalah semata-mata berdasarkan kemampuan yang ada.', 'Saya merasa bahwa masalah-masalah yang timbul diantara para karyawan biasanya akan dapat diselesaikan diantara mereka sendiri, tanpa campur tangan dari saya.', 'A', 'B'),
+(62, 62, 'Saya merasa bahwa serikat-serikat buruh dan pimpinan perusahaan bekerja untuk mencapai tujuan-tujuan yang sama.', 'Di dalam diskusi, saya memberikan fakta-fakta sesuai pemahaman bawahan saya, dan membiarkan mereka untuk membuat kesimpulan sendiri.', 'A', 'B'),
+(63, 63, 'Bila seorang karyawan tidak sanggup menyelesaikan tugasnya, saya akan membantu dia untuk menyelesaikan tugas tersebut.', 'Saya merasa bahwa semua karyawan pada jabatan yang sama seharusnya memperoleh gaji yang sama.', 'A', 'B'),
+(64, 64, 'Saya mengijinkan bawahan-bawahan saya untuk ikut serta dalam pengambilan keputusan, tetapi sayapun menyediakan sesuatu yang jitu sebagai keputusan terakhir.', 'Saya tidak akan ragu-ragu untuk memperkerjakan pegawai-pegawai yang cacat jasmaninya, bilamana saya merasa bahwa mereka dapat menangani pekerjaannya.', 'A', 'B');
 
 -- --------------------------------------------------------
 
@@ -1627,12 +2044,46 @@ CREATE TABLE `tb_ujian` (
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tb_ujian`
+-- Table structure for table `tb_ujian_essay`
 --
 
-INSERT INTO `tb_ujian` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `durasi`, `nama_pembuat`, `status`) VALUES
-(1, 'Tes Intelegensi 1 ( CFIT )', '2021-04-30 14:29:00', '2021-04-30 15:00:00', '2021-04-30 14:29:00', '2021-04-30 14:32:00', '2021-04-30 14:32:00', '2021-04-30 14:37:00', '2021-04-30 14:37:00', '2021-04-30 14:40:00', '2021-04-30 14:40:00', '2021-04-30 14:45:00', '2021-04-30 14:45:00', '2021-04-30 14:48:00', '2021-04-30 14:48:00', '2021-04-30 14:53:00', '2021-04-30 14:53:00', '2021-04-30 14:55:00', '2021-04-30 14:55:00', '2021-04-30 15:00:00', 1950, 'Administrator', 'tersedia');
+CREATE TABLE `tb_ujian_essay` (
+  `id_ujian_essay` int(5) NOT NULL,
+  `nama_ujian` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL,
+  `status` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_ujian_essay`
+--
+
+INSERT INTO `tb_ujian_essay` (`id_ujian_essay`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
+(1, 'Essay Kompetensi', '2021-06-11 09:49:43', '2021-06-11 19:19:00', 'tersedia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_ujian_hitung`
+--
+
+CREATE TABLE `tb_ujian_hitung` (
+  `id_ujian_hitung` int(5) NOT NULL,
+  `nama_ujian` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_ujian_hitung`
+--
+
+INSERT INTO `tb_ujian_hitung` (`id_ujian_hitung`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`) VALUES
+(1, 'Tes Hitung Akuntansi', '2021-07-05 01:15:00', '2021-07-06 23:15:00');
 
 -- --------------------------------------------------------
 
@@ -1653,7 +2104,7 @@ CREATE TABLE `tb_ujian_holland` (
 --
 
 INSERT INTO `tb_ujian_holland` (`id_ujian_holland`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
-(1, 'Test Minat Kerja', '2021-04-05 14:00:00', '2021-04-05 15:00:00', '');
+(1, 'Test Minat Kerja', '2021-06-15 14:00:00', '2021-06-15 23:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -1712,7 +2163,7 @@ CREATE TABLE `tb_ujian_ist` (
 --
 
 INSERT INTO `tb_ujian_ist` (`id_ujian`, `nama_ujian`, `waktu_dimulai`, `waktu_berakhir`, `start_lat_sub1`, `end_lat_sub1`, `start_uji_sub1`, `end_uji_sub1`, `start_lat_sub2`, `end_lat_sub2`, `start_uji_sub2`, `end_uji_sub2`, `start_lat_sub3`, `end_lat_sub3`, `start_uji_sub3`, `end_uji_sub3`, `start_lat_sub4`, `end_lat_sub4`, `start_uji_sub4`, `end_uji_sub4`, `start_lat_sub5`, `end_lat_sub5`, `start_uji_sub5`, `end_uji_sub5`, `start_lat_sub6`, `end_lat_sub6`, `start_uji_sub6`, `end_uji_sub6`, `start_lat_sub7`, `end_lat_sub7`, `start_uji_sub7`, `end_uji_sub7`, `start_lat_sub8`, `end_lat_sub8`, `start_uji_sub8`, `end_uji_sub8`, `start_lat_sub9`, `end_lat_sub9`, `start_uji_sub9`, `end_uji_sub9`, `durasi`, `nama_pembuat`, `status`) VALUES
-(89, 'Tes Intelegensi 2 ( IST )', '2021-05-31 12:30:00', '2021-05-31 13:51:00', '2021-05-31 12:30:00', '2021-05-31 12:31:00', '2021-05-31 12:31:00', '2021-05-31 12:37:00', '2021-05-31 12:37:00', '2021-05-31 12:38:00', '2021-05-31 12:38:00', '2021-05-31 12:44:00', '2021-05-31 12:44:00', '2021-05-31 12:45:00', '2021-05-31 12:45:00', '2021-05-31 12:52:00', '2021-05-31 12:52:00', '2021-05-31 12:53:00', '2021-05-31 12:53:00', '2021-05-31 13:01:00', '2021-05-31 13:01:00', '2021-05-31 13:02:00', '2021-05-31 13:02:00', '2021-05-31 13:12:00', '2021-05-31 13:12:00', '2021-05-31 13:13:00', '2021-05-31 13:13:00', '2021-05-31 13:23:00', '2021-05-31 13:23:00', '2021-05-31 13:24:00', '2021-05-31 13:24:00', '2021-05-31 13:31:00', '2021-05-31 13:31:00', '2021-05-31 13:32:00', '2021-05-31 13:32:00', '2021-05-31 13:41:00', '2021-05-31 13:41:00', '2021-05-31 13:45:00', '2021-05-31 13:45:00', '2021-05-31 13:51:00', 1950, 'Administrator', 'tersedia');
+(91, 'Tes Intelegensi 2 ( IST )', '2021-07-05 00:49:00', '2021-07-06 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-05 00:49:00', '2021-07-06 00:49:00', 1950, 'Administrator', 'tersedia');
 
 -- --------------------------------------------------------
 
@@ -1741,6 +2192,68 @@ CREATE TABLE `tb_ujian_ist2` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_ujian_kasus`
+--
+
+CREATE TABLE `tb_ujian_kasus` (
+  `id_ujian_studi` int(5) NOT NULL,
+  `nama_ujian` varchar(100) NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_ujian_kasus`
+--
+
+INSERT INTO `tb_ujian_kasus` (`id_ujian_studi`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`) VALUES
+(1, 'Studi Kasus Manajerial', '2021-06-13 08:18:56', '2021-06-13 23:56:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_ujian_leadership`
+--
+
+CREATE TABLE `tb_ujian_leadership` (
+  `id_ujian_leadership` int(11) NOT NULL,
+  `nama_ujian` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL,
+  `status` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_ujian_leadership`
+--
+
+INSERT INTO `tb_ujian_leadership` (`id_ujian_leadership`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
+(1, 'Leadership Inventory', '2021-06-15 14:46:57', '2021-06-15 23:46:57', 'tersedia');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_ujian_msdt`
+--
+
+CREATE TABLE `tb_ujian_msdt` (
+  `id_ujian_msdt` int(5) NOT NULL,
+  `nama_ujian` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL,
+  `status` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_ujian_msdt`
+--
+
+INSERT INTO `tb_ujian_msdt` (`id_ujian_msdt`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
+(1, 'Msdt', '2021-07-15 00:23:26', '2021-07-15 23:23:26', 'tersedia');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_ujian_papi`
 --
 
@@ -1757,7 +2270,7 @@ CREATE TABLE `tb_ujian_papi` (
 --
 
 INSERT INTO `tb_ujian_papi` (`id_ujian_papi`, `nama_ujian`, `waktu_mulai`, `waktu_akhir`, `status`) VALUES
-(1, 'Tes Sikap Kerja', '2021-03-25 16:35:00', '2021-03-25 16:45:00', 'tersedia');
+(1, 'Tes Sikap Kerja', '2021-06-11 16:35:00', '2021-06-11 23:25:30', 'tersedia');
 
 -- --------------------------------------------------------
 
@@ -1820,6 +2333,18 @@ ALTER TABLE `tb_data_jawaban_ist`
   ADD PRIMARY KEY (`id_jawaban_ist`);
 
 --
+-- Indexes for table `tb_data_jawaban_leadership`
+--
+ALTER TABLE `tb_data_jawaban_leadership`
+  ADD PRIMARY KEY (`id_jawaban_leadership`);
+
+--
+-- Indexes for table `tb_data_jawaban_msdt`
+--
+ALTER TABLE `tb_data_jawaban_msdt`
+  ADD PRIMARY KEY (`id_jawaban_msdt`);
+
+--
 -- Indexes for table `tb_data_jawaban_papi`
 --
 ALTER TABLE `tb_data_jawaban_papi`
@@ -1854,6 +2379,18 @@ ALTER TABLE `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
+
+--
+-- Indexes for table `tb_jawaban_essay`
+--
+ALTER TABLE `tb_jawaban_essay`
+  ADD PRIMARY KEY (`id_jawaban`);
+
+--
+-- Indexes for table `tb_jawaban_studi`
+--
+ALTER TABLE `tb_jawaban_studi`
+  ADD PRIMARY KEY (`id_jawaban`);
 
 --
 -- Indexes for table `tb_jenis_motlet`
@@ -1946,9 +2483,21 @@ ALTER TABLE `tb_soal_ist2`
   ADD PRIMARY KEY (`id_soal`);
 
 --
+-- Indexes for table `tb_soal_leadership`
+--
+ALTER TABLE `tb_soal_leadership`
+  ADD PRIMARY KEY (`id_soal`);
+
+--
 -- Indexes for table `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
+  ADD PRIMARY KEY (`id_soal`);
+
+--
+-- Indexes for table `tb_soal_msdt`
+--
+ALTER TABLE `tb_soal_msdt`
   ADD PRIMARY KEY (`id_soal`);
 
 --
@@ -1970,6 +2519,18 @@ ALTER TABLE `tb_ujian`
   ADD PRIMARY KEY (`id_ujian`);
 
 --
+-- Indexes for table `tb_ujian_essay`
+--
+ALTER TABLE `tb_ujian_essay`
+  ADD PRIMARY KEY (`id_ujian_essay`);
+
+--
+-- Indexes for table `tb_ujian_hitung`
+--
+ALTER TABLE `tb_ujian_hitung`
+  ADD PRIMARY KEY (`id_ujian_hitung`);
+
+--
 -- Indexes for table `tb_ujian_holland`
 --
 ALTER TABLE `tb_ujian_holland`
@@ -1986,6 +2547,24 @@ ALTER TABLE `tb_ujian_ist`
 --
 ALTER TABLE `tb_ujian_ist2`
   ADD PRIMARY KEY (`id_ujian`);
+
+--
+-- Indexes for table `tb_ujian_kasus`
+--
+ALTER TABLE `tb_ujian_kasus`
+  ADD PRIMARY KEY (`id_ujian_studi`);
+
+--
+-- Indexes for table `tb_ujian_leadership`
+--
+ALTER TABLE `tb_ujian_leadership`
+  ADD PRIMARY KEY (`id_ujian_leadership`);
+
+--
+-- Indexes for table `tb_ujian_msdt`
+--
+ALTER TABLE `tb_ujian_msdt`
+  ADD PRIMARY KEY (`id_ujian_msdt`);
 
 --
 -- Indexes for table `tb_ujian_papi`
@@ -2031,19 +2610,31 @@ ALTER TABLE `tb_data_jawaban_cfit`
 -- AUTO_INCREMENT for table `tb_data_jawaban_holland`
 --
 ALTER TABLE `tb_data_jawaban_holland`
-  MODIFY `id_jawaban_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jawaban_holland` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_data_jawaban_ist`
 --
 ALTER TABLE `tb_data_jawaban_ist`
-  MODIFY `id_jawaban_ist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=423;
+  MODIFY `id_jawaban_ist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=446;
+
+--
+-- AUTO_INCREMENT for table `tb_data_jawaban_leadership`
+--
+ALTER TABLE `tb_data_jawaban_leadership`
+  MODIFY `id_jawaban_leadership` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_data_jawaban_msdt`
+--
+ALTER TABLE `tb_data_jawaban_msdt`
+  MODIFY `id_jawaban_msdt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `tb_data_jawaban_papi`
 --
 ALTER TABLE `tb_data_jawaban_papi`
-  MODIFY `id_jawaban_papi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_jawaban_papi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `tb_data_keluarga`
@@ -2074,6 +2665,18 @@ ALTER TABLE `tb_data_pengalaman_kerja`
 --
 ALTER TABLE `tb_jadwal`
   MODIFY `id_jadwal` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_jawaban_essay`
+--
+ALTER TABLE `tb_jawaban_essay`
+  MODIFY `id_jawaban` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `tb_jawaban_studi`
+--
+ALTER TABLE `tb_jawaban_studi`
+  MODIFY `id_jawaban` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_jenis_motlet`
@@ -2109,7 +2712,7 @@ ALTER TABLE `tb_nilai`
 -- AUTO_INCREMENT for table `tb_nilai_cfit`
 --
 ALTER TABLE `tb_nilai_cfit`
-  MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_nilai_cfit` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_nilai_ist`
@@ -2166,10 +2769,22 @@ ALTER TABLE `tb_soal_ist2`
   MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tb_soal_leadership`
+--
+ALTER TABLE `tb_soal_leadership`
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `tb_soal_motlet`
 --
 ALTER TABLE `tb_soal_motlet`
   MODIFY `id_soal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_soal_msdt`
+--
+ALTER TABLE `tb_soal_msdt`
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `tb_soal_papi`
@@ -2190,6 +2805,18 @@ ALTER TABLE `tb_ujian`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
+-- AUTO_INCREMENT for table `tb_ujian_essay`
+--
+ALTER TABLE `tb_ujian_essay`
+  MODIFY `id_ujian_essay` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_ujian_hitung`
+--
+ALTER TABLE `tb_ujian_hitung`
+  MODIFY `id_ujian_hitung` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tb_ujian_holland`
 --
 ALTER TABLE `tb_ujian_holland`
@@ -2199,13 +2826,31 @@ ALTER TABLE `tb_ujian_holland`
 -- AUTO_INCREMENT for table `tb_ujian_ist`
 --
 ALTER TABLE `tb_ujian_ist`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `tb_ujian_ist2`
 --
 ALTER TABLE `tb_ujian_ist2`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tb_ujian_kasus`
+--
+ALTER TABLE `tb_ujian_kasus`
+  MODIFY `id_ujian_studi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_ujian_leadership`
+--
+ALTER TABLE `tb_ujian_leadership`
+  MODIFY `id_ujian_leadership` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tb_ujian_msdt`
+--
+ALTER TABLE `tb_ujian_msdt`
+  MODIFY `id_ujian_msdt` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_ujian_papi`

@@ -15,6 +15,11 @@ class Mdl_data_nilai extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function ambildata_nilai_perusahaan(){
+		$query=$this->db->query("SELECT * FROM tb_lowongan");
+		return $query->result_array();
+	}
+
 	public function get_apply($id){
 		$query=$this->db->query("SELECT * FROM tb_apply WHERE id_perusahaan = $id AND status_lamaran = 'Diterima'");
 		return $query->result_array();

@@ -375,7 +375,7 @@ foreach ($holland->result() as $key_uHolland) {
 </script>
 
 
-<!-- 
+
 <script type="text/javascript">
   var countDownDate = new Date("<?php echo $timeHolland ?>").getTime();
 
@@ -406,6 +406,6 @@ var x = setInterval(function() {
   }
 }, 1000);
 
-</script> -->
+</script> 
 
 <?php   $this->load->view('layout3/footer') ?>

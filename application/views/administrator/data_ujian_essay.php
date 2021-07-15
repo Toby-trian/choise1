@@ -3,18 +3,18 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-clipboard"></i> Ujian IST 5 - 6</h1>
+      <h1><i class="fa fa-clipboard"></i> Ujian Essay</h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
       <li class="breadcrumb-item">User</li>
-      <li class="breadcrumb-item"><a href="#">Ujian IST</a></li>
+      <li class="breadcrumb-item"><a href="#">Ujian Essay</a></li>
     </ul>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <a href="<?php echo base_url('Administrator/Data_ujian/tambahdata_ist2') ?>" class="btn btn-primary" style="margin-bottom: 2%;">Tambah Data</a>
+        <a href="<?php echo base_url('Administrator/Data_ujian/tambahdata_essay') ?>" class="btn btn-primary" style="margin-bottom: 2%;">Tambah Data</a>
         <div id="notifikasi">
           <?php if($this->session->flashdata('msg')):?>
             <div class="alert alert-primary">
@@ -41,8 +41,6 @@
                   <th>Nama Ujian</th>
                   <th>Waktu Dimulai</th>
                   <th>Waktu Berakhir</th>
-                  <th>Nama Admin</th>
-                  <th>Status</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -66,7 +64,7 @@
                           <p>Ingin hapus ujian <b><?php echo $nama_ujian ?>?</p>
                         </div>
                         <div class="modal-footer">
-                          <a href="<?php echo base_url('Administrator/Data_ujian/hapus_ujian_ist2/'.$key['id_ujian']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;"><i class="fa fa-trash"></i> Hapus</button></a>
+                          <a href="<?php echo base_url('Administrator/Data_ujian/hapus_ujian/'.$key['id_ujian_essay']) ?>" title="Hapus Data"><button type="button" class="btn btn-danger" style="margin-left: 170px;"><i class="fa fa-trash"></i> Hapus</button></a>
 
                         </div>
                       </div>
@@ -83,7 +81,7 @@
                           <p>Yakin ingin menghentikan ujian <b><?php echo $nama_ujian ?></b>?</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="<?php echo base_url('Administrator/Data_ujian/hentikan_ujian_ist2/'.$key['id_ujian']) ?>" title="Hentikan ujian"><button type="button" class="btn btn-dark" style="margin-left: 170px;"><i class="fa fa-stop text-danger"></i> Hentikan ujian</button></a>
+                            <a href="<?php echo base_url('Administrator/Data_ujian/hentikan_ujian/'.$key['id_ujian']) ?>" title="Hentikan ujian"><button type="button" class="btn btn-dark" style="margin-left: 170px;"><i class="fa fa-stop text-danger"></i> Hentikan ujian</button></a>
                         </div>
                       </div>
                     </div>
@@ -92,38 +90,15 @@
                   <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $key['nama_ujian'] ?></td>
-                    <td><?php echo $key['waktu_dimulai'] ?></td>
-                    <td><?php echo $key['waktu_berakhir'] ?></td>
-                    <!-- sub1 --><!-- 
-                    <td><?php echo $key['start_lat_sub1'] ?></td>
-                    <td><?php echo $key['end_lat_sub1'] ?></td>
-                    <td><?php echo $key['start_uji_sub1'] ?></td>
-                    <td><?php echo $key['end_uji_sub1'] ?></td> -->
-                    <!-- sub2 -->
-                    <!-- <td><?php echo $key['start_lat_sub2'] ?></td>
-                    <td><?php echo $key['end_lat_sub2'] ?></td>
-                    <td><?php echo $key['start_uji_sub2'] ?></td>
-                    <td><?php echo $key['end_uji_sub2'] ?></td> -->
-                    <!-- sub3 -->
-                    <!-- <td><?php echo $key['start_lat_sub3'] ?></td>
-                    <td><?php echo $key['end_lat_sub3'] ?></td>
-                    <td><?php echo $key['start_uji_sub3'] ?></td>
-                    <td><?php echo $key['end_uji_sub3'] ?></td> -->
-                    <!-- sub4 -->
-                    <!-- <td><?php echo $key['start_lat_sub4'] ?></td>
-                    <td><?php echo $key['end_lat_sub4'] ?></td>
-                    <td><?php echo $key['start_uji_sub4'] ?></td>
-                    <td><?php echo $key['end_uji_sub4'] ?></td>
- -->
-                    <td><?php echo $key['nama_pembuat'] ?></td>
-                    <td><?php echo $key['status'] ?></td>
+                    <td><?php echo $key['waktu_mulai'] ?></td>
+                    <td><?php echo $key['waktu_akhir'] ?></td>
                     
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                        <?php 
+                       <!--  <?php 
                         if ($key['status'] == "tersedia") { ?>
                         <button data-toggle="modal" data-target="#myModal<?php echo $modal ?>" style="color: #ffff" type="button" class="btn btn-dark"><i class="fa fa-stop text-danger"></i> Hentikan Ujian</button>
-                       <?php } ?>
+                       <?php } ?> -->
                        <button data-toggle="modal" data-target="#myModal2<?php echo $modal ?>" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
                      </div>
                    </td>

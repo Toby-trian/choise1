@@ -5,30 +5,30 @@
 	
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h3>Soal</h3>
+			<h3>LEADERSHIP INVENTORY</h3>
 		</div>
 		<div class="col-lg-3">
 			<h4 style="margin-top: 35px" align="right">Waktu Ujian <span id="timer"></span> detik</h4>
 		</div>
 	</div><!--/.row-->
-	<?php  
-	$id_ujian=  $this->session->userdata('ses_ujian');
-	$nomor = $soal_subtes6->nomor_soal;
-	$ujian = $this->db->query("SELECT * FROM tb_ujian_ist WHERE id_ujian = $id_ujian");
-	foreach ($ujian->result() as $key ) {
-		//$end_lat6 = $key->end_uji_sub6;
-	}
-	?>
-	<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_ist6/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
+		<?php  
+		$id_ujian =  $this->session->userdata('ses_leader');
+		$nomor = $soal_subtes1->nomor_soal;
+		$ujian = $this->db->query("SELECT * FROM tb_ujian_leadership WHERE id_ujian_leadership = ".$id_ujian);
+		foreach ($ujian->result() as $key ) {
+			$end_leader = $key->waktu_akhir;
+		}
+		?>
+	<iframe  id="frame" src="<?php echo base_url('Pelamar/Ujian/frame_ujian_leadership/'.$id_ujian.'/'.$nomor ) ?>" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  frameborder="0">Browser Anda Tidak Mendukung  Iframe, Silahkan Perbaharui Browser Anda.</iframe>
 
-</div>
+	</div>
 </div><!--/.row-->
 
 </div>	<!--/.main-->
 
 
 <script type="text/javascript">
-	var countDownDate = new Date("<?php echo $end_lat6 ?>").getTime();
+	var countDownDate = new Date("<?php echo $end_leader ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -48,8 +48,8 @@ var x = setInterval(function() {
 
   if (distance < 0) {
   	clearInterval(x);
-  	alert('Waktu Ujian Subtes 6 Telah Berakhir');
-  	window.location.href = '<?php echo base_url('Pelamar/Ujian/latihan_ist7/'.$id_ujian); ?>';
+  	alert('Waktu Ujian Telah Berakhir');
+  	window.location.href = '<?php echo base_url('Pelamar/Pelamar/testulispsikotest/'.$id_ujian); ?>';
 
   }
 }, 1000);

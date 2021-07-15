@@ -3,18 +3,19 @@
 
 <?php 
 $id_pelamar = $this->session->userdata('ses_id');
-$idEssay = $this->session->userdata('ses_ujianEssay');
+$idStudi = $this->session->userdata('ses_ujianStudi');
+$idLowongan = $this->session->userdata('sesIdLowongan');
 
-$essay = $this->db->query("SELECT * FROM tb_ujian_essay WHERE id_ujian_essay = $idEssay");
-foreach ($essay->result() as $key_uHolland) {
-	$timeHolland = $key_uHolland->waktu_akhir;
+$studi = $this->db->query("SELECT * FROM tb_ujian_kasus WHERE id_ujian_studi = $idStudi");
+foreach ($studi->result() as $key_uStudi) {
+	$timeStudi = $key_uStudi->waktu_akhir;
 }
 ?>
 
 <div class="col-sm-12 main">
 	<div class="row" style="margin-bottom: -50px;">
 		<div class="col-lg-9">
-			<h3 class="page-header" style="margin-top: 15px">ESSAY KOMPETENSI</h3>
+			<h3 class="page-header" style="margin-top: 15px">STUDI KASUS MANAGERIAL</h3>
 		</div>
 		<div class="col-lg-3">
 			<h4 style="margin-top: 35px" align="right">Waktu pengerjaan <span id="time"></span> detik</h4>
@@ -24,7 +25,7 @@ foreach ($essay->result() as $key_uHolland) {
 
 	<div class="col-sm-12" style="background-color: #f9243f; padding: 30px; border-radius: 5px; margin-bottom: 20px;">
 		<h4 style="color: #fff;"><b>Petunjuk Pengisian</b></h4>
-		<p style="color: #fff">Jawablah	beberapa	pertanyaan	dibawah	ini	sesuai	dengan	pemahaman	dan	kompetensi	yang	anda	miliki	saat	ini	secara	singkat	dan	jelas.</p>
+		<p style="color: #fff">Jawablah	beberapa	pertanyaan	dibawah	ini	sesuai dengan pemahama yang anda miliki	saat ini secara	singkat	dan	jelas !</p>
 	</div>
 
 	<div class="container">
@@ -32,84 +33,84 @@ foreach ($essay->result() as $key_uHolland) {
 	
 	<div class="col-sm-12" style="background-color: #fff; padding: 30px; border-radius: 5px;">
 		<div class="form-row">
-			<form action="<?php echo base_url("Pelamar/Ujian/jawaban_essay/") ?>" method="post">
-				<input type="hidden" name="id_ujian" value="<?php echo $idEssay ?>">
+			<form action="<?php echo base_url("Pelamar/Ujian/jawaban_studi/") ?>" method="post">
+				<input type="hidden" name="id_ujian" value="<?php echo $idStudi ?>">
 				<input type="hidden" name="id_pelamar" value="<?php echo $id_pelamar ?>">
+				<input type="hidden" name="id_lowongan" value="<?php echo $idLowongan ?>">
 				<div class="form-group">
-					<label>1. Jelaskan	 secara	 singkat	 terkait	 pemahaman	 anda	 mengenai	 gambaran	 dari	 Deskripsi	
-					Pekerjaan saat	ini?</label>
+
+				<br><label>STUDI KASUS</label></br>
+
+					
+				<br>
+					<p>Pada penugasan kali ini, anda akan dihadapkan pada 2 jenis persoalan/kasus yang memiliki kompleksitas masing-masing. Anda diminta menjadi salesperson untuk melakukan analisa dan solusi menyelesaikan 2 kasus dibawah ini.</p>
+				<br>	
+					<label>
+					<u>KASUS I</u>
+					</label>
+				</br>
+				<br>
+					<label>
+					Ketika anda dihadapkan pada 3 tipe konsumen (A-B-C), yakni:
+					</label>
+				</br>
+					<br>
+					<li style="margin-left: 40px;">
+					Konsumen A : Konsumen yang sudah tahu masalah/kebutuhannya serta sudah tahu solusinya
+					</li>
+					<li style="margin-left: 40px;">
+					Konsumen B  : Konsumen yang sudah tahu masalah/kebutuhannya tapi belum tahu solusi pastinya
+					</li>
+					<li style="margin-left: 40px;">
+					Konsumen C: Konsumen yang belum tahu secara pasti masalah/kebutuhan serta belum tahu solusinya.
+					</li>
+					<br>
+						<p>
+						Diantara ketiga tipe konsumen diatas, anda diminta untuk melakukan analisa kelebihan dan tantangan dari masing-masing tipe konsumen tersebut. Kemudian susunlah secara singkat strategi yang anda gunakan sebagai salesperson dalam melakukan penjualan produk anda. 
+						</p>
+					</br>
 					<textarea class="form-control" name="jawaban1" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>2. Jelaskan	permasalahan	internal	maupun	lapangan	yang	sering	muncul	pada	posisi	jabatan	
-						saat	ini	sekaligus	bagaimana	solusinya?
+				<br>	
+					<label>
+					<u>KASUS II</u>
+					</label>
+				</br>
+				<br>
+					<label>
+					Dibawah ini terdapat 2 paket penawaran produk  yang akan anda jual dan masing-masing memiliki nilai/keunggulan, yakni:
+					</label>
+				</br>
+				<p style="text-align:center;"><img src="<?php  echo base_url('assets3/images/ujian_hitung/tabel2.png') ?>" class="img-center" alt="" style="width: 300px; margin: 50px; border-radius: 5px;"></p>
+
+						<label>
+						Posisikan diri anda sebagai salesperson. Kemudian anda diminta untuk:
+						</label>
+					<br>
+					<p style="margin-left: 40px;">a. Lakukan analisa kelebihan dan kekurangan masing-masing paket?
+					</p>
+					<p style="margin-left: 40px;">b. Tentukan karakteristik segmentasi konsumen pada masing-masing paket?
+					</p>
+					<p style="margin-left: 40px;">c. Menurut anda, strategi penjualan seperti apa yang anda gunakan untuk memasarkan masing-masing paket tersebut?
+					</p>
 					</label>
 					<textarea class="form-control" name="jawaban2" required=required></textarea>
+					
 				</div>
-				<div class="form-group">
-					<label>3. Apa	 yang	 anda	 sukai	 pada	 tugas	 dari	 pekerjaan	 yang	 anda miliki	 saat	 ini?.	 Kemudian	
-						jelaskan	mengapa?
-
-					</label>
-					<textarea class="form-control" name="jawaban3" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>4. Sebutkan	 kompetensi	 teknis	 dan	 karakter	 apa	 yang	 anda	miliki	 sesuai	 dengan	 peran	 dan	
-						wewenang	pada	posisi	jabatan	anda	saat	ini?
-					</label>
-					<textarea class="form-control" name="jawaban4" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>5. . Jawablah	dengan	singkat	mengenai	pertanyaan	ini: <br>
-						a. Apa	yang	anda	maknai	tentang	integritas?
-					</label>
-					<textarea class="form-control" name="jawaban5" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>b. Bagaimana	 cara	 anda	 menciptakan	 situasi	 kerja yang	 mampu	 menampilkan	
-						integritas	dan	profesionalitas	kerja?
-					</label>
-					<textarea class="form-control" name="jawaban5b" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>c. Bagaimana	cara	anda	untuk	mengingatkan/mengajak	rekan	kerja	maupun	bawahan	
-						dalam	bertindak	sesuai	dengan	nilai,	norma	dan	etika	perusahaan?
-					</label>
-					<textarea class="form-control" name="jawaban5c" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>6. Apakah	anda	pernah	terlibat	dalam	sebuah	tim	kerja?	Ceritakan	situasi/kejadian,	sekaligus	
-						peran	apa	yang	anda	lakukan	dalam	kegiatan	tersebut?
-					</label>
-					<textarea class="form-control" name="jawaban6" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>7. Dalam	 mencapai	 target	 atas	 deskripsi	 pekerjaan	 yang	 dituntut	 pada	 posisi saat	 ini,	
-						sebutkan	langkah	apa	saja	yang	akan	anda	lakukan	untuk	memenuhi	tuntutan	perusahaan	
-						atas	kinerja	anda?
-					</label>
-					<textarea class="form-control" name="jawaban7" required=required></textarea>
-				</div>
-				<div class="form-group">
-					<label>8. Menurut	 pengalaman	anda,	apakah	anda	 pernah	memimpin	 sebuah	 tim	 kerja/kelompok.	
-						Apabila	 iya,	 silahkan	 berikan	 penjelasan	 singkat	 mengenai	 tugas	 yang	 anda	 miliki	 pada	
-						posisi	 tersebut	 sekaligus	 bagaimana	 cara	 anda	 untuk	 mengarahkan	 tim	 sekaligus	
-						mengevaluasi	setiap	progress	kerja	dan	permasalahan	yang	timbul?
-					</label>
-					<textarea class="form-control" name="jawaban8" required=required></textarea>
-				</div>
+				
 			</div>
 
 		</div>
 
 		<div class="col-sm-12 button-lm-tittle justify-content-center text-center" style="margin-top: 20px;">
-			<input style="margin-bottom: 2%" type="submit"class="btn btn-primary mr-2 mb-2" value="Selanjutnya"></a>
+			<input style="margin-bottom: 2%" type="submit"class="btn btn-primary mr-2 mb-2" value="Kirim Jawaban"></a>
+			<!-- <button type="submit" style="margin-top: 5%" class="btn btn-primary" formaction="<?php echo base_url('Pelamar/Ujian/jawaban_endStudi') ?>" class="btn btn-primary"> Kirim Jawaban Bro <i class="fa fa-arrow-circle-right"></i>
+						</button> -->
 		</div>
 	</form>
 
 
 <script type="text/javascript">
-  var countDownDate = new Date("<?php echo $timeHolland ?>").getTime();
+  var countDownDate = new Date("<?php echo $timeStudi ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

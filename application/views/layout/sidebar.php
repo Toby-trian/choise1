@@ -31,9 +31,12 @@
       <li class="treeview <?php if($this->uri->segment(2)=="Data_ujian"){echo "is-expanded";}?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Ujian</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_ist') ?>"><i class="icon fa fa-circle-o"></i> IST</a></li>
-          <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_ist2') ?>"><i class="icon fa fa-circle-o"></i> IST 2</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(2)=="Data_ujian"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian') ?>"><i class="icon fa fa-circle-o"></i> CFIT</a></li>
           <li><a class="treeview-item <?php if($this->uri->segment(3)=="data_ujian_holland"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_holland') ?>" ><i class="icon fa fa-circle-o"></i> Holland</a></li>
+          <li><a class="treeview-item <?php if($this->uri->segment(2)=="data_ujian_papi"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_papi') ?>"><i class="icon fa fa-circle-o"></i> Papikostik</a></li>
+           <li><a class="treeview-item <?php if($this->uri->segment(2)=="data_ujian_essay"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_essay') ?>"><i class="icon fa fa-circle-o"></i> Essay Kompetensi</a></li>
+           <li><a class="treeview-item <?php if($this->uri->segment(2)=="data_ujian_studi"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_studi') ?>"><i class="icon fa fa-circle-o"></i> Studi Kasus Manajerial</a></li>
+           <li><a class="treeview-item <?php if($this->uri->segment(2)=="data_ujian_hitung"){echo "active";}?>" href="<?php echo base_url('Administrator/Data_ujian/ujian_hitung') ?>"><i class="icon fa fa-circle-o"></i>  Hitung Akuntansi</a></li>
         </ul>
       </li>
 

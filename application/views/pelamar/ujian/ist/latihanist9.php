@@ -163,7 +163,7 @@ var x = setInterval(function() {
     clearInterval(x);
     // document.getElementById("time").innerHTML = "EXPIRED";
     alert('Waktu latian subtes 9 sudah berakhir, selamat mengerjakan subtes 9');
-    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian/'.$idUjian.'/157'); ?>';
+    window.location.href = '<?php echo base_url('Pelamar/Ujian/start_ujian_ist9/'.$idUjian.'/157'); ?>';
 
     // document.getElementById('hentikan').click();
   }
