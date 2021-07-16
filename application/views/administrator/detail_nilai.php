@@ -2139,12 +2139,168 @@
                     <td><span id="rs_gesamt"></span></td>
                     <td><span id="ss_gesamt"></span></td>
                   </tr>
+
                 </table>
 
                 </body>
                 <?php $modal++;  }?>
               </tbody>
             </table>
+
+
+             <div class="table-responsive">
+            <table class="table table-hover table-bordered" id="sampleTable">
+              <tbody>
+                  <tr>
+                  <th>Nilai MSDT :</th>
+                  <td></td>
+                </tr>
+                 <tr>
+                  <th style="text-align: right;width: 175px;">Jumlah A</th>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (1,2,3,4,5,6,7,8) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a1 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a1' value='".$nilai_a1."'><span>".$nilai_a1."</span> </td>";
+                    ?>
+                  
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (9,10,11,12,13,14,15,16) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a2 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a2' value='".$nilai_a2."'><span>".$nilai_a2."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (17,18,19,20,21,22,23,24) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a3 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a3' value='".$nilai_a3."'><span>".$nilai_a3."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (25,26,27,28,29,30,31,32) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a4 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a4' value='".$nilai_a4."'><span>".$nilai_a4."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (33,34,35,36,37,38,39,40) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a5 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a5' value='".$nilai_a5."'><span>".$nilai_a5."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (41,42,43,44,45,46,47,48) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a6 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a6' value='".$nilai_a6."'><span>".$nilai_a6."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (49,50,51,52,53,54,55,56) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a7 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a7' value='".$nilai_a7."'><span>".$nilai_a7."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='A' AND no_soal IN (57,58,59,60,61,62,63,64) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_a8 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_a8' value='".$nilai_a8."'><span>".$nilai_a8."</span> </td>";
+                    ?></td>
+                </tr>
+                 <tr>
+                  <th style="text-align: right;">Jumlah B</th>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (1,9,17,25,33,41,49,57) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b1 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b1' value='".$nilai_b1."'><span>".$nilai_b1."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (2,10,18,26,34,42,50,58) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b2 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b2' value='".$nilai_b2."'><span>".$nilai_b2."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (3,11,19,27,35,43,51,59) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b3 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b3' value='".$nilai_b3."'><span>".$nilai_b3."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (4,12,20,28,36,44,52,60) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b4 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b4' value='".$nilai_b4."'><span>".$nilai_b4."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (5,13,21,29,37,45,53,61) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b5 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b5' value='".$nilai_b5."'><span>".$nilai_b5."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (6,14,22,30,38,46,54,62) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b6 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b6' value='".$nilai_b6."'><span>".$nilai_b6."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (7,15,23,31,39,47,55,63) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b7 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b7' value='".$nilai_b7."'><span>".$nilai_b7."</span> </td>";
+                    ?></td>
+                  <td><?php
+                    $nilai = $this->db->query("SELECT count(jawaban) AS jumlah FROM tb_data_jawaban_msdt WHERE jawaban='B' AND no_soal IN (8,16,24,32,40,48,56,64) AND id_lowongan = $lowongan AND id_pelamar=$id_pelamar");
+                    $result = $nilai->result_array();
+                    $nilai_b8 = $result[0]['jumlah'];
+
+                    echo "<input type='hidden' id='nilai_b8' value='".$nilai_b8."'><span>".$nilai_b8."</span> </td>";
+                    ?></td>
+                </tr>
+                <tr>
+                  <th style="text-align: right;">Koreksi</th>
+                  <td>+1</td>
+                  <td>+2</td>
+                  <td>+1</td>
+                  <td>0</td>
+                  <td>+3</td>
+                  <td>-1</td>
+                  <td>0</td>
+                  <td>-4</td>
+                </tr>
+                <tr>
+                  <th style="text-align: right;">Jumlah</th>
+                  <td><span id="jumlah_a1b1"></span></td>
+                  <td><span id="jumlah_a2b2"></td>
+                  <td><span id="jumlah_a3b3"></td>
+                  <td><span id="jumlah_a4b4"></td>
+                  <td><span id="jumlah_a5b5"></td>
+                  <td><span id="jumlah_a6b6"></td>
+                  <td><span id="jumlah_a7b7"></td>
+                  <td><span id="jumlah_a8b8"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
           </div>
         </div>
       </div>
@@ -2174,6 +2330,63 @@ var nilaime = document.getElementById("nilai_me").value;
 var nilai_me = parseInt(nilaime, 10);
 var rs = nilai_se+nilai_wa+nilai_an+nilai_ge+nilai_ra+nilai_zr+nilai_fa+nilai_wu+nilai_me;
 var ss = parseInt(rs, 10);
+
+var nilaia1 = document.getElementById("nilai_a1").value;
+var nilai_a1 = parseInt(nilaia1, 10);
+var nilaib1 = document.getElementById("nilai_b1").value;
+var nilai_b1 = parseInt(nilaib1, 10);
+var a1b1 = nilai_a1+nilai_b1+1;
+document.getElementById("jumlah_a1b1").innerHTML = a1b1;
+
+var nilaia2 = document.getElementById("nilai_a2").value;
+var nilai_a2 = parseInt(nilaia2, 10);
+var nilaib2 = document.getElementById("nilai_b2").value;
+var nilai_b2 = parseInt(nilaib2, 10);
+var a2b2 = nilai_a2+nilai_b2+2;
+document.getElementById("jumlah_a2b2").innerHTML = a2b2;
+
+var nilaia3 = document.getElementById("nilai_a3").value;
+var nilai_a3 = parseInt(nilaia3, 10);
+var nilaib3 = document.getElementById("nilai_b3").value;
+var nilai_b3 = parseInt(nilaib3, 10);
+var a3b3 = nilai_a3+nilai_b3+1;
+document.getElementById("jumlah_a3b3").innerHTML = a3b3;
+
+var nilaia4 = document.getElementById("nilai_a4").value;
+var nilai_a4 = parseInt(nilaia4, 10);
+var nilaib4 = document.getElementById("nilai_b4").value;
+var nilai_b4 = parseInt(nilaib4, 10);
+var a4b4 = nilai_a4+nilai_b4+0;
+document.getElementById("jumlah_a4b4").innerHTML = a4b4;
+
+var nilaia5 = document.getElementById("nilai_a5").value;
+var nilai_a5 = parseInt(nilaia5, 10);
+var nilaib5 = document.getElementById("nilai_b5").value;
+var nilai_b5 = parseInt(nilaib5, 10);
+var a5b5 = nilai_a5+nilai_b5+3;
+document.getElementById("jumlah_a5b5").innerHTML = a5b5;
+
+var nilaia6 = document.getElementById("nilai_a6").value;
+var nilai_a6 = parseInt(nilaia6, 10);
+var nilaib6 = document.getElementById("nilai_b6").value;
+var nilai_b6 = parseInt(nilaib6, 10);
+var a6b6 = nilai_a6+nilai_b6-1;
+document.getElementById("jumlah_a6b6").innerHTML = a6b6;
+
+var nilaia7 = document.getElementById("nilai_a7").value;
+var nilai_a7 = parseInt(nilaia7, 10);
+var nilaib7 = document.getElementById("nilai_b7").value;
+var nilai_b7 = parseInt(nilaib7, 10);
+var a7b7 = nilai_a7+nilai_b7+0;
+document.getElementById("jumlah_a7b7").innerHTML = a7b7;
+
+var nilaia8 = document.getElementById("nilai_a8").value;
+var nilai_a8 = parseInt(nilaia8, 10);
+var nilaib8 = document.getElementById("nilai_b8").value;
+var nilai_b8 = parseInt(nilaib8, 10);
+var a8b8 = nilai_a8+nilai_b8-4;
+document.getElementById("jumlah_a8b8").innerHTML = a8b8;
+
 
 var umur = document.getElementById("umur").value;
 var umure = parseInt(umur, 10);
